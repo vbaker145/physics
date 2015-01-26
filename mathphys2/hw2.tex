@@ -41,14 +41,14 @@ We can integrate 1.3 to find:
 We then integrate again and multiply by $\frac{d \psi}{d \xi}$:
 \begin{gather}
 \frac{d\psi}{d\xi}=\int(c\psi-\frac{\psi^2}{2})\\
-(\frac{d\psi}{d\xi})^2=\frac{\psi^2}{2}(c-\frac{\psi^3}{3})\\
-\frac{d\psi}{d\xi}=\frac{\psi}{\sqrt{2}}(c-\frac{\psi^3}{3})^\frac{1}{2}
+(\frac{d\psi}{d\xi})^2=\frac{\psi^2}{2}(c-\frac{\psi}{3})\\
+\frac{d\psi}{d\xi}=\frac{\psi}{\sqrt{2}}(c-\frac{\psi}{3})^\frac{1}{2}
 \end{gather}
-We can now integrate to find $\psi (\xi)$. Wolfram Alpha spits out some awful mess that can't possibly be an answer.
-
-
-
-
+We can now integrate for $\xi$:
+\begin{equation}
+ d\xi =\int \frac{d \psi}{\frac{\psi}{\sqrt{2}}(c-\frac{\psi}{3})^{\frac{1}{2}}}\\
+\end{equation}
+And then rearrange to find $\psi$ as a function of $\xi$ and c.
 
 \section{Problem 2}
 The general form of a second-order linear PDE is:
@@ -145,9 +145,9 @@ We are solving the characteristic equation for:
 \end{gather*}
 With A=1, B=0, and $c=-c(x)^2$, the characteristic equation is:
 \begin{gather}
-\frac{dx}{dt}^2-c(x)^2=0\\
-\frac{dx}{dt}=c(x)\\
-dt=\frac{1}{c(x)}dx
+(\frac{dx}{dt})^2-c(x)^2=0\\
+\frac{dx}{dt}=\pm c(x)\\
+dt=\pm\frac{1}{c(x)}dx
 \end{gather}
 With $c(x)=c_0(1+\frac{|x|}{a})$ the characteristic curve can be written:
 \begin{equation}
@@ -179,8 +179,5 @@ We can now write the combined solution:
 \begin{equation}
 \psi(x,t)=\frac{1}{2c_0}(e^{-|x+vt|}-e^{-|x-vt|}) 
 \end{equation}
-
-
-
 
 \end{document}
