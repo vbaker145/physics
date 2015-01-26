@@ -1,0 +1,108 @@
+\documentclass[a4paper,10pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+
+%opening
+\title{Math Phys II HW 2}
+\author{Vince Baker}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+
+\end{abstract}
+
+\section{Problem 1}
+
+\section{Problem 2}
+The general form of a second-order linear PDE is:
+\begin{equation}
+ A(x,y)\frac{\partial ^2 \psi}{\partial x^2}+2B(x,y)\frac{\partial ^2\psi}{\partial x \partial y}+C(x,y)\frac{\partial ^2 \psi}{\partial y^2}
+\end{equation}
+The characteristic equation,  with solutions $\xi(x,y)$ and $\eta(x,y)$, is:
+\begin{equation}
+ A(\frac{dy}{dx})^2+2B(\frac{dy}{dx})+C=0
+\end{equation}
+We wish to write Eq. 1 in terms of $\xi$ and $\eta$. We differentiate $\psi(\xi, \eta)$:
+\begin{gather}
+\frac{\partial \psi}{\partial x}=\frac{\partial \psi}{\partial \xi}\frac{\partial \xi}{\partial x}+\frac{\partial \psi}{\partial \eta}\frac{\partial \eta}{\partial x}
+\end{gather}
+Now we calculate the other partials with respect to $\eta$ and $\xi$.
+\begin{gather}
+\frac{\partial}{\partial x}(\frac{\partial \psi}{\partial \xi})=\frac{\partial ^2 \psi}{\partial \xi^2}\frac{\partial \xi}{\partial x}+
+\frac{\partial ^2 \psi}{\partial \xi \partial \eta}\frac{\partial \eta}{\partial x}\\
+\frac{\partial}{\partial x}(\frac{\partial \psi}{\partial \eta})=\frac{\partial ^2 \psi}{\partial \eta^2}\frac{\partial \eta}{\partial x}+
+\frac{\partial ^2 \psi}{\partial \xi \partial \eta}\frac{\partial \xi}{\partial x}
+\end{gather}
+We use 3,4 and 5 to calculate $\frac{\partial ^2 \psi}{\partial x^2}$.
+\begin{gather*}
+\frac{\partial ^2 \psi}{\partial x^2} = \frac{\partial ^2 \xi}{\partial x^2}\frac{\partial \psi}{\partial \xi}
++\frac{\partial \xi}{\partial x}(\frac{\partial ^2 \psi}{\partial \xi^2}\frac{\partial \xi}{\partial x}+
+\frac{\partial ^2 \psi}{\partial \xi \partial \eta}\frac{\partial \eta}{\partial x})\\
++\frac{\partial ^2 \eta}{\partial x^2}\frac{\partial \psi}{\partial \eta}
++\frac{\partial \eta}{\partial x}(\frac{\partial ^2 \psi}{\partial \eta^2}\frac{\partial \eta}{\partial x}+
+\frac{\partial ^2 \psi}{\partial \xi \partial \eta}\frac{\partial \xi}{\partial x})\\
+=\frac{\partial ^2 \xi}{\partial x^2}\frac{\partial \psi}{\partial \xi}+\frac{\partial ^2 \eta}{\partial x^2}\frac{\partial \psi}{\partial \eta}
++\frac{\partial ^2 \psi}{\partial \xi ^2}(\frac{\partial \xi}{\partial x})^2 +\frac{\partial \xi}{\partial x}\frac{\partial \eta}{\partial x}
+\frac{\partial ^2 \psi}{\partial \xi \partial \eta}+\frac{\partial ^2 \psi}{\partial \eta ^2}(\frac{\partial \eta}{\partial x})^2
++\frac{\partial \xi}{\partial x}\frac{\partial \eta}{\partial x}\frac{\partial ^2 \psi}{\partial \xi \partial \eta}
+\end{gather*}
+\begin{gather}
+\frac{\partial ^2 \psi}{\partial x^2}=\frac{\partial ^2 \xi}{\partial x^2}\frac{\partial \psi}{\partial \xi}+\frac{\partial ^2 \eta}{\partial x^2}
+\frac{\partial \psi}{\partial \eta}
++\frac{\partial ^2 \psi}{\partial \xi ^2}(\frac{\partial \xi}{\partial x})^2+\frac{\partial ^2 \psi}{\partial \eta ^2}(\frac{\partial \eta}{\partial x})^2
++2(\frac{\partial \xi}{\partial x}\frac{\partial \eta}{\partial x}\frac{\partial ^2 \psi}{\partial \xi \partial \eta})
+\end{gather}
+The calculation of $\frac{\partial ^2 \psi }{\partial y^2}$ is identical.
+\begin{gather}
+\frac{\partial ^2 \psi}{\partial y^2}=\frac{\partial ^2 \xi}{\partial y^2}\frac{\partial \psi}{\partial \xi}+\frac{\partial ^2 \eta}{\partial y^2}\frac{\partial \psi}{\partial \eta}
++\frac{\partial ^2 \psi}{\partial \xi ^2}(\frac{\partial \xi}{\partial y})^2+\frac{\partial ^2 \psi}{\partial \eta ^2}(\frac{\partial \eta}{\partial y})^2
++2(\frac{\partial \xi}{\partial y}\frac{\partial \eta}{\partial y}\frac{\partial ^2 \psi}{\partial \xi \partial \eta})
+\end{gather}
+We now take $\frac{\partial}{\partial y}$ of equation 1:
+\begin{multline}
+ \frac{\partial ^2\psi}{\partial x \partial y}=\frac{\partial ^2\xi}{\partial x \partial y}\frac{\partial \psi}{\partial \xi}
+ +\frac{\partial ^2 \eta}{\partial x \partial y}\frac{\partial \psi}{\partial \eta}
+ +\frac{\partial^2 \psi}{\partial \xi ^2}(\frac{\partial \xi}{\partial x}\frac{\partial \xi}{\partial y})\\
+ +\frac{\partial^2 \psi}{\partial \eta ^2}(\frac{\partial \eta}{\partial x}\frac{\partial \eta}{\partial y})
+ +\frac{\partial ^2 \psi}{\partial \xi \partial \eta}(\frac{\partial \xi}{\partial x}\frac{\partial \eta}{\partial y}+\frac{\partial \eta}{\partial x}\frac{\partial \xi}{\partial y} ) 
+\end{multline}
+
+We can now write Eq. 1 in terms of $\xi$ and $\eta$:
+\begin{multline}
+ A\{\frac{\partial ^2 \xi}{\partial x^2}\frac{\partial \psi}{\partial \xi}+\frac{\partial ^2 \eta}{\partial x^2}
+\frac{\partial \psi}{\partial \eta}
++\frac{\partial ^2 \psi}{\partial \xi ^2}(\frac{\partial \xi}{\partial x})^2+\frac{\partial ^2 \psi}{\partial \eta ^2}(\frac{\partial \eta}{\partial x})^2
++2(\frac{\partial \xi}{\partial x}\frac{\partial \eta}{\partial x}\frac{\partial ^2 \psi}{\partial \xi \partial \eta})\}\\
++2B\{\frac{\partial ^2\xi}{\partial x \partial y}\frac{\partial \psi}{\partial \xi}
+ +\frac{\partial ^2 \eta}{\partial x \partial y}\frac{\partial \psi}{\partial \eta}
+ +\frac{\partial^2 \psi}{\partial \xi ^2}(\frac{\partial \xi}{\partial x}\frac{\partial \xi}{\partial y})
+ +\frac{\partial^2 \psi}{\partial \eta ^2}(\frac{\partial \eta}{\partial x}\frac{\partial \eta}{\partial y})
+ +\frac{\partial ^2 \psi}{\partial \xi \partial \eta}(\frac{\partial \xi}{\partial x}\frac{\partial \eta}{\partial y}+\frac{\partial \eta}{\partial x}\frac{\partial \xi}{\partial y} ) \}\\
+ +C\{\frac{\partial ^2 \xi}{\partial y^2}\frac{\partial \psi}{\partial \xi}+\frac{\partial ^2 \eta}{\partial y^2}\frac{\partial \psi}{\partial \eta}
++\frac{\partial ^2 \psi}{\partial \xi ^2}(\frac{\partial \xi}{\partial y})^2+\frac{\partial ^2 \psi}{\partial \eta ^2}(\frac{\partial \eta}{\partial y})^2
++2(\frac{\partial \xi}{\partial y}\frac{\partial \eta}{\partial y}\frac{\partial ^2 \psi}{\partial \xi \partial \eta}) \}
+\end{multline}
+We now take a break to stop Eq. 9 from giving us a migraine brought on by eye strain.
+
+We collect the coefficients of all the derivates of $\psi$:
+\begin{gather*}
+\frac{\partial \psi}{\partial \xi}(A\frac{\partial ^2 \xi}{\partial x^2}+2B\frac{\partial ^2 \xi}{\partial x \partial y}+C\frac{\partial ^2 \xi}{\partial y^2})\\
+\frac{\partial \psi}{\partial \eta}(A\frac{\partial ^2 \eta}{\partial x^2}+2B\frac{\partial ^2 \eta}{\partial x \partial y}+C\frac{\partial ^2 \eta}{\partial y^2})\\
+\frac{\partial ^2 \psi}{\partial \xi ^2}(A(\frac{\partial \xi}{\partial x})^2+2B\frac{\partial \xi}{\partial x}\frac{\partial \xi}{\partial y}+C(\frac{\partial \xi}{\partial y})^2)\\
+\frac{\partial ^2 \psi}{\partial \eta ^2}(A(\frac{\partial \eta}{\partial x})^2+2B\frac{\partial \eta}{\partial x}\frac{\partial \eta}{\partial y}+C(\frac{\partial \eta}{\partial y})^2)\\
+\end{gather*}
+
+After the break, we recognize that since $\xi(x,y)$ and $\eta(x,y)$ are solutions to Eq. 1:
+\begin{gather}
+ A(\frac{\partial \xi}{\partial x})^2+2B\frac{\partial \xi}{\partial x}\frac{\partial \xi}{ \partial y}+C(\frac{\partial \xi}{\partial y})^2=0\\
+ A(\frac{\partial \eta}{\partial x})^2+2B\frac{\partial \eta}{\partial x}\frac{\partial \eta}{ \partial y}+C(\frac{\partial \eta}{\partial y})^2=0
+\end{gather}
+
+
+
+\section{Problem 3}
+
+\end{document}
