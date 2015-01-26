@@ -1,7 +1,8 @@
 \documentclass[a4paper,10pt]{article}
 \usepackage[utf8]{inputenc}
 \usepackage{amsmath}
-
+\usepackage{graphicx}
+\numberwithin{equation}{section}
 %opening
 \title{Math Phys II HW 2}
 \author{Vince Baker}
@@ -15,6 +16,39 @@
 \end{abstract}
 
 \section{Problem 1}
+We seek solutions of the Kortweg-deVries equation:
+\begin{equation}
+ \frac{\partial \psi}{\partial t}+\psi\frac{\partial \psi}{\partial x}+\frac{\partial ^3 \psi}{\partial x^3}=0
+\end{equation}
+We look for solutions $\psi(\xi)$, with $\xi=x-ct$. To write 1.1 in terms of $\xi$, we calculate the partial derivatives:
+\begin{gather*}
+ \frac{\partial \psi}{\partial t}=-c\frac{d \psi(\xi)}{d \xi}\\
+ \frac{\partial \psi}{\partial x}=\frac{d \psi(\xi)}{d \xi}\\
+ \frac{\partial^3 \psi}{\partial x^3}=\frac{d^3 \psi(\xi)}{d \xi ^3}
+\end{gather*}
+We can now write 1.1 in terms of $\xi$:
+\begin{equation} 
+-c\frac{d \psi}{d \xi}+\psi\frac{d \psi}{d \xi}+\frac{d^3 \psi}{d \xi ^3}=0
+\end{equation}
+This simplifies to:
+\begin{equation}
+ (\psi-c)\frac{d \psi}{d \xi}+\frac{d^3 \psi}{d \xi ^3}=0
+\end{equation}
+We can integrate 1.3 to find:
+\begin{equation}
+ \frac{d^2\psi}{d\xi^2}=c\psi-\frac{\psi^2}{2}
+\end{equation}
+We then integrate again and multiply by $\frac{d \psi}{d \xi}$:
+\begin{gather}
+\frac{d\psi}{d\xi}=\int(c\psi-\frac{\psi^2}{2})\\
+(\frac{d\psi}{d\xi})^2=\frac{\psi^2}{2}(c-\frac{\psi^3}{3})\\
+\frac{d\psi}{d\xi}=\frac{\psi}{\sqrt{2}}(c-\frac{\psi^3}{3})^\frac{1}{2}
+\end{gather}
+We can now integrate to find $\psi (\xi)$. Wolfram Alpha spits out some awful mess that can't possibly be an answer.
+
+
+
+
 
 \section{Problem 2}
 The general form of a second-order linear PDE is:
@@ -78,7 +112,7 @@ We can now write Eq. 1 in terms of $\xi$ and $\eta$:
 +2(\frac{\partial \xi}{\partial x}\frac{\partial \eta}{\partial x}\frac{\partial ^2 \psi}{\partial \xi \partial \eta})\}\\
 +2B\{\frac{\partial ^2\xi}{\partial x \partial y}\frac{\partial \psi}{\partial \xi}
  +\frac{\partial ^2 \eta}{\partial x \partial y}\frac{\partial \psi}{\partial \eta}
- +\frac{\partial^2 \psi}{\partial \xi ^2}(\frac{\partial \xi}{\partial x}\frac{\partial \xi}{\partial y})
+ +\frac{\partial^2 \psi}{\partial \xi ^2}(\frac{\partial \xi}{\partial x}\frac{\partial \xi}{\partial y})\\
  +\frac{\partial^2 \psi}{\partial \eta ^2}(\frac{\partial \eta}{\partial x}\frac{\partial \eta}{\partial y})
  +\frac{\partial ^2 \psi}{\partial \xi \partial \eta}(\frac{\partial \xi}{\partial x}\frac{\partial \eta}{\partial y}+\frac{\partial \eta}{\partial x}\frac{\partial \xi}{\partial y} ) \}\\
  +C\{\frac{\partial ^2 \xi}{\partial y^2}\frac{\partial \psi}{\partial \xi}+\frac{\partial ^2 \eta}{\partial y^2}\frac{\partial \psi}{\partial \eta}
@@ -93,6 +127,9 @@ We collect the coefficients of all the derivates of $\psi$:
 \frac{\partial \psi}{\partial \eta}(A\frac{\partial ^2 \eta}{\partial x^2}+2B\frac{\partial ^2 \eta}{\partial x \partial y}+C\frac{\partial ^2 \eta}{\partial y^2})\\
 \frac{\partial ^2 \psi}{\partial \xi ^2}(A(\frac{\partial \xi}{\partial x})^2+2B\frac{\partial \xi}{\partial x}\frac{\partial \xi}{\partial y}+C(\frac{\partial \xi}{\partial y})^2)\\
 \frac{\partial ^2 \psi}{\partial \eta ^2}(A(\frac{\partial \eta}{\partial x})^2+2B\frac{\partial \eta}{\partial x}\frac{\partial \eta}{\partial y}+C(\frac{\partial \eta}{\partial y})^2)\\
+\frac{\partial ^2 \psi}{\partial \xi \partial \eta}(2A(\frac{\partial \xi}{\partial x}\frac{\partial \eta}{\partial x})
++2B(\frac{\partial \xi}{\partial x}\frac{\partial \eta}{\partial y}+\frac{\partial \xi}{\partial y}\frac{\partial \eta}{\partial y})
++2C(\frac{\partial \xi}{\partial y}\frac{\partial \eta}{\partial x}))
 \end{gather*}
 
 After the break, we recognize that since $\xi(x,y)$ and $\eta(x,y)$ are solutions to Eq. 1:
@@ -101,8 +138,49 @@ After the break, we recognize that since $\xi(x,y)$ and $\eta(x,y)$ are solution
  A(\frac{\partial \eta}{\partial x})^2+2B\frac{\partial \eta}{\partial x}\frac{\partial \eta}{ \partial y}+C(\frac{\partial \eta}{\partial y})^2=0
 \end{gather}
 
-
-
 \section{Problem 3}
+We are solving the characteristic equation for:
+\begin{gather*}
+ \frac{\partial ^2\psi}{\partial t^2}-c(x)^2\frac{\partial ^2 \psi}{\partial x^2}=0\\
+\end{gather*}
+With A=1, B=0, and $c=-c(x)^2$, the characteristic equation is:
+\begin{gather}
+\frac{dx}{dt}^2-c(x)^2=0\\
+\frac{dx}{dt}=c(x)\\
+dt=\frac{1}{c(x)}dx
+\end{gather}
+With $c(x)=c_0(1+\frac{|x|}{a})$ the characteristic curve can be written:
+\begin{equation}
+t=\pm\frac{1}{c_0}(x+sgn(x)\frac{x^2}{2a})+C
+\end{equation}
+Several characteristic curves are shown below for a-values 0.01, 0.1, 1 and 10. The positive curves are shown in blue, the negative curves in red.
+
+\includegraphics{p3chars}
+
+We now look to find a solution given the initial conditions:
+\begin{gather}
+\psi(x,0)=0\\
+\frac{\partial \psi}{\partial t}\mid_{t=0}=e^{-|x|}
+\end{gather}
+When $a=\infty$ the characteristic solutions become:
+\begin{gather}
+\xi=x+c_0t\\
+\eta=x-c_0t
+\end{gather}
+The solution can be written as a combination $\psi=f(\xi)+g(\eta)$. 
+Using the initial condition $\psi(x,0)=0$ we see that $f(x)+g(x)=0$, so that $g(x)=-f(x)$.
+We differentiate the combined solution with respect to t and use the second boundary condition:
+\begin{gather}
+-v\frac{df}{dt}+c_0\frac{dg}{dt}=e^{-|x|}\\
+\int-2\frac{df}{dt}=\int\frac{1}{c_0}e^{-|x|}\\
+f=\frac{-1}{2c_0}e^{-|x|}
+\end{gather}
+We can now write the combined solution:
+\begin{equation}
+\psi(x,t)=\frac{1}{2c_0}(e^{-|x+vt|}-e^{-|x-vt|}) 
+\end{equation}
+
+
+
 
 \end{document}
