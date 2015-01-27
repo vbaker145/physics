@@ -1,6 +1,6 @@
 clear
 
-x = linspace(-4,4,1000);
+x = linspace(-4,4,101);
 h(:,1) = ones(1,length(x));
 h(:,2) = 2*x;
 h(:,3) = 4*x.^2-2;

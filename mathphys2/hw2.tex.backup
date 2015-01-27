@@ -46,10 +46,9 @@ We then integrate again and multiply by $\frac{d \psi}{d \xi}$:
 \end{gather}
 We can now integrate for $\xi$:
 \begin{equation}
- d \xi =\int \frac{d \psi}{\frac{\psi}{\sqrt{2}}-(c-\frac{\psi}{3})^{\frac{1}{2}}}
+ d\xi =\int \frac{d \psi}{\frac{\psi}{\sqrt{2}}(c-\frac{\psi}{3})^{\frac{1}{2}}}\\
 \end{equation}
-Wolfram Alpha spits out some ridiculous mess with $\psi$ and c, in theory we can rearrange it to solve for $\psi$ as a function of $\xi$ and c. 
-
+And then rearrange to find $\psi$ as a function of $\xi$ and c.
 
 \section{Problem 2}
 The general form of a second-order linear PDE is:
@@ -105,7 +104,7 @@ We now take $\frac{\partial}{\partial y}$ of equation 1:
  +\frac{\partial ^2 \psi}{\partial \xi \partial \eta}(\frac{\partial \xi}{\partial x}\frac{\partial \eta}{\partial y}+\frac{\partial \eta}{\partial x}\frac{\partial \xi}{\partial y} ) 
 \end{multline}
 
-We can now write Eq. 1 in terms of $\xi$ and $\eta$ using 2.6, 2.7 and 2.8:
+We can now write Eq. 1 in terms of $\xi$ and $\eta$:
 \begin{multline}
  A\{\frac{\partial ^2 \xi}{\partial x^2}\frac{\partial \psi}{\partial \xi}+\frac{\partial ^2 \eta}{\partial x^2}
 \frac{\partial \psi}{\partial \eta}
@@ -146,9 +145,9 @@ We are solving the characteristic equation for:
 \end{gather*}
 With A=1, B=0, and $c=-c(x)^2$, the characteristic equation is:
 \begin{gather}
-\frac{dx}{dt}^2-c(x)^2=0\\
-\frac{dx}{dt}=c(x)\\
-dt=\frac{1}{c(x)}dx
+(\frac{dx}{dt})^2-c(x)^2=0\\
+\frac{dx}{dt}=\pm c(x)\\
+dt=\pm\frac{1}{c(x)}dx
 \end{gather}
 With $c(x)=c_0(1+\frac{|x|}{a})$ the characteristic curve can be written:
 \begin{equation}
@@ -181,6 +180,16 @@ We can now write the combined solution:
 \psi(x,t)=\frac{1}{2c_0}(e^{-|x+vt|}-e^{-|x-vt|}) 
 \end{equation}
 
+\section{Problem 4}
+We solve the diffusion equation for the temperature in a uniform cube of side L.
+
+\begin{equation}
+ \nabla^2T=\frac{1}{\kappa}\frac{\partial T}{t}
+\end{equation}
+We first separate T into time and space terms.
+\begin{gather}
+ T=\nabla
+\end{gather}
 
 
 

@@ -180,4 +180,38 @@ We can now write the combined solution:
 \psi(x,t)=\frac{1}{2c_0}(e^{-|x+vt|}-e^{-|x-vt|}) 
 \end{equation}
 
+\section{Problem 4}
+We solve the diffusion equation for the temperature in a uniform cube of side L.
+
+\begin{equation}
+ \nabla^2T=\frac{1}{\kappa}\frac{\partial T}{\partial t}
+\end{equation}
+We first separate T into time and space terms.
+\begin{gather}
+ T=\Gamma (t)\Psi(\vec{r})\\
+ \nabla ^2T=\nabla ^2 \Psi \Gamma\\
+ \frac{\partial T}{\partial t}=\Psi \Gamma ^{\prime}\\
+ \frac{\nabla ^2 \Psi}{\Psi}-\frac{1}{\kappa}\frac{\Gamma ^{\prime}}{\Gamma}=0\\
+ \frac{\nabla ^2 \Psi}{\Psi}=-\frac{1}{\kappa}\frac{\Gamma ^{\prime}}{\Gamma}=-c^2\\
+\end{gather}
+We can now solve the time dependent part.
+\begin{gather}
+\Gamma ^{\prime}=\Gamma kc^2\\
+\Gamma ^{\prime}-kc^2\Gamma=0\\
+\Gamma=e^{-tkc^2}
+\end{gather}
+We now separate the X/Y/Z components of the spatial function.
+\begin{gather}
+\Psi (\vec{r})=X(x)Y(y)Z(z)\\
+\frac{\nabla ^2\Psi}{\Psi}=-c^2\\
+\nabla ^2\Psi +c^2 \Psi =0\\
+X^\prime YZ+XY^\prime Z+XYZ^\prime +c^2XYZ=0\\
+\frac{X^\prime }{X}+\frac{Y^\prime }{Y}+\frac{Z^\prime }{Z}+c^2=0\\
+X^\prime -\ell^2 X=0\\
+Y^\prime -m^2 Y=0\\
+Z^\prime -n^2 Z=0\\
+\ell ^2+m^2+m^2=-c^2
+\end{gather}
+
+
 \end{document}
