@@ -184,11 +184,80 @@ We can now write the combined solution:
 We solve the diffusion equation for the temperature in a uniform cube of side L.
 
 \begin{equation}
- \nabla^2T=\frac{1}{\kappa}\frac{\partial T}{t}
+ \nabla^2T=\frac{1}{\kappa}\frac{\partial T}{\partial t}
 \end{equation}
 We first separate T into time and space terms.
 \begin{gather}
- T=\nabla
+ T=\Gamma (t)\Psi(\vec{r})\\
+ \nabla ^2T=\nabla ^2 \Psi \Gamma\\
+ \frac{\partial T}{\partial t}=\Psi \Gamma ^{\prime}\\
+ \frac{\nabla ^2 \Psi}{\Psi}-\frac{1}{\kappa}\frac{\Gamma ^{\prime}}{\Gamma}=0\\
+ \frac{\nabla ^2 \Psi}{\Psi}=-\frac{1}{\kappa}\frac{\Gamma ^{\prime}}{\Gamma}=-c^2\\
+\end{gather}
+We can now solve the time dependent part.
+\begin{gather}
+\Gamma ^{\prime}=\Gamma kc^2\\
+\Gamma ^{\prime}-kc^2\Gamma=0\\
+\Gamma=\alpha e^{-tkc^2}
+\end{gather}
+The boundary condition $\Gamma=0$ at $t=0$ can't be satisfied by this equation, so we shift the temperature scale so that the system
+starts at $T=-T_0$ and the heat bath is at a temperature of 0. We can then solve for $\alpha$.
+\begin{gather}
+\alpha = -T_0\\
+\Gamma=-T_0 e^{-tkc^2}
+\end{gather}
+
+We now separate the X/Y/Z components of the spatial function.
+\begin{gather}
+\Psi (\vec{r})=X(x)Y(y)Z(z)\\
+\frac{\nabla ^2\Psi}{\Psi}=-c^2\\
+\nabla ^2\Psi +c^2 \Psi =0\\
+X^\prime YZ+XY^\prime Z+XYZ^\prime +c^2XYZ=0\\
+\frac{X^\prime }{X}+\frac{Y^\prime }{Y}+\frac{Z^\prime }{Z}+c^2=0\\
+X^\prime -\ell^2 X=0\\
+Y^\prime -m^2 Y=0\\
+Z^\prime -n^2 Z=0\\
+\ell ^2+m^2+m^2=-c^2
+\end{gather}
+The spatial functions are all zero at both 0 and L (since we've shifted the temperature scale so the heat bath is at 0).
+The solutions are:
+\begin{gather}
+ X=sin\frac{\ell\pi}{L}x\\
+ Y=sin\frac{m \pi}{L}y\\
+ Z=sin\frac{n \pi}{L}z
+\end{gather}
+We can now write the general solution to the equation as a linear combination of the separate solutions.
+\begin{equation}
+T=\sum _{\ell,m,n=0}^{\infty}\alpha_{\ell m n}-T_0e^{-tkc^2} sin(\frac{\ell\pi}{L}x) sin(\frac{m \pi}{L}y) sin(\frac{n \pi}{L}z)
+\end{equation}
+With $\ell, m, n$ integers and subject to $\ell^2+m^2+n^2=-c^2$.
+
+\section{Problem 5}
+We solve the wave equation for a particle confined to a cylinder of radius R and height H.
+\begin{gather}
+\frac{-\hbar ^2}{2m} \nabla ^2 \psi=E \psi\\
+\nabla ^2 \psi -k^2\psi=0, k\equiv \sqrt{\frac{2mE}{\hbar ^2}}
+\end{gather}
+We separate the equation into functions in cylindrical coordinates.
+\begin{gather}
+ \psi=R(r)\Phi(\phi)Z(z)\\
+ \frac{1}{r}\frac{\partial}{\partial r}(r\frac{dR}{dr})\Phi Z+\frac{1}{r^2}\frac{d \Phi ^2}{d \phi }RZ+\frac{d^2Z}{dz}R\Phi +k^2r\Phi Z=0\\
+ \frac{1}{rR}\frac{d}{dr}(rR^{'} )+\frac{1}{r^2}\frac{\Phi^{''} }{\Phi}+\frac{Z^{''}}{Z}+k^2=0
+\end{gather}
+We can now solve for Z incorporating the boundary conditions that $\psi=0$ at z=0,H.
+\begin{gather}
+\frac{Z^{''}}{Z}=const.=\ell ^2\\
+ Z^{''}-\ell ^2Z=0\\
+ Z=sin\frac{\ell \pi}{H}z
+\end{gather}
+Substituing the constant value of $\frac{Z^{''}}{Z}$ into 5.5 and multiplying by $r^2$, we get:
+\begin{equation}
+\frac{r}{R}\frac{d}{dr}(rR^{'})+\frac{\Phi ^{''}}{\Phi}+r^2(\ell ^2+k^2)=0 
+\end{equation}
+we can now separate the $\Phi$ term.
+\begin{gather}
+\frac{\Phi ^{''}}{\Phi}=const.=m^2\\
+\Phi ^{''}-m^2\Phi=0
 \end{gather}
 
 
