@@ -222,21 +222,26 @@ Z^{''} +n^2 Z=0\\
 The spatial functions are all zero at both 0 and L (since we've shifted the temperature scale so the heat bath is at 0).
 The solutions are:
 \begin{gather}
- X=sin\frac{\ell\pi}{L}x\\
- Y=sin\frac{m \pi}{L}y\\
- Z=sin\frac{n \pi}{L}z
+X=sin\frac{\alpha \pi}{L}x\\
+Y=sin\frac{\beta \pi}{L}y\\
+Z=sin\frac{\gamma \pi}{L}z\\
+\alpha=\frac{\ell L}{\pi},\ \beta=\frac{mL}{\pi},\ \gamma=\frac{nL}{\pi}
 \end{gather}
 We can now write the general solution to the equation as a linear combination of the separate solutions.
 \begin{equation}
-T=\sum _{\ell,m,n=0}^{\infty}\alpha_{\ell m n}-T_0e^{-tkc^2} sin(\frac{\ell\pi}{L}x) sin(\frac{m \pi}{L}y) sin(\frac{n \pi}{L}z)
+T=\sum _{\alpha,\beta,\gamma=0}^{\infty}\mu_{\alpha \beta \gamma}(-T_0)e^{-tkc^2}\ sin(\frac{\alpha\pi}{L}x)\ sin(\frac{\beta \pi}{L}y)\ sin(\frac{\gamma \pi}{L}z)
 \end{equation}
-With $\ell, m, n$ integers and subject to $\ell^2+m^2+n^2=-c^2$.
+With $\ell, m, n$ integers and subject to $\ell^2+m^2+n^2=-c^2$. We write $c^2$ in terms of $\alpha,\ \beta,\ \gamma$ and pull out the 0th coefficient:
+\begin{gather}
+c_{\alpha \beta \gamma}^2=\frac{\pi ^2 \alpha ^2}{L^2}+\frac{\pi ^2 \beta ^2}{L^2}+\frac{\pi ^2 \gamma ^2}{L^2}=\frac{\pi ^2}{L ^2}(\alpha ^2+\beta ^2+\gamma ^2)\\
+T=-T_0+\sum _{\alpha,\beta,\gamma=0}^{\infty}\alpha_{\alpha \beta \gamma}e^{-tkc_{\alpha \beta \gamma}^2}\ sin(\frac{\alpha\pi}{L}x)\ sin(\frac{\beta \pi}{L}y)\ sin(\frac{\gamma \pi}{L}z)
+\end{gather}
 
 \section{Problem 5}
 We solve the wave equation for a particle confined to a cylinder of radius R and height H.
 \begin{gather}
 \frac{-\hbar ^2}{2m} \nabla ^2 \psi=E \psi\\
-\nabla ^2 \psi -k^2\psi=0, k\equiv \sqrt{\frac{2mE}{\hbar ^2}}
+\nabla ^2 \psi +k^2\psi=0, k\equiv \sqrt{\frac{2mE}{\hbar ^2}}
 \end{gather}
 We separate the equation into functions in cylindrical coordinates.
 \begin{gather}

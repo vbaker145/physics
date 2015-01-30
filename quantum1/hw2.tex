@@ -89,7 +89,7 @@ We apply a normalization constraint to avoid the trivial solution $\Psi=0$, and 
 \int \Psi^2 dx = 1\\
 J=\int (\frac{d\Psi }{dx})^{2}+\frac{1}{2}kx^2\Psi ^2 dx - E\int \Psi^2 dx
 \end{gather}
-We decompose $\Psi$ into localized basis functions $\Psi_i=e^{\frac{-(x-x_i)^2}{2\sigma ^2}}$.
+We decompose $\Psi$ into a sum of localized basis functions $\Psi_i=c_ie^{\frac{-(x-x_i)^2}{2\sigma ^2}}$.
 We now need to calculate the integrals of $(\frac{d\Psi }{dx})^{2}$, $x^2\Psi ^2$, and $\Psi^2$.
 We write $\Psi^2$ in this basis as:
 \begin{gather}
@@ -105,14 +105,15 @@ The  exponential will suppress all terms where $|i-j|$ is not small. We cut off 
 \begin{gather}
  \sum_{i}\sum_{j=i-5}^{i+5}c_ic_j\sqrt{\pi}\sigma e^{\frac{-(i-j)^2}{4}}
 \end{gather}
-The integral of $x^2\Psi ^2$ was not calculated by Wolfram Alpha, so we use the solution provided in class.
+For the potential term we need to caclulate the integral of $x^2\Psi ^2$. 
+This integral is not calculated by Wolfram Alpha, so we use the solution provided in class.
 \begin{gather}
  \sum_{i}\sum_{j=i-5}^{i+5}c_ic_j\sqrt{\pi}\sigma e^{\frac{-(i-j)^2}{4}}(\frac{a+b}{2}^2+\frac{1}{2}\sigma ^2)
 \end{gather}
 We use the numerical approximation for $\frac{d\Psi}{dx}$ and square it.
 \begin{gather}
  \frac{d \Psi_{i}}{dx}=\frac{\Psi_{i+1}-\Psi_{i}}{\Delta}\\
- (\frac{d \Psi_{i}}{dx})^2=\frac{\Psi_{i+1}^2-2\Psi_{i}\Psi_{i+1}+\Psi_{i+1}^2}{\Delta ^2}\\
+ (\frac{d \Psi_{i}}{dx})^2=\frac{\Psi_{i+1}^2-2\Psi_{i}\Psi_{i+1}+\Psi_{i}^2}{\Delta ^2}\\
 \end{gather}
 
 

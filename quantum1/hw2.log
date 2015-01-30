@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=latex 2015.1.23)  29 JAN 2015 22:19
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=latex 2015.1.23)  30 JAN 2015 09:52
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -346,23 +346,29 @@ Overfull \hbox (96.65001pt too wide) in paragraph at lines 50--52
 [1
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 71--77
+Underfull \hbox (badness 10000) in paragraph at lines 72--78
 \OT1/cmr/m/n/10 the 6 low-est eigen-val-ues.
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 71--77
+Underfull \hbox (badness 10000) in paragraph at lines 72--78
 
  []
 
 [2]
 File: numeric1.eps Graphic file (type eps)
  <numeric1.eps>
-Overfull \hbox (119.68001pt too wide) in paragraph at lines 78--79
+Overfull \hbox (119.68001pt too wide) in paragraph at lines 79--80
 [][] 
  []
 
-[3] (./hw2.aux) ) 
+
+Overfull \hbox (6.13953pt too wide) in paragraph at lines 82--84
+\OT1/cmr/m/n/10 We now solve the har-monic os-cil-la-tor us-ing a vari-a-tional
+ prin-ci-ple on the quadratic
+ []
+
+[3] [4] (./hw2.aux) ) 
 Here is how much of TeX's memory you used:
  1352 strings out of 495029
  15080 string characters out of 6181523
@@ -372,4 +378,4 @@ Here is how much of TeX's memory you used:
  14 hyphenation exceptions out of 8191
  27i,9n,20p,220b,189s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on hw2.dvi (3 pages, 6520 bytes).
+Output written on hw2.dvi (4 pages, 11136 bytes).

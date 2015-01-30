@@ -212,25 +212,30 @@ We now separate the X/Y/Z components of the spatial function.
 \Psi (\vec{r})=X(x)Y(y)Z(z)\\
 \frac{\nabla ^2\Psi}{\Psi}=-c^2\\
 \nabla ^2\Psi +c^2 \Psi =0\\
-X^\prime YZ+XY^\prime Z+XYZ^\prime +c^2XYZ=0\\
-\frac{X^\prime }{X}+\frac{Y^\prime }{Y}+\frac{Z^\prime }{Z}+c^2=0\\
-X^\prime -\ell^2 X=0\\
-Y^\prime -m^2 Y=0\\
-Z^\prime -n^2 Z=0\\
+X^{''} YZ+XY^{''} Z+XYZ^{''} +c^2XYZ=0\\
+\frac{X^{''} }{X}+\frac{Y^{''} }{Y}+\frac{Z^{''} }{Z}+c^2=0\\
+X^{''} +\ell^2 X=0\\
+Y^{''} +m^2 Y=0\\
+Z^{''} +n^2 Z=0\\
 \ell ^2+m^2+m^2=-c^2
 \end{gather}
 The spatial functions are all zero at both 0 and L (since we've shifted the temperature scale so the heat bath is at 0).
 The solutions are:
 \begin{gather}
- X=sin\frac{\ell\pi}{L}x\\
- Y=sin\frac{m \pi}{L}y\\
- Z=sin\frac{n \pi}{L}z
+X=sin\frac{\alpha \pi}{L}x\\
+Y=sin\frac{\beta \pi}{L}y\\
+Z=sin\frac{\gamma \pi}{L}z\\
+\alpha=\frac{\ell L}{\pi},\ \beta=\frac{mL}{\pi},\ \gamma=\frac{nL}{\pi}
 \end{gather}
 We can now write the general solution to the equation as a linear combination of the separate solutions.
 \begin{equation}
-T=\sum _{\ell,m,n=0}^{\infty}\alpha_{\ell m n}-T_0e^{-tkc^2} sin(\frac{\ell\pi}{L}x) sin(\frac{m \pi}{L}y) sin(\frac{n \pi}{L}z)
+T=\sum _{\ell,m,n=0}^{\infty}\alpha_{\ell m n}(-T_0)e^{-tkc^2}\ sin(\frac{\alpha\pi}{L}x)\ sin(\frac{\beta \pi}{L}y)\ sin(\frac{\gamma \pi}{L}z)
 \end{equation}
-With $\ell, m, n$ integers and subject to $\ell^2+m^2+n^2=-c^2$.
+With $\ell, m, n$ integers and subject to $\ell^2+m^2+n^2=-c^2$. We write $c^2$ in terms of $\alpha,\ \beta,\ \gamma$:
+\begin{gather}
+c^2=
+\end{gather}
+
 
 \section{Problem 5}
 We solve the wave equation for a particle confined to a cylinder of radius R and height H.
@@ -256,10 +261,14 @@ Substituing the constant value of $\frac{Z^{''}}{Z}$ into 5.5 and multiplying by
 \end{equation}
 we can now separate the $\Phi$ term.
 \begin{gather}
-\frac{\Phi ^{''}}{\Phi}=const.=m^2\\
-\Phi ^{''}-m^2\Phi=0
+\frac{\Phi ^{''}}{\Phi}=const.=-m^2\\
+\Phi ^{''}+m^2\Phi=0
 \end{gather}
-
-
+There is no explicit boundary condition on $\phi$. 
+However, since $\phi$ is an angular coordinate $\Phi$ must be single-valued on multiples of $2\pi$. 
+With $\Phi(0)=\Phi(2\pi)$, the solution is a general exponential with m confined to integer values.
+\begin{equation}
+\Phi=e^{im \phi}, \  m=0,1,2...
+\end{equation}
 
 \end{document}
