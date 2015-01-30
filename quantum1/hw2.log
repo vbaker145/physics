@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=latex 2015.1.23)  29 JAN 2015 21:45
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=latex 2015.1.23)  29 JAN 2015 22:19
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -339,20 +339,37 @@ LaTeX Font Info:    ... okay on input line 14.
 File: analytic.eps Graphic file (type eps)
 
 <analytic.eps>
-Overfull \hbox (96.65001pt too wide) in paragraph at lines 50--56
-[]
+Overfull \hbox (96.65001pt too wide) in paragraph at lines 50--52
+[] 
  []
 
 [1
 
-] [2] (./hw2.aux) ) 
+]
+Underfull \hbox (badness 10000) in paragraph at lines 71--77
+\OT1/cmr/m/n/10 the 6 low-est eigen-val-ues.
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 71--77
+
+ []
+
+[2]
+File: numeric1.eps Graphic file (type eps)
+ <numeric1.eps>
+Overfull \hbox (119.68001pt too wide) in paragraph at lines 78--79
+[][] 
+ []
+
+[3] (./hw2.aux) ) 
 Here is how much of TeX's memory you used:
- 1350 strings out of 495029
- 15056 string characters out of 6181523
- 73427 words of memory out of 5000000
- 4581 multiletter control sequences out of 15000+600000
+ 1352 strings out of 495029
+ 15080 string characters out of 6181523
+ 72427 words of memory out of 5000000
+ 4582 multiletter control sequences out of 15000+600000
  9015 words of font info for 33 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  27i,9n,20p,220b,189s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on hw2.dvi (2 pages, 4780 bytes).
+Output written on hw2.dvi (3 pages, 6520 bytes).

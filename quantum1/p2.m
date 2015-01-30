@@ -1,6 +1,6 @@
 clear
 
-n = 1001;
+n = 101;
 x = linspace(-4,4,n);
 delx2 = (x(2)-x(1))^2;
 a = zeros(n,n);
