@@ -9,9 +9,9 @@ h(:,5) = 16*x.^4-48*x.^2+12;
 h(:,6) = 32*x.^5-160*x.^3+120*x;
 
 for jj=1:6
-   h(:,jj) = h(:,jj).*exp(-x.^2)';
-   norm = 1/(2^(jj-1)*factorial(jj-1)*sqrt(pi));
+   h(:,jj) = h(:,jj).*exp(-x.^2/2)';
+   norm = 1/sqrt(2^(jj-1)*factorial(jj-1)*sqrt(pi));
    h(:,jj) = h(:,jj)*norm;
 end
 
-figure; plot(x, h);
+figure; plot(x, h.^2)

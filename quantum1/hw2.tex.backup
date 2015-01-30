@@ -1,0 +1,32 @@
+\documentclass[a4paper,10pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\numberwithin{equation}{section}
+%opening
+\title{Math Phys II HW 2}
+\author{Vince Baker}
+
+%opening
+\title{}
+\author{Vince Baker}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+
+\end{abstract}
+
+\section{Problem 1}
+We first plot the analytic solutions for the 1-D quantum harmonic oscillator. 
+\begin{equation}
+ \Psi(x)_n=\frac{1}{\sqrt{2^n n! \sqrt{\pi}}}H_n(x)
+\end{equation}
+\includegraphics{analytic}
+\linebreak
+We then approximate the solution using a numerical estimate of the second derivative. 
+The 6 lowest eigenvalues are (to within .01) 0.5, 1.5, 2.5, 3.5, 4.5 and 5.5 in close agreement with the analytical energy levels $n+\frac{1}{2}$. 
+Increasing the number of lattice sites from 101 to 1001 improves
+\end{document}
