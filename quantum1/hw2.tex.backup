@@ -89,7 +89,7 @@ We apply a normalization constraint to avoid the trivial solution $\Psi=0$, and 
 \int \Psi^2 dx = 1\\
 J=\int (\frac{d\Psi }{dx})^{2}+\frac{1}{2}kx^2\Psi ^2 dx - E\int \Psi^2 dx
 \end{gather}
-We decompose $\Psi$ into localized basis functions $\Psi_i=e^{\frac{-(x-x_i)^2}{2\sigma ^2}}$.
+We decompose $\Psi$ into a sum of localized basis functions $\Psi_i=c_ie^{\frac{-(x-x_i)^2}{2\sigma ^2}}$.
 We now need to calculate the integrals of $(\frac{d\Psi }{dx})^{2}$, $x^2\Psi ^2$, and $\Psi^2$.
 We write $\Psi^2$ in this basis as:
 \begin{gather}
@@ -98,16 +98,23 @@ We write $\Psi^2$ in this basis as:
 \end{gather}
 Pulling the coefficients outside, and letting $\sigma=\Delta x$, this integral (according to Wolfram Alpha) is:
 \begin{gather}
- c_ic_j \sum_{i}\sum_{j}\frac{\sqrt{\pi}}{2}\sigma e^{\frac{-(i-j)^2}{4}}\{erf(\frac{x_i+x_j+8}{2\sigma})-erf(\frac{x_i+x_j-8}{2\sigma})\}
+\frac{\sqrt{\pi}}{2}\sigma e^{\frac{-(i-j)^2}{4}}\{erf(\frac{x_i+x_j+8}{2\sigma})-erf(\frac{x_i+x_j-8}{2\sigma})\}
 \end{gather}
 For reasonably small values of $\sigma$ the error function becomes a step function at 0, and the right hand term becomes 2 for all values of i and j.
 The  exponential will suppress all terms where $|i-j|$ is not small. We cut off all terms with  $|i-j|<6$, so the next term is less then $\frac{1}{1000}$.
 \begin{gather}
- c_ic_j \sum_{i}\sum_{j=i-5}^{i+5}\sqrt{\pi}\sigma e^{\frac{-(i-j)^2}{4}}
+ \sum_{i}\sum_{j=i-5}^{i+5}c_ic_j\sqrt{\pi}\sigma e^{\frac{-(i-j)^2}{4}}
 \end{gather}
-The integral of $x^2\Psi ^2$ 
-
-
-
+For the potential term we need to caclulate the integral of $x^2\Psi ^2$. 
+This integral is not calculated by Wolfram Alpha, so we use the solution provided in class.
+\begin{gather}
+ \sum_{i}\sum_{j=i-5}^{i+5}c_ic_j\sqrt{\pi}\sigma e^{\frac{-(i-j)^2}{4}}(\frac{a+b}{2}^2+\frac{1}{2}\sigma ^2)
+\end{gather}
+We find the derivative of $\Psi$ anaylytically, then calculate the integral of $(\nabla \Psi)^2$.
+\begin{gather}
+\nabla \Psi= \sum_{i}\sum_{j}c_ic_j\frac{d}{dx}e^{\frac{(x-x_i)^2}{2\sigma ^2}}\\
+\nabla \Psi=\sum_{i}\sum_{j}c_ic_j-\frac{x-x_i}{\sigma ^2}e^{\frac{(x-x_i)^2}{2\sigma ^2}}
+\int (\nabla \Psi)^2 
+\end{gather}
 
 \end{document}

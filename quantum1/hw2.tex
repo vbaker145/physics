@@ -108,13 +108,20 @@ The  exponential will suppress all terms where $|i-j|$ is not small. We cut off 
 For the potential term we need to caclulate the integral of $x^2\Psi ^2$. 
 This integral is not calculated by Wolfram Alpha, so we use the solution provided in class.
 \begin{gather}
- \sum_{i}\sum_{j=i-5}^{i+5}c_ic_j\sqrt{\pi}\sigma e^{\frac{-(i-j)^2}{4}}(\frac{a+b}{2}^2+\frac{1}{2}\sigma ^2)
+ \sum_{i}\sum_{j=i-5}^{i+5}c_ic_j\sqrt{\pi}\sigma e^{\frac{-(i-j)^2}{4}}(\frac{x_i+x_j}{2}^2+\frac{1}{2}\sigma ^2)
 \end{gather}
-We use the numerical approximation for $\frac{d\Psi}{dx}$ and square it.
+We find the derivative of $\Psi$ anaylytically, then calculate the integral of $(\nabla \Psi)^2$ using the previous integrals.
 \begin{gather}
- \frac{d \Psi_{i}}{dx}=\frac{\Psi_{i+1}-\Psi_{i}}{\Delta}\\
- (\frac{d \Psi_{i}}{dx})^2=\frac{\Psi_{i+1}^2-2\Psi_{i}\Psi_{i+1}+\Psi_{i}^2}{\Delta ^2}\\
+\nabla \Psi= \sum_{i}c_i\frac{d}{dx}e^{\frac{(x-x_i)^2}{2\sigma ^2}}\\
+\nabla \Psi=\sum_{i}c_i\frac{-(x-x_i)}{\sigma ^2}e^{\frac{(x-x_i)^2}{2\sigma ^2}}\\
+\int (\nabla \Psi)^2 = \int \sum_{i}\sum_{j}c_ic_j\frac{x-x_i}{\sigma ^2}\frac{x-x_j}{\sigma ^2}
+  e^{\frac{(x-x_i)^2}{2\sigma ^2}}e^{\frac{(x-x_j)^2}{2\sigma ^2}}\\
+  =\sum_{i}\sum_{j}\frac{\sqrt{\pi}}{\sigma}e^{\frac{(i-j)^2}{4}}\{(\frac{x_i+x_j}{2})^2+\frac{1}{2}\sigma ^2
+  -(x_i+x_j)\frac{x_i+x_j}{2}
+  +x_ix_j\}c_ic_j\\
+  =\sum_{i}\sum_{j}\frac{\sqrt{\pi}}{\sigma}e^{\frac{(i-j)^2}{4}}\{-\frac{(x_i+x_j)^2}{4}+\frac{1}{2}\sigma ^2+x_ix_j\}c_ic_j\\
+  =\sum_{i}\sum_{j=i-5}^{i+5}\frac{\sqrt{\pi}}{\sigma}e^{\frac{(i-j)^2}{4}}\{-\frac{(x_i+x_j)^2}{4}+\frac{1}{2}\sigma ^2+x_ix_j\}c_ic_j
 \end{gather}
-
-
+Where we again only evaluate integrals for  $|i-j|<6$.
+We can now make a quadratic form from 3.7, 3.8 and 3.14 in the c's and set up the variational problem in matrix form.
 \end{document}
