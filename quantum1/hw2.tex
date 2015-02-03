@@ -87,7 +87,7 @@ J=\int (\frac{d\Psi }{dx})^{2}+\frac{1}{2}x^2\Psi ^2 dx\\
 We apply a normalization constraint to avoid the trivial solution $\Psi=0$, and incorporate the constraint via Lagrange multipler.
 \begin{gather}
 \int \Psi^2 dx = 1\\
-J=\int (\frac{d\Psi }{dx})^{2}+\frac{1}{2}x^2\Psi ^2 dx - E\int \Psi^2 dx
+J=\int (\frac{d\Psi }{dx})^{2}+\frac{1}{2}x^2\Psi ^2 dx = E\int \Psi^2 dx
 \end{gather}
 We decompose $\Psi$ into a sum of localized basis functions $\Psi_i=c_ie^{\frac{-(x-x_i)^2}{2\sigma ^2}}$.
 We now need to calculate the integrals of $(\frac{d\Psi }{dx})^{2}$, $x^2\Psi ^2$, and $\Psi^2$.
@@ -115,10 +115,11 @@ This integral is not calculated by Wolfram Alpha, so we use the solution provide
 \end{gather}
 We find the derivative of $\Psi$ analytically, then calculate the integral of $(\nabla \Psi)^2$ using the previous integrals.
 \begin{gather}
-\nabla \Psi= \sum_{i}c_i\frac{d}{dx}e^{\frac{(x-x_i)^2}{2\sigma ^2}}\\
-\nabla \Psi=\sum_{i}c_i\frac{-(x-x_i)}{\sigma ^2}e^{\frac{(x-x_i)^2}{2\sigma ^2}}\\
+\nabla \Psi= \sum_{i}c_i\frac{d}{dx}e^{\frac{-(x-x_i)^2}{2\sigma ^2}}\\
+\nabla \Psi=\sum_{i}c_i\frac{-(x-x_i)}{\sigma ^2}e^{\frac{-(x-x_i)^2}{2\sigma ^2}}\\
 \int (\nabla \Psi)^2 = \int \sum_{i}\sum_{j}c_ic_j\frac{x-x_i}{\sigma ^2}\frac{x-x_j}{\sigma ^2}
-  e^{\frac{(x-x_i)^2}{2\sigma ^2}}e^{\frac{(x-x_j)^2}{2\sigma ^2}}\\
+  e^{\frac{-(x-x_i)^2}{2\sigma ^2}}e^{\frac{-(x-x_j)^2}{2\sigma ^2}}\\
+  =\int\sum_{i}\sum_{j}c_ic_j\frac{1}{\sigma ^2}(x^2-xx_i-xx_j+x_ix_j)e^{\frac{-(x-x_i)^2}{2\sigma ^2}}e^{\frac{-(x-x_j)^2}{2\sigma ^2}}\\
   =\sum_{i}\sum_{j}\frac{\sqrt{\pi}}{\sigma}e^{\frac{(i-j)^2}{4}}\{(\frac{x_i+x_j}{2})^2+\frac{1}{2}\sigma ^2
   -(x_i+x_j)\frac{x_i+x_j}{2}
   +x_ix_j\}c_ic_j\\
@@ -126,5 +127,12 @@ We find the derivative of $\Psi$ analytically, then calculate the integral of $(
   =\sum_{i}\sum_{j=i-5}^{i+5}\frac{\sqrt{\pi}}{\sigma}e^{\frac{(i-j)^2}{4}}\{-\frac{(x_i+x_j)^2}{4}+\frac{1}{2}\sigma ^2+x_ix_j\}c_ic_j
 \end{gather}
 Where we again only evaluate integrals for  $|i-j|<6$.
-We can now make a quadratic form from 3.7, 3.8 and 3.14 in the c's and set up the variational problem in matrix form.
+We can now make a quadratic form from 3.7, 3.8 and 3.15 in the c's and set up the variational problem in matrix form.
+We plot the first 6 eigenvectors, using 1001 pts to help resolve the shapes.
+
+\includegraphics{variational}
+
+These appear to have the right form, but scaled to the interval [-0.5:0.5]. 
+
+
 \end{document}
