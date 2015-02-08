@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=latex 2015.1.23)  3 FEB 2015 21:53
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=latex 2015.1.23)  8 FEB 2015 14:35
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -344,23 +344,35 @@ Overfull \hbox (27.30127pt too wide) in paragraph at lines 42--42
 [1
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 87--91
+Underfull \hbox (badness 10000) in paragraph at lines 89--93
 
  []
 
 [2]
-Underfull \hbox (badness 10000) in paragraph at lines 94--101
+Underfull \hbox (badness 10000) in paragraph at lines 96--103
 
  []
 
-[3] (./hw3.aux) ) 
-Here is how much of TeX's memory you used:
- 1347 strings out of 495029
- 15028 string characters out of 6181523
- 73427 words of memory out of 5000000
- 4580 multiletter control sequences out of 15000+600000
- 9015 words of font info for 33 fonts, out of 8000000 for 9000
- 14 hyphenation exceptions out of 8191
- 27i,9n,20p,220b,189s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on hw3.dvi (3 pages, 9692 bytes).
+Underfull \hbox (badness 10000) in paragraph at lines 117--124
+
+ []
+
+[3] [4]
+Underfull \hbox (badness 10000) in paragraph at lines 134--158
+
+ []
+
+[5
+
+] (./hw3.aux) ) 
+Here is how much of TeX's memory you used:
+ 1350 strings out of 495029
+ 15053 string characters out of 6181523
+ 74427 words of memory out of 5000000
+ 4582 multiletter control sequences out of 15000+600000
+ 9324 words of font info for 34 fonts, out of 8000000 for 9000
+ 14 hyphenation exceptions out of 8191
+ 27i,10n,20p,220b,198s stack positions out of 5000i,500n,10000p,200000b,80000s
+
+Output written on hw3.dvi (5 pages, 14456 bytes).

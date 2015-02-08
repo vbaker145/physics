@@ -65,14 +65,16 @@ We now equate this energy to the rest mass of the electron and caculate the clas
 \section{Problem 3}
 Trying simple combinations of two of the three physical constants, we have:
 \begin{gather}
- QM \bigcup EM: \frac{e^2}{\hbar}=\frac{L}{T}\\
+ QM \bigcup EM: \frac{\hbar ^2}{e^2}=ML\\
  QM \bigcup SR: \frac{\hbar}{c}=ML\\
  EM \bigcup SR: \frac{e^2}{c^2}=ML
 \end{gather}
-To find a unit of length, we really require all three physical constants, and we get the fine structure constant.
+These are the Bohr radius of hydrogen, the Compton wavelength of the electron, and the classical radius of the electron. 
+Seeking a dimensionless combination of the fundamental constants we find the fine structure constant:
 \begin{gather}
  \alpha = \frac{e^2}{\hbar c} \ (dimensionless)
 \end{gather}
+Multiplying each length scale by the fine structure constant moves to the next lower length scale.
 
 \section{Problem 4}
 The Schrodinger equation of a fixed rotor with angular momentum $I_0$ is:
@@ -86,8 +88,71 @@ The separation constant $m^2=\frac{2I_0E}{\hbar ^2}$ allows us to calculate the 
  E_m=\frac{m^2 \hbar^2}{2I_0},\ m=0,\pm 1, \pm 2...
 \end{equation}
 $E_m \leq 100\frac{\hbar ^2}{2I_0}$ when $|m|\leq10$. There are therefore 21 states with $E_m \leq 100\frac{\hbar ^2}{2I_0}$.
+\\ \\
+With a variable axis we are now working with a full spherical coordinate system. The Schrodinger equation is:
+\begin{gather}
+ \frac{-\hbar^2}{2I_0}\nabla^2\Psi=E\Psi\\
+ \nabla^2\Psi+\frac{2I_0E}{\hbar ^2}\Psi=0
+\end{gather}
+With a fixed rotor length we can ignore the radial part of this solution. 
+The angular part of the solution is a spherical harmonic $Y_\ell^m(\theta, \phi)$.
+This will consist of an exponential part in $\phi$ and an associated Legendre function in $\theta$.
+The exponential part gives rise to the constraint that m is an integer.\\ \\
+The angular part will be equal to a separation constant, which we set to $-\ell(\ell+1)$ by convention. 
+We can then use the separation constant to calculate the energy levels.
+\begin{gather}
+ \nabla^2Y_\ell^m(\theta, \phi)=-\ell(\ell+1)\\
+ E=\frac{\ell(\ell+1)\hbar^2}{2I_0}
+\end{gather}
+We apparently recognize that this is $(2\ell+1)$-fold degenerate. 
+The maximum value of $\ell$ that satisfies $E_{\ell} \leq 100\frac{\hbar ^2}{2I_0}$ is 9.
+With 9 energy levels and $(2\ell+1)$-fold degeneracy there are 99 states with energy $E_{\ell} \leq 100\frac{\hbar ^2}{2I_0}$.
 
+\section{Problem 5}
+We put the energy levels of the fixed rotor (4.3) into the partition function.
+\begin{gather}
+ \zeta(\beta)=\sum_{m=-\infty }^{+\infty }e^{-m^2 \beta \frac{\hbar^2}{2I_0}},\ \beta=\frac{1}{kT},\ m=0,\pm 1, \pm 2...\\
+ =1+2\sum_{m=1 }^{+\infty }e^{-m^2 \beta \frac{\hbar^2}{2I_0}}\\
+ =1+2\sum_{m=1 }^{+\infty }(e^{-\beta \frac{\hbar^2}{2I_0}})^{m^2}
+\end{gather}
+With $\frac{\hbar ^2}{2I_0} \ll kT$, $\frac{\hbar ^2}{2I_0} \gg \beta$. 
+This guarantees the term $e^{-\beta \frac{\hbar^2}{2I_0}}$ will be small enough to quickly go to 0 from m>1.
+\\
+\\
+we put the energy of the rotor with variable axis(4.7) into the partition function.
+\begin{gather}
+ \zeta(\beta)=\sum_{l=-\infty }^{+\infty }e^{-m^2 \beta \frac{\hbar^2}{2I_0}},\ \beta=\frac{1}{kT},\ m=0,\pm 1, \pm 2...\\
+ =1+2\sum_{m=1 }^{+\infty }e^{-m^2 \beta \frac{\hbar^2}{2I_0}}\\
+ =1+2\sum_{m=1 }^{+\infty }(e^{-\beta \frac{\hbar^2}{2I_0}})^{m^2}
+\end{gather}
+\clearpage
 
+\section{Problem 6}
+We find the Dunham coefficients $Y_{ij}$ of NaCl\footnotemark[1]: \\
+\begin{table}[h]
+ \caption{Dunham coefficients of $NaCl$}
+ \centering
+ \begin{tabular}{ccc}
+ \\
+ Constant & $Na^{35}Cl$ & $Na^{37}Cl$ \\
+ \hline
+ $Y_{10}$ & 364.68 & 360.75 \\
+ $Y_{20}$ & -1.7761 & -1.7366 \\
+ $Y_{30}\times10^3$ & 5.9369 & 5.452(1) \\
+ $Y_{40}\times10^5$ & -1.231(2) & - \\
+ $Y_{01}$ & 0.21806 & 0.21339 \\
+ $Y_{11}\times10^3$ & -1.6248 & -1.5716 \\
+ $Y_{21}\times10^6$ & 5.1543 & 4.9913 \\
+ $Y_{02}\times10^7$ & -3.1190 & -2.9520 \\ 
+ $Y_{12}\times10^10$ & 6.397(2) & 4.019(5) \\
+ $Y_{22}\times10^12$ & 6.397(21) & - \\
+ $Y_{03}\times10^14$ & 8.96(29) & - \\
+ \end{tabular} 
+\end{table}
+\\ \\
+These are coefficients of the Dunham expansion of the total energy of a rotating vibrator.
 
+\footnote[1]{R. S. Ram, M. Dulick, B. Guo, K.-Q. Zhang, and P. F. Bernath, 
+Journal of Molecular Spectroscopy, \textbf{183}, 360-373  }
 
 \end{document}
