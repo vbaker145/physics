@@ -1,0 +1,117 @@
+\documentclass[a4paper,10pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\numberwithin{equation}{section}
+%opening
+\title{Math Phys II HW 3}
+\author{Vince Baker}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+
+\end{abstract}
+
+\section{Problem 1}
+We investigate solutions of Laplace' equation in two dimensions.
+\begin{gather}
+ \nabla ^2 U = 0\\
+ U(\rho, \phi)=R(\rho)\Phi(\phi)
+\end{gather}
+Separating variables and dividing through by $R\Phi$:
+\begin{gather}
+  \frac{1}{\rho}\frac{d}{d\rho}(r R^{'} )\Phi+\frac{1}{\rho^2}\Phi^{''}R=0\\
+  \frac{\rho}{R}(rR^{'})^{'}+\frac{\Phi^{''}}{\Phi}=0
+\end{gather}
+We use $\Phi(\phi)=e^{im\phi}$ as the angular solution, then:
+\begin{gather}
+ \frac{\rho}{R}(rR^{'})^{'}=m^2\\
+ \rho ^2R^{''}+\rho R^{'}-m^2R=0
+\end{gather}
+We write down the series solution to this problem around the regular singular point 0.
+\begin{gather}
+ R=\sum c_i \rho ^{\alpha+i}\\
+ R^{'}=\sum (\alpha+i)c_i \rho ^{\alpha+i-1}\\
+ R^{''}=\sum (\alpha+i)(\alpha+i-1)c_i\rho ^{\alpha+i-2}\\
+ \sum (\alpha+i)(\alpha+i-1)c_i\rho ^{\alpha+i}+\sum (\alpha+i)c_i \rho ^{\alpha+i}-m^2\sum c_i \rho ^{\alpha+i}=0
+\end{gather}
+Collecting the coefficients of the 0th term and equating them to 0:
+\begin{gather}
+ [\alpha(\alpha-1)+\alpha-m^2]=0\\
+ \alpha=\pm m\\
+ R=\rho ^{\pm m}
+\end{gather}
+We can now write the general solution.
+\begin{equation}
+ U(\rho, \phi)=\sum (a_{m}\rho^{m}+b_m\rho^{-m})e^{im\phi}
+\end{equation}
+With boundary condition $U(a,\phi)=U_0cos^2\phi$, we find:
+\begin{gather}
+  U(a, \phi)=\sum (a_{m}a^{m}+b_ma^{-m})e^{im\phi}=U_0cos^2\phi\\
+  (a_{m}a^{m}+b_ma^{-m})=\alpha_m\\
+  \alpha_m=\frac{1}{\sqrt{2\pi}}\int_0^{2\pi}U_0cos^2\phi e^{im\phi} d\phi\\
+  =\frac{U_0}{2\pi}\int_0^{2\pi}\frac{1}{2}[cos2\phi\ +1]e^{im\phi} d\phi\\
+  =\frac{U_0}{2\sqrt{2\pi}}\{-\frac{ie^{im\phi}(mcos2\phi\ -2isin2\phi)}{m^2-4}-\frac{i}{m}e^{im\phi} \}_0^{2\pi}\\
+  =0
+\end{gather}
+
+
+\section{Problem 2}
+\begin{gather}
+ \nabla ^2u=\frac{1}{c^2}\frac{\partial ^2u}{\partial t^2}
+\end{gather}
+We recognize the time part of the solution as $e^{i\omega t}$. 
+The sptial solutions of Equation 2.1 are then the solutions to a Helmholtz equation in three dimensions.
+\begin{gather}
+ u(r, \theta, \phi, t)=\sum a_{\ell mn}j_{\ell}(cr)P_{\ell}^{m}(cos\theta)e^{im\phi}e^{i\omega t},\ \omega^2=\ell^2+m^2+n^2
+\end{gather}
+The surface boundary conditions $\frac{\partial u}{\partial r}=0,\ r=R_0$, require that $\frac{d}{dr}j_{\ell}(cR_0)=0$.
+We calculate $\frac{d}{dr}j_{\ell}(cR_0)$ for $\ell=0,1,2$.
+\begin{gather}
+ j_0=\frac{sin x}{x}, j_0^{'}=-\frac{-sin x}{x^2}+\frac{cos x}{x}=0\Rightarrow x=4.49\\
+ j_1=\frac{sin x}{x^2}-\frac{cosx}{x}, j_1^{'}=x^2sinx+2xcosx-2sinx=0\Rightarrow x=2.08\\
+ j_2=\frac{3sinx}{x^3}-\frac{sinx}{x}-\frac{3cosx}{x^2}, j_2^{'}=-x^3cosx+4x^2sinx+9xcosx-9sinx =0 \Rightarrow x=3.34
+\end{gather}
+We can now solve for $\omega$.
+
+\section{Problem 3}
+\begin{gather}
+ \nabla^2n+\lambda n=\frac{1}{\kappa}\frac{\partial n}{\partial t}
+\end{gather}
+Separating the time and space parts, we find:
+\begin{gather}
+ T^{'}-\kappa cT=0\\
+\end{gather}
+With the time solution of the form $e^{\alpha t}$, then $\alpha=\kappa c$.
+We separate the space part:
+\begin{gather}
+ \nabla ^2 \chi + k^2 \chi = 0,\ k^2 \equiv \lambda-c^2
+\end{gather}
+For spherically symmetric modes $\ell=m=0$, and the solution is:
+\begin{gather}
+ \chi(r)=j_0(kr)
+\end{gather}
+Applying the boundary condition $n(R)=0$:
+\begin{gather}
+ j_0(kR)=\frac{sinx}{x}=0
+\end{gather}
+The first zero will be at $\pi$, so we find $R_0=\frac{\pi}{k}$.
+At the critical point $\alpha=0,k^2=\lambda$. 
+So the critical radius $R_0=\frac{\pi}{\sqrt{\lambda}}$. \\ \\
+Repeating for a hemisphere we apply axial symmetry (m=0) and find:
+\begin{gather}
+ \chi(r,\theta )=j_{\ell}(kr)P_{\ell}^{0}(cos \theta )
+\end{gather}
+We now have a boundary on the upper surface (r=R) and on the bottom of the hemisphere ($\theta=\frac{\pi}{2})$.
+For the bottom surface boundary, only $P_{1}^{0}=cos\theta$ satisfiesthe the boundary condition so $\ell=1$.
+We can now apply the radial boundary condition:
+\begin{gather}
+ j_1(kR)=\frac{sinx}{x^2}-\frac{cosx}{x}=0 \Rightarrow x=4.49
+\end{gather}
+
+
+
+\end{document}
