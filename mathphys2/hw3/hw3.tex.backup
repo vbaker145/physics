@@ -48,16 +48,21 @@ We can now write the general solution.
 \begin{equation}
  U(\rho, \phi)=\sum (a_{m}\rho^{m}+b_m\rho^{-m})e^{im\phi}
 \end{equation}
-With boundary condition $U(a,\phi)=U_0cos^2\phi$, we find:
+With boundary condition $U(a,\phi)=U_0cos^2\phi$, we now look for the coefficients.
+We write the boundary condition as $\frac{U_0}{2}+\frac{U_0cos2 \phi}{2}$ and expand the general $e^{im\phi}$ term into cosines and sines.
 \begin{gather}
-  U(a, \phi)=\sum (a_{m}a^{m}+b_ma^{-m})e^{im\phi}=U_0cos^2\phi\\
-  (a_{m}a^{m}+b_ma^{-m})=\alpha_m\\
-  \alpha_m=\frac{1}{\sqrt{2\pi}}\int_0^{2\pi}U_0cos^2\phi e^{im\phi} d\phi\\
-  =\frac{U_0}{2\pi}\int_0^{2\pi}\frac{1}{2}[cos2\phi\ +1]e^{im\phi} d\phi\\
-  =\frac{U_0}{2\sqrt{2\pi}}\{-\frac{ie^{im\phi}(mcos2\phi\ -2isin2\phi)}{m^2-4}-\frac{i}{m}e^{im\phi} \}_0^{2\pi}\\
-  =0
+ U(a, \phi)=\sum (a_{m}a^{m}+b_ma^{-m})(A_mcos\ m\phi+B_msin\ m\phi)
 \end{gather}
-
+It is clear from the form of the boundary condition that only the m=0 and m=2 coefficients will survive.
+Collecting the various coefficients:
+\begin{gather}
+ U(a, \phi)=A_0 + A_2cos\ 2\phi = \frac{U_0}{2}+\frac{U_0cos2 \phi}{2}\\
+ A_0=A_2=\frac{U_0}{2}
+\end{gather}
+So the general solution is:
+\begin{gather}
+ U(\rho, \phi)=\frac{U_0}{2}+\frac{U_0}{2}\rho^2cos\ 2\phi
+\end{gather}
 
 \section{Problem 2}
 \begin{gather}
@@ -66,7 +71,7 @@ With boundary condition $U(a,\phi)=U_0cos^2\phi$, we find:
 We recognize the time part of the solution as $e^{i\omega t}$. 
 The sptial solutions of Equation 2.1 are then the solutions to a Helmholtz equation in three dimensions.
 \begin{gather}
- u(r, \theta, \phi, t)=\sum a_{\ell mn}j_{\ell}(cr)P_{\ell}^{m}(cos\theta)e^{im\phi}e^{i\omega t},\ \omega^2=\ell^2+m^2+n^2
+ u(r, \theta, \phi)=\sum j_{\ell}(kr)P_{\ell}^{m}(cos\theta)e^{im\phi}
 \end{gather}
 The surface boundary conditions $\frac{\partial u}{\partial r}=0,\ r=R_0$, require that $\frac{d}{dr}j_{\ell}(cR_0)=0$.
 We calculate $\frac{d}{dr}j_{\ell}(cR_0)$ for $\ell=0,1,2$.
@@ -75,7 +80,13 @@ We calculate $\frac{d}{dr}j_{\ell}(cR_0)$ for $\ell=0,1,2$.
  j_1=\frac{sin x}{x^2}-\frac{cosx}{x}, j_1^{'}=x^2sinx+2xcosx-2sinx=0\Rightarrow x=2.08\\
  j_2=\frac{3sinx}{x^3}-\frac{sinx}{x}-\frac{3cosx}{x^2}, j_2^{'}=-x^3cosx+4x^2sinx+9xcosx-9sinx =0 \Rightarrow x=3.34
 \end{gather}
-We can now solve for $\omega$.
+We can now solve for k and find $\omega=kc$.
+\begin{gather}
+ \omega_{10}=\frac{4.49}{R}c\\
+ \omega_{11}=\frac{2.08}{R}c\\
+ \omega_{12}=\frac{3.34}{R}c
+\end{gather}
+
 
 \section{Problem 3}
 \begin{gather}
@@ -83,12 +94,12 @@ We can now solve for $\omega$.
 \end{gather}
 Separating the time and space parts, we find:
 \begin{gather}
- T^{'}-\kappa cT=0\\
+ T^{'}-\kappa cT=0
 \end{gather}
 With the time solution of the form $e^{\alpha t}$, then $\alpha=\kappa c$.
 We separate the space part:
 \begin{gather}
- \nabla ^2 \chi + k^2 \chi = 0,\ k^2 \equiv \lambda-c^2
+ \nabla ^2 \chi + k^2 \chi = 0,\ k^2 \equiv \lambda-c
 \end{gather}
 For spherically symmetric modes $\ell=m=0$, and the solution is:
 \begin{gather}
@@ -106,7 +117,56 @@ Repeating for a hemisphere we apply axial symmetry (m=0) and find:
  \chi(r,\theta )=j_{\ell}(kr)P_{\ell}^{0}(cos \theta )
 \end{gather}
 We now have a boundary on the upper surface (r=R) and on the bottom of the hemisphere ($\theta=\frac{\pi}{2})$.
-For the bottom surface boundary, only $\ell=1\ (cos \theta)$ satisfiesthe boundary condition.
+For the bottom surface boundary, only $P_{1}^{0}=cos\theta$ satisfiesthe the boundary condition so $\ell=1$.
+We can now apply the radial boundary condition:
+\begin{gather}
+ j_1(kR)=\frac{sinx}{x^2}-\frac{cosx}{x}=0 \Rightarrow x=4.49\\
+ R_0=\frac{4.49}{\sqrt{\lambda}}
+\end{gather}
+\\ \\
+We can now combine the two critical hemispheres into a single sphere of radius $\frac{4.49}{\lambda}$. 
+The critical radius of the sphere is only $\frac{\pi}{\lambda}$, so the sphere is now unstable.
+The critical radius for the sphere is $\frac{\pi}{\sqrt{\lambda}}$, so we can express the new radius as $1.43R_0$. 
+Using 3.4, we write:
+\begin{gather}
+ k^2=\lambda-\frac{\alpha}{\kappa}=\\
+ k_0=\frac{\pi}{R_0},\ k_1=\frac{\pi}{1.43R_0}=\frac{\sqrt{\lambda}}{1.43}\\
+ k_1^2=\frac{\lambda}{1.43^2}=\lambda-\frac{\alpha}{\kappa}\\
+ \alpha=\kappa\lambda(0.511)\\
+ \tau = \frac{1}{\alpha}=\frac{1.957}{\kappa \lambda}
+\end{gather}
+
+\section{Problem 4}
+The general solution to the homogenous 2D Helholtz equation is:
+\begin{gather}
+ u(r,\phi)=\sum_m a_mJ_m(kr)e^{im\phi}
+\end{gather}
+Applying the boundary condition, we get:
+\begin{gather}
+ u(R,\phi)=\sum_m a_mJ_m(kR)e^{im\phi}=f(\phi)
+\end{gather}
+we recognize this as the Fourier expansion of $f(\phi)$, with the Fourier coeeficients $c_m=a_mJ_m(kR)$.
+We can now combine the coeeficients into a general coefficient $B_m$ and solve for $B_m$.
+\begin{gather}
+ B_m=\frac{1}{2\pi}\int_0^{2\pi}f(\phi^{'})e^{im\phi^{'}}d\phi^{'}\\
+ a_m=\frac{1}{J_m(kR)}\frac{1}{2\pi}\int_0^{2\pi}f(\phi^{'})e^{im\phi^{'}}d\phi^{'}
+\end{gather}
+Substituting the $a_m$ back into 4.2 and rearranging:
+\begin{gather}
+ u(r,\phi,\phi^{'})=\frac{1}{J_m(kR)}\frac{1}{2\pi}\int_0^{2\pi}\{f(\phi^{'})e^{im\phi^{'}}d\phi^{'}\}J_m(kr)e^{im\phi}\\
+ =\int_0^{2\pi}\sum_m\frac{J_m(kr)}{J_m(kR)}\frac{1}{2\pi}e^{im\phi}f(\phi^{'})e^{im\phi^{'}}d\phi^{'}\\
+ =\int_0^{2\pi}K(r,\phi,\phi^{'}f(\phi^{'})d\phi^{'}\\
+ K=\sum_m\frac{J_m(kr)}{J_m(kR)}\frac{1}{2\pi}e^{im\phi}e^{im\phi^{'}}
+\end{gather}
+\\ \\
+To solve for $f(\phi)=cos^2\phi$ we substitute into 4.2.
+\begin{gather}
+ u(R,\phi)=\sum_m a_mJ_m(kR)e^{im\phi}=cos^2\phi
+\end{gather}
+Using the same approach as problem 1, we find that only the m=0 and m=2 coefficients survive and are equal to $\frac{1}{2J_0(kR)}$ and $\frac{1}{2J_2(kR)}$.
+\begin{gather}
+ u(r,\phi)=\frac{1}{2J_0(kR)}J_0(kr)+\frac{1}{2J_2(kR)}J_2(kr)cos\ 2\phi
+\end{gather}
 
 
 \end{document}
