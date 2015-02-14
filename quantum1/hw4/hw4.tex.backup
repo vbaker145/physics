@@ -1,0 +1,22 @@
+\documentclass[a4paper,10pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\numberwithin{equation}{section}
+
+%opening
+\title{}
+\author{Vince Baker}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+Quantum 1 HW 4
+\end{abstract}
+
+\section{Problem 1}
+\includegraphics{p1}
+
+\end{document}
