@@ -26,11 +26,11 @@ We now have a second-order operator acting on a wavefunction $\psi$:
 \end{gather}
 We now put our free particle in a scalar potential V. 
 This will be the electrostatic potential from the nuclear charge.
-Since we're dealing with $E^2$ to simplify the relativistic energy/momentum, we'll need to use $V^2$ here.
-V and E should have the opposite sign, if we had incorporated V into the original energy equation it would have been on the right hand side (with the rest mass energy and kinetic energy).
+Going back to 1.1, we substitute $(E-V)$ for $E$.
+The negative sign retains conservation of potential/kinetic energy (as potential energy goes up, the kinetic energy goes down).
 \begin{gather}
- \{(\frac{\hbar c}{i}\nabla)^2+(mc^2)^2-(E^2-V^2)\}\psi = 0\\
- -(\hbar c)^2\nabla ^2\psi+\{(mc^2)^2-E^2+V^2\}\psi=0
+ \{(\frac{\hbar c}{i}\nabla)^2+(mc^2)^2-(E-V)^2)\}\psi = 0\\
+ -(\hbar c)^2\nabla ^2\psi+\{(mc^2)^2-(E-V)^2\}\psi=0
 \end{gather}
 The Laplacian in three dimensions is:
 \begin{gather}
@@ -41,21 +41,21 @@ We assume we can separate 1.5 into $\psi(r,\theta, \phi)=R(r)\Theta(\theta)\Phi(
 \begin{multline}
   -(\hbar c)^2\{\frac{1}{r^2}\frac{\partial}{\partial r}(r^2\frac{dR}{dr})\Phi\Theta+\frac{1}{r^2\sin \theta}\frac{\partial}{\partial \theta}(\sin \theta \frac{d\Theta}{d \theta})R\Phi\\
  +\frac{1}{r^2 \sin ^2 \theta}\frac{d^2\Phi}{d \phi^2}R\Theta\}
- +\{(mc^2)^2-E^2+V(r)^2\}R\Phi\Theta=0
+ +\{(mc^2)^2-(E-V(r))^2\}R\Phi\Theta=0
 \end{multline}
 Dividing through by $\frac{-(\hbar c)^2R\Theta\Phi}{r^2}$ we have:
 \begin{gather}
  \frac{1}{R}\frac{d}{dr}(r^2\frac{dR}{dr})+\frac{1}{\Theta\sin \theta}\frac{d}{d \theta}(\sin \theta \frac{d\Theta}{d \theta})
  +\frac{1}{\Phi \sin ^2 \theta}\frac{d^2\Phi}{d \phi^2}
- -r^2\frac{(mc^2)^2-E^2+V(r)^2}{(\hbar c)^2}=0
+ -r^2\frac{(mc^2)^2-(E-V(r))^2}{(\hbar c)^2}=0
 \end{gather}
 The first and fourth terms are expressions in r only, the second and third terms are expressions in $\theta$ and $\phi$.
 We can therefore separate the angular and radial terms.
 The solutions to the angular terms are the spherical harmonics $P_{\ell}^{m}(\cos \theta)e^{im\phi}$.
 We examine the radial solution by setting the separation constant to $\ell(\ell+1)$, and we have:
 \begin{gather}
-  \frac{1}{R}\frac{d}{dr}(r^2\frac{dR}{dr})-r^2\frac{(mc^2)^2-E^2+V(r)^2}{(\hbar c)^2}=\ell(\ell+1)\\
-  \frac{d}{dr}(r^2\frac{dR}{dr})+\frac{Rr^2}{(\hbar c)^2}(E^2-V(r)^2-(mc^2)^2))-R(\ell(\ell+1))=0
+  \frac{1}{R}\frac{d}{dr}(r^2\frac{dR}{dr})-r^2\frac{(mc^2)^2-(E-V(r))^2}{(\hbar c)^2}=\ell(\ell+1)\\
+  \frac{d}{dr}(r^2\frac{dR}{dr})+\frac{Rr^2}{(\hbar c)^2}((E-V(r))^2-(mc^2)^2))-R(\ell(\ell+1))=0
 \end{gather}
 We make the substitution $R=\frac{u}{r}$. We then find:
 \begin{gather}
@@ -65,17 +65,34 @@ R = \frac{u}{r}\\
 \end{gather}
 We can now substitute into 1.10:
 \begin{gather}
- r\frac{d^2u}{dr^2}+\frac{ur}{(\hbar c)^2}(E^2-V(r)^2-(mc^2)^2))-\frac{u}{r}(\ell(\ell+1))=0\\
- \frac{d^2u}{dr^2}+\frac{u}{(\hbar c)^2}(E^2-V(r)^2-(mc^2)^2))-\frac{u}{r^2}(\ell(\ell+1))=0
+ r\frac{d^2u}{dr^2}+\frac{ur}{(\hbar c)^2}((E-V(r))^2-(mc^2)^2))-\frac{u}{r}(\ell(\ell+1))=0\\
+ \frac{d^2u}{dr^2}+\frac{u}{(\hbar c)^2}((E-V(r))^2-(mc^2)^2))-\frac{u}{r^2}(\ell(\ell+1))=0
 \end{gather}
 We now introduce a dimensionless constant $r=\gamma z$ so that we can look up the solution for this PDE.
 This is also a good time to introduce our potential function, $V(r) = \frac{-e^2}{r}$.
 \begin{gather}
- \frac{1}{\gamma ^2}\frac{d^2u}{dz^2}+\frac{u}{(\hbar c)^2}(E^2-\frac{e^4}{\gamma ^2 z^2}-(mc^2)^2))-\frac{u}{(\gamma z)^2}\ell(\ell+1)=0\\
- \frac{d^2u}{dz^2}+\{ \frac{ \gamma^2u}{(\hbar c)^2}(E^2-(mc^2)^2)    \}
+ \frac{1}{\gamma ^2}\frac{d^2u}{dz^2}+\frac{u}{(\hbar c)^2}((E-\frac{e^2}{\gamma z})^2-(mc^2)^2))-\frac{u}{(\gamma z)^2}\ell(\ell+1)=0\\
+ \frac{1}{\gamma ^2}\frac{d^2u}{dz^2}+\frac{u}{(\hbar c)^2}((E^2+2E\frac{e^2}{\gamma z}+(\frac{-e^2}{\gamma z})^2   )-(mc^2)^2))-\frac{u}{(\gamma z)^2}\ell(\ell+1)=0\\
+ \frac{d^2u}{dz^2}+\{\frac{1}{z}\frac{2Ee^2\gamma}{(\hbar c)^2}+\frac{-\ell(\ell+1)+\frac{e^4}{(\hbar c)^2})}{z^2}+\frac{\gamma^2}{(\hbar c)^2}(E^2-(mc^2)^2) \}u=0
 \end{gather}
-
-
+We find a solution of the right form in Abramowitz and Stegun:
+\begin{gather}
+ \frac{d^2y}{dx^2}+\{\frac{2n+\beta +1}{2x}+\frac{1-\beta ^2}{4x^2}-\frac{1}{4} \}y=0
+\end{gather}
+Equating terms and making the substitution $\alpha=\frac{e^2}{(\hbar c)^2}$, we find:
+\begin{gather}
+  -\ell(\ell+1)+\alpha^2=\frac{1-\beta ^2}{4}\\
+  2E\alpha \frac{\gamma}{\hbar c} =\frac{2n+\beta +1}{2}\\
+ \frac{\gamma^2}{(\hbar c)^2}(E^2-(mc^2)^2)=-\frac{1}{4}
+\end{gather}
+From the first equation we see that $4[(\ell+\frac{1}{2})^2-\alpha ^2]=\beta^2$, so $\beta=2\sqrt{(\ell+\frac{1}{2})^2-\alpha ^2}$.
+We use the second equation to solve for $\frac{\gamma}{\hbar c}$, then plug into the third equation to find an expression for E.
+\begin{gather}
+ 2E\alpha \frac{\gamma}{\hbar}=\frac{2n+\beta+1}{2}\\
+ 2E\alpha \frac{\gamma}{\hbar}=n+\sqrt{(\ell+\frac{1}{2})^2-\alpha^2}+\frac{1}{2},\ 
+ N(\alpha) \equiv n+\sqrt{(\ell+\frac{1}{2})^2-\alpha^2}+\frac{1}{2}\\
+ \frac{\gamma}{\hbar}=\frac{N(\alpha)}{2E\alpha}\\
+\end{gather}
 
 
 \end{document}

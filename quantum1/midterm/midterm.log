@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=latex 2015.1.23)  21 FEB 2015 22:24
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=latex 2015.1.23)  23 FEB 2015 20:46
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -337,31 +337,28 @@ LaTeX Font Info:    ... okay on input line 11.
 LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 11.
 LaTeX Font Info:    ... okay on input line 11.
 
-Overfull \hbox (7.74329pt too wide) in paragraph at lines 49--49
+Overfull \hbox (11.03496pt too wide) in paragraph at lines 51--51
 [] 
  []
 
 [1
 
 ]
-! Misplaced alignment tab character &.
-l.75 We find a solution of the right form in A&
-                                               S:
-I can't figure out why you would want to use a tab mark
-here. If you just want an ampersand, the remedy is
-simple: Just type `I\&' now. But if some right brace
-up above has ended a previous alignment prematurely,
-you're probably due for more error messages, and you
-might try typing `S' now just to see what is salvageable.
+Overfull \hbox (0.46681pt too wide) in paragraph at lines 87--90
+\OT1/cmr/m/n/10 From the first equa-tion we see that $4[(\OML/cmm/m/it/10 ` \OT
+1/cmr/m/n/10 + [])[] \OMS/cmsy/m/n/10 ^^@ \OML/cmm/m/it/10 []\OT1/cmr/m/n/10 ]
+ = \OML/cmm/m/it/10 ^^L[]$\OT1/cmr/m/n/10 , so $\OML/cmm/m/it/10 ^^L \OT1/cmr/m
+/n/10 = 2[]$.
+ []
 
-[2] (./midterm.aux) ) 
+[2] [3] (./midterm.aux) ) 
 Here is how much of TeX's memory you used:
  1343 strings out of 495029
  15028 string characters out of 6181523
- 75427 words of memory out of 5000000
+ 77427 words of memory out of 5000000
  4578 multiletter control sequences out of 15000+600000
  8408 words of font info for 31 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  27i,10n,20p,229b,189s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on midterm.dvi (2 pages, 8972 bytes).
+Output written on midterm.dvi (3 pages, 13572 bytes).
