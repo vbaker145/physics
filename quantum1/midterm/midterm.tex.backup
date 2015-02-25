@@ -89,10 +89,40 @@ From the first equation we see that $4[(\ell+\frac{1}{2})^2-\alpha ^2]=\beta^2$,
 We use the second equation to solve for $\frac{\gamma}{\hbar c}$, then plug into the third equation to find an expression for E.
 \begin{gather}
  2E\alpha \frac{\gamma}{\hbar}=\frac{2n+\beta+1}{2}\\
- 2E\alpha \frac{\gamma}{\hbar}=n+\sqrt{(\ell+\frac{1}{2})^2-\alpha^2}+\frac{1}{2},\ 
+ 2E\alpha \frac{\gamma}{\hbar c}=n+\sqrt{(\ell+\frac{1}{2})^2-\alpha^2}+\frac{1}{2},\ 
  N(\alpha) \equiv n+\sqrt{(\ell+\frac{1}{2})^2-\alpha^2}+\frac{1}{2}\\
- \frac{\gamma}{\hbar}=\frac{N(\alpha)}{2E\alpha}\\
+ \frac{\gamma}{\hbar c}=\frac{N(\alpha)}{2E\alpha}\\
+ (\frac{N(\alpha)}{2E\alpha})^2(E^2-(mc^2)^2)=-\frac{1}{4}\\
+ -1+\frac{(mc^2)^2}{E^2}=(\frac{\alpha}{N(\alpha)})^2\\
+ E^2=\frac{(mc^2)^2}{1-(\frac{\alpha}{N(\alpha)})^2}\\
+ E=\frac{mc^2}{\sqrt{1-(\frac{\alpha}{N(\alpha)})^2}}
 \end{gather}
+We can now substitute E into equation 1.21 to find $\gamma$.
+\begin{gather}
+ 2E\alpha \frac{\gamma}{\hbar c}=N(\alpha)\\
+ \gamma = \frac{\hbar c}{2mc^2}\sqrt{1-(\frac{\alpha}{N(\alpha)})^2}\frac{N(\alpha)}{\alpha}\\
+ \gamma = \frac{\hbar c}{2mc^2}\sqrt{(\frac{(N(\alpha)}{\alpha})^2-1}
+\end{gather}
+The presence of minus signs under square roots raises a question of imaginary values for the energy spectra. 
+We examine the ground state, $n=\ell=0$, so that $N(\alpha)=\frac{1}{2}+\sqrt{\frac{1}{4}-\alpha^2}$.
+Since the fine structure constant $\alpha\approx\frac{1}{137}$, this works fine for hydrogen.
+However it may fail for other atoms with a higher nuclear charge $Ze$ (Z an integer).
+A nuclear charge of $Ze$ will modify the expression for $\alpha$ to $\frac{(Ze)e}{\hbar c}=Z\alpha$. 
+We then find the nuclear charge at which $N(Z\alpha)$ becomes complex.
+\begin{gather}
+ \frac{1}{4}-Z^2\alpha ^2=0\\
+ Z^2=\frac{1}{4\alpha^2}\approx\frac{137^2}{2^2}\\
+ Z\approx \frac{137}{2}=68.5
+\end{gather}
+So for nucleii with atomic number 69 (thulium) or greater the Klein-Gordon equation will produce complex numbers for the energy spectrum.
+\\
+The rest energy $mc^2$ will typically dominate the total energy.
+Returning to equation 1.4, we expand $E=mc^2+W$ as the rest energy plus a nonrelativistic energy W. 
+We then find:
+\begin{gather}
+ -(\hbar c)^2\nabla ^2\psi+\{(mc^2)^2-(E-V)^2\}\psi=0
+\end{gather}
+
 
 
 \end{document}
