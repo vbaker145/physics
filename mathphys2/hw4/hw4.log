@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=latex 2015.1.23)  24 FEB 2015 22:03
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=latex 2015.1.23)  26 FEB 2015 22:33
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -339,7 +339,31 @@ LaTeX Font Info:    ... okay on input line 11.
 
 [1
 
-] [2] [3] (./hw4.aux) ) 
+] [2]
+Underfull \hbox (badness 10000) in paragraph at lines 78--82
+
+ []
+
+[3]
+Overfull \hbox (0.40862pt too wide) in paragraph at lines 107--107
+[] 
+ []
+
+! Double subscript.
+<argument>  U=K\int _0^R r_1^2 \int _0^r_
+                                         1 \frac { e^{\frac {-4r_2}{a_0}} }{...
+l.122 \end{gather}
+                  
+I treat `x_1_2' essentially like `x_1{}_2'.
+
+! Double subscript.
+<argument>  U=K\int _0^R r_1^2 \int _0^r_
+                                         1 \frac { e^{\frac {-4r_2}{a_0}} }{...
+l.122 \end{gather}
+                  
+I treat `x_1_2' essentially like `x_1{}_2'.
+
+[4] (./hw4.aux) ) 
 Here is how much of TeX's memory you used:
  1346 strings out of 495029
  15047 string characters out of 6181523
@@ -349,4 +373,4 @@ Here is how much of TeX's memory you used:
  14 hyphenation exceptions out of 8191
  27i,10n,20p,220b,189s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on hw4.dvi (3 pages, 9700 bytes).
+Output written on hw4.dvi (4 pages, 13992 bytes).
