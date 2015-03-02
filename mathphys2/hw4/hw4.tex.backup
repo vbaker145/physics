@@ -1,6 +1,8 @@
 \documentclass[a4paper,12pt]{article}
 \usepackage[utf8]{inputenc}
 \usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
 \usepackage{graphicx}
 \numberwithin{equation}{section}
 
@@ -105,6 +107,13 @@ We can now write the interior solution:
 \begin{gather}
  \Phi(r,\theta)=\frac{V_0}{2}[2P_0(\cos \theta)+\frac{3r}{R_0}P_1(\cos \theta)-\frac{7r^3}{4R_0^3}P_3(\cos \theta)+\frac{11r^5}{8R_0^5}P_5(\cos \theta)+\ldots]
 \end{gather}
+\\
+We now find the exterior solution with a time-dependent driving potential $\pm V_0e^{i\omega t}$ on the two hemispheres.
+The general solution for the exterior solution of the Helmholtz equation with axial symmetry is:
+\begin{gather}
+ \Phi(r,\theta)=\sum_{\ell}(a_{\ell}j_{\ell}(kr)+b_{\ell}n_{\ell}(kr))P_{\ell}(\cos \theta)
+\end{gather}
+
 
 
 \section{Problem 4}
@@ -118,10 +127,10 @@ We expand $\frac{1}{r_{12}}$ in spherical harmonics.
 Since the wavefunctions have no anglar dependence only a constant factor of $16\pi$ will survive the angular integral.
 We can now collect the constant terms $K=(\sqrt{\frac{8}{\pi a_0^3}})^4e^216\pi^2$ and write the integral:
 \begin{gather}
- U=K \int_{0}^{R} r_1^2 e^{\frac{-4r-1}{a_0}}dr_1\{\int_{0}^{r_1} r_2^2\frac{ e^{\frac{-4r_2}{a_0}} }{r_1} dr_2
+ U=K \int_{0}^{R} r_1^2 e^{\frac{-4r_1}{a_0}}dr_1\{\int_{0}^{r_1} r_2^2\frac{ e^{\frac{-4r_2}{a_0}} }{r_1} dr_2
  + \int_{r_1}^{R} r_2 e^{\frac{-4r_2}{a_0}}  dr_2\}\\
- U=K \int_{0}^{R} r_1^2 e^{\frac{-4r-1}{a_0}}dr_1\{\int_{0}^{r_1} r_2^2\frac{ e^{\frac{-4r_2}{a_0}} }{r_1} dr_2
- + \int_{r_1}^{R} r_2 e^{\frac{-4r_2}{a_0}}  dr_2\}\\
+ U=K \int_{0}^{R} r_1^2 e^{\frac{-4r_1}{a_0}}dr_1\{\ (\frac{a_0^2}{16}-\frac{a_0}{8} )e^{\frac{-4r_1}{a_0}} 
+ -\frac{a_0^3}{32r_1}(e^{\frac{-4r_1}{a_0}}-1 )-e^{\frac{-4R}{a_0}}(\frac{a_0^2}{16}+\frac{a_0}{4}R) \}
 \end{gather}
 
 

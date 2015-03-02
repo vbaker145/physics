@@ -1,0 +1,17 @@
+integral of ( (x^2)exp(-4x/a)(  (a^2/16-a/8)exp(-4x/a)-(a^3/32x)(exp(-4x/a)-1)-exp(-4b/a)(a^2/16+a*b/4) ) ) from 0 to b
+
+
+integral of ( (x^2)exp(-4x/a)(  (a^2/16-a/8)exp(-4x/a) ) from 0 to b
+((-2 + a) a^2 (a^2 - (a^2 + 8 a b + 32 b^2)/E^((8 b)/a)))/4096
+
+
+integral of ( (x^2)exp(-4x/a)(  -(a^3/32x)(exp(-4x/a)-1) ) ) from 0 to b
+(a^4 (-3 a^3 + (3 a^3 + 24 a^2 b + 96 a b^2 + 256 b^3)/E^((8 b)/a) + 16 (3 a^3 - (3 a^3 + 12 a^2 b + 24 a b^2 + 32 b^3)/E^((4 b)/a))))/65536
+
+
+integral of ( (x^2)exp(-4x/a)( -exp(-4b/a)(a^2/16+a*b/4) ) ) from 0 to b
+-(a^2 (a + 4 b) (-4 a b - 8 b^2 + a^2 (-1 + E^((4 b)/a))))/(512 E^((8 b)/a))
+
+
+((-2 + a) a^2 (a^2 - (a^2 + 8 a b + 32 b^2)/E^((8 b)/a)))/4096+(a^4 (-3 a^3 + (3 a^3 + 24 a^2 b + 96 a b^2 + 256 b^3)/E^((8 b)/a) + 16 (3 a^3 - (3 a^3 + 12 a^2 b + 24 a b^2 + 32 b^3)/E^((4 b)/a))))/65536-(a^2 (a + 4 b) (-4 a b - 8 b^2 + a^2 (-1 + E^((4 b)/a))))/(512 E^((8 b)/a))
+
