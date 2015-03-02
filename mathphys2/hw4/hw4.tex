@@ -28,7 +28,7 @@ Since $\Gamma(x+1)=x\Gamma(x)$ and $\Gamma(\frac{1}{2})=\pi$, we can write the s
  J_{\frac{1}{2}}(x)=\frac{(\frac{1}{2}x)^\frac{1}{2}}{\frac{1}{2}\pi}(1-\frac{x^2}{3!}+\frac{x^4}{5!}\ldots)\\
  J_{\frac{1}{2}}(x)=\sqrt{\frac{2}{\pi x}}\sin x
 \end{gather}
-For $n=-\frac{1}{2}$, the series is:
+Where we identify the series terms as the fourier series of $\sin x$. For $n=-\frac{1}{2}$, the series is:
 \begin{gather}
  J_{-\frac{1}{2}}=\frac{(\frac{1}{2}x)^{-\frac{1}{2}}}{\sqrt{\pi}}(1-\frac{x^2}{2!}+\frac{x^4}{4!}-\ldots)=\sqrt{\frac{2}{\pi x}}\cos x
 \end{gather}
@@ -143,8 +143,8 @@ The mutual potential energy is given by:
  U=\int\int\psi^*(r_1)\psi^*(r_2)\frac{e^2}{r_{12}}\psi(r_1)\psi(r_2) d^3r_1 d^3r_2
 \end{gather}
 We expand $\frac{1}{r_{12}}$ in spherical harmonics. 
-Since the wavefunctions have no anglar dependence only a constant factor of $16\pi$ will survive the angular integral.
-We can now collect the constant terms $K=(\sqrt{\frac{8}{\pi a_0^3}})^4e^216\pi^2$ and write the integral:
+Since the wavefunctions have no angular dependence only a constant factor of $16\pi^2$ will survive the angular integral.
+We can now collect the constant terms $K=(\sqrt{\frac{8}{\pi^2 a_0^3}})^4e^216\pi^2$ and write the integral:
 \begin{gather}
  U=K \int_{0}^{R} r_1^2 e^{\frac{-4r_1}{a_0}}dr_1\{\int_{0}^{r_1} r_2^2\frac{ e^{\frac{-4r_2}{a_0}} }{r_1} dr_2
  + \int_{r_1}^{R} r_2 e^{\frac{-4r_2}{a_0}}  dr_2\}\\
