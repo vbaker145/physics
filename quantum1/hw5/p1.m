@@ -1,4 +1,4 @@
-clear all
+clear all; close all
 
 N = 3;
 nc = 9;
@@ -32,7 +32,18 @@ for cidx = 1:nc
         if (l==lp) && (m==mp) 
            hlz(ridx, cidx) = hlz(ridx,cidx) + m; 
         end
+        
         %Lx
+        if (l==lp)
+           if (mp==(m+1))
+               %L+
+               hlx(ridx, cidx) = hlx(ridx, cidx)+sqrt( l*(l+1)-m*(m+1) );
+           end
+           if (mp==(m-1))
+               %L- 
+               hlx(ridx, cidx) = hlx(ridx, cidx)+sqrt( l*(l+1)-m*(m-1) );
+           end
+        end
         
         %E.r
         if (l-lp) == 1
@@ -52,9 +63,32 @@ for cidx = 1:nc
         
     end
 end
-
-he = he./emFac; %Make Stark effect same magitude as Zeeman
-
-ht = h0+hlz+hlx+he;
+hlx = hlx./2; %Make Lx from L+, L-
 
 %Use eig to find eigenvalues/vectors
+
+ev0 = eig(h0);
+evz = eig(hlz);
+evx = eig(hlx);
+eve = eig(he);
+
+figure; plot(evx,'go')
+hold on; plot(evx, 'rx')
+title('Spectrum of L_z and L_x')
+xlabel('Eigenvalue #'); ylabel('Eigenvalue')
+
+figure; plot(eve, 'x')
+title('Spectrum of H_{E}')
+he = he./emFac; %Make Stark effect same magitude as Zeeman
+
+%Find total system spectrum
+ndegs = 100;
+theta = linspace(0, pi, ndegs);
+for didx = 1:ndegs
+    ht = h0+he+hlz*cos(theta(didx))+hlx*sin(theta(didx));
+    evt(:,didx)=eig(ht);
+end
+
+figure; plot(theta.*180/pi, evt'); 
+title('Energy spectrum of sodium valence electron in combined magnetic/electric fields');
+xlabel('theta (degrees)'); ylabel('energy')
