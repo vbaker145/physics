@@ -90,5 +90,5 @@ for didx = 1:ndegs
 end
 
 figure; plot(theta.*180/pi, evt'); 
-title('Energy spectrum of sodium valence electron in combined magnetic/electric fields');
+title('Energy spectrum of sodium valence electron');
 xlabel('theta (degrees)'); ylabel('energy')
