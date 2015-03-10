@@ -4,6 +4,7 @@
 \usepackage{amsfonts}
 \usepackage{amssymb}
 \usepackage{graphicx}
+
 \numberwithin{equation}{section}
 \renewcommand\thesubsection{\alph{subsection}}
 
@@ -35,9 +36,10 @@ H_0=
 \end{equation}
 \\
 \subsection{}
-With an external magnetic field applied along the z axis, the selection rules for $L_z$ are $m^{'}=m, \ell ^{'}=\ell $.
-The $L_z$ matrix is :
-\begin{equation}
+With an external magnetic field applied along the z axis we look for the $L_z$ and $L_x$ operator elements.
+Schwinger's isomorphism between the operators for two uncoupled harmonic oscillators and angular momentum operators gives us:
+\begin{gather}
+L_z(\ell^{'}=\ell, m^{'}=m)=m\\
 L_z=
 \begin{bmatrix}
  0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
@@ -50,7 +52,7 @@ L_z=
  0 & 0 & 0 & 0 & 0 & 0 & 0 & -1 & 0 \\
  0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & -2 \\
 \end{bmatrix}
-\end{equation}
+\end{gather}
 \\
 \subsection{}
 The matrix elements of $L_x$ can be calculated from the raising and lower operators $L^{\pm}$ by:
@@ -59,8 +61,11 @@ The matrix elements of $L_x$ can be calculated from the raising and lower operat
  L_-=L_x-iL_y\\
  L_x=\frac{1}{2}(L_++L_-)
 \end{gather}
+Again using Schwinger's harmonic oscillator isomorphism, we find:
 
-\begin{equation}
+\begin{gather}
+L_+(\ell^{'}=\ell, m^{'}=m \pm 1)=\sqrt{(\ell-m)(\ell+m+1)}\\
+L_-(\ell^{'}=\ell, m^{'}=m \pm 1)=\sqrt{(\ell-m)(\ell-m+1)}\\
 L_x=\frac{1}{2}
 \begin{bmatrix}
  0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
@@ -73,11 +78,17 @@ L_x=\frac{1}{2}
  0 & 0 & 0 & 0 & 0 & 0 & \sqrt{6} & 0 & \sqrt{4} \\
  0 & 0 & 0 & 0 & 0 & 0 & 0 & \sqrt{4} & 0 \\
 \end{bmatrix}
-\end{equation}
-
+\end{gather}
+The energy spectrum of $L_z$ and $L_x$ are identical and are shown below:\\
+\includegraphics{Lx_Lz}
+\\
 \subsection{}
 A uniform electric field is applied parallel to the z axis.
-The Hamilton is:
+With $z=r\cos\theta$ we use the properties of the spherical harmonics as a complete orthonormal basis.
+We find the radial contribution is $\frac{-3}{2}n\sqrt{n^2-\ell^2}$. 
+Since $\cos\theta=Y_0^1$, we can look up the spherical harmonic integrals.
+We find the angular contribution is $\sqrt{\frac{(\ell+m)(\ell-m)}{(2\ell+1)(2\ell-1)}}$.
+The Hamiltonian is:
 \begin{equation}
 -e|E|z=
 \begin{bmatrix}
@@ -92,6 +103,18 @@ The Hamilton is:
  0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
 \end{bmatrix}
 \end{equation}
+
+\subsection{}
+The energy spectrum of the sodium atom in electric and magnetic fields as a function of magnetic field angle $\theta$ is shown below:\\
+\includegraphics{Na_spectrum}
+\\
+\subsection{}
+We explore the shape of the 2nd and 3rd excited states as the magnetic field direction is rotated with respect to the electric field.
+The Zeeman effect will 
+
+Inspecting the eigenvectors of the total Hamiltonian when $\theta=0$ we see that the 2nd excited state is correlated entirely with the 5th mode ($\ell=1,\ m=2$).
+Looking at just the Stark eigenvectors we see that the 5th mode is completely correlated with the 3rd excited state. 
+
 
 
 \end{document}

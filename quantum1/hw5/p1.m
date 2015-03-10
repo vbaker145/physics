@@ -37,11 +37,13 @@ for cidx = 1:nc
         if (l==lp)
            if (mp==(m+1))
                %L+
-               hlx(ridx, cidx) = hlx(ridx, cidx)+sqrt( l*(l+1)-m*(m+1) );
+               %hlx(ridx, cidx) = hlx(ridx, cidx)+sqrt( l*(l+1)-m*(m+1) );
+               hlx(ridx, cidx) = hlx(ridx, cidx)+sqrt( (l-m)*(l+m+1) );
            end
            if (mp==(m-1))
                %L- 
-               hlx(ridx, cidx) = hlx(ridx, cidx)+sqrt( l*(l+1)-m*(m-1) );
+               %hlx(ridx, cidx) = hlx(ridx, cidx)+sqrt( l*(l+1)-m*(m-1) );
+               hlx(ridx, cidx) = hlx(ridx, cidx)+sqrt( (l+m)*(l-m+1) );
            end
         end
         
