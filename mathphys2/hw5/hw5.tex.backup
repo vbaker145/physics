@@ -1,0 +1,40 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+
+\numberwithin{equation}{section}
+\renewcommand\thesubsection{\alph{subsection}}
+
+%opening
+\title{Math Phys II HW5}
+\author{Vince Baker}
+
+\begin{document}
+
+\maketitle
+
+\section{Problem 1}
+We investigate the solution of the 3D Helmholtz equation with the boundary that the solution represents a traveling wave as $r\rightarrow\infty$.
+The general solution is:
+\begin{gather}
+ U(r,\theta,\phi)=\sum_{\ell mn}(a_mj_m(kr)+b_mn_m(kr) )Y_{\ell}^{m}(\theta, \phi)
+\end{gather}
+We look at the solution near $\vec{x}^{\ '}=\vec{x}$, where we require $u(r)=-\frac{1}{4\pi r}$.
+We see that $-\frac{1}{4\pi}j_0(x)=(-\frac{1}{4\pi})\frac{\cos x}{x}$ will satisfy this. 
+Looking at the requirement that the exterior solution becomes a traveling wave as $r\rightarrow\infty$, we see that we can add $n_0(x)=\frac{\sin x}{x}$ to the solution to get an exponential form 
+(spherical Henkel function $h_0^{(1)}$).
+With spherical symmetry our final Green's function is:
+\begin{equation}
+ G(\vec{x}, \vec{x}^{\ '})=-\frac{e^{ikr}}{4\pi r}
+\end{equation}
+
+$\textbf{This is bold}$
+
+\section{Problem 2}
+Our trial Green's function places an image point of $\textbf{x}$ at $\textbf{x}_1=\alpha \textbf{x}$.
+
+
+\end{document}
