@@ -21,13 +21,15 @@ m2 = [0 1]*m_f1*exp(-10i*t);
 %Find flavor mixtures from mass mixtures
 f = ut*[m1; m2];
 f1 = f(1,:);
-f2 = f(2,:)
+f2 = f(2,:);
 p10 = f1.*conj(f1);
 p01 = f2.*conj(f2);
 
 %figure; plot(abs(f1))
 %hold on; plot(abs(f2), 'r')
 
-figure; plot(p10)
-hold on; plot(p01, 'r')
+figure; plot(t, p10)
+hold on; plot(t, p01, 'r')
+xlabel('t'); ylabel('probability')
+legend('P(flavor1)', 'P(flavor2)');
 

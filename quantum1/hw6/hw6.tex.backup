@@ -4,6 +4,7 @@
 \usepackage{amsfonts}
 \usepackage{amssymb}
 \usepackage{graphicx}
+\usepackage{braket}
 
 \numberwithin{equation}{section}
 \renewcommand\thesubsection{\alph{subsection}}
@@ -26,7 +27,35 @@ The Hamiltonian of this two-level system is:
   \gamma    & -\frac{\epsilon}{2}
  \end{bmatrix}
 \end{gather}
-The energy eigenvalues are $\pm\sqrt{\frac{\epsilon}{2}^2+\gamma^2}$.
+The energy eigenvalues are $\pm\sqrt{(\frac{\epsilon}{2})^2+\gamma^2}$.
+We can write the eigenvectors in terms of an angle $\theta$, where $\tan \theta = \frac{\gamma}{\epsilon/2}$.
+Then the Hamiltonian is $E\bigl ( \begin{smallmatrix}
+				      \cos \theta & \sin \theta \\
+				      \sin \theta & -\cos \theta
+                                  \end{smallmatrix}
+\bigr )$. \\
+The eigenvectors are:
+\begin{gather}
+ \hat{e}_1= \begin{bmatrix}\cos(\frac{\theta}{2})\\ \sin(\frac{\theta}{2}) \end{bmatrix}\\
+ \hat{e}_2= \begin{bmatrix}-\sin(\frac{\theta}{2})\\ \cos(\frac{\theta}{2}) \end{bmatrix}\\
+\end{gather}
+
+The state $\ket{\uparrow}$ in the eigenvector basis is:
+\begin{gather}
+ \ket{\uparrow}=\ket{1,0}=\ket{\cos(\frac{\theta}{2}) \hat{e}_1 -\sin(\frac{\theta}{2}) \hat{e}_2}\\
+\end{gather}
+The eigenfunctions evolve independently with an exponential phase factor. 
+With the system starting in the $\ket{\uparrow}$ state, and $\gamma=\epsilon$, the time evolution of P10 and P01 is:
+
+\includegraphics{p1}
+\\
+\section{Problem 2}
+(See p2.m for work): We invert the unitary operator to find the mixture of mass eigenstates corresponding to the flavor eigenstate $\ket{1,0}$.
+The Hamiltonian for the mass eigenstates is simply $\bigl( \begin{smallmatrix}c^2 & 0 \\ 0 & c^2 \end{smallmatrix} \bigr )$ and is already diagonal.
+We can then evolve the mass eigenstates in time, and use the original mixing matrix to find the corresponding flavor eigenstates. 
+With the given mixing angle the probability of finding the neutrino in each of the two flavors is:
+
+\includegraphics{p2}
 
 
 \end{document}

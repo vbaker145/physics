@@ -49,3 +49,5 @@ hold on; plot(real(f3),'g')
 figure; plot(p100)
 hold on; plot(p010, 'r')
 hold on; plot(p001, 'g')
+xlabel('t'); ylabel('probability')
+legend('P(flavor1)', 'P(flavor2)', 'P(flavor3)');
