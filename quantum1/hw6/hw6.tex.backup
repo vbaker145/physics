@@ -1,0 +1,32 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+
+\numberwithin{equation}{section}
+\renewcommand\thesubsection{\alph{subsection}}
+\newcommand{\bvp}[1]{\textbf{#1}'}
+\newcommand{\bv}[1]{\textbf{#1}}
+
+%opening
+\title{Quantum I HW6}
+\author{Vince Baker}
+
+\begin{document}
+
+\maketitle
+
+\section{Problem 1}
+The Hamiltonian of this two-level system is:
+\begin{gather}
+ \begin{bmatrix}
+  \frac{\epsilon}{2} & \gamma\\
+  \gamma    & -\frac{\epsilon}{2}
+ \end{bmatrix}
+\end{gather}
+The energy eigenvalues are $\pm\sqrt{\frac{\epsilon}{2}^2+\gamma^2}$.
+
+
+\end{document}
