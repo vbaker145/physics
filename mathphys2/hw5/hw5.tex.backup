@@ -7,6 +7,8 @@
 
 \numberwithin{equation}{section}
 \renewcommand\thesubsection{\alph{subsection}}
+\newcommand{\bvp}[1]{\textbf{#1}'}
+\newcommand{\bv}[1]{\textbf{#1}}
 
 %opening
 \title{Math Phys II HW5}
@@ -31,10 +33,56 @@ With spherical symmetry our final Green's function is:
  G(\vec{x}, \vec{x}^{\ '})=-\frac{e^{ikr}}{4\pi r}
 \end{equation}
 
-$\textbf{This is bold}$
-
 \section{Problem 2}
 Our trial Green's function places an image point of $\textbf{x}$ at $\textbf{x}_1=\alpha \textbf{x}$.
+Without loss of generality we examine the solution for $\textbf{x}$ lying on the x-axis in Cartesian coordinates.
+The intersection points with the sphere, where $G(\textbf{x}, \textbf{x}^{'})=0$, are at $\pm a$.
+We then have:
+\begin{gather}
+ \beta=\frac{|\textbf{x}^{'}-\alpha \textbf{x}|}{|\textbf{x}^{'}-\textbf{x} |}\\
+ |\textbf{x}^{'}|=\pm a\\
+ \frac{|a-\alpha x|}{|a-x|} = \frac{|a+\alpha x|}{|a+x|}\\
+ \alpha = (\frac{a}{x})^2\\
+ \beta = \frac{a+\frac{a^2}{x}}{a+x}\\
+ \beta = \frac{1+\frac{a}{x}}{1+\frac{x}{a}}=\frac{a}{x}
+\end{gather}
+For a Dirichlet boundary condition $f(\theta^{'}, \phi^{'})$ defined at $r^{'}=a$ we need to compute only the surface integral contribution to the solution.
+We find the normal derivative of the Green's function using the geometric identity $ |\textbf{x}^{'}-\frac{a^2}{r^2}\textbf{x}|=\frac{a}{r}|\textbf{x}^{'}-\textbf{x}|$:
+\begin{gather}
+ G(\textbf{x}^{'}, \textbf{x})=\frac{1}{4\pi}
+     (-\frac{a}{r|\textbf{x}^{'}-\frac{a^2}{r^2}\textbf{x}|}+\frac{1}{|\textbf{x}^{'}-\textbf{x} |} )\\
+ \nabla G = \frac{1}{4\pi}\frac{(1-\frac{a^2}{r^2})\textbf{x}^{'}}{|\textbf{x}^{'}-\textbf{x} |^3}\\
+ \frac{\textbf{x}^{'}}{|\textbf{x}^{'}|} \cdot \nabla G = 
+      \frac{1}{4\pi a} \frac{a^2-r^2}{c^3}
+\end{gather}
+We can now set up the solution as the integral on the surface of sphere $r^{'}=a$. 
+\begin{gather}     
+ u(r,\theta,\phi) = \frac{1}{4\pi a}\int_{\Omega^{'}}
+          \frac{a^2-r^2}{|\textbf{x}^{'}-\textbf{x} |^3}f(\theta^{'}, \phi^{'})\ d\Omega^{'}
+\end{gather}
+We compare this to the series solution of Laplace's equation subject to an inhomogenous boundary condition on the surface of the sphere.
+The regular series solution for Laplace's equation inside a sphere is:
+\begin{gather}
+ u(r,\theta,\phi)=\sum_{\ell,m}A_{\ell m}r^{\ell}Y_\ell^m(\theta,\phi)
+\end{gather}
+Applying the surface boundary condition $u(a,\theta,\phi)=f(\theta, \phi)$ we get an expansion of $f(\theta, \phi)$ in spherical harmonics:
+\begin{gather}
+ \sum_{\ell,m}A_{\ell m}a^{\ell}Y_\ell^m(\theta,\phi)=f(\theta, \phi)\\
+ \alpha_{\ell m} = A_{\ell m}a^{\ell}\\
+ \alpha_{\ell m} = \int_{\Omega}Y_\ell^m(\theta,\phi)f(\theta, \phi)\ d\Omega 
+\end{gather}
+We can see a similarity between the two solutions if we expand $|\textbf{x}^{'}-\textbf{x} |$ in spherical harmonics.
+
+\section{Problem 3}
+We examine the inhomogenous wave equation with a point source moving on a trajectory. 
+The retarded potential solution is:
+\begin{gather}
+ \phi(\bvp{x},t)=-\frac{c}{4\pi}\int d^3\bvp{x}\ dt'\ f(\bvp{x},t')\frac{\delta\left [|\bv{x}-\bvp{x}|-c(t-t')\right ]}{|\bv{x}-\bvp{x}|}
+\end{gather}
+With $f(\bvp{x},t^{'})=\delta\left[\bvp{x}-\xi(t^{'})\right]$, then $\bvp{x}=\xi(t^{'})$. We then have:
+\begin{gather}
+ \phi(\bvp{x},t)=-\frac{c}{4\pi}\int d\xi\ dt'\ \frac{\delta\left [|\bv{x}-\xi(t')|-c(t-t')\right ]}{|\bv{x}-\bvp{x}|}
+\end{gather}
 
 
 \end{document}
