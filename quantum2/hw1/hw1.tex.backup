@@ -99,9 +99,9 @@ Pulling out a factor of i from all three terms, we have:
 We have now recovered $\sigma_x,\sigma_y, \sigma_z$ and have proved 3.1.
 
 \section{Problem 5}
-Two spin $\frac{1}{2}$ particles interact through the potential $V(r)=V_1(r)+\sigma_1\cdot \sigma_2V_2(r)$.
+Two spin $\frac{1}{2}$ particles interact through the potential $V(r)=V_1(r)+\sigma_1\times \sigma_2V_2(r)$.
 We will show that the spin-dependent potential can be split into two potentials based on addition of spin.
-We start with $\sigma=\frac{2}{\hbar}\bv{S}, \sigma \cdot\sigma=\frac{4}{\hbar^2}S^2$. We take the total spin $\bv{S}=\bv{S_1}+\bv{S_2}$.
+We start with $\bv{\sigma}=\frac{2}{\hbar}\bv{S}$. We take the total spin $\bv{S}=\bv{S_1}+\bv{S_2}$.
 \begin{gather}
  S_1+S_2=S\\
  (S_1+S_2)^2=S^2\\
@@ -109,18 +109,6 @@ We start with $\sigma=\frac{2}{\hbar}\bv{S}, \sigma \cdot\sigma=\frac{4}{\hbar^2
  S_1 \cdot S_2 = \frac{1}{2}\left (S^2-S_1^2-S_2^2 \right )
 \end{gather}
 Since both particles are spin $\frac{1}{2}$ we have $S_1 \cdot S_1=S_2 \cdot S_2=\frac{3}{4}$.
-The values of $m_1=m_2=\pm \frac{1}{2}$, so the value of $M=\{1,0,-1\}$ and therefore $S=1, S \cdot S = \{2,0\}$.
-Using 5.4 we find that 
-\begin{gather}
-S_1 \cdot S_2=\frac{1}{2}\left( \{2, 0\} - \frac{3}{4}-\frac{3}{4} \right)\\
-S_1 \cdot S_2=\{\frac{1}{4}, -\frac{3}{4}\}
-\end{gather}
-With $\sigma \cdot\sigma=\frac{4}{\hbar^2}S^2$ we have therefore shown that $V(r)=V_1(r)+\sigma_1\times \sigma_2V_2(r)$
-can be written as two equations:
-\begin{gather}
- V(r)=V_1(r)+V_2(r)\\
- V(r)=V_1(r)-3V_2(r)
-\end{gather}
 
 
 \section{Problem 6}
@@ -129,6 +117,5 @@ With $J=\frac{1}{2}$ the system has a 2D space defined by eigenstates $\ket{\fra
 With a 2D space the system cannot exhibit an electric quadrupole moment, only a dipole moment.
 
 \section{Problem 7}
-
 
 \end{document}
