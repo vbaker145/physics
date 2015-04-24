@@ -12,6 +12,7 @@
 
 %opening
 \title{Statistical Mechanics I HW1}
+\author{Vince Baker}
 
 \begin{document}
 
@@ -32,12 +33,13 @@ From these relations we find:
 b) Integrating directly from the differential form:
 \begin{gather}
  du = Tds - Pdv = \frac{3As^2}{v}ds - \frac{As^3}{v^2}dv\\
- u = \frac{As^3}{v}
+ u = \frac{2As^3}{v}
 \end{gather}
 
 
 \section{Problem 2}
-a) Plotting the entropy as a function of $\frac{E_A}{E_A+E_B}$, ignoring the constant term:
+a) Plotting the entropy as a function of $\frac{E_A}{E_A+E_B}$: \\
+
 \includegraphics{p1}
 \\
 We note that the maximum entropy occurs at 0.65.
@@ -57,7 +59,7 @@ showing that setting the temperatures equal in the two separate compartments max
 Both gasses start at the same temperature. Using the ideal gas relation to find the pressures:
 \begin{gather}
  P_1=\frac{nkT}{nV_0}=\frac{kT}{V_0}\\
- P_2=\frac{mkT}{mV_0}=\frac{kT}{V_0}=P_1\\
+ P_2=\frac{mkT}{mV_0}=\frac{kT}{V_0}=P_1
 \end{gather}
 So both gasses are at the same temperature and pressure to begin.
 Therefore, there will be no change in the energies of the components when the partition is ruptured.
@@ -79,8 +81,27 @@ Starting with the given relations,
  e = \frac{3}{2}Pv\\
  P = AvT^4
 \end{gather}
-We immediately see that $A = \frac{P}{vT^4}$.
-Using $G=A+Pv$ and the first given relation, we see that $G=\frac{P}{vT^4}+\frac{2}{3}e$.
+To find the Helmholtz potential $F(v,T)=e-Ts$ we need $e(v,T)$ and $s(v,T)$. 
+\begin{gather}
+ e = \frac{3}{2}Pv\\
+ e(v,T) = \frac{3}{2}Av^2T^4
+\end{gather}
+To find $s(v,T)$ we integrate the relation $T=\frac{\partial e}{\partial s}$.
+\begin{gather}
+ T=\frac{de}{ds}\\
+ ds = \frac{1}{T}de\\
+ s = \int 6Av^2T^2 dT\\
+ s(v,T) = 2Av^2T^3
+\end{gather}
+The Helmholtz potential is then $f=u-Ts=-\frac{1}{2}Av^2T^4$.\\ \\
+To find the Gibbs potential $g(P,T)=f-Pv$ we need $v(P,T)=\frac{P}{AT^4}$ and
+$f(P,T)$.
+\begin{gather}
+ f=-\frac{1}{2}Av^2T^4=-\frac{1}{2}AT^4\left(\frac{P}{AT^4}\right)^2\\
+ f(P,T) = -\frac{1}{2}\frac{P^2}{AT^4}
+\end{gather}
+We can then find $G(P,T) = f-Pv = -\frac{3}{2}\frac{P^2}{AT^4}$. 
+
 
 \section{Problem 5}
 a) We show that S is an extensive parameter through direct scaling.
@@ -94,15 +115,15 @@ a) We show that S is an extensive parameter through direct scaling.
 b) We find the temperature from the differential definition.
 \begin{gather}
  \frac{1}{T}=\left (\frac{\partial S}{\partial E} \right )_V=
-    \sigma\left ( \frac{E}{V} \right )^{\frac{1}{4}}\\
+    \sigma\left ( \frac{V}{E} \right )^{\frac{1}{4}}\\
  T = \frac{1}{\sigma} \left(\frac{E}{V} \right)^{\frac{1}{4}}
 \end{gather}
 To find the pressure, we rearrage (5.1) to find $E(S,V)$ and use $P=-\frac{\partial E}{\partial V}$.
 \begin{gather}
  E(V,S) = \left(\frac{(\frac{3S}{4\sigma})^4}{V} \right)^{\frac{1}{3}}\\
- -\frac{\partial E}{\partial V}=\frac{1}{3}\left(\frac{(\frac{3S}{4\sigma})^4}{V} \right)^{-\frac{2}{3}}
+ -\frac{\partial E}{\partial V}=-\frac{1}{3}\left(\frac{(\frac{3S}{4\sigma})^4}{V} \right)^{-\frac{2}{3}}
  \left(-\frac{(\frac{3S}{4\sigma})^4}{V^2} \right)\\
- P=-\frac{1}{3}\left(\frac{(\frac{3S}{4\sigma})^4}{V} \right)^{\frac{4}{3}}
+ P=\frac{1}{3}\left(\frac{3S}{4\sigma V} \right)^{\frac{4}{3}}
 \end{gather}
 \\
 c) Starting with the Euler relation, and inserting the equation for T found above:
