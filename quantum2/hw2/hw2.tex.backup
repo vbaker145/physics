@@ -57,14 +57,16 @@ c. We look for a 3D harmonic oscillator model with N=3 and approximately the rig
 We break the symmetry of the 3D harmonic oscillator by $\omega_1=\alpha,\ \omega_2=\omega_3=\beta$.
 Setting $\alpha-\beta=150$ will create the desired separation between the energy levels.
 To find the value of $\beta$ we calculate the lowest energy level $\braket{0 0 3}$ as $\frac{\beta+150}{2}+ \frac{1}{2}\beta + \frac{7}{2}\beta=1233$ so $\beta=257.33$.\\
-This model produces good energy levels, but the lowest energy level has three states and the next-lowest has four states.
-This differs from the data, which has four particles at the lowest energy level and three particles at the next-lowest level.\\
 d. The Hamiltonian for the 3D harmonic oscillator can be wrriten using annihilation and creation operators:
 \begin{gather}
  H=(a_1^\dagger a_1+\frac{1}{2})\hbar \omega_1+(a_2^\dagger a_2+a_3^\dagger a_3 + 1)\hbar \omega_{23}
 \end{gather}
 e. We find the best fit energies by varying our basic parameters and minimizing the mean-squared error (see p4.m).
-With one million trials we find the best fit (in an MMSE sense) to be $\omega_1=402.46,\ \omega_2=263.15,\ \omega_3=242.59$.
+With one million trials we find the best fit (in an MMSE sense) to be $\omega_1=412.31,\ \omega_2=251.69,\ \omega_3=258.01$.
+With these parameters our prediction for the 10th particle is 1697.9.\\
+f. We test the quality of the MMSE fit with a chi-squared test, incorporating the variance from the measurements.
+We find a chi-squared value of 4.28 with 9 degrees of freedom, so we can reject the null hypothesis (our model is a good fit). 
+
 
 
 \end{document}
