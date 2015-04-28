@@ -1,0 +1,102 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{braket}
+
+\numberwithin{equation}{section}
+\renewcommand\thesubsection{\alph{subsection}}
+\newcommand{\bvp}[1]{\mathbf{#1}'}
+\newcommand{\bv}[1]{\mathbf{#1}}
+
+%opening
+\title{Quantum II HW3}
+\author{Vincent Baker}
+
+\begin{document}
+
+\maketitle
+
+\section{Problem 1}
+a. We expand the trace of both AB and BA:
+\begin{gather}
+ trace(AB)=\sum_i\sum_ja_{ij}b_{ji}\\
+ trace(BA)=\sum_i\sum_jb_{ij}a_{ji}
+\end{gather}
+But i and j are just index variables over the same range, so we can write 1.2 as:
+\begin{gather}
+ trace(BA)=\sum_j\sum_ib_{ji}a_{ij}
+\end{gather}
+This is a sum of the same terms as 1.1, so $trace(AB)=trace(BA)$.\\
+b. We define the product matrix $BCD...Z\equiv P$. 
+Then we have $trace(AP)=trace(PA)$ which we have proved in part a.\\
+c. \\
+d. The diagonal elements of $\ket{u}\bra{v}$ are $u_iv_i$, so the trace is $\sum u_iv_i=\braket{v|u}$.
+
+\section{Problem 2}
+For each matrix, we check its eigenvalues and symmetry to see if it is a valid density matrix. 
+If it is a density matrix we determine if it represents a pure state through the eigenvalues (one eigenvalue is 1, others are 0).
+If it does represent a pure state, we determine the pure state by finding the eigenvector corresponding to the eigenvalue that equals 1.\\ \\
+$\rho_1$ and $\rho_4$ have negative eigenvalues and are therefore not valid desnity matrices.
+\\In $\rho_3$, collecting the three ineer products into one constant C, we have:
+\begin{gather}
+ \rho_3=\frac{C}{3}\ket{u}\bra{v}\\
+ \rho_3=\frac{C}{3}\braket{v|u}=0
+\end{gather}
+So $\rho_3$ is not a valid density matrix.\\
+$\rho_5$ is a valid density matrix but does not represent a pure state.\\
+$\rho_2$ is a valid density matrix that represents the pure state $\left(\begin{smallmatrix}3/5\\4/5  \end{smallmatrix}\right)$.
+
+\section{Problem 3}
+With the two eignvalues 1,-1 the operator of the dynamical variable is $\left(\begin{smallmatrix}1&0\\0&-1\end{smallmatrix}\right)$.
+The states in vector form are:
+\begin{gather}
+ \ket{+}=\begin{bmatrix}1\\0 \end{bmatrix}\\
+ \ket{-}=\begin{bmatrix}0\\-1 \end{bmatrix}
+\end{gather}
+\\
+a. For the pure states $\ket{\theta}=\sqrt{\frac{1}{2}}\left(\ket{+}+e^{i\theta}\ket{-}  \right)$ we find:
+\begin{gather}
+ \bra{\theta}M\ket{\theta}=\bra{\theta}\sqrt{\frac{1}{2}}\begin{bmatrix}\ket{+}\\-e^{i\theta}\ket{-} \end{bmatrix}\\
+ \bra{\theta}M\ket{\theta}=\frac{1}{2}\left(\braket{+|+}-(e^{-i\theta}e^{i\theta})\braket{-|-}\right)\\
+ \bra{\theta}M\ket{\theta}=\frac{1}{2}(1-1)=0
+\end{gather}
+For the mixed state $\rho=\frac{1}{2}\left(\ket{+}\braket{+|+|-}\bra{-}  \right)$, writing the inner product as a constant C, we find:
+\begin{gather}
+ \rho=\frac{C}{2}\left(\ket{+}\bra{-} \right)\\
+ \rho^\dagger M \rho=\rho^\dagger \frac{C}{2} \begin{bmatrix}1&0\\0&-1\end{bmatrix} \begin{bmatrix}0&1\\0&0\end{bmatrix}\\
+ \rho^\dagger M \rho=\rho^\dagger \frac{C}{2} \begin{bmatrix}1\\0\end{bmatrix}\\
+ \rho^\dagger M \rho=\frac{C^2}{4}\ket{+}\bra{-}\ket{+}=\frac{C^2}{4}\ket{+}\left\{ \braket{-|+} \right\}=0
+\end{gather}
+Since $\ket{+},\ket{-}$ are orthogonal.\\
+b. The pure and mixed states can be distinguished by studying their time evolution. 
+The pure state evolution is just a phase factor, whereas the mixed state will under amplitude transitions.
+
+\section{Problem 4}
+To find the probability that $\sigma_y$ is positive we first find it's eigenstates.
+Solving the inidicial equation we find that the eigenvalues are $\pm\frac{\hbar}{2}$ as expected.
+We write the eigenvectors as $e_{-\hbar/2}=\frac{1}{\sqrt{2}}\left( \begin{smallmatrix}i\\1\end{smallmatrix} \right)$
+and $e_{\hbar/2}=\frac{1}{\sqrt{2}}\left( \begin{smallmatrix}i\\-1\end{smallmatrix} \right)$.\\
+We project the state vector $\left( \begin{smallmatrix}\alpha\\ \beta \end{smallmatrix} \right)$ 
+on to the state with energy $\frac{\hbar}{2}$ by:
+\begin{gather}
+ \frac{1}{\sqrt{2}}\braket{\alpha\ \bet a | i\ -1}=\frac{\alpha i-\beta}{\sqrt{2}}
+\end{gather}
+Since $\frac{\hbar}{2}$ is the only positive state the probahility that $\sigma_y$ is positive is $\frac{\alpha^2+\beta^2}{2}$.
+
+\section{Problem 5}
+For the operator M the eigenvalues are $\{-\sqrt{2}, 0, \sqrt{2} \}$.
+The eigenvector correspong to e=0 is $e_2=[-\frac{\sqrt{2}}{2}\ 0\ \frac{\sqrt{2}}{2}]$.
+We find the conditional probability $P(M=0|p_i)=\bra{e_2}M\ket{e_2}$.\\
+\begin{gather}
+ P(M=0| \rho_1)=\frac{1}{4}\\
+ P(M=0| \rho_2)=0\\
+ P(M=0| \rho_3)=\frac{1}{2}
+\end{gather}
+
+\section{Problem 6}
+
+
+\end{document}
