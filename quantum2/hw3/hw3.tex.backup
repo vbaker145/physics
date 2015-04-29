@@ -82,10 +82,9 @@ and $e_{\hbar/2}=\frac{1}{\sqrt{2}}\left( \begin{smallmatrix}i\\-1\end{smallmatr
 We project the state vector $\left( \begin{smallmatrix}\alpha\\ \beta \end{smallmatrix} \right)$ 
 on to the state with energy $\frac{\hbar}{2}$ by:
 \begin{gather}
- \frac{1}{\sqrt{2}}\braket{\alpha\ \beta | i\ -1}=\frac{\alpha i-\beta}{\sqrt{2}}
+ \frac{1}{\sqrt{2}}\braket{\alpha\ \bet a | i\ -1}=\frac{\alpha i-\beta}{\sqrt{2}}
 \end{gather}
 Since $\frac{\hbar}{2}$ is the only positive state the probahility that $\sigma_y$ is positive is $\frac{\alpha^2+\beta^2}{2}$.
-
 
 \section{Problem 5}
 For the operator M the eigenvalues are $\{-\sqrt{2}, 0, \sqrt{2} \}$.
@@ -98,6 +97,25 @@ We find the conditional probability $P(M=0|p_i)=\bra{e_2}M\ket{e_2}$.\\
 \end{gather}
 
 \section{Problem 6}
+For $R=\left( \begin{smallmatrix}6&-2\\-2&9\end{smallmatrix} \right)$ and an arbitrary state vector $\left( \begin{smallmatrix}a\\b\end{smallmatrix} \right)$ we calcualte $\braket{R^2}$ two ways.\\
+a. We calculate $\braket{R^2}$ directly.
+\begin{gather}
+ R^2=\begin{bmatrix}40&-20\\-30&35 \end{bmatrix}\\
+ \braket{\{si|R^2|\Psi}=40a^2-60ab+85b^2
+\end{gather}
+\\
+b. We find the eigenvalues and eigenvectors of R.
+\begin{gather}
+ R= \begin{bmatrix}6&-2\\-2&9\end{bmatrix}\\
+ (6-\lambda)(9-\lambda)-4=0\\
+ \lambda^2-15\lambda+50=0\\
+ \lambda=\{5,10\}\\
+ e_{5}:x_1=2x_2,\ e_5= \frac{1}{\sqrt{5}}\begin{bmatrix}2\\1\end{bmatrix}\\
+ e_{10}:x_1=-\frac{1}{2}x_2,\ e_10= \frac{1}{\sqrt{5}}\begin{bmatrix}1\\-2\end{bmatrix}
+\end{gather}
+We choose 
+
+
 
 
 \end{document}
