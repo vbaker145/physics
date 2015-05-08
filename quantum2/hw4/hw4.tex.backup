@@ -62,15 +62,16 @@ c. We can write the density matrix as $\ket{\Psi}\bra{\Psi}$.
 \end{gather}
 d. We calculate the entropy from the state probabilities through the eigenvalues of $\rho$. 
 \\
-e. We calculate the reduced spin density matrix by taking the partial trace over $m_\ell$.
+e. We calcualte the reduced spin density matrix by taking the partial trace over $m_\ell$.
 Since we have a 2x2 matrix and the two rows/column indices have different values of $m_\ell$ this is just the sum of the diagonal elements.
 \begin{gather}
-\rho_{spin} = \begin{bmatrix}
-  \frac{5}{9}+\frac{2}{9}(\cvalp+\cvaln)+\frac{4}{9}+\frac{2}{9}(\cvalp+\cvaln) & 0 \\
-  0 & 0
+ \begin{bmatrix}
+  \frac{5}{9}+\frac{2}{9}(\cvalp+\cvaln)+\frac{4}{9}+\frac{2}{9}(\cvalp+\cvaln) 				& 0 \\
+  0 & 
  \end{bmatrix}
 \end{gather}
-f. The entropy is $\sum -\rho_i \ln{\rho_i} $. 
+f. In diagonal form the state probabilities can be read from the diagonal elements. 
+The entropy is $\sum -\rho_i \ln{\rho_i} $. 
 Using an exponential/trig identity we can write the entropy as:
 \begin{gather}
  S=-\frac{5}{9}\cos{(6\hbar t)}\ln{(\frac{5}{9}\cos{6\hbar t})}
@@ -78,10 +79,8 @@ Using an exponential/trig identity we can write the entropy as:
 \end{gather}
 \includegraphics{p1}
 \\
-g. h. The reduced orbital density matrix contains the same sum of diagonal elements of the total density matrix. 
-The results are the same as parts e and f.
+g. h. The reduced orbital density matrix is also just the diagonal elements of the total density matrix, so the results are the same as parts e and f.
 \\
-i. The system has entropy S. 
-The observed entropy should be the same regardless of which state in the mixture we choose to measure. 
+i. Since the total system has entropy S
 
 \end{document}
