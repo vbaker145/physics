@@ -1,0 +1,111 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{braket}
+
+\numberwithin{equation}{section}
+\renewcommand\thesubsection{\alph{subsection}}
+\newcommand{\bvp}[1]{\mathbf{#1}'}
+\newcommand{\bv}[1]{\mathbf{#1}}
+
+%opening
+\title{Statistical Mechanics I HW3}
+\author{Vincent Baker}
+
+\begin{document}
+
+\maketitle
+
+\section{Problem 1}
+a. The volume of an N-dimensional hypersphere of radius R is:
+\begin{gather}
+ V_N(R)=\frac{\pi^{\frac{N}{2}}}{\Gamma(\frac{N}{2}+1)}R^N
+\end{gather}
+We find the probability of finding a point inside the sphere of radius 0.99999999 by dividing the volume of that sphere by the volume of the unit sphere (R=1).
+\begin{gather}
+ P_{.99999999}= V_N(.99999999)/V_N(.99999999)\\
+ P_{.99999999}= .99999999^N
+\end{gather}
+b. When N-3 the probability inside the shell is practically 1 $(1-3E^{-8})$.
+For $N=N_A$ the probability inside the shell is practically 0 $(\ll 1E^{-10})$.
+\\
+c. This demonstrates that for the microcanonical ensemble consisting of very large numbers ($\ge N_A$) of molecules $\Sigma (E) \approxeq \Gamma (E)$.
+Therefore the entropy can be defined as either $k \ln{\Sigma (E)}$ or $k \ln{\Gamma (E)}$.
+
+\section{Problem 2}
+The harmonic oscillator Hamiltonian is a quadratic form that represents an ellipse in phase space.
+Writing the Hamiltonian in the common $\frac{x^2}{a^2}+\frac{y^2}{b^2}=1$ form:
+\begin{gather}
+ H=p^2+(M\omega q)^2=2MU\\
+ \frac{p^2}{2MU}+\frac{M\omega^2q^2}{2U}=1\\
+ a=\sqrt{2MU},\ b=\sqrt{\frac{2U}{M\omega^2}}
+\end{gather}
+So we have an ellipse with semimajor axis $\sqrt{2MU}$, semiminor axis $\sqrt{\frac{2U}{M\omega^2}}$, and area $\frac{2\pi U}{\omega}$.
+\\
+a) With N independent harmonic oscillators the system will consist of N ellipses, each with 2 coordinates, in phase space. 
+
+\section{Problem 3}
+a) For the two-level system of N particles the energy U is $n_1E$. 
+With $n_1$ and N fixed, $n_0$ is also fixed.
+The number of states $\Gamma(U)$ is $\left(\substack{N\\n_1}\right)$.
+The entropy is then:
+\begin{gather}
+ S=k\ln{\frac{N!}{n_0!n_1!}}
+\end{gather}
+b) From the binomial theorem, the total number of states is $\sum_{k=0}^N \left(\substack{N\\k}\right)=2^N$.
+The statistics for $n_0$ and $n_1$ will be calculated in the same manner.
+\begin{gather}
+ <n_0>=\sum_{k=0}^N \left(\substack{N\\k}\right)k / 2^n\\
+ <n_0>=\frac{N2^{N-1}}{2^N}=\frac{N}{2}\\
+ <n_0^2>=\sum_{k=0}^N \left(\substack{N\\k}\right)k^2 / 2^n\\
+ <n_0^2>=\frac{(N+N^2)2^{N-2}}{2^N}=\frac{N^2+N}{4}
+\end{gather}
+The mean square fluctuation is:
+\begin{gather}
+ \frac{<n_0^2>-<n_0>^2}{<n_0>^2}=\frac{1}{N}
+\end{gather}
+The analysis for $n_1$ is identical.
+c) We find the temperature from the entropy.
+\begin{gather}
+ S(U)=k\ln{\Gamma(U)}\\
+ S=k\ln{\frac{N!}{n_0!n_1!}}\\
+ \frac{S}{k}=-n_0\ln{\frac{n_0}{N}}-n_1\ln{\frac{n_1}{N}}\\
+ \frac{S}{Nk}=-\frac{n_0}{N}\ln{\frac{n_0}{N}}-\frac{n_1}{N}\ln{\frac{n_1}{N}}\\
+ \frac{n_0}{N}=\frac{U}{NE},\ \frac{n_1}{N}=1-\frac{U}{NE}
+\end{gather}
+
+d) States with negative temperature have higher energy than states with positive temperature. 
+Heat will flow from the system with negative temperature to the system with positive temeprature.
+
+\section{Problem 4}
+Following Pathria's discussion of the simple harmonic oscillator we take the general coordinate $\theta$ and angular momentum L:
+\begin{gather}
+ \theta=\frac{h}{\ell}\cos{(\omega t+\phi)}\\
+ L=m\ell^2\frac{d\theta}{dt}=-hm\ell\omega\sin{(\omega t+\phi)}
+\end{gather}
+We can now write the phase space path in the form of an ellipse:
+\begin{gather}
+ \frac{q^2}{(\frac{h}{\ell})^2}+\frac{p^2}{(hm\ell\omega)^2}=
+ \cos^2{(\omega t+\phi)}+\sin^2{(\omega t+\phi)}=1
+\end{gather}
+With semimajor axis $\frac{h}{\ell}$ and semiminor axis $hm\ell\omega$ the area of the ellipse is $\pi m\omega h^2$.
+When p=0 the energy is $E=\frac{1}{2}m\omega^2h^2$ and the period of the pendulum is $\frac{2\pi}{\omega}$.
+So we find that $E\tau = \pi m\omega h^2$, the area of the ellipse.
+
+\section{Problem 5}
+The uncorrected and corrected entropy formulas are:
+\begin{gather}
+ S_{uncorrected}=Nk\ln{Vu^{\frac{3}{2}}}+s_0\\
+ S_{corrected}=Nk\ln{\frac{V}{N}u^{\frac{3}{2}}}+s_1
+\end{gather}
+For dissimilar gasses the $N_1$ and $N_2$ cannot be combined into a total N.
+Each gas expands to take up the total volume $V=V_1+V_2$.
+\begin{gather}
+ 
+\end{gather}
+
+
+\end{document}
