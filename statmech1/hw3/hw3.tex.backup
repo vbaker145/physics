@@ -101,5 +101,34 @@ The uncorrected and corrected entropy formulas are:
  S_{uncorrected}=Nk\ln{Vu^{\frac{3}{2}}}+s_0\\
  S_{corrected}=Nk\ln{\frac{V}{N}u^{\frac{3}{2}}}+s_1
 \end{gather}
+For dissimilar gasses the $N_1$ and $N_2$ cannot be combined into a total N.
+Each gas expands to take up the total volume $V=V_1+V_2$. 
+The change in entropy calculated using the uncorrected formula is:
+\begin{gather}
+ \frac{\Delta S}{k}=N_1\ln{Vu^{3/2}}-N_1\ln{V_1u^{3/2}}
+      +N_2\ln{Vu^{3/2}}-N_2\ln{V_2u^{3/2}}\\
+ \frac{\Delta S}{k}=N_1\ln{\frac{V}{V_1}}+N_2\ln{\frac{V}{V_2}}
+\end{gather}
+Using the corrected entropy formula:
+\begin{gather}
+ \frac{\Delta S}{k}=N_1\ln{\frac{V}{N_1}u^{3/2}}-N_1\ln{\frac{V_1}{N_1}u^{3/2}}
+      +N_2\ln{\frac{V}{N_1}u^{3/2}}-N_2\ln{\frac{V_2}{N_2}u^{3/2}}\\
+ \frac{\Delta S}{k}=N_1\ln{\frac{V/N_1}{V_1/N_1}}+N_2\ln{\frac{V/N_2}{V_2/N_2}}\\
+ \frac{\Delta S}{k}=N_1\ln{\frac{V}{V_1}}+N_2\ln{\frac{V}{V_2}}
+\end{gather}
+So for different gasses the corrected entropy formula gives the same result as the uncorrected formula.\\
+For identical gasses the uncorrected entropy gives the same result, which is incorrect. 
+The corrected entropy formula gives:
+\begin{gather}
+ \frac{\Delta S}{k}=N\ln{\frac{V}{N}u^{3/2}}-N_1\ln{\frac{V_1}{N_1}u^{3/2}}
+      -N_2\ln{\frac{V_2}{N_2}u^{3/2}}
+\end{gather}
+Since the ratios $\frac{V}{N}=\frac{V_1}{N_1}=\frac{V_2}{N_2}$ we can write this as:
+\begin{gather}
+ \frac{\Delta S}{k}=N\ln{\frac{V}{N}u^{3/2}}-(N_1+N_2)\ln{\frac{V}{N}u^{3/2}}=0
+\end{gather}
+So the corrected entropy formula gives no change in entropy as expected.
+
+
 
 \end{document}
