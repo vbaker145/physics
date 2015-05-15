@@ -99,8 +99,9 @@ We now take $\frac{\partial S}{\partial U}=\frac{1}{T}$ and use a numerical prog
  \frac{1}{Nk}\frac{\partial S}{\partial U}=\frac{1}{NkT}=\frac{2}{NE}\tanh^{-1}{(1-\frac{2U}{NE})}\\
  T=\frac{E}{2k}\frac{1}{\tanh^{-1}{(1-\frac{2U}{NE})}}=\frac{E}{2k}\frac{1}{\tanh^{-1}{(1-\frac{2n_0E}{NE})}}
 \end{gather}
-When $n_0>\frac{N}{2}$ the temperature will be negative. 
-
+When $n_0>\frac{N}{2}$ the $\tanh^{-1}$ term, and hence the temperature, will be negative. 
+The temperature scale starts at 0 for minimum energy, proceeds to $+\infty$ as $n_0 \rightarrow \frac{N}{2}$,
+then ``wraps around'' to $-\infty$ and approaches $0^-$ as the system approaches the maximum energy state.
 
 d) States with negative temperature have higher energy than states with positive temperature. 
 Heat will flow from the system with negative temperature to the system with positive temeprature.
@@ -176,17 +177,20 @@ To find the temperature we take $\left(\frac{\partial S}{\partial U}\right)_{N,V
 For the uncorrected entropy formula:
 \begin{gather}
  U=NV^{-2/3}e^{\frac{2S}{3Nk}}\\
- T=\left(\frac{\partial S}{\partial U}\right)_{N,V}=
+ T=\left(\frac{\partial U}{\partial S}\right)_{N,V}=
     \frac{2}{3kV^{2/3}}e^{\frac{2S}{3Nk}}
 \end{gather}
 For the corrected entropy formula:
 \begin{gather}
  U=\frac{N^{5/3}}{V^{2/3}}e^{\frac{2S}{3Nk}}\\
- T=\left(\frac{\partial S}{\partial U}\right)_{N,V}=
+ T=\left(\frac{\partial U}{\partial S}\right)_{N,V}=
   \frac{2}{3k}\left(\frac{N}{V}\right)^{2/3}  e^{\frac{2S}{3Nk}}
 \end{gather}
-
-
-
+\\
+We now find the chemical potential from $\mu=(\frac{\partial U}{\partial N} )_{S,V}$.
+For the uncorrected entropy formula:
+\begin{gather}
+ \mu = V^{-2/3}e^{}
+\end{gather}
 
 \end{document}

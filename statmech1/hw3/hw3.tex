@@ -1,4 +1,4 @@
-\documentclass[a4paper,10pt]{article}
+\documentclass[a4paper,11pt]{article}
 \usepackage[utf8]{inputenc}
 \usepackage{amsmath}
 \usepackage{amsfonts}
@@ -118,7 +118,7 @@ We can now write the phase space path in the form of an ellipse:
  \cos^2{(\omega t+\phi)}+\sin^2{(\omega t+\phi)}=1
 \end{gather}
 With semimajor axis $\frac{h}{\ell}$ and semiminor axis $hm\ell\omega$ the area of the ellipse is $\pi m\omega h^2$.
-When p=0 the energy is $E=\frac{1}{2}m\omega^2h^2$ and the period of the pendulum is $\frac{2\pi}{\omega}$.
+The energy of the pendulum is $E=\frac{1}{2}m\omega^2h^2$ and the period of the pendulum is $\frac{2\pi}{\omega}$.
 So we find that $E\tau = \pi m\omega h^2$, the area of the ellipse.
 
 \section{Problem 5}
@@ -187,9 +187,19 @@ For the corrected entropy formula:
   \frac{2}{3k}\left(\frac{N}{V}\right)^{2/3}  e^{\frac{2S}{3Nk}}
 \end{gather}
 \\
-We now find the chemical potential from the Helmholtz free energy A=U-TS.
-The chemical potential $\mu=(\frac{\partial A}{\partial N})_{U,V}$.
-
+We now find the chemical potential from $\mu=(\frac{\partial U}{\partial N} )_{S,V}$.
+For the uncorrected entropy formula:
+\begin{gather}
+ U=NV^{-2/3}e^{\frac{2S}{3Nk}}\\
+ \mu = (\frac{\partial U}{\partial N} )_{S,V}\\
+ \mu = V^{-2/3}\left(1-\frac{2S}{3kN} \right)e^{\frac{2S}{3kN}}
+\end{gather}
+For the corrected entropy formula:
+\begin{gather}
+ U=\frac{N^{5/3}}{V^{2/3}}e^{\frac{2S}{3Nk}}\\
+ \mu = (\frac{\partial U}{\partial N} )_{S,V}\\
+ \mu = V^{-2/3}\left(\frac{5}{3}N^{2/3}-\frac{2S}{3kN^{1/3}}   \right)e^{\frac{2S}{3kN}}
+\end{gather}
 
 
 \end{document}
