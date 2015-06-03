@@ -121,17 +121,32 @@ e)
 
 
 \section{Problem 4}
-
+In class it was shown that $\frac{\partial U}{\partial \beta}=<(\Delta E)^2>$. 
+To work out $<(\Delta E)^3>$ we find $\frac{\partial^2 U}{\partial \beta^2}$.
+\begin{gather}
+ d\beta=-\frac{1}{kT^2}dT\\
+ \frac{\partial U}{\partial \beta}=\frac{\partial U}{\partial T}\frac{\partial T}{\partial \beta}
+  =kT^2\frac{\partial U}{\partial T}=kT^2C_v\\
+ \frac{\partial^2 U}{\partial \beta^2}=\frac{\partial}{\partial T}(\frac{\partial U}{\partial \beta})\frac{\partial T}{\partial \beta} \\
+ \frac{\partial^2 U}{\partial \beta^2}=\left(2kTC_v+kT^2\frac{\partial C_v}{\partial T} \right)kT^2\\
+ \frac{\partial^2 U}{\partial \beta^2}=k^2\left(2T^3C_v+T^4\frac{\partial C_v}{\partial T} \right)
+\end{gather}
+For an ideal gas $U=\frac{3}{2}NkT$
 
 \section{Problem 5}
-For an ideal gas, the partition function is $Z=\frac{1}{N!}\left(\frac{V}{\lambda ^3} \right)^N$.
-We can then find the Helmholtz free energy:
+For an ideal gas the entropy is $S=Nk\left(\ln{\frac{V}{N\lambda ^3}}+\frac{5}{2} \right)$.
+We show that:
 \begin{gather}
- A=-kT\ln{Z}\\
- \ln{Z}=N\left(\ln{V}-\ln{\lambda ^3}\right)-N\ln{N}-N\\
- \ln{Z}=N\left(\ln{\frac{Ve}{N}}-\ln{\lambda ^3}\right)\\
- A=-Nkt\left(\ln{\frac{Ve}{N}}-\ln{\lambda ^3}\right)
+ \frac{S}{Nk}=\ln{(\frac{Q_1}{N})}+T(\frac{\partial \ln{Q_1}}{\partial T})_P
 \end{gather}
+The partition function for an ideal gas is $Q_n(V,T)=\frac{1}{N!}(\frac{V}{\lambda ^3})^N$.
+$Q_1$ is $\frac{V}{\lambda ^3}$. We expand $Q_1$ and find $(\frac{\partial \ln{Q_1}}{\partial T})_P$.
+\begin{gather}
+ Q_1=\frac{V}{h^3}(2\pi mkT)^{3/2}\\
+ (\frac{\partial \ln{Q_1}}{\partial T})_P=\frac{1}{Q_1}\frac{\partial Q_1}{\partial T}\\
+ (\frac{\partial \ln{Q_1}}{\partial T})_P=\frac{3}{2}\frac{1}{T}
+\end{gather}
+We see that $\frac{S}{Nk}=\ln{(\frac{Q_1}{N})}+T(\frac{\partial \ln{Q_1}}{\partial T})_P=\ln{\frac{V}{N\lambda ^3}+\frac{3}{2}}$.
 
 
 \end{document}

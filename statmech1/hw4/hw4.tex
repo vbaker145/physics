@@ -121,11 +121,29 @@ e)
 
 
 \section{Problem 4}
-
+In class it was shown that $\frac{\partial U}{\partial \beta}=<(\Delta E)^2>$. 
+To work out $<(\Delta E)^3>$ we find $\frac{\partial^2 U}{\partial \beta^2}$.
+\begin{gather}
+ d\beta=-\frac{1}{kT^2}dT\\
+ \frac{\partial U}{\partial \beta}=\frac{\partial U}{\partial T}\frac{\partial T}{\partial \beta}
+  =kT^2\frac{\partial U}{\partial T}=kT^2C_v\\
+ \frac{\partial^2 U}{\partial \beta^2}=\frac{\partial}{\partial T}(\frac{\partial U}{\partial \beta})\frac{\partial T}{\partial \beta} \\
+ \frac{\partial^2 U}{\partial \beta^2}=\left(2kTC_v+kT^2\frac{\partial C_v}{\partial T} \right)kT^2\\
+ \frac{\partial^2 U}{\partial \beta^2}=k^2\left(2T^3C_v+T^4\frac{\partial C_v}{\partial T} \right)
+\end{gather}
+For an ideal gas $U=\frac{3}{2}NkT$ and $C_v=\frac{3}{2}Nk$. So we have:
+\begin{gather}
+ <(\Delta E)^2> = kT^2C_v=\frac{3}{2}Nk^2T^2\\
+ <U^2>=(\frac{3}{2}NkT)^2\\
+ <(\frac{\Delta E}{U})^2>=\frac{2}{3N}\\
+ <(\Delta E)^3>=k^2(2T^3(\frac{3}{2}Nk)+T^4(0))=3Nk^3T^3\\
+ <U^3>=\frac{3^3}{2^3}N^3k^3T^3\\
+ <(\frac{\Delta E}{U})^3>=\frac{2^3}{3^3}\frac{1}{N^2}=\frac{8}{9N}
+\end{gather}
 
 \section{Problem 5}
 For an ideal gas the entropy is $S=Nk\left(\ln{\frac{V}{N\lambda ^3}}+\frac{5}{2} \right)$.
-we show that:
+We show that:
 \begin{gather}
  \frac{S}{Nk}=\ln{(\frac{Q_1}{N})}+T(\frac{\partial \ln{Q_1}}{\partial T})_P
 \end{gather}
