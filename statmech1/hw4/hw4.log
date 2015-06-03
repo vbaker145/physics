@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.1.23)  3 JUN 2015 09:36
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.1.23)  3 JUN 2015 09:45
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -433,15 +433,12 @@ Package epstopdf Info: Source file: <p3.eps>
 (epstopdf)                    date: 2015-06-02 22:39:23
 (epstopdf)                    size: 8824 bytes
 (epstopdf)             Output file: <p3-eps-converted-to.pdf>
+(epstopdf)                    date: 2015-06-03 09:36:05
+(epstopdf)                    size: 6043 bytes
 (epstopdf)             Command: <repstopdf --outfile=p3-eps-converted-to.pdf p3
 .eps>
 (epstopdf)             \includegraphics on input line 114.
-runsystem(repstopdf --outfile=p3-eps-converted-to.pdf p3.eps)...executed safely
- (allowed).
-
-Package epstopdf Info: Result file: <p3-eps-converted-to.pdf>
-(epstopdf)                    date: 2015-06-03 09:36:05
-(epstopdf)                    size: 6043 bytes.
+Package epstopdf Info: Output file is already uptodate.
 
 <p3-eps-converted-to.pdf, id=23, 309.155pt x 298.11375pt>
 File: p3-eps-converted-to.pdf Graphic file (type pdf)
@@ -473,7 +470,7 @@ ts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/
 cmsy6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.p
 fb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pf
 b></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm7.pfb>
-Output written on hw4.pdf (6 pages, 149386 bytes).
+Output written on hw4.pdf (6 pages, 153350 bytes).
 PDF statistics:
  90 PDF objects out of 1000 (max. 8388607)
  64 compressed objects within 1 object stream

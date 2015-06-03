@@ -117,7 +117,14 @@ a) With all state having probability $\frac{1}{27}$ the entropy is 3.2958.\\
 b) The entropy when only $M_z=0$ is possible is 1.9549. \\
 c) The entropy when only $M_z=M$ is possible is 1.7918. \\
 d) There is only one state with $M_z=3M$, so the entropy is 0.\\
-e)
+e) We minimize the entropy using Lagrange multipliers to incorporate the constraints $\sum f_i=1$ and $\sum f_i M_{zi}=\gamma M$.
+\begin{gather}
+ F=\sum f_i\ln{f_i}-\lambda_1(\sum f_i -1)-\lambda_2(\sum f_i M_{zi}-\gamma M)\\
+ \frac{\partial F}{\partial f_i}=1+\ln{f_i}-\lambda_1-\lambda_2M_{zi}=0\\
+ f_i=e^{\lambda_1+\lambda_2M_{z_i}-1}\\
+ \sum f_i=e^{\alpha}\sum e^{\lambda_2M_{zi}}=1, \alpha \equiv \lambda_1-1\\
+ e^{-\alpha}=\sum e^{\lambda_2M_{zi}}
+\end{gather}
 
 
 \section{Problem 4}
