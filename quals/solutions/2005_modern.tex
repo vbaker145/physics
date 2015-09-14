@@ -1,0 +1,163 @@
+\documentclass[a4paper,11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{braket}
+
+\numberwithin{equation}{section}
+\renewcommand\thesubsection{\alph{subsection}}
+\newcommand{\bvp}[1]{\mathbf{#1}'}
+\newcommand{\bv}[1]{\mathbf{#1}}
+
+
+%opening
+\title{Drexel Physics 2005 Modern Qual Solutions}
+\author{2014 entering class}
+
+\begin{document}
+
+\maketitle
+
+\section{Problem 1}
+\section{Problem 3}
+Electron tunneling in transistors.
+\section{Problem A1}
+We see that $S_x=\frac{S_+ + S_-}{2}$.
+We find the eigenvalues in the usual manner:
+\begin{gather}
+ S_x = \frac{\hbar}{2}
+ \begin{bmatrix}
+  0 & \sqrt{2} & 0 \\
+  \sqrt{2} & 0 & \sqrt{2} \\
+  0 & \sqrt{2} & 0
+ \end{bmatrix} \\
+ \begin{vmatrix}
+  -\lambda & \sqrt{2}/2 \hbar & 0 \\
+  \sqrt{2}/2 \hbar & -\lambda & \sqrt{2}/2 \hbar \\
+  0 & \sqrt{2}/2 \hbar & -\lambda
+ \end{vmatrix} = 0\\
+ -\lambda(\lambda^2-\hbar^2/2)-\hbar\sqrt{2}/2(-\lambda\hbar\sqrt{2}/2)=0\\
+ -\lambda^3+\lambda \hbar^2=0\\
+ \lambda = \{-\hbar, \hbar \}
+\end{gather}
+We now solve $S_x \bv{e} = \lambda \bv{e}$ for the eigenvectors.\\
+\begin{gather}
+ e_1=e_3\\
+ e_2=\frac{1}{\lambda}\sqrt{2} \hbar e_1\\
+ \lambda=-\hbar:\ \bv{e_{-\hbar}}=\{1,-\sqrt{2},1 \}\frac{1}{2}\\
+ \lambda=\hbar:\ \bv{e_{\hbar}}=\{1,\sqrt{2},1 \}\frac{1}{2}
+\end{gather}
+We now  calculate the probability of measuring $S_x=\hbar$.
+(The question says $S+x=1$, but 1 is not an eigenvalue of $S_x$.
+\begin{gather}
+ P(S_x=\hbar) = \braket{e_\hbar|u}^2= \left(\frac{1}{2\sqrt{2c}}(1*1+4*\sqrt{2}-3*1 )\right)^2\\
+ P(S_x=\hbar) = \frac{1}{2c}(9-4\sqrt{2})
+\end{gather}
+After the measurement the system has a definite value of $S_x=\hbar$ and is in state $e_\hbar$.
+The eigenvector corresponding to $S_z=\hbar$ is $(1,0,0)$, so we calculate the probability the same way.
+\begin{gather}
+ P(S_z=\hbar) = \braket{\bv{e_1}|\bv{e_\hbar}}^2= \left( 1*\frac{1}{2}+0+0 \right)^2\\
+ P(S_z=\hbar) = \frac{1}{4}
+\end{gather}
+\\
+\section{Problem A2}
+a) We open up the brackets and find $\Psi(x,0) = 2x^3-10x^2_12x$.
+\begin{gather}
+ \int_0^3(C\Psi(x,0))^2 dx = 1\\
+ \frac{1}{C^2}=\left(\int_0^32x^3-10x^2+12x dx \right)^2\\
+ \frac{1}{C^2}=(-\frac{1}{2})^2=\frac{1}{4}\\
+ C=2\\
+ \Psi(x,0) = 2(2x^3-10x^2+12x)
+\end{gather}
+b) The wavefunction has a single 0 in the range at $x=2$, so it most closely resembles the standard wavefunction $\sin{\frac{2\pi}{3}x}$.
+c) The wavefunctions can be derived from the Schrodinger equation:
+\begin{gather}
+ -\frac{\hbar^2}{2m}\frac{d^2 \psi}{dx^2}=e\psi\\
+ \frac{d^2 \psi}{dx^2}=-\frac{2mE}{\hbar^2}\psi
+\end{gather}
+With $k \equiv \frac{\sqrt{2mE}}{\hbar}$, the solutions are of the form $A\cos{kx}+B\sin{kx}$.
+The inifinte square well requires $\psi(0)=0$, so $A=0$.
+This square well also requires $\psi(3)=0$, so k takes on discrete values determined by:
+\begin{gather}
+ \sin{\frac{n\pi x}{3}}=0\\
+ k = \frac{n \pi}{3},\ n=1,2,3...\\
+ \frac{\sqrt{2mE}}{\hbar}=\frac{n \pi}{3}\\
+ E=\frac{n^2\pi^2 \hbar^2}{18m},\ n=1,2,3...
+\end{gather}
+So we can estimate the expectation value of the energy for $n=2$ as $\frac{2\pi^2\hbar^2}{9m}$.
+\\
+\section{Problem B1}
+a) \\
+i) Each distinguishable particle may be in one of 4 states, so there are 16 total states. 
+Half the states have energy 0, half have energy $\epsilon$, so the partition function is:
+\begin{gather}
+ Z=\sum_1^8e^{-\beta\epsilon}+\sum_1^81\\
+ Z=8(1+e^{-\beta\epsilon})
+\end{gather}
+ii) For Bosons there are only 8 possible states as the particles are indistinguishable. Once again, half the states have energy $\epsilon$.
+\begin{gather}
+ Z=\sum_1^4e^{-\beta\epsilon}+\sum_1^41\\
+ Z=4(1+e^{-\beta\epsilon})
+\end{gather}
+iii) For Fermions the Pauli exclusion principle will eliminate the states with both particles having the same spin.
+There are now 4 states, with half having energy $\epsilon$.
+\begin{gather}
+ Z=\sum_1^2e^{-\beta\epsilon}+\sum_1^21\\
+ Z=2(1+e^{-\beta\epsilon})
+\end{gather}
+\\
+b) As $T \rightarrow \infty$, $\beta=\frac{1}{kT}\rightarrow 0$ and $e^{-\beta\epsilon}\rightarrow 1$.
+We note that the three partition functions can all be written as $Z=\frac{N}{2}(1+e^{-\beta \epsilon})$.
+For each ensemble the probability of finding the system in a state with energy 0 is:
+\begin{gather}
+ f_0=\frac{e^{0}}{\frac{N}{2}\times 2}=\frac{1}{N}=f_\epsilon
+\end{gather}
+So half of the canonical systems for all types of particles will have energy 0 as $T\rightarrow \infty$.
+\\
+c) Writing the partition functions as $Z=\frac{N}{2}(1+e^{-\beta \epsilon})$ we find:
+\begin{gather}
+ \braket{E}=\sum E_i P_i=\frac{\sum E_i e^{-\beta E_i}}{Z}\\
+ \braket{E}=\frac{\sum_1^{N/2}\epsilon e^{-\beta\epsilon}}{\frac{N}{2}(1+e^{-\beta \epsilon}})\\
+ \braket{E}=\epsilon\frac{e^{-\beta\epsilon}}{1+e^{-\beta\epsilon}}\\
+ \braket{E}=\epsilon\frac{1}{1+e^{\beta \epsilon}}
+\end{gather}
+\\
+d) In the high temperature limit $\braket{E}=\frac{\epsilon}{2}$.
+
+\section{Problem B2}
+a) The heat capacity $C_v=(\frac{\partial U}{\partial T})_V$.
+If the heat capacity is constant then $U\sim T$.
+Then $A=U-TS=CT-TS=T(C-S)$ with C some constant.
+b) For a monatomic ideal gas the Hamiltonian is $H=\frac{p^2}{2m}$.
+The partition function of one atom is:
+\begin{gather}
+ Z_1=\frac{1}{h^3}\int d^3x\ d^3p\ e^{-\beta \frac{p^2}{2m}}\\
+ Z_1 = \frac{V}{h^3}\int d^3p\ e^{-\beta \frac{p^2}{2m}}
+\end{gather}
+Each momentum component integral $\int_0^\infty e^{-\beta \frac{p^2}{2m}} dp=\sqrt{2m\pi kT}$.
+With three independent components, the total partition function of one atom is:
+\begin{gather}
+ Z_1=\frac{V}{h^3}(2m\pi kT )^{3/2}\\
+ Z_N=\frac{1}{N!}(\frac{V}{h^3})^N(2m\pi kT )^{3N/2}
+\end{gather}
+The Helmholtz free energy A is $A=-kT\ln{Z_N}$.
+\begin{gather}
+ A = -NkT(\ln{\frac{V}{N!}}+\frac{3}{2}\ln{\frac{2m\pi kT}{h^2}} )
+\end{gather}
+c) The energy levels of the harmonic oscillator are $(n+\frac{1}{2})\hbar \omega$. 
+The partition function for one atom is:
+\begin{gather}
+ \sum_{s=0}^\infty e^{-\beta(s+\frac{1}{2})\hbar \omega}=e^{-\beta\frac{1}{2}\hbar\omega}(1+e^{-\beta\hbar\omega}+e^{-2\beta\hbar\omega}+...)\\
+ =e^{-\beta\frac{1}{2}\hbar\omega}(\frac{1}{1-e^{\beta\hbar\omega}})
+\end{gather}
+The partition function for N atoms is $Z_1^N=\left(e^{-\beta\frac{1}{2}\hbar\omega}(\frac{1}{1-e^{\beta\hbar\omega}})\right)^N$.
+The Helmholtz free energy is:
+\begin{gather}
+ A=-kT\ln{Z_N}\\
+ A=-NkT(-\beta\frac{1}{2}\hbar\omega+\beta\hbar\omega)\\
+ A=-\frac{N}{2}\hbar\omega
+\end{gather}
+
+\end{document}
