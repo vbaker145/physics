@@ -1,0 +1,82 @@
+\documentclass[a4paper,11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{braket}
+
+\numberwithin{equation}{section}
+\renewcommand\thesubsection{\alph{subsection}}
+\newcommand{\bvp}[1]{\mathbf{#1}'}
+\newcommand{\bv}[1]{\mathbf{#1}}
+
+
+%opening
+\title{Drexel Physics 2005 Classical Qual Solutions}
+\author{2014 entering class}
+
+\begin{document}
+
+\maketitle
+
+\section{Problem 1}
+We take the top of the triangle as the potential energy reference. 
+Our one coordinate x is the displacement of $m_1$ from the top.
+The kinetic and potential energy is:
+\begin{gather}
+ U=-g\{m_1x\sin{\alpha _1}+m_2(\ell-x)\sin{\alpha _2} \}\\
+ K = \frac{1}{2}(m_1+m_2)\dot{x}^2
+\end{gather}
+The Lagrangian is then:
+\begin{gather}
+ L=K-U=\frac{1}{2}(m_1+m_2)\dot{x}^2+g\{m_1x\sin{\alpha _1}+m_2(\ell-x)\sin{\alpha _2} \}
+\end{gather}
+Calculating the partial derivatives we need for Lagrange's equations:
+\begin{gather}
+ \frac{\partial L}{\partial x}=g(m_1\sin{\alpha_1}-m_2\sin{\alpha_2})\\
+ \frac{\partial L}{\partial \dot{x}}=(m_1+m_2)\dot{x}\\
+ \frac{d}{dt}\frac{\partial L}{\partial \dot{x}}=(m_1+m_2)\ddot{x}
+\end{gather}
+Therefore, Lagrange's equation of motion for the system is:
+\begin{gather}
+ \frac{\partial L}{\partial x}-\frac{d}{dt}\frac{\partial L}{\partial \dot{x}}=0\\
+ g(m_1\sin{\alpha_1}-m_2\sin{\alpha_2})-(m_1+m_2)\ddot{x}=0\\
+ \ddot{x}-g(\frac{m_1}{m_1+m_2}\sin{\alpha_1}-\frac{m_2}{m_1+m_2}\sin{\alpha_2})=0
+\end{gather}
+\\
+\section{Problem 2}
+The astronaut's initial kinetic energy, $\frac{1}{2}mv^2$, is equal to his potential energy at the height of the jump, $m g_e h$.
+So his velocity is $v=\sqrt{2g_e h}=2*\sqrt{\frac{GM_e}{r_e^2}}$.
+The orbital velocity ($\sqrt{\frac{GM_d}{r_d}}$) and escape velocity ($\sqrt{\frac{2GM_d}{r_d}}$) for Deimos are porportional to the Earth's 
+by $\frac{1}{r_e}$, since the mass is porportional to the radius cubed. 
+Therefore the astronaut can reach both orbital and escape velocity from Deimos.
+\\
+\section{Problem 3}
+The answer is (a) by Newton's third law. 
+The force floating the magnet has an opposite force of equal magnitude pushing down on the cup.
+\\
+\section{Problem 4}
+The fields must be perpendicular to each other and to the direction of propagation.
+\\
+\section{Problem 5}
+a) Yes, the surface of a conductor is always an equipotential if it's at equilibrium.\\
+b) The electric field lines that pass near the sphere curve into the surface. They are normal to the sphere at the point where they touch.\\
+c): The field will cause negative charge to pile up at the +z pole, while positive charge piles up at the -z pole (taking the field as directed along z).
+The charge distribution will be axially symmetric. You can find sketches online, and Griffiths uses this configuration to illustrate dipole moment.\\
+d) Inside a conducting sphere there is no electric field.
+\\
+\section{Problem 6}
+I would place them in a T configuration (the tip of one bar against the middle of the other).
+The magnetized one will have the tip ``stick'' to the unmagnetized one.
+\\
+\section{Problem 7}
+a) The wavelength is $\frac{c}{f}=0.125$ meters, or about 5 inches. 
+There will be two full cycles in the standing wave.\\
+b) Each water molecule will see an oscillating electric field which will set up oscillations in the polar water molecule. 
+The zeros of the wave are the parts of the microwave oven that don't cook well, which is why your Hot Pocket$^{tm}$ can
+burn your mouth while still having chunks of ice in some parts.\\
+c) 
+
+
+\end{document}

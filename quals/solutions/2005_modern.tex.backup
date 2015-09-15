@@ -151,9 +151,7 @@ c) The expectation value of $\hat{X}$ is:
 \end{gather}
 Since $\hat{X}==\sqrt{\frac{\hbar}{2m\omega}}(a+a^\dagger)$, we again see the combination of creation and annihilation operators.
 Once again the orthogoonality of the harmonic oscillator eigenfunctions and the fact that the initial wavefunction contains only states 0 and 2 
-cause the expectation value to be 0. 
-The expectation of both $\hat{P}$ and $\hat{X}$ will be 0 whenever the initial state contains only odd levels or only even levels,
-corresponding to combinations of only odd/even wavefunctions.
+cause the expectation value to be 0.
 \\
 \section{Problem B1}
 a) \\
