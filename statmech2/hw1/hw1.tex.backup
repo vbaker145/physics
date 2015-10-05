@@ -1,0 +1,92 @@
+\documentclass[a4paper,11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{braket}
+
+\numberwithin{equation}{section}
+\renewcommand\thesubsection{\alph{subsection}}
+\newcommand{\bvp}[1]{\mathbf{#1}'}
+\newcommand{\bv}[1]{\mathbf{#1}}
+
+
+%opening
+\title{Statmech II HW1}
+\author{Vince Baker}
+
+\begin{document}
+
+\maketitle
+
+\section{Problem 1}
+With two different spin orientations each electron will occupy one of two energy levels. 
+Set the lower energy level (polarized along beam) to 0, then $Nf$ electrons have energy 0.
+Set the higher energy (polarized against beam) to $\epsilon$, then $N(1-f)$ electrons have energy $\epsilon$.
+Assuming the electrons don't interact with each other, we can write the density matrix as:
+\begin{align}
+ \rho = \sum_{i=1}^{Nf}\frac{1}{Nf+N(1-f)e^\epsilon}\ket{i}\bra{i}+\sum_{j=Nf}^{N}\frac{e^\epsilon}{Nf+N(1-f)e^\epsilon}\ket{j}\bra{j}
+\end{align}
+Where $\ket{i}$ is the wavefunction of electron i.
+\\
+\section{Problem 2}
+Since the $\ket{n}$ are a complete orthonormal basis, each diagonal element of $\rho\hat{A}$ is:
+\begin{align}
+ (\rho\hat{A})_n=e^{-\braket{n}}\frac{\braket{n}^n}{n!}\bra{n}\hat{A}\ket{n}
+\end{align}
+a) For $\hat{a}\ket{n}=\sqrt{n}\ket{n-1}$, each term contains a dot product $\braket{n|n-1}=0$ because the eigenvectors are orthogonal, so $\braket{\hat{a}}=0$.\\
+For $\braket{a^\dagger a}$ the diagonal terms are:
+\begin{align}`
+  (\rho a^\dagger a)_n&=e^{-\braket{n}}\frac{\braket{n}^n}{n!}\bra{n}n\ket{n}\\
+  (\rho a^\dagger a)_n&=e^{-\braket{n}}\frac{\braket{n}^{n}}{(n-1)!}
+\end{align}
+We use the series definition of $e$ and pull out one $\braket{n}$ from the numerator:
+\begin{align}
+ Tr(\rho a^\dagger a)&=\sum_{i=0}^\infty\frac{i!}{\braket{n}^i}\sum_{j=0}^\infty\frac{\braket{n}^{j}}{(j-1)!}\\
+ Tr(\rho a^\dagger a)&=\braket{n}\sum_{i=0}^\infty\frac{i!}{\braket{n}^i}\sum_{j=0}^\infty\frac{\braket{n}^{j-1}}{(j-1)!}\\
+ Tr(\rho a^\dagger a)&=\braket{n}
+\end{align}
+
+
+\\
+\section{Problem 3}
+a) The Hamiltonian for a electron with magnetic moment $\mu_B$ in a magnetic field $B$ along the z axis is:
+\begin{align}
+ H&=-\mu_B\bv{S}\cdot\bv{B}\\
+ H&=-\mu_B B\sigma_z
+\end{align}
+The eigenvalues of $\sigma_z$ are $\pm\frac{\hbar}{2}$ in the basis where $\sigma_z$ is diagonalized.
+Defining $\kappa \equiv \mu_bB\frac{\hbar}{2}$ we find the probabilities of the two states:
+\begin{align}
+ \rho_\uparrow&=\frac{e^{\beta\kappa}}{e^{-\beta \kappa}+e^{\beta\kappa}}=\frac{1}{1+e^{-2\beta\kappa}}\\
+ \rho_\downarrow&=\frac{e^{-\beta\kappa}}{e^{-\beta \kappa}+e^{\beta\kappa}}=\frac{1}{1+e^{2\beta\kappa}}
+\end{align}
+Knowing that the eigenvectors of $\sigma_z$ are $(1,0)$ and $(0,1)$ we can directly write the density matrix:
+\begin{gather}
+\rho=
+ \begin{bmatrix}
+  \frac{1}{1+e^{-2\beta\kappa}} & 0\\
+  0                             & \frac{1}{1+e^{2\beta\kappa}}
+ \end{bmatrix}
+\end{gather}
+\
+b) We compute $\braket{\sigma_z}$ as $Tr(\rho \sigma_z )$:
+\begin{align}
+ \braket{\sigma_z}&=Tr(\rho\sigma_z)\\
+ \braket{\sigma_z}&=Tr\left(
+  \begin{bmatrix}
+  \frac{1}{1+e^{-2\beta\kappa}} & 0\\
+  0                             & \frac{1}{1+e^{2\beta\kappa}}
+ \end{bmatrix}
+ \begin{bmatrix}
+  1 & 0\\
+  0 & -1
+ \end{bmatrix}
+ \right)\\
+ \braket{\sigma_z}&=\frac{e^{\beta\kappa}-e^{-\beta\kappa}}{e^{\beta\kappa}+e^{-\beta\kappa}}
+\end{align}
+
+
+
+\end{document}

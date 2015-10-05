@@ -1,0 +1,100 @@
+\documentclass[a4paper,11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{braket}
+
+\numberwithin{equation}{section}
+\renewcommand\thesubsection{\alph{subsection}}
+\newcommand{\bvp}[1]{\mathbf{#1}'}
+\newcommand{\bv}[1]{\mathbf{#1}}
+
+
+%opening
+\title{Statmech II HW1}
+\author{Vince Baker}
+
+\begin{document}
+
+\maketitle
+
+\section{Problem 1}
+We write the wavefunctions corresponding to the two polarizations as $(1,0),(0,1)$. 
+In this basis we can write the density matrix as:
+\begin{align}
+ \rho=\begin{bmatrix}
+       f & 0 \\
+       0 & 1-f
+      \end{bmatrix}
+\end{align}
+\\
+\section{Problem 2}
+Since the $\ket{n}$ are a complete orthonormal basis, each diagonal element of $\rho\hat{A}$ is:
+\begin{align}
+ (\rho\hat{A})_n=e^{-\braket{n}}\frac{\braket{n}^n}{n!}\bra{n}\hat{A}\ket{n}
+\end{align}
+a) For $\hat{a}\ket{n}=\sqrt{n}\ket{n-1}$, each term contains a dot product $\braket{n|n-1}=0$ because the eigenvectors are orthogonal, so $\braket{\hat{a}}=0$.\\
+For $\braket{a^\dagger a}$ the diagonal terms are:
+\begin{align}`
+  (\rho a^\dagger a)_n&=e^{-\braket{n}}\frac{\braket{n}^n}{n!}\bra{n}n\ket{n}\\
+  (\rho a^\dagger a)_n&=e^{-\braket{n}}\frac{\braket{n}^{n}}{(n-1)!}
+\end{align}
+We and pull out one $\braket{n}$ from the numerator and use the series definition of $e$:
+\begin{align}
+ Tr(\rho a^\dagger a)&=\braket{n}e^{-\braket{n}}\sum_{j=0}^\infty\frac{\braket{n}^{j-1}}{(j-1)!}\\
+ Tr(\rho a^\dagger a)&=\braket{n}e^{-\braket{n}}e^{\braket{n}}\\
+ Tr(\rho a^\dagger a)&=\braket{n}
+\end{align}
+b) To find $\braket{(a^\dagger a)^2}$ we expand the exponential in its series:
+\begin{align}
+  (\rho a^\dagger a)_n&=e^{-\braket{n}}\frac{\braket{n}^n}{n!}\bra{n}n^2\ket{n}\\
+  (\rho (a^\dagger a)^2)_n&=e^{-\braket{n}}\frac{n\braket{n}^{n}}{(n-1)!}\\
+  Tr((a^\dagger a)^2)&=\braket{n}e^{-\braket{n}}\sum_{j=0}^\infty\frac{j\braket{n}^{j-1}}{(j-1)!}\\
+  Tr((a^\dagger a)^2)&=\braket{n} \left(\sum_{i=0}^\infty\frac{\braket{n}^i}{i!} \right)^{-1}   \sum_{j=0}^\infty\frac{j\braket{n}^{j-1}}{(j-1)!}\\
+  Tr((a^\dagger a)^2)&=\frac{\braket{n}}{\braket{n}}\left(\sum_{i=0}^\infty\frac{i\braket{n}^{i-1}}{(i-1)!} \right)^{-1}   \sum_{j=0}^\infty\frac{j\braket{n}^{j-1}}{(j-1)!}\\
+  Tr((a^\dagger a)^2)&=1
+\end{align}
+So we find that the variance is $1-\braket{n}^2$.
+\\
+\section{Problem 3}
+a) The Hamiltonian for a electron with magnetic moment $\mu_B$ in a magnetic field $B$ along the z axis is:
+\begin{align}
+ H&=-\mu_B\bv{S}\cdot\bv{B}\\
+ H&=-\mu_B B\sigma_z
+\end{align}
+The eigenvalues of $\sigma_z$ are $\pm\frac{\hbar}{2}$ in the basis where $\sigma_z$ is diagonalized.
+Defining $\kappa \equiv \mu_bB\frac{\hbar}{2}$ we find the probabilities of the two states:
+\begin{align}
+ \rho_\uparrow&=\frac{e^{\beta\kappa}}{e^{-\beta \kappa}+e^{\beta\kappa}}=\frac{1}{1+e^{-2\beta\kappa}}\\
+ \rho_\downarrow&=\frac{e^{-\beta\kappa}}{e^{-\beta \kappa}+e^{\beta\kappa}}=\frac{1}{1+e^{2\beta\kappa}}
+\end{align}
+Knowing that the eigenvectors of $\sigma_z$ are $(1,0)$ and $(0,1)$ we can directly write the density matrix:
+\begin{gather}
+\rho=
+ \begin{bmatrix}
+  \frac{1}{1+e^{-2\beta\kappa}} & 0\\
+  0                             & \frac{1}{1+e^{2\beta\kappa}}
+ \end{bmatrix}
+\end{gather}
+\
+b) We compute $\braket{\sigma_z}$ as $Tr(\rho \sigma_z )$:
+\begin{align}
+ \braket{\sigma_z}&=Tr(\rho\sigma_z)\\
+ \braket{\sigma_z}&=Tr\left(
+  \begin{bmatrix}
+  \frac{1}{1+e^{-2\beta\kappa}} & 0\\
+  0                             & \frac{1}{1+e^{2\beta\kappa}}
+ \end{bmatrix}
+ \begin{bmatrix}
+  1 & 0\\
+  0 & -1
+ \end{bmatrix}
+ \right)\\
+ \braket{\sigma_z}&=\frac{e^{\beta\kappa}-e^{-\beta\kappa}}{e^{\beta\kappa}+e^{-\beta\kappa}}
+\end{align}
+
+
+
+\end{document}
