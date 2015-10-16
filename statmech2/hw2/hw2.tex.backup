@@ -51,7 +51,7 @@ Applying the transform to $\sigma_x$ we find:
 \end{align}
 So this has transformed us to the basis where $\sigma_x$ is diagonal.
 \\
-To calculate $\braket{\sigma_z}$ in this representation we will need to transform both $\sigma_z$ and $\rho$.
+To calculate $\\braket{\sigma_z}$ in this representation we will need to transform both $\sigma_z$ and $\rho$.
 The transformed $\sigma_z$ calculated as above is $\begin{bmatrix}0 & -1\\ -1 & 0 \end{bmatrix}$.
 Transforming $\rho$ we find:
 \begin{align}
@@ -184,11 +184,8 @@ With N particles taking the sum over $i<j$, we have $\frac{N(N-1)}{2}$ of these 
 We now calculate the equation of state for the first-order correction.
 \begin{align}
  A &= -kT\ln{Q_N}\\
- A &= -kT\left[ N\ln{V} + \ln\left(1 \pm \lambda^{\frac{N(N-1)}{2}}V^{N^2/6-\frac{7}{6}N} \right) \right]
+ A &= -kT\left[ N\ln{V} \pm \left(\frac{N(N-1)}{6}\ln{V}+\frac{N(N-1)}{2}\ln{\lambda} \right) \right]
 	-kT\ln{(N!\lambda^{3N})}\\
- P &= \frac{\partial A}{\partial V} = -\frac{NkT}{V}+
-    \left(\pm (\frac{N^2}{6}-\frac{7}{6}N)\lambda^{\frac{N(N-1)}{2}}V^{N^2/6-\frac{7}{6}N-1} \right)
-    \left(1 \pm \lambda^{\frac{N(N-1)}{2}}V^{N^2/6-\frac{7}{6}N} \right)^{-1}
 \end{align}
 
                                                                                                                                                                                                                
