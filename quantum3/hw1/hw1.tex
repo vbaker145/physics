@@ -1,0 +1,144 @@
+\documentclass[a4paper,11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{braket}
+
+\numberwithin{equation}{section}
+\renewcommand\thesubsection{\alph{subsection}}
+\newcommand{\bvp}[1]{\mathbf{#1}'}
+\newcommand{\bv}[1]{\mathbf{#1}}
+
+
+%opening
+\title{Quantum III HW1}
+\author{Vince Baker}
+
+\begin{document}
+
+\maketitle
+
+\section{Problem 1}
+Using the classic perturbation theory:
+\begin{align}
+ i\hbar \dot{c_1}=e^{\frac{i}{\hbar}\omega_{12}t}V_{21}c_2\\
+ i\hbar \dot{c_2}=e^{-\frac{i}{\hbar}\omega_{12}t}V_{12}c_1
+\end{align}
+We insert the initial values of $c_1,c_2$ on the right hand side and find the first-order solution.
+\begin{align}
+ i\hbar \dot{c_1} &=0,\ c_1=1\\
+ i\hbar \dot{c_2} &=e^{\frac{i}{\hbar}\omega_{21}t}\lambda\cos{\omega t}\\
+ c_2 &=\frac{-i}{\hbar}\int \lambda \cos{(\omega t)}e^{-\frac{i}{\hbar}\omega_{12}t}\ dt\\
+ c_2 &=\frac{-i\lambda}{\hbar}\int e^{i(\omega_{12}+\omega)t}+e^{i(\omega_{12}-\omega)t}\ dt\\
+ c_2 &= \frac{-\lambda}{2\hbar}\left(\frac{1}{\omega_{12}+\omega}(e^{i(\omega_{12}+\omega)t}-1)+ 
+	\frac{1}{\omega_{12}-\omega}(e^{i(\omega_{12}-\omega)t}-1)\right)
+\end{align}
+If $E_2-E_1$ is close to $\hbar \omega$ then the second term will become large, so this approximation is not completely valid since we assume a small perturbation.
+However, this approximation does capture the qualitative transition probabilities for emission and absorption under a harmonic perturbation.
+\
+\section{Problem 2}
+Using $\delta (x-ct)=\frac{1}{c}\delta(\frac{x}{c}-t)$ we can write the first-order Dyson series term as:
+\begin{align}
+ c_2^1 &= \frac{-iA}{\hbar c}\int_0^t dt^\prime\braket{2|\hat{x}}\delta(\frac{x}{c}-t^\prime)\braket{\hat{x}|1}\\
+ c_2^1 &= \frac{-iA}{\hbar c}\int_{-\infty}^\infty dx\ \psi^\dagger_2\psi_1e^{i\omega_{12}(\frac{x}{c})}
+\end{align}
+Using the integral form of the exponential $\delta(x-x_0)=\int e^{ik(x-x_0)}dk$ we can view the exponential as an expansion in harmonic terms.
+However our result shows that only the term with $k=\omega_{12}$ contributes to the transition probability.
+
+\section{Problem 3}
+We have two coupled differential equations:
+\begin{align}
+ i \hbar \dot{c_1} &= \gamma e^{i(\omega+\omega_{12}) t}c_2\\
+ i \hbar \dot{c_2} &= \gamma e^{-i(\omega-\omega_{21}) t}c_1
+\end{align}
+Rearranging 3.2 for $c_1$, we take the time derivative $\dot{c_1}$ and substitute into 3.1:
+\begin{align}
+ -\frac{\hbar^2}{\gamma}e^{i(\omega-\omega_{21})t}(i(\omega-\omega_{21}\dot{c_2}+\ddot{c_2}) ) &= \gamma e^{i(\omega+\omega_{12})t}c_2\\
+ \ddot{c_2}+i(\omega-\omega_{21})\dot{c_2}+\frac{\gamma^2}{\hbar^2} &= 0
+\end{align}
+Since the coefficients are all constants the solution will be a linear combination of exponentials, and we can find the roots of the quadratic equation.
+\begin{align}
+ c_2 &= C_Ae^{i\alpha_+ t}+C_Be^{i\alpha_- t}\\
+ \alpha_\pm &= \frac{1}{2}\left( \omega-\omega_{21} \pm \sqrt{(\omega-\omega_{21})^2-4(\gamma^2/\hbar^2)} \right)\\
+ c_2(0) &=0,\ C_A=-C_B\\
+ c_1(0) & =\frac{i\hbar}{\gamma}\dot{c_2}(0)=1\\
+ c_2 &= \frac{ i\gamma e^{i\frac{\omega-\omega_{21}}{2}t} }{\hbar\sqrt{(\omega-\omega_{21})^2+4(\gamma^2/\hbar^2)}}
+      \sin{\left(\frac{\sqrt{(\omega-\omega_{21})^2+(\gamma^2/\hbar^2)}}{2}t \right)}\\
+ |c_2|^2 &= \frac{\gamma^2}{\hbar^2((\omega-\omega_{21})^2+4(\gamma^2/\hbar^2))}
+      \sin^2{\left(\frac{\sqrt{(\omega-\omega_{21})^2+(\gamma^2/\hbar^2)}}{2}t \right)}\\
+ |c_1|^2 &= 1-|c_2|^2
+\end{align}
+\
+We can also examine the problem using perturbation theory. Working up to second order:
+\begin{align}
+ c_2^0 & =0\\
+ c_2^{(1)} &= \frac{i}{\hbar}\int_0^t dt^\prime \gamma e^{-i(\omega-\omega_{21})t^\prime}\\
+ c_2^{(1)} &= \frac{\gamma}{\hbar}\frac{ie^{-i(\omega-\omega_{21})t/2}}{2(\omega-\omega_{21})}\left(\sin{(\omega-\omega_{21})t/2}\right)\\
+ c_2^{(2)} &= (\frac{-i}{\hbar})^2\int_0^tdt^\prime\gamma e^{-i(\omega-\omega_{21})t^\prime}
+	    \int_0^{t^\prime} dt^{\prime\prime} \gamma e^{i(\omega-\omega_{21})t}\\
+ c_2^{(2)} &= \frac{\gamma^2}{\hbar^2}\frac{i}{\omega-\omega_{21}}\left(t-\frac{i}{\omega-\omega_{21}}(e^{-i(\omega-\omega_{21})t}-1) \right)\\
+ c_2^{(2)} &= \frac{\gamma^2}{\hbar^2}\frac{i}{\omega-\omega_{21}}
+	      \left(t-\frac{e^{-i(\omega-\omega_{21})t/2}}{2(\omega-\omega_{21})}(\sin{(\omega-\omega_{21})t/2}) \right)\\
+ c_2^{(2)} &= \frac{\gamma^2}{\hbar^2}\frac{i}{\omega-\omega_{21}}t
+	      -\frac{\gamma^2}{\hbar^2}\frac{ie^{-i(\omega-\omega_{21})t/2}}{2(\omega-\omega_{21})^2}\sin{(\omega-\omega_{21})t/2})      
+\end{align}
+\\
+When $\omega \ne \omega_{21}$ the $\frac{\gamma^2}{\hbar^2}\frac{i}{\omega-\omega_{21}}t$ term will dominate for large t, since the other terms are oscillatory.
+This asymptotic behvior is not indicated in the exact solution. The probability wil lincrease as $t^2$.
+\\
+When $\omega \approx \omega_{21}$ the dominant term will be:
+\begin{align}
+ c_2 &\approx \frac{\gamma^2}{\hbar^2}\frac{ie^{-i(\omega-\omega_{21})t/2}}{2(\omega-\omega_{21})^2}\sin{(\omega-\omega_{21})t/2} \\
+ |c_2|^2 &= \frac{\gamma^4}{\hbar^4}\frac{1}{4(\omega-\omega_{21})^4}\sin^2{(\omega-\omega_{21})t/2}
+\end{align}
+Which has similar behavior to the exact result, although the amplitude and frequency are different.
+\
+\section{Problem 4}
+At time $t=0$ the system is in state $\alpha\ket{1}+\beta\ket{2}$.
+The zeroth-order term will be $c_1^0=\alpha,c_2^0=\beta$.
+Referencing equation 1.4 for the first-order terms we find:
+\begin{align}
+  c_1 &= \alpha-\frac{\beta}{2\hbar}\left(\frac{1}{\omega_{21}+\omega}(e^{i(\omega_{21}+\omega)t}-1)+ 
+	\frac{1}{\omega_{21}-\omega}(e^{i(\omega_{21}-\omega)t}-1)\right)\\
+ c_2 &= \beta-\frac{\alpha}{2\hbar}\left(\frac{1}{\omega_{12}+\omega}(e^{i(\omega_{12}+\omega)t}-1)+ 
+	\frac{1}{\omega_{12}-\omega}(e^{i(\omega_{12}-\omega)t}-1)\right)
+\end{align}
+With $\hbar\omega \approx \hbar(E_2-E_1)$ we can discard the terms where the denominator is not close to 0.
+We then have:
+\begin{align}
+ c_1 &= \alpha-\frac{\beta}{2\hbar}\left(\frac{1}{\omega-\omega_{12}}(e^{i(\omega-\omega_{21})t}-1)\right)\\
+ c_1 &= \alpha-i\frac{\beta}{\hbar}\frac{e^{i(\omega-\omega_{21})t/2}}{\omega-\omega_{12}} (\sin{(\omega-\omega_{21})t/2)})\\
+ c_2 &= \beta-\frac{\alpha}{2\hbar}\left(\frac{1}{\omega_{12}-\omega}(e^{i(\omega_{12}-\omega)t}-1)\right)\\
+ c_2 &= \beta-i\frac{\alpha}{\hbar}\frac{e^{i(\omega_{12}-\omega)t/2}}{\omega_{12}-\omega} (\sin{(\omega_{12}-\omega)t/2)})
+\end{align}
+Generally, if the system starts in a mixed state, the probabilities will involve cross terms. 
+However, the transition probabilities from a pure state are much simpler.
+\begin{align}
+ |c_1^2|_{\alpha=0} &= \frac{\beta^2}{\hbar^2}\frac{\sin^2{(\omega-\omega_{21})t/2)}}{(\omega-\omega_{12})^2}\\
+ |c_2^2|_{\beta=0} &= \frac{\alpha^2}{\hbar^2}\frac{\sin^2{(\omega_{12}-\omega)t/2)}}{(\omega_{12}-\omega)^2}
+\end{align}
+\
+\section{Problem 5}
+a) Starting from the Schrodinger equation we derive the time evolution of the density operator.
+\begin{align}
+ i\hbar\frac{\partial \psi}{\partial t} &= H\psi\\
+ \frac{\partial \rho}{\partial t} &= \frac{\partial}{\partial t}\ket{\psi}\bra{\psi}+\ket{\psi}\frac{\partial}{\partial t}\bra{\psi}\\
+ i\hbar\frac{\partial \rho}{\partial t} &= H\ket{\psi}\bra{\psi}-\ket{\psi}\bra{\psi}H^\dagger\\
+ i\hbar\frac{\partial \rho}{\partial t} &= [H,\rho]
+\end{align}
+\
+b) Since $\braket{\rho}=\braket{\psi|\psi}\braket{\psi|\psi}=1$, the time derivative of $\rho$ is 0.
+\\
+c) Making use of 5.4:
+\begin{align}
+ i\hbar\frac{\partial \rho}{\partial t} &= H\ket{\psi}\bra{\psi}-\ket{\psi}\bra{\psi}H^\dagger\\
+ \braket{\frac{\partial \rho}{\partial t}} &= \frac{i}{\hbar}\left(\bra{\psi}\rho H\ket{\psi}
+	  -\bra{\psi}H\rho\ket{\psi} \right)\\
+ \braket{\frac{\partial \rho}{\partial t}} &= \frac{i}{\hbar}\left(E_\psi\bra{\psi}\rho\ket{\psi}
+	  -\bra{\psi}H\ket{\psi}\bra{\psi}\ket{\psi}\right)\\
+ \braket{\frac{\partial \rho}{\partial t}} &= \frac{i}{\hbar}(E_\psi-E_\psi)=0
+\end{align}
+ 
+\end{document}
