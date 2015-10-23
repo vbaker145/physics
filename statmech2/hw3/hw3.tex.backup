@@ -1,0 +1,102 @@
+\documentclass[a4paper,11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{braket}
+
+\numberwithin{equation}{section}
+\renewcommand\thesubsection{\alph{subsection}}
+\newcommand{\bvp}[1]{\mathbf{#1}'}
+\newcommand{\bv}[1]{\mathbf{#1}}
+
+
+%opening
+\title{Statmech II HW2}
+\author{Vince Baker}
+
+\begin{document}
+
+\maketitle
+
+\section{Problem 1}
+We prove the relation:
+\begin{align}
+ \ln{w(i)} = n_i\ln{(\frac{g_i}{n_i}-a)}-\frac{g_i}{a}\ln{(1-a\frac{n_i}{g_i})}
+\end{align}
+Where $a=-1$ for Bose-Einstein systems, $a=1$ for Fermi-Dirac systems, and $a=0$ for classical Maxwell-Boltzmann systems.
+We assume that $n_i\gg 1$ and $g_i \gg 1$.\\
+For Bose-Einstein systems:
+\begin{align}
+ w(i) &= \frac{(n_i+g_i-1)!}{(n_i)!(g_i-1)!}\\
+ \ln{w(i)} &= \ln{\left(\frac{(n_i+g_i-1)!}{(n_i)!(g_i-1)!} \right)}\\
+ \ln{w(i)} &= (n_i+g_i-1)\ln{(n_i+g_i-1)}-n_i\ln{n_i}-(g_i-1)\ln{(g_i-1)}\\
+ \ln{w(i)} &= n_i\ln{\left(\frac{n_i+g_i-1}{n_i}\right)} +(g_i-1)\ln{(\frac{n_i}{g_i+1}+1)}\\
+ \ln{w(i)} &= n_i\ln{\left(\frac{g_i}{n_i}+1\right)} +g_i\ln{(\frac{n_i}{g_i}+1)}
+\end{align}
+Where in 1.5 we have used $n_i\gg 1$ and $g_i \gg 1$ to simplify the expression.
+\\
+For Fermi-Dirac systems:
+\begin{align}
+  w(i) &= \frac{(g_i)!}{(n_i)!(g_i-n_i)!}\\
+ \ln{w(i)} &= \ln{\left(\frac{(g_i)!}{(n_i)!(g_i-n_i)!} \right)}\\
+ \ln{w(i)} &= g_i\ln{g_i}-n_i\ln{n_i}-(g_i-n_i)\ln{(n_i-g_i)}\\
+ \ln{w(i)} &= n_i\left(\ln{(g_i-n_i)}-\ln{n_i} \right)+g_i\left(\ln{\frac{g_i}{g_i-n_i}} \right)\\
+ \ln{w(i)} &= n_i\ln{\left(\frac{g_i}{n_i}-1 \right)}-g_i\ln{\left(1-\frac{n_i}{g_i} \right)}
+\end{align}
+\\
+For Maxwell-Boltazmann systems:
+\begin{align}
+  w(i) &= \frac{(g_i)^{n_i}}{(n_i)!}\\
+ \ln{w(i)} &= n_i\ln{g_i}-n_i\ln{n_i}+n_i
+\end{align}
+Taking the limit of $-\frac{g_i}{a}\ln{(1-a\frac{n_i}{g_i})} $ as $a \rightarrow 0$ using L'Hopital's rule:
+\begin{align}
+ \varinjlim 0 -\frac{g_i}{a}\ln{(1-a\frac{n_i}{g_i})} &= n_i\\
+ \ln{w(i)} &= n_i\ln{g_i}-n_i\ln{n_i}-\frac{g_i}{a}\ln{(1-a\frac{n_i}{g_i})}\ (a=0)
+\end{align}
+\\
+\section{Problem 2}
+We prove the maximization result using Lagrange multipliers:
+\begin{align}
+ \delta \ln{W_i}-\left(\alpha\sum \delta n_i+\beta\sum \epsilon_i \delta n_i \right) &= \sum \left(\ln{(\frac{g_i}{n_i}-a)}-\alpha-\beta \epsilon_i \right)\delta n_i
+\end{align}
+We take the derivative with respect to $n_i$ of $\ln{w_i}$ (equation 1.1).
+\begin{align}
+ \frac{\partial \ln{w_i}}{\partial n_i} &= \ln{(\frac{g_i}{n_i}-a)}-\frac{g_i}{n_i}\frac{1}{g_i/n_i-a}+\frac{1}{1-an_i/g_i}\\
+ \frac{\partial \ln{w_i}}{\partial n_i} &= \ln{(\frac{g_i}{n_i}-a)}
+\end{align}
+With $W_i=\prod w_i$ and using the logarithm addition rules this proves 2.1.
+\
+\section{Problem 3}
+Starting from the grand canonical equivalent of the microcanonical ensmble expression for number of microstates, with $g_i=1$ and replacing $n_i^*$ with $<n_e>$:
+\begin{align}
+ \ln{W} &= \sum_e\left(<n_e>\ln{(\frac{1}{<n_e>}-a)}-\frac{1}{a}\ln{(1-a<n_e>)} \right)\\
+ S & =k\ln{W} = k \sum_e\left(<n_e>\ln{(\frac{1}{<n_e>}-a)}-\frac{1}{a}\ln{(1-a<n_e>)} \right)\\
+ S &= k \sum_e <n_e>\ln{\left(\frac{1-a<n_e>}{<n_e>} \right)}-\frac{1}{a}\ln{(1-a<n_e>)}\\
+ S &= k\sum_e \left(<n_e>-\frac{1}{a}\right)\ln{(1-a<n_e>)}-<n_e>\ln{<n_e>}
+\end{align}
+So we have proved the relation with $a=-1$ for Bosons and $a=1$ for Fermions.
+\\
+For Fermions there are only two probabilities:
+\begin{align}
+ \rho_0 = 1-<n_e>\\
+ \rho_1 = <n_e>
+\end{align}
+So the probability form of the entropy is:
+\begin{align}
+ S &= -k\sum_e \left((1-<n_e>\ln{(1-<n_e>)}+<n_e>\ln{<n_e>}  \right)\\
+ S &= k\sum_e \left((<n_e>-1)\ln{(1-<n_e>)}-<n_e>\ln{<n_e>}  \right)
+\end{align}
+\\
+For Bosons, the probability is:
+\begin{align}
+ \rho_e = \frac{<n_e>^n}{\left(<n_e>+1 \right)^{n+1}}
+\end{align}
+We can write the entropy equation terms as the expectation value of $\ln{\rho_e}$.
+
+
+
+
+\end{document}
