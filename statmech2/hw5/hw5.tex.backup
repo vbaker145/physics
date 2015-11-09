@@ -1,0 +1,144 @@
+\documentclass[a4paper,11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{braket}
+
+\numberwithin{equation}{section}
+\renewcommand\thesubsection{\alph{subsection}}
+\newcommand{\bvp}[1]{\mathbf{#1}'}
+\newcommand{\bv}[1]{\mathbf{#1}}
+
+
+%opening
+\title{Statmech II HW5}
+\author{Vince Baker}
+
+\begin{document}
+
+\maketitle
+
+\section{Problem 8.1}
+\\
+\section{Problem 8.2}
+We find a general expression for the temperature:
+\begin{align}
+ \frac{1}{v} &= \frac{g}{\lambda^3}f_{3/2}(z)\\
+ \lambda &= \frac{h}{\sqrt{2\pi mkT}}\\
+ T &= \frac{h^2}{2\pi mk}\left(gvf_{3/2}(z) \right)^{-2/3}
+\end{align}
+At $T_0$, $z=1$, and we find (from E.14 in Pathria):
+\begin{align}
+ f_{3/2}(1) = (1-\frac{1}{\sqrt{2}})\zeta (\frac{3}{2}) = 0.7650
+\end{align}
+We set $t_f=\frac{e_f}{k}$ and use Pathria equation 8.1.24 for $e_f$. 
+\begin{align}
+ T_f &= \left(\frac{3}{4\pi gv} \right)^{2/3}\frac{h^2}{2mk}\\
+ \frac{T_f}{T_0} &= \frac{1}{\pi}\left(\frac{4\pi}{3f_{3/2}(1)} \right)^{2/3} = 0. 9889
+\end{align}
+So the temperature at which $\mu =0$ is approximately the Fermi temperature.
+\\ \\
+\section{Problem 8.3}
+Starting from the expression for pressure and using the recurrence relation for the Fermi integrals:
+\begin{align}
+ P &= kT\frac{g}{\lambda^3}f_{5/2}(z)\\
+ P &= kg\left(\frac{h}{\sqrt{2\pi mk}}\right)^3T^{5/2}f_{5/2}(z)\\
+ \left(\frac{\partial P}{\partial T}\right)_P &= kg\left(\frac{h}{\sqrt{2\pi mk}}\right)^3\frac{5}{2}T^{\frac{3}{2}}f_{5/2}(z)+
+						kg\left(\frac{h}{\sqrt{2\pi mk}}\right)^3T^{5/2}\frac{1}{z}f_{3/2}(z)\left(\frac{\partial z}{\partial T} \right)_P\\
+ \frac{1}{z}\left(\frac{\partial z}{\partial T} \right)_P &= -\frac{5}{2T}\frac{f_{5/2}(z)}{f_{3/2}(z)}
+\end{align}
+From equation 8.1.9 in Pathria we can prove the desired relation $\gamma$:
+\begin{align}
+  \frac{1}{z}\left(\frac{\partial z}{\partial T} \right)_v &= -\frac{3}{2T}\frac{f_{3/2}(z)}{f_{1/2}(z)}\\
+  \gamma &= \frac{C_P}{C_v} = \frac{5}{3}\frac{f_{5/2}(z)f_{1/2}(z)}{(f_{3/2}(z))^2}
+\end{align}
+\\
+Using eqns 8.1.30-8.1.32 of Pathria:
+\begin{align}
+ \gamma &= \frac{5}{3}\frac{\frac{8}{15\sqrt{\pi}}(\ln{z})^{5/2}(1+\frac{5\pi^2}{8}(\ln{z})^{-2}+...)\frac{2}{\sqrt{\pi}}(\ln{z})^{1/2}(1-\frac{\pi^2}{24}(\ln{z})^{-2}+...)}
+	    {\left(\frac{4}{3\sqrt{\pi}}(1+\frac{\pi^2}{8}(\ln{z})^{-2}+...) \right)^2}
+\end{align}
+Keeping up to second-order terms:
+\begin{align}
+ \gamma &= \frac{3}{5}\frac{5}{3}\frac{(1+\frac{5\pi^2}{8}\ln{z}^{-2}-\frac{\pi^2}{24}\ln{z}^{-2}+...)}{(1+2\frac{\pi^2}{8}\ln{z}^{-2}+...)}\\
+ \gamma &\simeq 1+\frac{\pi^2}{3}(\ln{z})^{-2}
+\end{align}
+Substituting $\ln{z} = \frac{e_f}{kT}$ we prove $\gamma \simeq 1+\frac{\pi^2}{3}(\frac{kT}{e_f})^{2}$.
+\\
+\section{8.4}
+a) We prove the following relations for the isothermal compressibility and adiabatic compressibility of an ideal Fermi gas:
+\begin{align}
+ \kappa_T &= \frac{1}{V}\left(\frac{\partial V}{\partial P}\right)_T\\
+ \kappa_S &= \frac{1}{V}\left(\frac{\partial V}{\partial P}\right)_S
+\end{align}
+Using the expressions for P and n and taking the derivatives with T held constant and with z held constant:
+\begin{align}
+ P &= kT\frac{g}{\lambda^3}f_{5/2}(z)\\
+ \frac{\partial P}{\partial z} &= kT\frac{g}{\lambda^3}\frac{1}{z}f_{3/2}(z)\\
+ \frac{\partial P}{\partial T} &= \frac{5}{2}\frac{(2\pi m)^{3/2}}{gh^3}k^{5/2}T^{3/2}f_{5/2}(z)\\
+ n &= \frac{g}{\lambda^3}f_{3/2}(z)\\
+ \frac{\partial n}{\partial z} &= \frac{g}{\lambda^3}\frac{1}{z}f_{1/2}(z)\\
+ \frac{\partial n}{\partial T} &= \frac{3}{2}\frac{(2\pi mk)^{3/2}}{gh^3}T^{1/2}f_{3/2}(z)
+\end{align}
+Writing the compressibility expressions as functions of n and using the appropriate derivatives, we show:
+\begin{align}
+ \kappa_T &= \frac{N}{V}\left(\frac{\partial (\frac{N}{V})}{\partial P}\right)_T
+	      = \frac{1}{n}\left(\frac{\partial n}{\partial P}\right)_T\\
+ \kappa_T &= \frac{1}{nkT}\frac{f_{1/2}(z)}{f_{3/2}(z)}\\
+ \kappa_S &= \frac{N}{V}\left(\frac{\partial (\frac{N}{V})}{\partial P}\right)_S
+	      = \frac{1}{n}\left(\frac{\partial n}{\partial P}\right)_S\\
+ \kappa_S &= \frac{3}{5nkT}\frac{f_{3/2}(z)}{f_{5/2}(z)}
+\end{align}
+\\
+Using the expansions of the Fermi integrals in powers of $\ln{z}$ up to second order (eqns 8.1.30-8.1.32 of Pathria):
+\begin{align}
+ \kappa_T &\simeq \frac{1}{nkT}\frac{3}{2\ln{z}}(1-\frac{\pi^2}{24}(\ln{z})^{-2}+...)/(1+\frac{\pi^2}{8}(\ln{z})^{-2}+...)\\
+ \kappa_T &\simeq \frac{1}{nkT}\frac{3}{2\ln{z}}(1-\pi^2(\frac{1}{24}+\frac{1}{8})(\ln{z})^{-2}+...)\\
+ \kappa_T &\simeq \frac{3}{2nkT\ln{z}}(1-\frac{\pi^2}{6}(\ln{z})^{-2}+...)
+\end{align}
+We substitute Pathria 8.1.35 for $\ln{z}$ and keep only the first-order part in the exponential term. Working up to second order:
+\begin{align}
+ \kappa_T &\simeq \frac{3}{2nkT\frac{e_f}{kT}(1-\frac{\pi^2}{12}(\frac{kT}{e_f})^2)}(1-\frac{\pi^2}{6}(\frac{kT}{e_f})^{2})\\
+ \kappa_T &\simeq \frac{3}{2ne_f}(1-\frac{\pi^2}{6}(\frac{kT}{e_f})^{2})(1+\frac{\pi^2}{12}(\frac{kT}{e_f})^2)\\
+ \kappa_T &\simeq \frac{3}{2ne_f}\left(1-\frac{\pi^2}{12}(\frac{kT}{e_f})^{2}\right)
+\end{align}
+We now follow the same procedure to calculate $\kappa_S$.
+\begin{align}
+ \kappa_S &\simeq \frac{3}{5nkT}\frac{5}{2\ln{z}}(1+\frac{\pi^2}{8}(\ln{z})^{-2}+...)/(1+\frac{5\pi^2}{8}(\ln{z})^{-2}+...)\\
+ \kappa_S &\simeq \frac{3}{5nkT}\frac{5}{2\ln{z}}(1+\pi^2(\frac{1}{8}-\frac{5}{8})(\ln{z})^{-2}+...)\\
+ \kappa_S &\simeq \frac{3}{2nkT\ln{z}}(1-\frac{\pi^2}{2}(\ln{z})^{-2}+...)
+\end{align}
+We substitute Pathria 8.1.35 for $\ln{z}$ and keep only the first-order part in the exponential term. Working up to second order:
+\begin{align}
+ \kappa_S &\simeq \frac{3}{2nkT\frac{e_f}{kT}(1-\frac{\pi^2}{12}(\frac{kT}{e_f})^2)}(1-\frac{\pi^2}{2}(\frac{kT}{e_f})^{2})\\
+ \kappa_S &\simeq \frac{3}{2ne_f}(1-\frac{\pi^2}{2}(\frac{kT}{e_f})^{2})(1+\frac{\pi^2}{12}(\frac{kT}{e_f})^2)\\
+ \kappa_S &\simeq \frac{3}{2ne_f}\left(1-\frac{5\pi^2}{12}(\frac{kT}{e_f})^{2}\right)
+\end{align}
+\\
+b) Starting with the given relation for $C_P-C_V$:
+\begin{align}
+ C_P-C_V &= TV\kappa_T\left(\frac{\partial P}{\partial T} \right)_V^2\\
+ PV &= \frac{2}{3}U\\
+ \left(\frac{\partial P}{\partial T} \right)_V &= \frac{2}{3V}\left(\frac{\partial U}{\partial T} \right)_V = \frac{2}{3V}C_V\\
+ \frac{C_P-C_V}{C_V} &= \frac{4}{9} \frac{1}{V}C_V\frac{1}{nk}\frac{f_{1/2}(z)}{f_{3/2}(z)} = \frac{4}{9}\frac{C_V}{Nk}\frac{f_{1/2}(z)}{f_{3/2}(z)} 
+\end{align}
+Using $C_V=\frac{\pi^2}{2}\frac{kT}{e_f}$ and again substituting the $\ln{z}$ series expansion:
+\begin{align}
+ \frac{f_{1/2}}{f_{3/2}} &= \frac{3}{2\ln{z}}\left(1-\frac{\pi^2}{24}(\ln{z})^{-2}\right)\left(1-\frac{\pi^2}{8}(\ln{z})^{-2} \right)\\
+ \frac{f_{1/2}}{f_{3/2}} &= \frac{3}{2}\frac{kT}{e_f}\left(1-\frac{\pi^2}{6}(\frac{kT}{e_f})^{2}\right)\\
+\end{align}
+
+\\
+c) Using the relation $\gamma = \frac{\kappa_T}{\kappa_S}$, keeping terms to second order, we find:
+\begin{align}
+ \gamma &\simeq \left(1-\frac{\pi^2}{12}(\frac{kT}{e_f})^{2}\right)/\left(1-\frac{5\pi^2}{12}(\frac{kT}{e_f})^{2}\right)\\
+ \gamma &\simeq \left(1-\frac{\pi^2}{12}(\frac{kT}{e_f})^{2}\right)\left(1+\frac{5\pi^2}{12}(\frac{kT}{e_f})^{2}\right)\\
+ \gamma &\simeq 1-\frac{\pi^2}{3}(\frac{kT}{e_f})^2
+\end{align}
+So we have verified the result in part A for $\gamma$ at low temperatures.
+
+
+
+\end{document}
