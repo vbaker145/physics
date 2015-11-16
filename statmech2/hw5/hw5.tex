@@ -21,6 +21,53 @@
 \maketitle
 
 \section{Problem 8.1}
+Using the linear approximation for the Fermi distribution at low temperatures, we have the following approximate Fermi integral:
+\begin{align}
+ f_v(z) &= \frac{1}{\Gamma (z)}\left(\int_0^{\xi-2}z^{v-1}+\int_{\xi-2}^{\xi+2}\left(\frac{\xi+2-z}{4}) \right)z^{v-1} \right)
+\end{align}
+Solving for $f_{5/2}$ and $f_{3/2}$:
+\begin{align}
+ f_{5/2}(z) &= \frac{4}{3\sqrt{\pi}}\left(\int_0^{\xi-2}z^{3/2}dz+\frac{\xi+2}{4}\int_{\xi-2}^{\xi+2}z^{3/2}dz 
+	      +\frac{1}{4}\int_{\xi-2}^{\xi+2}z^{5/2}dz\right)\\
+ \begin{split}
+ f_{5/2}(z) &= \frac{4}{3\sqrt{\pi}}( \frac{2}{5}(\xi-2)^{5/2} + \frac{1}{10}(\xi+2)^{7/2}-\frac{1}{10}(\xi+2)(\xi-2)^{5/2}\\ +
+		&\frac{1}{14}(\xi+2)^{7/2}-(\xi-2)^{7/2} )
+ \end{split}\\
+ \begin{split}
+   f_{5/2}(z) &= \frac{4}{3\sqrt{\pi}}\{\frac{2}{5}(\xi-2)^{3/2}-\frac{1}{10}(\xi+2)(\xi-2)^{5/2}\\
+	      & +\frac{12}{70}(\xi+2)^{7/2}-\frac{1}{14}(\xi-2)^{7/2}\}
+ \end{split}\\
+ f_{3/2}(z) &= \frac{2}{\sqrt{\pi}}\left(\int_0^{\xi-2}z^{1/2}dz+\frac{\xi+2}{4}\int_{\xi-2}^{\xi+2}z^{1/2}dz 
+	      +\frac{1}{4}\int_{\xi-2}^{\xi+2}z^{3/2}dz\right)\\
+ \begin{split}
+ f_{3/2}(z) &= \frac{2}{\sqrt{\pi}}( \frac{2}{3}(\xi-2)^{3/2} + \frac{1}{6}(\xi+2)^{5/2}-\frac{1}{6}(\xi+2)(\xi-2)^{3/2}\\ +
+		&\frac{1}{10}(\xi+2)^{5/2}-(\xi-2)^{5/2} )
+ \end{split}\\
+ \begin{split}
+   f_{3/2}(z) &= \frac{2}{\sqrt{\pi}}\{\frac{2}{3}(\xi-2)^{3/2}-\frac{1}{6}(\xi+2)(\xi-2)^{3/2}\\
+	      & +\frac{4}{15}(\xi+2)^{5/2}-\frac{1}{10}(\xi-2)^{5/2}\}
+ \end{split}
+\end{align}
+We substitute $\frac{e_f}{kT}$ for $\xi$. 
+At low temperatures z is large, so we keep only the highest powers of z in the two expressions. 
+\begin{align}
+ \frac{f_{5/2}(z)}{f_{3/2}(z)} &= \frac{2}{3}\left(
+		  \frac{\frac{12}{70}(\frac{e_f}{kT}+2)^{7/2}-\frac{1}{14}(\frac{e_f}{kT}-2)^{7/2}}
+		  {\frac{4}{15}(\frac{e_f}{kT}+2)^{5/2}-\frac{1}{10}(\frac{e_f}{kT}-2)^{5/2}} \right)
+\end{align}
+We now plug this approximations into the expression for energy and differentiate with respect to T:
+\begin{align}
+ U &= \frac{3}{2}NkT\frac{f_{5/2}(z)}{f_{3/2}(z)}\\
+ U &= \frac{3}{2}NkT\frac{2}{3}\left(
+		  \frac{\frac{12}{70}(\frac{e_f}{kT}+2)^{7/2}-\frac{1}{14}(\frac{e_f}{kT}-2)^{7/2}}
+		  {\frac{4}{15}(\frac{e_f}{kT}+2)^{5/2}-\frac{1}{10}(\frac{e_f}{kT}-2)^{5/2}} \right)\\
+ \frac{C_v}{Nk} &= Nk\frac{2}{3}\left(
+		  \frac{\frac{12}{70}(\frac{e_f}{kT}+2)^{7/2}-\frac{1}{14}(\frac{e_f}{kT}-2)^{7/2}}
+		  {\frac{4}{15}(\frac{e_f}{kT}+2)^{5/2}-\frac{1}{10}(\frac{e_f}{kT}-2)^{5/2}} \right)
+\end{align}
+
+
+
 \section{Problem 8.2}
 We find a general expression for the temperature:
 \begin{align}

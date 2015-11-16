@@ -21,7 +21,36 @@
 \maketitle
 
 \section{Problem 8.1}
-\\
+Using the linear approximation for the Fermi distribution at low temperatures, we have the following approximate Fermi integral:
+\begin{align}
+ f_v(z) &= \frac{1}{\Gamma (z)}\left(\int_0^{\xi-2}z^{v-1}+\int_{\xi-2}^{\xi+2}\left(\frac{\xi+2-z}{4}) \right)z^{v-1} \right)
+\end{align}
+Solving for $f_{5/2}$ and $f_{3/2}$:
+\begin{align}
+ f_{5/2}(z) &= \frac{4}{3\sqrt{\pi}}\left(\int_0^{\xi-2}z^{3/2}dz+\frac{\xi+2}{4}\int_{\xi-2}^{\xi+2}z^{3/2}dz 
+	      +\frac{1}{4}\int_{\xi-2}^{\xi+2}z^{5/2}dz\right)\\
+ \begin{split}
+ f_{5/2}(z) &= \frac{4}{3\sqrt{\pi}}( \frac{2}{5}(\xi-2)^{5/2} + \frac{1}{10}(\xi+2)^{7/2}-\frac{1}{10}(\xi+2)(\xi-2)^{5/2}\\ +
+		&\frac{1}{14}(\xi+2)^{7/2}-(\xi-2)^{7/2} )
+ \end{split}\\
+ \begin{split}
+   f_{5/2}(z) &= \frac{4}{3\sqrt{\pi}}\{\frac{2}{5}(\xi-2)^{3/2}-\frac{1}{10}(\xi+2)(\xi-2)^{5/2}\\
+	      & +\frac{12}{70}(\xi+2)^{7/2}-\frac{1}{14}(\xi-2)^{7/2}\}
+ \end{split}\\
+ f_{3/2}(z) &= \frac{2}{\sqrt{\pi}}\left(\int_0^{\xi-2}z^{1/2}dz+\frac{\xi+2}{4}\int_{\xi-2}^{\xi+2}z^{1/2}dz 
+	      +\frac{1}{4}\int_{\xi-2}^{\xi+2}z^{3/2}dz\right)\\
+ \begin{split}
+ f_{3/2}(z) &= \frac{2}{\sqrt{\pi}}( \frac{2}{3}(\xi-2)^{3/2} + \frac{1}{6}(\xi+2)^{5/2}-\frac{1}{6}(\xi+2)(\xi-2)^{3/2}\\ +
+		&\frac{1}{10}(\xi+2)^{5/2}-(\xi-2)^{5/2} )
+ \end{split}\\
+ \begin{split}
+   f_{3/2}(z) &= \frac{2}{\sqrt{\pi}}\{\frac{2}{3}(\xi-2)^{3/2}-\frac{1}{6}(\xi+2)(\xi-2)^{3/2}\\
+	      & +\frac{4}{15}(\xi+2)^{5/2}-\frac{1}{10}(\xi-2)^{5/2}\}
+ \end{split}
+\end{align}
+We now plug these approximations into the expression for energy and differentiate with respect to T:
+
+
 \section{Problem 8.2}
 We find a general expression for the temperature:
 \begin{align}
@@ -128,9 +157,9 @@ Using $C_V=\frac{\pi^2}{2}\frac{kT}{e_f}$ and again substituting the $\ln{z}$ se
 \begin{align}
  \frac{f_{1/2}}{f_{3/2}} &= \frac{3}{2\ln{z}}\left(1-\frac{\pi^2}{24}(\ln{z})^{-2}\right)\left(1-\frac{\pi^2}{8}(\ln{z})^{-2} \right)\\
  \frac{f_{1/2}}{f_{3/2}} &= \frac{3}{2}\frac{kT}{e_f}\left(1-\frac{\pi^2}{6}(\frac{kT}{e_f})^{2}\right)\\
+ \frac{C_P-C_V}{C_V} &=\frac{4}{9}\frac{\pi^2}{2}\frac{kT}{e_f}\frac{3}{2}\frac{kT}{e_f}\left(1-\frac{\pi^2}{6}(\frac{kT}{e_f})^{2}\right)\\
+ \frac{C_P-C_V}{C_V} &\simeq \frac{\pi^2}{3}\left(\frac{kT}{e_f} \right)^2
 \end{align}
-
-\\
 c) Using the relation $\gamma = \frac{\kappa_T}{\kappa_S}$, keeping terms to second order, we find:
 \begin{align}
  \gamma &\simeq \left(1-\frac{\pi^2}{12}(\frac{kT}{e_f})^{2}\right)/\left(1-\frac{5\pi^2}{12}(\frac{kT}{e_f})^{2}\right)\\
@@ -138,7 +167,5 @@ c) Using the relation $\gamma = \frac{\kappa_T}{\kappa_S}$, keeping terms to sec
  \gamma &\simeq 1-\frac{\pi^2}{3}(\frac{kT}{e_f})^2
 \end{align}
 So we have verified the result in part A for $\gamma$ at low temperatures.
-
-
 
 \end{document}
