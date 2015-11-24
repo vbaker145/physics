@@ -1,0 +1,68 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 2.3 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \sortlist{entry}{nty}
+    \entry{nanoCrystal}{article}{}
+      \name{labelname}{1}{}{%
+        {{hash=0afda2562ae8d2fc0889241ce3547b80}{Cleland}{C\bibinitperiod}{J.\bibnamedelimi Bochmann\bibnamedelimb A.\bibnamedelimi Vainsencher\bibnamedelimb D.\bibnamedelimi Awschalom\bibnamedelima A.}{J\bibinitperiod\bibinitdelim B\bibinitperiod\bibinitdelim A\bibinitperiod\bibinitdelim V\bibinitperiod\bibinitdelim D\bibinitperiod\bibinitdelim A\bibinitperiod\bibinitdelim A\bibinitperiod}{}{}{}{}}%
+      }
+      \name{author}{1}{}{%
+        {{hash=0afda2562ae8d2fc0889241ce3547b80}{Cleland}{C\bibinitperiod}{J.\bibnamedelimi Bochmann\bibnamedelimb A.\bibnamedelimi Vainsencher\bibnamedelimb D.\bibnamedelimi Awschalom\bibnamedelima A.}{J\bibinitperiod\bibinitdelim B\bibinitperiod\bibinitdelim A\bibinitperiod\bibinitdelim V\bibinitperiod\bibinitdelim D\bibinitperiod\bibinitdelim A\bibinitperiod\bibinitdelim A\bibinitperiod}{}{}{}{}}%
+      }
+      \strng{namehash}{0afda2562ae8d2fc0889241ce3547b80}
+      \strng{fullhash}{0afda2562ae8d2fc0889241ce3547b80}
+      \field{sortinit}{C}
+      \field{labeltitle}{Nanomechanical coupling between microwave and optical photons}
+      \field{journaltitle}{Nature Physics}
+      \field{title}{Nanomechanical coupling between microwave and optical photons}
+      \field{volume}{9}
+      \field{year}{2013}
+      \field{pages}{712\bibrangedash 716}
+      \verb{doi}
+      \verb 10.1038/NPHYS2748
+      \endverb
+      \keyw{physics}
+    \endentry
+    \entry{nanoMR}{article}{}
+      \name{labelname}{1}{}{%
+        {{hash=c4b30b219cb4cf7772989d3934171084}{Milburn}{M\bibinitperiod}{Sh.\bibnamedelimi Barzanjeh\bibnamedelimb D.\bibnamedelimi Vitali\bibnamedelimb P.\bibnamedelimi Tombesi\bibnamedelima G.J.}{S\bibinitperiod\bibinitdelim B\bibinitperiod\bibinitdelim D\bibinitperiod\bibinitdelim V\bibinitperiod\bibinitdelim P\bibinitperiod\bibinitdelim T\bibinitperiod\bibinitdelim G\bibinitperiod}{}{}{}{}}%
+      }
+      \name{author}{1}{}{%
+        {{hash=c4b30b219cb4cf7772989d3934171084}{Milburn}{M\bibinitperiod}{Sh.\bibnamedelimi Barzanjeh\bibnamedelimb D.\bibnamedelimi Vitali\bibnamedelimb P.\bibnamedelimi Tombesi\bibnamedelima G.J.}{S\bibinitperiod\bibinitdelim B\bibinitperiod\bibinitdelim D\bibinitperiod\bibinitdelim V\bibinitperiod\bibinitdelim P\bibinitperiod\bibinitdelim T\bibinitperiod\bibinitdelim G\bibinitperiod}{}{}{}{}}%
+      }
+      \strng{namehash}{c4b30b219cb4cf7772989d3934171084}
+      \strng{fullhash}{c4b30b219cb4cf7772989d3934171084}
+      \field{sortinit}{M}
+      \field{labeltitle}{Entangling optical and microwave cavity modes by means of a nanomechanical resonator}
+      \field{journaltitle}{Annalen der Physik}
+      \field{number}{10}
+      \field{title}{Entangling optical and microwave cavity modes by means of a nanomechanical resonator}
+      \field{volume}{322}
+      \field{year}{1905}
+      \field{pages}{891\bibrangedash 921}
+      \verb{doi}
+      \verb http://dx.doi.org/10.1002/andp.19053221004
+      \endverb
+      \keyw{physics}
+    \endentry
+  \endsortlist
+\endrefsection
+\endinput
+
