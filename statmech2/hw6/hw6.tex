@@ -66,13 +66,38 @@ Using the low-temperature approximation $\ln{z} = \frac{e_f}{kT}\left(1-\frac{\p
  X &= \frac{3n\mu^{*2}}{2e_f}\left(1-\frac{\pi^2}{12}(\frac{kT}{e_f})^{-2}+...\right)
 \end{align}
 \section{Problem 8.19}
+We begin from the relation from problem 8.13, expression 8.1.21 and 8.4.7:
 \begin{align}
- e &=mc^2\left(\sqrt{1+\left(\frac{p}{mc}\right)^2}-1 \right)\\
- p &=mc\sqrt{(\frac{e}{mc^2}+1)^2-1}\\
- p &=\sqrt{\frac{e^2}{c^2}+2me}\\
- \frac{dp}{de} &= \frac{1}{c}(\frac{e}{mc^2}+1)\left((\frac{e}{mc^2}+1)^2-1 \right)^{-1/2}\\
- p^2 \frac{dp}{de} &= m^2c(\frac{e}{mc^2}+1)\left((\frac{e}{mc^2}+1)^2-1 \right)^{1/2}
+ C_V &= \frac{\pi^2}{3}k^2Ta(e_F)\\
+ a(e) &= \frac{gV}{h^3}4\pi p^2\frac{dp}{de}\\
+ \frac{de}{dp} &= \frac{p/m}{\left(1+\left(\frac{p}{mc}\right)^2 \right)^{1/2}}
 \end{align}
+Using these expressions with $g=2$ we find:
+\begin{align}
+ a(e) &= \frac{8\pi mV}{h^3}p\left(1+\left(\frac{p}{mc}\right)^2 \right)^{1/2}\\
+ \frac{C_V}{k} &= \frac{8\pi^3mV}{3}kTp\left(1+\left(\frac{p}{mc}\right)^2 \right)^{1/2}
+\end{align}
+Using the value of N from equation 8.4.4 we show:
+\begin{align}
+  \frac{C_V}{Nk} &= \pi^2mkT\frac{\left(1+\left(\frac{p}{mc}\right)^2 \right)^{1/2}}{p_f^2}
+\end{align}
+Making the substitution $x=\frac{p_f}{mc}$ we have proved the desired result.
+\begin{align}
+ \frac{C_V}{Nk} &= \pi^2\frac{kT}{mc^2}\frac{\left(x^2+1 \right)^{1/2}}{x^2}
+\end{align}
+\\ \\
+For the nonrelativistic case $p_f<<mc,x<<1$ we have:
+\begin{align}
+ \frac{C_V}{Nk} &\simeq \pi^2\frac{mkT}{p_f^2}
+\end{align}
+With $e_f=\frac{p_f^2}{2m}$ we recover the nonrelativistic result $\frac{C_V}{Nk}=\frac{\pi^2}{2}\frac{kT}{e_f}$.
+\\
+For the extreme relativistic case $p_f>>mc, x>>1$ we obtain:
+\begin{align}
+ \frac{C_V}{Nk} &\simeq \frac{\pi^2kT}{p_f c}
+\end{align}
+We do not have any particular result for the specific heat of an ultrarelativistic Fermi gas to compare this to.
+However, we note that using ultrarelativistic energy $e=pc$ we recover the standard form of the specific heat without the factor of $\frac{1}{2}$.
 
 \section{Problem 7.3}
 Using the relation from note 6 in chapter 7 of Pathria:

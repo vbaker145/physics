@@ -66,6 +66,41 @@ Using the low-temperature approximation $\ln{z} = \frac{e_f}{kT}\left(1-\frac{\p
  X &= \frac{3n\mu^{*2}}{2e_f}\left(1-\frac{\pi^2}{12}(\frac{kT}{e_f})^{-2}+...\right)
 \end{align}
 \section{Problem 8.19}
+We begin from the relation from problem 8.13, expression 8.1.21 and 8.4.7:
+\begin{align}
+ C_V &= \frac{\pi^2}{3}k^2Ta(e_F)\\
+ a(e) &= \frac{gV}{h^3}4\pi p^2\frac{dp}{de}\\
+ \frac{de}{dp} &= \frac{p/m}{\left(1+\left(\frac{p}{mc}\right)^2 \right)^{1/2}}
+\end{align}
+Using these expressions with $g=2$ we find:
+\begin{align}
+ a(e) &= \frac{8\pi mV}{h^3}p\left(1+\left(\frac{p}{mc}\right)^2 \right)^{1/2}\\
+ \frac{C_V}{k} &= \frac{8\pi^3mV}{3}kTp\left(1+\left(\frac{p}{mc}\right)^2 \right)^{1/2}
+\end{align}
+Using the value of N from equation 8.4.4 we show:
+\begin{align}
+  \frac{C_V}{Nk} &= \pi^2mkT\frac{\left(1+\left(\frac{p}{mc}\right)^2 \right)^{1/2}}{p_f^2}
+\end{align}
+Making the substitution $x=\frac{p_f}{mc}$ we have proved the desired result.
+\begin{align}
+ \frac{C_V}{Nk} &= \pi^2\frac{kT}{mc^2}\frac{\left(x^2+1 \right)^{1/2}}{x^2}
+\end{align}
+\\ \\
+For the nonrelativistic case $p_f<<mc,x<<1$ we have:
+\begin{align}
+ \frac{C_V}{Nk} &\simeq \pi^2\frac{mkT}{p_f^2}
+\end{align}
+With $e_f=\frac{p_f^2}{2m}$ we recover the nonrelativistic result $\frac{C_V}{Nk}=\frac{\pi^2}{2}\frac{kT}{e_f}$.
+\\
+For the extreme relativistic case $p_f>>mc, x>>1$ we obtain:
+\begin{align}
+ \frac{C_V}{Nk} &\simeq \frac{\pi^2kT}{p_f c}
+\end{align}
+
+
+
+
+
 \begin{align}
  e &=mc^2\left(\sqrt{1+\left(\frac{p}{mc}\right)^2}-1 \right)\\
  p &=mc\sqrt{(\frac{e}{mc^2}+1)^2-1}\\
@@ -83,10 +118,19 @@ Truncating Pathria D.9 two two terms and instering into 1:
 \begin{align}
  g_{3/2}(e^{-a}) &= \frac{\Gamma(-1/2)}{a^{-1/2}}+\xi(\frac{3}{2})+...\\
  g_{3/2}(e^{-a}) &= \xi(\frac{3}{2})-2\sqrt{\pi}a^{1/2} \\
- 1-\frac{2\sqrt{\pi}a^{1/2}}{\xi(\frac{3}{2})} &= \left(\frac{T}{T_c} \right)^{2/3}\\
- a^{1/2} &= \frac{\xi(\frac{3}{2})}{2\sqrt{\pi}}\left(1-\left(\frac{T}{T_c}\right)^{2/3} \right)
+ 1-\frac{2\sqrt{\pi}a^{1/2}}{\xi(\frac{3}{2})} &= \left(\frac{T}{T_c} \right)^{3/2}\\
+ a^{1/2} &= \frac{\xi(\frac{3}{2})}{2\sqrt{\pi}}\left(1-\left(\frac{T}{T_c}\right)^{3/2} \right)
 \end{align}
-Now expand $1-\left(\frac{T_c+\epsilon}{T_c} \right)^{2/3}$ for small $\epsilon$.
+Now make a Taylor expansion of $1-\left(\frac{T}{T_c}\right)^{3/2}$.
+\begin{align}
+ 1-\left(\frac{T}{T_c}\right)^{3/2} &\simeq (1-1)-\frac{3}{2}\frac{1}{T_c^{3/2}}T_c^{1/2}(T-T_c)\\
+ 1-\left(\frac{T}{T_c}\right)^{3/2} &\simeq -\frac{3}{2}\frac{T-T_c}{T_c}
+\end{align}
+Inserting the approximation into 5 and squaring both sides:
+\begin{align}
+ a &\simeq \frac{1}{\pi}\left(\frac{3\xi(3/2)}{4} \right)^2\left(\frac{T-T_c}{T_c} \right)^2
+\end{align}
+
 
 \section{Problem 7.5}
 a) We prove the following relations for the isothermal compressibility and adiabatic compressibility of an ideal Bose gas:
