@@ -62,6 +62,26 @@
       \endverb
       \keyw{physics}
     \endentry
+    \entry{qi}{article}{}
+      \name{labelname}{1}{}{%
+        {{hash=6c3d11b6a4551dde458674a237429727}{Pirandola}{P\bibinitperiod}{Sh.\bibnamedelimi Barzanjeh\bibnamedelimb S.\bibnamedelimi Guha\bibnamedelimb C.\bibnamedelimi Weedbrook\bibnamedelimb D.\bibnamedelimi Vitali\bibnamedelimb J.\bibnamedelimi Shapiro\bibnamedelima S.}{S\bibinitperiod\bibinitdelim B\bibinitperiod\bibinitdelim S\bibinitperiod\bibinitdelim G\bibinitperiod\bibinitdelim C\bibinitperiod\bibinitdelim W\bibinitperiod\bibinitdelim D\bibinitperiod\bibinitdelim V\bibinitperiod\bibinitdelim J\bibinitperiod\bibinitdelim S\bibinitperiod\bibinitdelim S\bibinitperiod}{}{}{}{}}%
+      }
+      \name{author}{1}{}{%
+        {{hash=6c3d11b6a4551dde458674a237429727}{Pirandola}{P\bibinitperiod}{Sh.\bibnamedelimi Barzanjeh\bibnamedelimb S.\bibnamedelimi Guha\bibnamedelimb C.\bibnamedelimi Weedbrook\bibnamedelimb D.\bibnamedelimi Vitali\bibnamedelimb J.\bibnamedelimi Shapiro\bibnamedelima S.}{S\bibinitperiod\bibinitdelim B\bibinitperiod\bibinitdelim S\bibinitperiod\bibinitdelim G\bibinitperiod\bibinitdelim C\bibinitperiod\bibinitdelim W\bibinitperiod\bibinitdelim D\bibinitperiod\bibinitdelim V\bibinitperiod\bibinitdelim J\bibinitperiod\bibinitdelim S\bibinitperiod\bibinitdelim S\bibinitperiod}{}{}{}{}}%
+      }
+      \strng{namehash}{6c3d11b6a4551dde458674a237429727}
+      \strng{fullhash}{6c3d11b6a4551dde458674a237429727}
+      \field{sortinit}{P}
+      \field{labeltitle}{Microwave quantum illumination}
+      \field{journaltitle}{Physical Review Letters}
+      \field{title}{Microwave quantum illumination}
+      \field{volume}{114}
+      \field{year}{2015}
+      \verb{doi}
+      \verb http://dx.doi.org/10.1002/andp.19053221004
+      \endverb
+      \keyw{physics}
+    \endentry
   \endsortlist
 \endrefsection
 \endinput

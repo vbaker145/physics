@@ -1,0 +1,65 @@
+\documentclass[a4paper,11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{braket}
+
+\numberwithin{equation}{section}
+\renewcommand\thesubsection{\alph{subsection}}
+\newcommand{\bvp}[1]{\mathbf{#1}'}
+\newcommand{\bv}[1]{\mathbf{#1}}
+
+
+%opening
+\title{Quantum III HW3}
+\author{Vince Baker}
+
+\begin{document}
+
+\maketitle
+
+\section{Problem 1}
+We start with the double commutation relation $[[H,e^{ik\cdot r}],e^{ik\cdot r}]$. 
+Following the usual proof of the Thomas-Reiche-Kuhn sum rule, we first write this as:
+\begin{align}
+ [H,e^{ik\cdot r}] &=  [\frac{p^2}{2m}+V(r),e^{ik\cdot r}]\\
+ [H,e^{ik\cdot r}] &= \frac{-\hbar^2}{2m}\nabla^2(e^{ik\cdot r})+e^{ik\cdot r}\frac{\hbar^2}{2m}\nabla^2\\
+ [[H,e^{ik\cdot r}],e^{ik\cdot r}] &= \frac{i\hbar k^2}{m}[p, r] = \frac{\hbar^2k^2}{m}
+\end{align}
+Now we expand the double commutator and write the expression for the final state:
+\begin{align}
+ &\bra{n}[He^{ik\cdot r}-e^{ik\cdot r}H,e^{ik\cdot r}]\ket{n}\\
+ &2E_n\bra{n}e^{i2k\cdot r}\ket{n}-2\bra{n}e^{ik\cdot r}He^{ik\cdot r} \ket{n}\\
+ \begin{split}
+ &\sum_m 2E_n\bra{n}e^{ik\cdot r}\ket{m}\bra{m}e^{ik\cdot r}\ket{n}\\&\ -2\sum_m\bra{n}e^{ik\cdot r}\ket{m}\bra{m}H\ket{m}\bra{m}e^{ik\cdot r}\ket{n}
+ \end{split}\\
+ &\sum_m 2(E_n-E_m)\bra{n}e^{ik\cdot r}\ket{m}^2
+\end{align}
+Combining 3 and 7, interchanging m for nn, we have shown:
+\begin{align}
+ \sum_n (E_n-E_m)\bra{n}e^{ik\cdot r}\ket{m}^2 &= \frac{\hbar^2k^2}{2m}
+\end{align}
+
+\section{Problem 2}
+We first evaluate the commutator $[L_z,P_+]$, with $L_z=-i\hbar x\frac{\partial}{\partial y}+i\hbar y\frac{\partial}{\partial x}$
+and $P_+=-i\hbar \frac{\partial}{\partial x}+\hbar \frac{\partial}{\partial y}$.
+Opening up the commutator and operating on a test function f:
+\begin{align}
+ \begin{split}
+ [L_z,P_+] = &-\hbar^2x\frac{\partial f}{\partial x \partial y}-i\hbar^2x\frac{\partial^2f}{\partial y^2}+\hbar^2y\frac{\partial^2f}{\partial x^2}+i\hbar^2y\frac{\partial^2f}{\partial x \partial y}\\
+  &+\hbar^2\left(\frac{\partial f}{\partial y}+x\frac{\partial^2f}{\partial x \partial y} \right)-\hbar^2y\frac{\partial^2 f}{\partial x^2}+i\hbar^2x\frac{\partial^2 f}{\partial y^2}\\
+  &-i\hbar^2\left(\frac{\partial f}{\partial x}+y\frac{\partial^2 f}{\partial x \partial y} \right)
+ \end{split}\\
+ [L_z,P_+] &= \hbar^2\frac{\partial}{\partial y}-i\hbar^2\frac{\partial}{\partial x} = \hbar P_x
+\end{align}
+
+\section{Problem 3}
+We use the Born approximation with a spherically symmetric potential:
+\begin{align}
+ f(\theta) &= \frac{-2m}{\hbar^2 k}\int_0^\infty rV(r)\sin{(kr)} dr
+\end{align}
+
+
+\end{document}

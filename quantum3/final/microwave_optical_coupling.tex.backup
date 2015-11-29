@@ -36,8 +36,11 @@
 \section{Introduction}
 Coupling between optical and microwave modes creates a new set of experimental techniques to explore the principles of quantum dynamics.
 The coherent transfer of quantum states may be exploited in applications including quantum-enhanced sensing and quantum computing.
-Several similar mechanisms for optical/microwave coupling have been reported recently \cite{nanoCrystal, nanoMR}.
-Outline of paper \cite{qi}.\\
+Several similar mechanisms for optical/microwave coupling have been reported recently \cite{nanoCrystal, nanoMR}.\\
+We will start by reviewing some of the proposed methods for microwave/optical coupling.
+We then sketch the analytical exploration of the nanomechanical resonator from \cite{nanoMR} to demonstrate some important aspects of the approach. 
+A general discussion of applications is followed by a discussion of aspects of quantum illumination applied to radar systems.
+
 \section{Optical/Microwave Coupling Methods}
 Piezoelectric optomechanical crystal.\\
 Mechanical resonator.
@@ -49,6 +52,11 @@ Correlation between systems and log-negativity.
 Quanum computing.\\
 Quantum illumination.
 \section{Discussion of microwave quantum illumination}
-\section{Bibliography}
+Quantum-enhanced sensing is a relatively young field that seeks to enhance sensing by using quantum entanglement. 
+We discuss the particular application of quantum illumination in the microwave regime applied to radar systems.
+Radar systems determine the range, bearing and velocity of an object by emitting a microwave signal and measuring the signal reflections.
+Radar waveforms are designed to allow the receiver to correlate the return signal from an object of interest in the presence of thermal noise, interfering microwave signals and signal reflections from other objects.
+
+
 \printbibliography
 \end{document}

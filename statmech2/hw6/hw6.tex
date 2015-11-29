@@ -1,0 +1,147 @@
+\documentclass[a4paper,11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{braket}
+
+\numberwithin{equation}{section}
+\renewcommand\thesubsection{\alph{subsection}}
+\newcommand{\bvp}[1]{\mathbf{#1}'}
+\newcommand{\bv}[1]{\mathbf{#1}}
+
+
+%opening
+\title{Statmech II HW6}
+\author{Vince Baker}
+
+\begin{document}
+
+\maketitle
+
+\section{Problem 8.15}
+a. We prove the relation:
+\begin{align}
+ X &= \frac{2n\mu^{*2}}{(\frac{\partial \mu_0}{\partial x})|_{x=1/2}} = \frac{n\mu^{*2}}{kT}\frac{f_{1/2}(z)}{f_{5/2}(z)}
+\end{align}
+We start with the relation:
+\begin{align}
+ \mu_0(xN) &= kT\ln{(\frac{xN\lambda^3}{V})} = kT\ln{z}\\
+ \frac{\partial{\mu_0}}{\partial x} &= kT\frac{\partial \ln{z}}{\partial x}
+\end{align}
+With $f_{3/2}(z) \simeq z$ we identify $f_{3/2}(z) = \frac{xN\lambda^3}{V}$ we find an expression for $\frac{\partial \ln{z}}{\partial x}$:
+\begin{align}
+ \frac{\partial f_{3/2}(z)}{\partial \ln{z}}\frac{\partial \ln{z} }{\partial x} &= \frac{N\lambda^3}{V}\\
+ \frac{\partial \ln{z}}{\partial x} &= \frac{f_{3/2}(z)}{xf_{1/2}(z)}
+\end{align}
+Using 1.3 and 1.6 we can now write 1.1 as:
+\begin{align}
+ X &= \frac{2n\mu^{*2}}{kT/x}|_{x=1/2}\frac{f_{1/2}(z)}{f_{3/2}(z)}\\
+ X &= \frac{n\mu^{*2}}{kT}\frac{f_{1/2}(z)}{f_{3/2}(z)}
+\end{align}
+\\ \\
+At high temperatures $z \ll 1$ and (keeping terms to first order in z):
+\begin{align}
+ \frac{f_{1/2}(z)}{f_{3/2}(z)} &= \frac{z-z^2 2^{-1/2}+...}{z-z^2 2^{-1/2}+...}\\
+ \frac{f_{1/2}(z)}{f_{3/2}(z)} &\simeq \frac{1-z2^{-1/2}}{1-z2^{-3/2}}\\
+ \frac{f_{1/2}(z)}{f_{3/2}(z)} &\simeq 1-z2^{-3/2}
+\end{align}
+Where we have used the fact that $2^{-1/2}-2^{-3/2}=2^{-3/2}$.
+Using the high temperature expression $z=\frac{n\lambda^3}{2}$ we can write the susceptibility:
+\begin{align}
+ X &= \frac{n\mu^{*2}}{kT}\left(1-\frac{n\lambda^3}{2}2^{-3/2} \right)\\
+ X &= \frac{n\mu^{*2}}{kT}\left(1-\frac{n\lambda^3}{2^{5/2}} \right)
+\end{align}
+With $X_0 \equiv \frac{n\mu^{*2}}{kT}$ we have proved the provided relation.
+\\ \\
+At low temperatures we use the Sommerfeld expansions of the Fermi integrals:
+\begin{align}
+ \frac{f_{1/2}(z)}{f_{3/2}(z)} &= \frac{3}{2}\frac{1}{\ln{z}}\left(1-\frac{\pi^2}{6}(\ln{z})^{-2}+...\right)
+\end{align}
+Using the low-temperature approximation $\ln{z} = \frac{e_f}{kT}\left(1-\frac{\pi^2}{12}(\frac{kT}{e_f})^2 \right)$:
+\begin{align}
+ X &= \frac{n\mu^{*2}}{kT}\frac{f_{1/2}(z)}{f_{3/2}(z)}\\
+ X &= \frac{n\mu^{*2}}{kT}\frac{3}{2}\frac{kT}{e_f}\left(1-\frac{\pi^2}{6}(\frac{kT}{e_f})^{-2}+...\right)\left(1+\frac{\pi^2}{12}(\frac{kT}{e_f})^2+... \right)\\
+ X &= \frac{3n\mu^{*2}}{2e_f}\left(1-\frac{\pi^2}{12}(\frac{kT}{e_f})^{-2}+...\right)
+\end{align}
+\section{Problem 8.19}
+\begin{align}
+ e &=mc^2\left(\sqrt{1+\left(\frac{p}{mc}\right)^2}-1 \right)\\
+ p &=mc\sqrt{(\frac{e}{mc^2}+1)^2-1}\\
+ p &=\sqrt{\frac{e^2}{c^2}+2me}\\
+ \frac{dp}{de} &= \frac{1}{c}(\frac{e}{mc^2}+1)\left((\frac{e}{mc^2}+1)^2-1 \right)^{-1/2}\\
+ p^2 \frac{dp}{de} &= m^2c(\frac{e}{mc^2}+1)\left((\frac{e}{mc^2}+1)^2-1 \right)^{1/2}
+\end{align}
+
+\section{Problem 7.3}
+Using the relation from note 6 in chapter 7 of Pathria:
+\begin{align}
+ \frac{g_{3/2}(z)}{g_{3/2}(1)} &= \left(\frac{T_c}{T} \right)^{3/2}
+\end{align}
+Truncating Pathria D.9 two two terms and instering into 1:
+\begin{align}
+ g_{3/2}(e^{-a}) &= \frac{\Gamma(-1/2)}{a^{-1/2}}+\xi(\frac{3}{2})+...\\
+ g_{3/2}(e^{-a}) &= \xi(\frac{3}{2})-2\sqrt{\pi}a^{1/2} \\
+ 1-\frac{2\sqrt{\pi}a^{1/2}}{\xi(\frac{3}{2})} &= \left(\frac{T}{T_c} \right)^{3/2}\\
+ a^{1/2} &= \frac{\xi(\frac{3}{2})}{2\sqrt{\pi}}\left(1-\left(\frac{T}{T_c}\right)^{3/2} \right)
+\end{align}
+Now make a Taylor expansion of $1-\left(\frac{T}{T_c}\right)^{3/2}$.
+\begin{align}
+ 1-\left(\frac{T}{T_c}\right)^{3/2} &\simeq (1-1)-\frac{3}{2}\frac{1}{T_c^{3/2}}T_c^{1/2}(T-T_c)\\
+ 1-\left(\frac{T}{T_c}\right)^{3/2} &\simeq -\frac{3}{2}\frac{T-T_c}{T_c}
+\end{align}
+Inserting the approximation into 5 and squaring both sides:
+\begin{align}
+ a &\simeq \frac{1}{\pi}\left(\frac{3\xi(3/2)}{4} \right)^2\left(\frac{T-T_c}{T_c} \right)^2
+\end{align}
+
+
+\section{Problem 7.5}
+a) We prove the following relations for the isothermal compressibility and adiabatic compressibility of an ideal Bose gas:
+\begin{align}
+ \kappa_T &= \frac{1}{V}\left(\frac{\partial V}{\partial P}\right)_T\\
+ \kappa_S &= \frac{1}{V}\left(\frac{\partial V}{\partial P}\right)_S
+\end{align}
+Using the expressions for P and n and taking the derivatives with T held constant and with z held constant:
+\begin{align}
+ P &= kT\frac{1}{\lambda^3}g_{5/2}(z)\\
+ \frac{\partial P}{\partial z} &= \frac{kT}{\lambda^3}\frac{1}{z}g_{3/2}(z)\\
+ \frac{\partial P}{\partial T} &= \frac{5}{2}\frac{(2\pi m)^{3/2}}{h^3}k^{5/2}T^{3/2}g_{5/2}(z)\\
+ n &= \frac{1}{\lambda^3}g_{3/2}(z)\\
+ \frac{\partial n}{\partial z} &= \frac{1}{\lambda^3}\frac{1}{z}g_{1/2}(z)\\
+ \frac{\partial n}{\partial T} &= \frac{3}{2}\frac{(2\pi mk)^{3/2}}{h^3}T^{1/2}g_{3/2}(z)
+\end{align}
+Writing the compressibility expressions as functions of n and using the appropriate derivatives, we show:
+\begin{align}
+ \kappa_T &= \frac{V}{N}\left(\frac{\partial (\frac{N}{V})}{\partial P}\right)_T
+	      = \frac{1}{n}\left(\frac{\partial n}{\partial P}\right)_T\\
+ \kappa_T &= \frac{1}{nkT}\frac{g_{1/2}(z)}{g_{3/2}(z)}\\
+ \kappa_S &= \frac{V}{N}\left(\frac{\partial (\frac{N}{V})}{\partial P}\right)_S
+	      = \frac{1}{n}\left(\frac{\partial n}{\partial P}\right)_S\\
+ \kappa_S &= \frac{3}{5nkT}\frac{g_{3/2}(z)}{g_{5/2}(z)}
+\end{align}
+b) We now derive the relations:
+\begin{align}
+ \gamma &= \frac{C_p}{C_v} = 1 + \frac{4}{9}\frac{C_v}{Nk}\frac{g_{1/2}(z)}{g_{3/2}(z)}\\
+        &= \frac{5}{3}\frac{g_{5/2}(z)g_{1/2}(z)}{\left(g_{3/2}(z) \right)^2}
+\end{align}
+We first note that $\frac{C_p-C_v}{C_v}=\gamma-1$, so $\gamma = 1+\frac{C_p-C_v}{C_v}$.
+We calculate $\frac{\partial P}{\partial T}|_V$:
+\begin{align}
+ P &= \frac{2U}{3V}\\
+ \left(\frac{\partial P}{\partial T}\right)|_V &= \frac{2}{3V}\left(\frac{\partial U}{\partial T}\right)_V\\
+ \left(\frac{\partial P}{\partial T}\right)|_V &= \frac{2}{3V}C_V
+\end{align}
+Using the provided relation for $C_P-C_V$ and plugging in the expression for $\left(\frac{\partial P}{\partial T}\right)|_V$:
+\begin{align}
+ \frac{C_P-C_V}{C_V} &= \frac{4T}{9V}C_V\frac{1}{nkT}\frac{g_{1/2}(z)}{g_{3/2}(z)}\\
+ \frac{C_P-C_V}{C_V} &= \frac{4}{9}\frac{C_V}{Nk}\frac{g_{1/2}(z)}{g_{3/2}(z)}\\
+ \gamma &= 1 + \frac{4}{9}\frac{C_V}{Nk}\frac{g_{1/2}(z)}{g_{3/2}(z)}
+\end{align}
+Using the relation $\frac{C_P}{C_V}=\frac{\kappa_T}{\kappa_S}$ and substituting our previous values for the compressibilities:
+\begin{align}
+ \gamma &= \frac{C_P}{C_V} = \frac{5}{3}\frac{g_{5/2}(z)g_{1/2}(z)}{\left(g_{3/2}(z) \right)^2}
+\end{align}
+
+\end{document}

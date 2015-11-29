@@ -58,14 +58,13 @@ A scaled version of this function is plotted below. The probability again oscill
 \section{Problem 2}
 Wigner and Weisskopf analyze a time-dependent perturbation of a stationary system in the interaction picture. 
 They find an energy shift as well as a line broadening using second-order results.
-Fano found the stationary states of a system with an interaction potential between a discrete state and a comtinuum of states using the Schrodinger picture. 
+Fano found the stationary states of a system with an interaction potential between a discrete state and a continuum of states using the Schrodinger picture. 
 Fano's exact result using the Schordinger picture determines that the discrete state is diluted across a range of continuum states near the discrete-state energy.\\
 If we consider the discrete-continuum interaction terms in the Hamiltonian as a time-dependent perturbation we can view the Wigner-Weisskopf results as an approximation of Fano's results.
-However, the time-dependent perturbation results as presented by Wigner-Weisskopf has a decay width term:
-\begin{align}
- \Gamma &= 2\pi\sum_{m \ne i}|V_{mi}|^2\delta(E_i-E_m)
-\end{align}
-Unlike Fano's result, there is no sudden phase change as the continuum energy passes through the discrete state energy, so Wigner-Weisskopf does not predict the asymmetric absorption peaks that Fano explained.
+Wigner-Weisskopf does predict a frequency shift and a broadening of the spectral line. However, the theory does not account for the asymmetric nature of the emission/absorption peaks.
+Fano's exact approach derives the coefficients of the mixed wavefunction and calculates the general transition probability using the mixed wavefunction.
+Fano's expression for transition probability explain the asymetric peak shape and predicts an absorption null on one side of the peak.
+
 \section{Problem 3}
 We follow Fano's derivation of the factorization:
 \begin{align}
@@ -88,7 +87,7 @@ This leads to:
  P(\int) +i\pi Res = 0 \ (k>0)
 \end{align}
 The residue at the simple pole can be evaluated using $lim(\pp{E} \rightarrow E)(E-\pp{E})\frac{ e^{-i2\pi k\pp{E}} }{E-\pp{E}}=e^{-i2\pi kE}$.
-Writing the sign of k as $\frac{k}{|k|}$, and noting that $ie^{i\theta}=e^{-i\theta}$, we have proved Fano's equation A1:
+Writing the sign of k as $\frac{k}{|k|}$ we have proved Fano's equation A1:
 \begin{align}
  \frac{1}{E-\pp{E}} &= -i\pi\int_{-\infty}^\infty \frac{k}{|k|}e^{i2\pi k(E-\pp{E})}dk
 \end{align}
@@ -104,14 +103,35 @@ Fano now makes the substitution $u=k+\pp{k},\ v=\frac{1}{2}(k-\pp{k})$ and finds
  \frac{k\pp{k}}{|k\pp{k}|} &= \frac{u^2-4v^2}{|u^2-4v^2|}
 \end{align}
 This expression will be -1 for $u^2<4v^2$ and +1 for $u^2>4v^2$, so it is equivalent to  $2St(u^2-4v^2)-1$ where $St()$ is the step function.
-This substitution allows us to write equation7 as:
+This substitution allows us to write equation 7 as:
 \begin{align}
   \begin{split}
   \frac{1}{(\bar{E}-\pp{E})(E-\pp{E})} = &\pi^2 \int_{-\infty}^\infty du\ e^{i2\pi u[\frac{1}{2}(\bar{E}+E)-\pp{E}) ]} \\
 					&\times \left( \int_{-\infty}^\infty\ dv-2\int_{-\frac{1}{2}|u|}^{\frac{1}{2}|u|}\ dv \right) e^{i2\pi v(\bar{E}-E)}
   \end{split}
 \end{align}
-Using the exponential delta function $\delta(x-a) = \int e^{x-a}dx$
+For the step function expression we have pulled out a negative sign and recognize the the integral over v is 0 until $v=\frac{1}{2}|u|$.
+The right integral over v is straightforward:
+\begin{align}
+ \int_{-\frac{1}{2}|u|}^{\frac{1}{2}|u|}e^{i2\pi v(\bar{E}-E)}\ dv\\
+ \frac{1}{2i\pi(\bar{E}-E)}\left(e^{i\pi |u|(\bar{E}-E)}-e^{-i\pi |u|(\bar{E}-E)} \right)\\
+ \frac{\sin{(\pi |u|(\bar{E}-E))}}{\pi(\bar{E}-E)}
+\end{align}
+Using the Fourier transform definition of the delta function, $\delta(x)=\int e^{i2\pi kx}dk$, we now have:
+\begin{align}
+  \begin{split}
+  \frac{1}{(\bar{E}-\pp{E})(E-\pp{E})} = &\pi^2 \int_{-\infty}^\infty du\ e^{i2\pi u[\frac{1}{2}(\bar{E}+E)-\pp{E}) ]} \\
+					&\times \left( \delta(\bar{E}-E)-2\frac{\sin{(\pi |u|(\bar{E}-E))}}{\pi(\bar{E}-E)} \right) 
+  \end{split}
+\end{align}
+Writing $\sin{(\pi |u|(\bar{E}-E))}$ as $\frac{1}{2i}\frac{u}{|u|}\left(e^{i\pi u(\bar{E}-E)}-e^{-i\pi u(\bar{E}-E)} \right)$, we can then collect the exponential terms:
+\begin{align}
+  \begin{split}
+  \frac{1}{(\bar{E}-\pp{E})(E-\pp{E})} = &\pi^2\delta(\frac{1}{2}(\bar{E}+E)-\pp{E}) \\
+					&\times \left( \delta(\bar{E}-E)-2\frac{\sin{(\pi |u|(\bar{E}-E))}}{\pi(\bar{E}-E)} \right) 
+  \end{split}
+\end{align}
+
 \\
 \section{Problem 4}
 We start from Fano eq. 10:
@@ -146,8 +166,51 @@ Using $\delta(\bar{E}-\pp{E})\delta(E-\pp{E})=\delta(\bar{E}-E)\delta(\pp{E}-\fr
 \begin{align}
  \int |V_{\pp{E}}|^2 z(\bar{E})z(E)\delta(\bar{E}-\pp{E})\delta(E-\pp{E}) d\pp{E} &= |V_{E}|^2 z(E)^2\delta(\bar{E}-E)
 \end{align}
-
-
+We can now collect terms:
+\begin{align}
+ \begin{split}
+  |a(E)|^2&|V_E|^2(\pi^2+z(E)^2)\delta(\bar{E}-E)+a^*(\bar{E})a(E)\\
+      &\times\left\{1+\frac{1}{\bar{E}-E}\left(F(E)-F(\bar{E})
+         +z(E)|V_E|^2-z(\bar{E})|V_{\bar{E}}|^2  \right) \right\}\\
+         &=\delta(\bar{E}-E)
+ \end{split}
+\end{align}
+Since $F(E)=E-z(E)|V_E|^2-E_\phi$, the term inside the brackets reduces to $1+\frac{E-\bar{E}}{\bar{E}-E}=0$ so the second term vanishes.
+We then have:
+\begin{align}
+ |a(E)|^2 =\frac{1}{|V_E|^2(\pi^2+z(E)^2)}=\frac{|V_E|^2}{(E-E_\phi-F(E))^2+\pi^2|V_E|^4}
+\end{align}
+\\
+\section{Problem 5}
+Following Fano's terminology, the unmixed configurations have wavefunctions $\phi$ and $\psi_E$ for the discrete and continuum states.
+The mixed wavefunction is represented by $\Psi_E$ and is a combination of the unmixed wavefunctions with coefficients $a$ and $b_\pp{E}$.
+The values of $a$ and $b_\pp{E}$ are:
+\begin{align}
+ a &= \frac{\sin{\Delta}}{\pi V_E}\\
+ b_\pp{E} &= \frac{V_{\pp{e}}}{\pi V_E^*}\frac{\sin{\Delta}}{E-\pp{E}}-\cos{\Delta}\delta(E-\pp{E})\\
+ \Delta &= -arctan\left(\frac{\pi|V_E|^2}{E-E_\phi-F(E)}\right)
+\end{align}
+With these definitions we can write the transition probability in terms of a general transition operator T:
+\begin{align}
+ \begin{split}
+ \braket{\Psi_E|T|i} = &\frac{1}{\pi V_E^*}\braket{\phi|T|i}\sin{\Delta}+\frac{1}{\pi V_E^*}\int d\pp{E} \frac{V_{\pp{E}}^*\braket{\psi_{\pp{e}}|T|i}}{E-\pp{E}}\sin{\Delta} \\
+		     &-\int d\pp{E} \braket{\psi_{\pp{E}}|T|i}\cos{\Delta}\delta(E-\pp{E})
+ \end{split}\\
+ \begin{split}
+ \braket{\Psi_E|T|i} = &\frac{1}{\pi V_E^*}\braket{\phi|T|i}\sin{\Delta}+\frac{1}{\pi V_E^*}\int d\pp{E} \frac{V_{\pp{E}}^*\braket{\psi_{\pp{e}}|T|i}}{E-\pp{E}}\sin{\Delta} \\
+		     &-\braket{\psi_E|T|i}\cos{\Delta}
+ \end{split}
+\end{align}
+We can define a new wavefunction $\Phi_E=\phi+\int d\pp{E}\frac{V_{\pp{E}}\psi_{\pp{E}}}{E-\pp{E}}$ and collect the first two terms:
+\begin{align}
+ \braket{\Phi_E|T|i} = &\frac{1}{\pi V_E^*}\braket{\phi|T|i}\sin{\Delta}-\braket{\psi_E|T|i}\cos{\Delta}
+\end{align}
+By writing the transition probability in this form we have highlighted the contribution of the $\Delta$ term in the coefficients, independent of the particular transition operator T.
+In particular, examine $\Delta$ near the pole at $E=E_\psi-F(E)$.
+When the denominator approaches 0 from the left then $\Delta=\frac{\pi}{2}$, while $\Delta=-\frac{\pi}{2}$ when the denominator approaches 0 from the right.\\
+The cosine term in Eq. 5.5 will approach zero from either direction, while the sine term will approach $\pm 1$ as $\Delta$ approaches $\pm \frac{\pi}{2}$.
+This sudden phase change, combined with the functional form of equation 5.6, creates an asymmetric absorption peak. 
+On the ``left'' side of the peak there will be a value of E for which the two terms in equation 5.6 cancel and there is a null in the absorption spectra.
 
 
 \end{document}

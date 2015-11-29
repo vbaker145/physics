@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.1.23)  15 NOV 2015 22:31
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.1.23)  17 NOV 2015 22:37
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -462,49 +462,51 @@ Underfull \hbox (badness 10000) in paragraph at lines 53--58
  []
 
 [2 <./p1_b-eps-converted-to.pdf>] [3]
-Underfull \hbox (badness 10000) in paragraph at lines 113--116
-
+Overfull \hbox (6.37411pt too wide) in paragraph at lines 119--121
+\OT1/cmr/m/n/10.95 Using the Fourier trans-form def-i-ni-tion of the delta func
+-tion, $\OML/cmm/m/it/10.95 ^^N\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 x\OT1/cm
+r/m/n/10.95 ) = [] \OML/cmm/m/it/10.95 e[]dk$\OT1/cmr/m/n/10.95 ,
  []
 
-[4]
-Overfull \hbox (64.10504pt too wide) in paragraph at lines 142--146
+[4] [5]
+Overfull \hbox (64.10504pt too wide) in paragraph at lines 169--173
 \OT1/cmr/m/n/10.95 The sec-ond and third ex-pres-sions in 4.2 can be com-bined 
 into $[] []$. 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 162--164
+Underfull \hbox (badness 10000) in paragraph at lines 189--191
 
  []
 
-[5] (./hw2.aux) ) 
+[6] [7] (./hw2.aux) ) 
 Here is how much of TeX's memory you used:
  2624 strings out of 495028
  33474 string characters out of 6181497
- 100903 words of memory out of 5000000
+ 99903 words of memory out of 5000000
  5778 multiletter control sequences out of 15000+600000
  10737 words of font info for 41 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  37i,18n,24p,234b,199s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/
-cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10
-.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><
-/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/sh
-are/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/tex
-live/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/te
-xmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dis
-t/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texlive/texmf-dist/fonts
-/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texlive/texmf-dist/fonts/type1/p
-ublic/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/am
-sfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts
-/cm/cmsy6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cms
-y8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm1
-0.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm7.
-pfb>
-Output written on hw2.pdf (5 pages, 155190 bytes).
+</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts
+/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cm
+ex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.p
+fb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></us
+r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share
+/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texliv
+e/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf
+-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texlive/texmf-dist/f
+onts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texlive/texmf-dist/fonts/typ
+e1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/publi
+c/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsf
+onts/cm/cmsy6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm
+/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/m
+sbm10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/ms
+bm7.pfb>
+Output written on hw2.pdf (7 pages, 163361 bytes).
 PDF statistics:
- 94 PDF objects out of 1000 (max. 8388607)
- 67 compressed objects within 1 object stream
+ 102 PDF objects out of 1000 (max. 8388607)
+ 73 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  6 words of extra memory for PDF output out of 10000 (max. 10000000)
 
