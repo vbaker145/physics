@@ -1,0 +1,73 @@
+\documentclass[a4paper,11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{braket}
+
+\numberwithin{equation}{section}
+\renewcommand\thesubsection{\alph{subsection}}
+\newcommand{\bvp}[1]{\mathbf{#1}'}
+\newcommand{\bv}[1]{\mathbf{#1}}
+
+
+%opening
+\title{Stat mech II HW7}
+\author{Vince Baker}
+
+\begin{document}
+
+\maketitle
+
+\section{Problem 7.6}
+For $T>T_c$ we will take $\frac{\partial}{\partial \ln{z}}\frac{\partial \ln{z}}{\partial T}$.
+We drop the argument z of the Bose integrals for compactness.
+\begin{align}
+ \frac{C_V}{Nk} &= \frac{15}{4}\frac{g_{5/2}}{g_{3/2}}-\frac{9}{4}\frac{g_{3/2}}{g_{1/2}}\\
+ \frac{1}{Nk}\frac{\partial C_v}{\partial \ln{z}} &= \frac{15}{4}\left(g_{3/2}\frac{1}{g_{3/2}}-g_{5/2}\frac{g_{1/2}}{g_{3/2}^2} \right)
+	-\frac{9}{4}\left(g_{1/2}\frac{1}{g_{1/2}}-g_{3/2}\frac{g_{-1/2}}{g_{1/2} ^2} \right)\\
+  \frac{1}{Nk}\frac{\partial C_v}{\partial \ln{z}} &= \frac{3}{2}-\frac{15}{4}\frac{g_{5/2}g_{1/2}}{g_{3/2}^2}+\frac{9}{4}\frac{g_{3/2}g_{-1/2}}{g_{1/2}^2}
+\end{align}
+Using the relation $\frac{1}{z}\left(\frac{\partial z}{\partial T}\right)=\frac{\partial \ln{z}}{\partial T}=\frac{3}{2T}\frac{g_{3/2}}{g_{1/2}}$ we have:
+\begin{align}
+ \frac{1}{Nk}\left(\frac{\partial C_V}{\partial T} \right) &= \frac{1}{T}\left(\frac{45}{8}\frac{g_{5/2}}{g_{3/2}}-\frac{9}{4}\frac{g_{3/2}}{g_{1/2}}
+      -\frac{27}{8}\frac{g_{3/2}^2g_{-1/2}}{g_{1/2}^3} \right)
+\end{align}
+\\
+For $T<T_c$ we use the relation:
+\begin{align}
+ \frac{C_V}{Nk} &= \frac{15}{4}\zeta\left(\frac{5}{2}\right)\frac{v}{\lambda^3}
+\end{align}
+With $\frac{1}{\lambda} \propto T^{3/2}$ we can take the derivative with respect to T directly.
+Adding a factor of $\frac{1}{T}$ we can keep the expression in terms of $\lambda$:
+\begin{align}
+ \frac{C_V}{Nk} &= \frac{45}{8}\zeta\left(\frac{5}{2}\right)\frac{v}{T\lambda^3}
+\end{align}
+We have thus proved the required results.
+\\
+We now examine the discontinuity at $T=T_c$. 
+We take the difference of our two expressions as $T \rightarrow T_c$ from above and below.
+Using D.9 to make the approximation $(g_v(z) = \zeta(z)$
+\section{Problem 7.10}
+
+\section{Problem 7.13}
+The number of particles with energy e in a Bose gas is:
+\begin{align}
+ \sum_e \frac{1}{z^{-1}e^{\beta e}-1}
+\end{align}
+We convert this to an integral in the usual manner, except the gas is now confined to a 2D space.
+So the space integral evaluates to A rather than V, and we divide by $h^2$ for the per-particle area.
+Our 2D expression for the density of energy states is therefore:
+\begin{align}
+ a(e)\ de = \frac{2\pi mA}{h^2} e\ de
+\end{align}
+And our integral expression is:
+\begin{align}
+ \frac{N}{A} =\frac{2\pi m}{h^2}\int_0^\infty \frac{e\ de}{z^{-1}e^{\beta e}-1}+\frac{1}{A}\frac{z}{1-z}
+\end{align}
+Where we have removed the singularity at $e=0$ from the integral.
+The term on the left is the number of excited particles $N_e$ while the right hand term is the number of particles in the ground state $N_0$.
+The solution to the integral is $g_1(z)$.\\
+The critical temperature is defined in the limit as $z \rightarrow 1$, where $g_1(z) \rightarrow \zeta(1)$
+\end{document}

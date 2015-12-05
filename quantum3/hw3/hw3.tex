@@ -37,7 +37,7 @@ Now we expand the double commutator and write the expression for the final state
  \end{split}\\
  &\sum_m 2(E_n-E_m)\bra{n}e^{ik\cdot r}\ket{m}^2
 \end{align}
-Combining 3 and 7, interchanging m for nn, we have shown:
+Combining 3 and 7, interchanging m for n, we have shown:
 \begin{align}
  \sum_n (E_n-E_m)\bra{n}e^{ik\cdot r}\ket{m}^2 &= \frac{\hbar^2k^2}{2m}
 \end{align}
@@ -64,6 +64,53 @@ We use the Born approximation with a spherically symmetric potential:
  \frac{d\sigma}{d\Omega} &= |f(\theta)|^2 = \left\{\frac{4mV_0}{\hbar^2}\frac{a^3}{\left(k^2a^2+1 \right)^2} \right\}^2
 \end{align}
 Where we have done the integral through table lookup.
+
+\section{Problem 4}
+
+
+\section{Problem 5}
+To prove the optical theorem we will compare the form of the stationary wavefunction in both the plane wave and spherical wave bases,
+making use of the expansion of the incoming wave $e^{ikz}$ in the spherical wave basis.
+\begin{align}
+ \Psi_{k}(r) &= e^{ikz}+\frac{e^{ikr}}{r}\ \text{ (Plane wave basis)}\\
+ e^{ikz} &= \sum_{\ell=0}^\infty i^\ell\sqrt{4\pi(2\ell +1)}j_\ell(kr)Y_\ell^0(\theta)\ \text{(spherical basis)}
+\end{align}
+For a spherically symmetric potential the effect of scattering in the spherical basis is a phase shift in the radial part of the wavefunction.
+The asymptotic form is (multiplying through by the phase shift):
+\begin{align}
+ U^{diff}(r) &= \sum_{\ell=0}^\infty i^\ell \sqrt{4\pi(2\ell +1)}Y_\ell^0(\theta) \frac{e^{-i(kr+\ell(\pi/2))}-e^{i(kr-\ell(\pi/2)+2\delta_\ell)}}{2ikr}
+\end{align}
+We can now add and subtract (2) from (3), and will get a form that we can compare to 1.
+\begin{align}
+ \begin{split}
+ U^{diff}(r) = &e^{ikz} +\sum_{\ell=0}^\infty i^\ell \sqrt{4\pi(2\ell +1)}Y_\ell^0(\theta)\\
+	       &X\left\{-\frac{e^{ikr}e^{i\ell(\pi/2)}}{2ikr}+\frac{e^{ikr}e^{i\ell(\pi/2)}e^{i2\delta_\ell}}{2ikr} \right\}
+ \end{split}\\
+ U^{diff}(r) = &e^{ikz} +\sum_{\ell=0}^\infty i^\ell \sqrt{4\pi(2\ell +1)}Y_\ell^0(\theta)\frac{e^{ikr}}{kr}e^{-i\ell(\pi/2)}\left(\frac{1-e^{i2\delta_\ell}}{2i} \right)\\
+ U^{diff}(r) &= e^{ikz}+\sum_{\ell=0}^\infty i^\ell\sqrt{4\pi(2\ell+1)}\frac{e^{ikr}}{kr}e^{-i\ell(\pi/2)}e^{i\delta_\ell}\ \sin{\delta_\ell}Y_\ell^0(\theta)\\
+ f(\theta,\phi) &= \frac{1}{k}\sum_\ell^\infty \sqrt{4\pi(2\ell+1)}Y_\ell^0(\theta)e^{i\delta_\ell}\sin{\delta_\ell}
+\end{align}
+Where we have used the fact that $e^{-i\ell(\pi/2)}=(-i)^\ell$ for $\ell=0,1,2...$ in the final step.
+We can now compute $\sigma_{\text{total}}$ by taking the integral over all angles.
+\begin{align}
+ \sigma_{\text{total}} &= \int \mid f(\theta)\mid^2 d\Omega\\
+ \begin{split}
+ \sigma_{\text{total}} = &\int d\Omega Y_\ell^0 Y_{\ell^\prime}^0 \sum_\ell^\infty \sum_{\ell^\prime}^\infty \sqrt{4\pi(2\ell+1)}\sqrt{4\pi(2\ell^\prime+1)}\\
+			  &\times \sin{\delta_\ell}\sin{\delta_{\ell^\prime}}
+ \end{split}\\
+ \sigma_{\text{total}} &= \frac{4\pi}{k^2}\sum_{\ell=0}^\infty (2\ell+1)\sin^2{\delta_\ell}
+\end{align}
+Where we have used the orthonormalization of the spherical harmonics $Y_\ell^0Y_{\ell^\prime}^0=\delta_{\ell\ell^\prime} $.\\
+To prove the optical theorem, we compute the imaginary part of $f(\theta,\phi)$ at $\theta=0$.
+Noting that $Y_\ell^0(1)=1$ for all $\ell$:
+\begin{align}
+ Im\left(f(\theta,\phi)\right) &= \frac{1}{k}\sum_{\ell=0}^\infty (2\ell+1)\sin{\delta_\ell}\ Im\left(e^{i\delta_\ell}\right)\\
+ Im\left(f(\theta,\phi)\right) &= \frac{1}{k}\sum_{\ell=0}^\infty (2\ell+1)\sin^2{\delta_\ell}
+\end{align}
+Comparing with (10) we have proved the optical theorem:
+\begin{align}
+ \sigma_{\text{total}} &= \frac{4\pi}{k}\ Im\left(f(\theta,\phi)|_{\theta=0} \right)
+\end{align}
 
 
 \end{document}
