@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.1.23)  6 DEC 2015 10:40
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.1.23)  6 DEC 2015 11:53
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -707,19 +707,26 @@ Overfull \hbox (5.0pt too wide) in paragraph at lines 54--55
  [][] 
  []
 
+<figs/OptoMechCrystal.png, id=2, 595.023pt x 208.6194pt>
+File: figs/OptoMechCrystal.png Graphic file (type png)
 
-Underfull \hbox (badness 1418) in paragraph at lines 45--58
-\OT1/cmr/m/n/10 Several meth-ods for cou-pling op-ti-cal and mi-
+<use figs/OptoMechCrystal.png>
+Package pdftex.def Info: figs/OptoMechCrystal.png used on input line 65.
+(pdftex.def)             Requested size: 226.0pt x 79.23799pt.
+
+Overfull \hbox (5.0pt too wide) in paragraph at lines 65--67
+ [][] 
  []
 
+<figs/CrystalMixing.png, id=4, 221.1462pt x 343.0416pt>
+File: figs/CrystalMixing.png Graphic file (type png)
 
-Underfull \hbox (badness 1546) in paragraph at lines 45--58
-\OT1/cmr/m/n/10 mi-crowave/optical sys-tem us-ing a piezo-elec-tric
- []
+<use figs/CrystalMixing.png>
+Package pdftex.def Info: figs/CrystalMixing.png used on input line 75.
+(pdftex.def)             Requested size: 226.0pt x 350.57825pt.
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 45--58
-
+Overfull \hbox (5.0pt too wide) in paragraph at lines 75--77
+ [][] 
  []
 
 
@@ -729,41 +736,41 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
  <./figs/f1-eps-converted-to.pdf>]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [2 <./figs/OptoMechCrystal.png> <./figs/CrystalMixing.png>]
 Package epstopdf Info: Source file: <figs/ThermalPhotons.eps>
 (epstopdf)                    date: 2015-12-05 14:35:38
 (epstopdf)                    size: 173010 bytes
 (epstopdf)             Output file: <figs/ThermalPhotons-eps-converted-to.pdf>
+(epstopdf)                    date: 2015-12-06 10:40:07
+(epstopdf)                    size: 10462 bytes
 (epstopdf)             Command: <repstopdf --outfile=figs/ThermalPhotons-eps-co
 nverted-to.pdf figs/ThermalPhotons.eps>
-(epstopdf)             \includegraphics on input line 103.
-runsystem(repstopdf --outfile=figs/ThermalPhotons-eps-converted-to.pdf figs/The
-rmalPhotons.eps)...executed safely (allowed).
+(epstopdf)             \includegraphics on input line 129.
+Package epstopdf Info: Output file is already uptodate.
 
-Package epstopdf Info: Result file: <figs/ThermalPhotons-eps-converted-to.pdf>
-(epstopdf)                    date: 2015-12-06 10:40:07
-(epstopdf)                    size: 10462 bytes.
-
-<figs/ThermalPhotons-eps-converted-to.pdf, id=16, 433.62pt x 321.2pt>
+<figs/ThermalPhotons-eps-converted-to.pdf, id=27, 433.62pt x 321.2pt>
 File: figs/ThermalPhotons-eps-converted-to.pdf Graphic file (type pdf)
 
 <use figs/ThermalPhotons-eps-converted-to.pdf>
 Package pdftex.def Info: figs/ThermalPhotons-eps-converted-to.pdf used on input
- line 103.
+ line 129.
 (pdftex.def)             Requested size: 226.0pt x 167.40724pt.
 
-Overfull \hbox (5.0pt too wide) in paragraph at lines 103--104
+Overfull \hbox (5.0pt too wide) in paragraph at lines 129--131
  [][] 
  []
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [2 <./figs/ThermalPhotons-eps-converted-to.pdf>]
-Underfull \hbox (badness 10000) in paragraph at lines 132--132
+ [3 <./figs/ThermalPhotons-eps-converted-to.pdf>]
+Underfull \hbox (badness 10000) in paragraph at lines 159--159
 []\OT1/cmr/bx/n/10 Applications of co-her-ent op-ti-
  []
 
-[3] [4
+[4] [5
 
 ] (./microwave_optical_coupling.aux)
 Package logreq Info: Writing requests to 'microwave_optical_coupling.run.xml'.
@@ -771,13 +778,13 @@ Package logreq Info: Writing requests to 'microwave_optical_coupling.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 8983 strings out of 495028
- 145316 string characters out of 6181497
- 541961 words of memory out of 5000000
- 12055 multiletter control sequences out of 15000+600000
+ 8998 strings out of 495028
+ 145656 string characters out of 6181497
+ 541991 words of memory out of 5000000
+ 12068 multiletter control sequences out of 15000+600000
  12618 words of font info for 49 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 44i,16n,48p,848b,953s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 44i,16n,48p,848b,998s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></us
 r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.pfb></usr/share
 /texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/share/texl
@@ -796,10 +803,10 @@ exmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-d
 ist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/share/texlive/texmf-dist/fo
 nts/type1/public/amsfonts/symbols/msbm10.pfb></usr/share/texlive/texmf-dist/fon
 ts/type1/public/amsfonts/symbols/msbm7.pfb>
-Output written on microwave_optical_coupling.pdf (4 pages, 245418 bytes).
+Output written on microwave_optical_coupling.pdf (5 pages, 880767 bytes).
 PDF statistics:
- 111 PDF objects out of 1000 (max. 8388607)
- 79 compressed objects within 1 object stream
+ 119 PDF objects out of 1000 (max. 8388607)
+ 82 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 11 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 21 words of extra memory for PDF output out of 10000 (max. 10000000)
 

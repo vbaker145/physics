@@ -40,6 +40,14 @@
       \endverb
       \keyw{physics}
     \endentry
+    \entry{ipimi}{online}{}
+      \field{sortinit}{I}
+      \field{labeltitle}{Integrated Photonics Institute for Manufacturing Innovation}
+      \field{title}{Integrated Photonics Institute for Manufacturing Innovation}
+      \verb{url}
+      \verb http://manufacturing.gov/ip-imi.html
+      \endverb
+    \endentry
     \entry{nanoMR}{article}{}
       \name{labelname}{1}{}{%
         {{hash=c4b30b219cb4cf7772989d3934171084}{Milburn}{M\bibinitperiod}{Sh.\bibnamedelimi Barzanjeh\bibnamedelimb D.\bibnamedelimi Vitali\bibnamedelimb P.\bibnamedelimi Tombesi\bibnamedelima G.J.}{S\bibinitperiod\bibinitdelim B\bibinitperiod\bibinitdelim D\bibinitperiod\bibinitdelim V\bibinitperiod\bibinitdelim P\bibinitperiod\bibinitdelim T\bibinitperiod\bibinitdelim G\bibinitperiod}{}{}{}{}}%

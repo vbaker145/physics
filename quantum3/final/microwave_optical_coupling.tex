@@ -53,8 +53,34 @@ The optically-induced mechanical motion changes the capacitance of the microwave
  \centering
    \includegraphics[width=0.5\textwidth]{figs/f1}
 \end{figure}
-\\In \cite{nanoCrystal} the authors have characterized a coupled microwave/optical system using a piezoelectric optical nanocrystal.
+\\In \cite{nanoCrystal} the authors have experimentally characterized a coupled microwave/optical system using a piezoelectric optical nanocrystal.
+In this case the nanomechanical coupling function is performed by a piezoelectric optomechanical crystal.
+The crystal is driven directly by a microwave signal. 
+The optical coupling is acheived by routing an optical waveguide to a separation of <1 optical wavelength from the crystal.
+The crystal has a transverse mechanical resonance at 4GHz which is electrically excited.
+The optical coupling point (see figure \ref{fig:optoCrystal}) is placed at the mechanical resonance point, so that the electrically excited mechanical motion interacts with the optical transmission.
+\begin{figure}[ht]
+ \caption{Optomechanical piezo crystal device from \cite{nanoCrystal}.}
+ \centering
+   \includegraphics[width=0.5\textwidth]{figs/OptoMechCrystal}
+ \label{fig:optoCrystal}
+\end{figure}
 \\
+The authors in \cite{nanoCrystal} focus on the ability to transfer phase and amplitude from the microwave signal to the optical signal.
+Figure \ref{fig:homodyne} shows the experimental setup using homodyne mixing of an optical signal that has been downcoverted through photodetection and low-pass filtering to isolate the optical sideband related to the mechanical resonance.
+The Argand diagram of the received signal for different phases of the injected microwave signal show that the microwave phase is retained in the coupled optical signal.
+\begin{figure}[ht]
+ \caption{Homodyne detection from \cite{nanoCrystal}.}
+ \centering
+   \includegraphics[width=0.5\textwidth]{figs/CrystalMixing}
+ \label{fig:homodyne}
+\end{figure}
+\\
+The optomechanical piezoelectric crystal was fabricated as an integrated electronic/photonic device.
+This is a strongly supported area of engineering research, as exemplified by the new Integrated Photonics Institute for Manufacturing Innovation, 
+an institute with almost 100 academic and industry members funded with \$110M federal funding and over \$500M cost share from the members \cite{ipimi}.
+As these engineering and manufacturing methods improve these types of nanomechanical systems will become readily available to physics researchers.
+
 \section{Analysis of the Mechanical Resonator}
 We present the analysis of the nanomechanical resonator system in \cite{nanoMR} to illustrate some of the relevant analytical methods.
 The Hamiltonian of the combined system is expressed in terms of the creation and annihilation operators of the optical and microwave cavities.
@@ -93,7 +119,7 @@ The final Hamiltonian is:
 \end{split}
 \end{align}
 The fourth and fifth terms of the Hamiltonian are the coupling terms between the microwave and optical cavities and the mechanical resonator.\\ 
-We also consider thermal effects for both systems. We plot the expected number of thermal photons for both the optical system (500 THz) and the microwave system (4.5 GHz).
+We also consider thermal effects for both systems. We plot the expected number of thermal photons for both the optical system (500 THz) and the microwave system (4.5 GHz) in Figure \ref{fig:thermalnoise}.
 \begin{align}
  \braket{n}_e &= \frac{1}{z^{-1}e^{\beta \hbar \omega}-1}
 \end{align}
@@ -101,6 +127,7 @@ We also consider thermal effects for both systems. We plot the expected number o
  \caption{Mean number of thermal photons in the microwave cavity (top) and the optical cavity (bottom)}
  \centering
    \includegraphics[width=0.5\textwidth]{figs/ThermalPhotons}
+ \label{fig:thermalnoise}
 \end{figure}
 We can clearly neglect thermal noise in the optical part of the system, but we must include noise terms in the microwave system even at low temperatures.
 To incorporate the noise terms the authors introduce a set of quantum Langevin equations (QLEs), differential equations for the time evolution of the system.
