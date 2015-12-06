@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.1.23)  5 DEC 2015 22:38
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.1.23)  6 DEC 2015 10:40
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -685,22 +685,22 @@ LaTeX Font Info:    Try loading font information for U+msb on input line 35.
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-Package epstopdf Info: Source file: <f1.eps>
+Package epstopdf Info: Source file: <figs/f1.eps>
 (epstopdf)                    date: 2015-12-01 21:37:01
 (epstopdf)                    size: 121942 bytes
-(epstopdf)             Output file: <f1-eps-converted-to.pdf>
-(epstopdf)                    date: 2015-12-01 21:37:16
+(epstopdf)             Output file: <figs/f1-eps-converted-to.pdf>
+(epstopdf)                    date: 2015-12-06 10:39:26
 (epstopdf)                    size: 33264 bytes
-(epstopdf)             Command: <repstopdf --outfile=f1-eps-converted-to.pdf f1
-.eps>
+(epstopdf)             Command: <repstopdf --outfile=figs/f1-eps-converted-to.p
+df figs/f1.eps>
 (epstopdf)             \includegraphics on input line 54.
 Package epstopdf Info: Output file is already uptodate.
 
-<f1-eps-converted-to.pdf, id=1, 610.28pt x 629.35126pt>
-File: f1-eps-converted-to.pdf Graphic file (type pdf)
+<figs/f1-eps-converted-to.pdf, id=1, 610.28pt x 629.35126pt>
+File: figs/f1-eps-converted-to.pdf Graphic file (type pdf)
 
-<use f1-eps-converted-to.pdf>
-Package pdftex.def Info: f1-eps-converted-to.pdf used on input line 54.
+<use figs/f1-eps-converted-to.pdf>
+Package pdftex.def Info: figs/f1-eps-converted-to.pdf used on input line 54.
 (pdftex.def)             Requested size: 226.0pt x 233.05798pt.
 
 Overfull \hbox (5.0pt too wide) in paragraph at lines 54--55
@@ -728,12 +728,28 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
  [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}
 
 
- <./f1-eps-converted-to.pdf>]
-<ThermalPhotons.jpg, id=16, 572.1375pt x 423.5825pt>
-File: ThermalPhotons.jpg Graphic file (type jpg)
- <use ThermalPhotons.jpg>
-Package pdftex.def Info: ThermalPhotons.jpg used on input line 103.
-(pdftex.def)             Requested size: 226.0pt x 167.31648pt.
+ <./figs/f1-eps-converted-to.pdf>]
+Package epstopdf Info: Source file: <figs/ThermalPhotons.eps>
+(epstopdf)                    date: 2015-12-05 14:35:38
+(epstopdf)                    size: 173010 bytes
+(epstopdf)             Output file: <figs/ThermalPhotons-eps-converted-to.pdf>
+(epstopdf)             Command: <repstopdf --outfile=figs/ThermalPhotons-eps-co
+nverted-to.pdf figs/ThermalPhotons.eps>
+(epstopdf)             \includegraphics on input line 103.
+runsystem(repstopdf --outfile=figs/ThermalPhotons-eps-converted-to.pdf figs/The
+rmalPhotons.eps)...executed safely (allowed).
+
+Package epstopdf Info: Result file: <figs/ThermalPhotons-eps-converted-to.pdf>
+(epstopdf)                    date: 2015-12-06 10:40:07
+(epstopdf)                    size: 10462 bytes.
+
+<figs/ThermalPhotons-eps-converted-to.pdf, id=16, 433.62pt x 321.2pt>
+File: figs/ThermalPhotons-eps-converted-to.pdf Graphic file (type pdf)
+
+<use figs/ThermalPhotons-eps-converted-to.pdf>
+Package pdftex.def Info: figs/ThermalPhotons-eps-converted-to.pdf used on input
+ line 103.
+(pdftex.def)             Requested size: 226.0pt x 167.40724pt.
 
 Overfull \hbox (5.0pt too wide) in paragraph at lines 103--104
  [][] 
@@ -742,7 +758,7 @@ Overfull \hbox (5.0pt too wide) in paragraph at lines 103--104
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [2 <./ThermalPhotons.jpg>]
+ [2 <./figs/ThermalPhotons-eps-converted-to.pdf>]
 Underfull \hbox (badness 10000) in paragraph at lines 132--132
 []\OT1/cmr/bx/n/10 Applications of co-her-ent op-ti-
  []
@@ -755,8 +771,8 @@ Package logreq Info: Writing requests to 'microwave_optical_coupling.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 8982 strings out of 495028
- 145203 string characters out of 6181497
+ 8983 strings out of 495028
+ 145316 string characters out of 6181497
  541961 words of memory out of 5000000
  12055 multiletter control sequences out of 15000+600000
  12618 words of font info for 49 fonts, out of 8000000 for 9000
@@ -780,10 +796,10 @@ exmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-d
 ist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/share/texlive/texmf-dist/fo
 nts/type1/public/amsfonts/symbols/msbm10.pfb></usr/share/texlive/texmf-dist/fon
 ts/type1/public/amsfonts/symbols/msbm7.pfb>
-Output written on microwave_optical_coupling.pdf (4 pages, 258211 bytes).
+Output written on microwave_optical_coupling.pdf (4 pages, 245418 bytes).
 PDF statistics:
- 98 PDF objects out of 1000 (max. 8388607)
- 69 compressed objects within 1 object stream
+ 111 PDF objects out of 1000 (max. 8388607)
+ 79 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  11 words of extra memory for PDF output out of 10000 (max. 10000000)
 
