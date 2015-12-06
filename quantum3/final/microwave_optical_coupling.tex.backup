@@ -83,6 +83,51 @@ We can then work in the interaction picture with respect to:
 \begin{align}
  H_0 &= \hbar\omega_{0w}b^\dagger b +\hbar\omega_{0c}a^\dagger a
 \end{align}
+We can now express the time-dependent Hamiltonian in terms of the cavity detunings and neglect higher-order terms at $\pm2\omega_{0w},\pm2\pm\omega_{0c}$ since they will oscillate quickly and tend to average out.
+The final Hamiltonian is:
+\begin{align}
+\begin{split}
+ H = &\hbar\Delta_{0w}b^\dagger b+\hbar\Delta_{0c}a^\dagger a\\
+     &+\frac{\hbar\omega_m}{2}(\hat{p}^2+\hat{q}^2)-\hbar G_{0w}\hat{q}b^\dagger b-\hbar G_{0c}\hat{q}a^\dagger a\\
+     &+i\hbar E_w(b^\dagger -b)+i\hbar E_c(a^\dagger -a )
+\end{split}
+\end{align}
+The fourth and fifth terms of the Hamiltonian are the coupling terms between the microwave and optical cavities and the mechanical resonator.\\ 
+We also consider thermal effects for both systems. We plot the expected number of thermal photons for both the optical system (500 THz) and the microwave system (4.5 GHz).
+\begin{align}
+ \braket{n}_e &= \frac{1}{z^{-1}e^{\beta \hbar \omega}-1}
+\end{align}
+\begin{figure}[ht]
+ \caption{Mean number of thermal photons in the microwave cavity (top) and the optical cavity (bottom)}
+ \centering
+   \includegraphics[width=0.5\textwidth]{ThermalPhotons}
+\end{figure}
+We can clearly neglect thermal noise in the optical part of the system, but we must include noise terms in the microwave system even at low temperatures.
+To incorporate the noise terms the authors introduce a set of quantum Langevin equations (QLEs), differential equations for the time evolution of the system.
+\begin{align}
+ \dot{q} &= \omega_mp\\
+ \dot{p} &- -\omega_mq-\gamma_mp+G_{0c}a^\dagger a+G_{0w}b^\dagger b +\xi\\
+ \dot{a} &= -(\kappa_c+i\Delta_{0c})a+iG_{0c}qa+E_c\\
+ \begin{split}
+ \dot{b} &= -(\kappa_w+i\Delta_{0w})b+iG_{0w}qb+E_w\\
+         &\ \ +\sqrt{2\kappa_w}b_{in}
+ \end{split}
+\end{align}
+Where $\kappa_c,\kappa_w$ are the damping functions of the optical and microwave cavities, $\xi$ is the quantum Brownian noise acting on the mechanical resonator,
+and $b_{in}$ is the noise function for the microwave input.\\
+The authors then investigate the steady state of the driven system by setting the derivatives in the QLEs equal to 0. 
+One question not addressed in this paper is the time for the system to reach steady state. 
+This settling time will be important for quantum illumination systems that use pulsed signals that are not continuous in time.
+The authors  write the steady-state parameter values as $q_s,p_s,a_s, b_s$ with corresponding fluctuations $\delta q,\delta p,\delta a,\delta b$.
+The equilibrium values are found by setting the derivatives to 0:
+\begin{align}
+ p_s &= 0\\
+ q_s &= \frac{G_{0c}|a_s|^2+G_{0w}|b_s|^2}{\omega_m}\\
+ a_s &= \frac{E_c}{\kappa_c+i\Delta_c}\\
+ b_s &= \frac{E_w}{\kappa_w+i\Delta_w}
+\end{align}
+Where we have written $\Delta_c=\Delta_{0c}-G_{0c}q_s$ and $\Delta_w=\Delta_{0w}-G_{0w}q_s$. 
+These are the caivty detuning for the optical and microwave fields. 
 
 \section{Applications of coherent optical/microwave coupling}
 Quanum computing.\\
@@ -92,9 +137,13 @@ Quantum-enhanced sensing is a relatively young field that seeks to enhance sensi
 We discuss the particular application of quantum illumination in the microwave regime applied to radar systems.
 Radar systems determine the range, bearing and velocity of an object by emitting a microwave signal and measuring the signal reflections.
 Radar waveforms are designed to allow the receiver to correlate the return signal from an object of interest in the presence of thermal noise, interfering signals and signal reflections from other objects.
-Quantum illumination can improve this correlation and can theoretically provide better performance than any conventional microwave system. 
+Quantum illumination can improve this correlation and can theoretically provide better performance than any conventional microwave system \cite{qi}(other MIT citations).
 \\
-Following \cite{qi} we look at the theorectical improvement over a classical system. 
-We will then examine several challenges for quantum illumination, including pulsed waveforms and antenna arrays.
+In microwave quantum illumination the microwave probe photon will travel from the transmitter to the object to be detected, scatter from the object, and return to the detector.
+An optical photon, termed the idler photon, is initially entangled with the microwave photon.
+The probe photons are not expected to remain in a coherent entangled state with the idler photons, yet there is a still an enhanced correlation between them even after decoherence \cite{qig}. 
+\\
+The key result \cite{} 
+
 \printbibliography
 \end{document}

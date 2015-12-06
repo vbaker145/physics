@@ -82,6 +82,26 @@
       \endverb
       \keyw{physics}
     \endentry
+    \entry{qig}{article}{}
+      \name{labelname}{1}{}{%
+        {{hash=2b83c9bcb1164dc6e8e5054d579fa907}{Shapiro}{S\bibinitperiod}{S.\bibnamedelimi Tan\bibnamedelimb B.\bibnamedelimi Erkmen\bibnamedelimb V.\bibnamedelimi Giovannetti\bibnamedelimb S.\bibnamedelimi Guha\bibnamedelimb S.\bibnamedelimi Lloyd\bibnamedelimb L.\bibnamedelimi Maccone\bibnamedelimb S.\bibnamedelimi Pirandola\bibnamedelima J.}{S\bibinitperiod\bibinitdelim T\bibinitperiod\bibinitdelim B\bibinitperiod\bibinitdelim E\bibinitperiod\bibinitdelim V\bibinitperiod\bibinitdelim G\bibinitperiod\bibinitdelim S\bibinitperiod\bibinitdelim G\bibinitperiod\bibinitdelim S\bibinitperiod\bibinitdelim L\bibinitperiod\bibinitdelim L\bibinitperiod\bibinitdelim M\bibinitperiod\bibinitdelim S\bibinitperiod\bibinitdelim P\bibinitperiod\bibinitdelim J\bibinitperiod}{}{}{}{}}%
+      }
+      \name{author}{1}{}{%
+        {{hash=2b83c9bcb1164dc6e8e5054d579fa907}{Shapiro}{S\bibinitperiod}{S.\bibnamedelimi Tan\bibnamedelimb B.\bibnamedelimi Erkmen\bibnamedelimb V.\bibnamedelimi Giovannetti\bibnamedelimb S.\bibnamedelimi Guha\bibnamedelimb S.\bibnamedelimi Lloyd\bibnamedelimb L.\bibnamedelimi Maccone\bibnamedelimb S.\bibnamedelimi Pirandola\bibnamedelima J.}{S\bibinitperiod\bibinitdelim T\bibinitperiod\bibinitdelim B\bibinitperiod\bibinitdelim E\bibinitperiod\bibinitdelim V\bibinitperiod\bibinitdelim G\bibinitperiod\bibinitdelim S\bibinitperiod\bibinitdelim G\bibinitperiod\bibinitdelim S\bibinitperiod\bibinitdelim L\bibinitperiod\bibinitdelim L\bibinitperiod\bibinitdelim M\bibinitperiod\bibinitdelim S\bibinitperiod\bibinitdelim P\bibinitperiod\bibinitdelim J\bibinitperiod}{}{}{}{}}%
+      }
+      \strng{namehash}{2b83c9bcb1164dc6e8e5054d579fa907}
+      \strng{fullhash}{2b83c9bcb1164dc6e8e5054d579fa907}
+      \field{sortinit}{S}
+      \field{labeltitle}{Quantum Illumination with Gaussian State}
+      \field{journaltitle}{Physical Review Letters}
+      \field{number}{253601}
+      \field{title}{Quantum Illumination with Gaussian State}
+      \field{volume}{101}
+      \field{year}{2008}
+      \verb{doi}
+      \verb http://dx.doi.org/10.1103/PhysRevLett.101.253601
+      \endverb
+    \endentry
   \endsortlist
 \endrefsection
 \endinput
