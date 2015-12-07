@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.1.23)  6 DEC 2015 22:51
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.1.23)  7 DEC 2015 18:37
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -719,10 +719,10 @@ Overfull \hbox (5.0pt too wide) in paragraph at lines 54--55
 File: figs/OptoMechCrystal.png Graphic file (type png)
 
 <use figs/OptoMechCrystal.png>
-Package pdftex.def Info: figs/OptoMechCrystal.png used on input line 65.
+Package pdftex.def Info: figs/OptoMechCrystal.png used on input line 64.
 (pdftex.def)             Requested size: 226.0pt x 79.23799pt.
 
-Overfull \hbox (5.0pt too wide) in paragraph at lines 65--67
+Overfull \hbox (5.0pt too wide) in paragraph at lines 64--66
  [][] 
  []
 
@@ -730,10 +730,38 @@ Overfull \hbox (5.0pt too wide) in paragraph at lines 65--67
 File: figs/CrystalMixing.png Graphic file (type png)
 
 <use figs/CrystalMixing.png>
-Package pdftex.def Info: figs/CrystalMixing.png used on input line 75.
+Package pdftex.def Info: figs/CrystalMixing.png used on input line 79.
 (pdftex.def)             Requested size: 226.0pt x 350.57825pt.
 
-Overfull \hbox (5.0pt too wide) in paragraph at lines 75--77
+Overfull \hbox (5.0pt too wide) in paragraph at lines 79--81
+ [][] 
+ []
+
+
+Underfull \hbox (badness 1448) in paragraph at lines 89--89
+[]\OT1/cmr/m/n/10 Figure 4: |b. Op-ti-cal side-band trans-mis-sion
+ []
+
+Package epstopdf Info: Source file: <figs/opticaltransparency.eps>
+(epstopdf)                    date: 2015-12-07 16:39:32
+(epstopdf)                    size: 309906 bytes
+(epstopdf)             Output file: <figs/opticaltransparency-eps-converted-to.
+pdf>
+(epstopdf)                    date: 2015-12-07 16:39:37
+(epstopdf)                    size: 129267 bytes
+(epstopdf)             Command: <repstopdf --outfile=figs/opticaltransparency-e
+ps-converted-to.pdf figs/opticaltransparency.eps>
+(epstopdf)             \includegraphics on input line 91.
+Package epstopdf Info: Output file is already uptodate.
+
+<figs/opticaltransparency-eps-converted-to.pdf, id=5, 949.5475pt x 561.09625pt>
+File: figs/opticaltransparency-eps-converted-to.pdf Graphic file (type pdf)
+<use figs/opticaltransparency-eps-converted-to.pdf>
+Package pdftex.def Info: figs/opticaltransparency-eps-converted-to.pdf used on 
+input line 91.
+(pdftex.def)             Requested size: 226.0pt x 133.54427pt.
+
+Overfull \hbox (5.0pt too wide) in paragraph at lines 91--93
  [][] 
  []
 
@@ -746,39 +774,32 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 ]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [2 <./figs/f1-eps-converted-to.pdf> <./figs/OptoMechCrystal.png>]
-Underfull \hbox (badness 3803) in paragraph at lines 102--109
+ [2 <./figs/f1-eps-converted-to.pdf> <./figs/OptoMechCrystal.png>] [3 <./figs/C
+rystalMixing.png> <./figs/opticaltransparency-eps-converted-to.pdf>]
+Underfull \hbox (badness 3803) in paragraph at lines 118--126
 \OT1/cmr/m/n/10.95 Where $\OML/cmm/m/it/10.95 a[]; a$ \OT1/cmr/m/n/10.95 are th
 e cre-ation and an-ni-
  []
 
 
-Underfull \hbox (badness 5359) in paragraph at lines 102--109
+Underfull \hbox (badness 5359) in paragraph at lines 118--126
 \OT1/cmr/m/n/10.95 hi-la-tion op-er-a-tors of the op-ti-cal cav-ity,
  []
 
 
-Underfull \hbox (badness 3769) in paragraph at lines 102--109
+Underfull \hbox (badness 3769) in paragraph at lines 118--126
 \OT1/cmr/m/n/10.95 ^^H\OML/cmm/m/it/10.95 ; Q$ \OT1/cmr/m/n/10.95 are the flux 
 through the in-duc-tor
  []
 
 
-Underfull \hbox (badness 1158) in paragraph at lines 102--109
+Underfull \hbox (badness 1158) in paragraph at lines 118--126
 \OT1/cmr/m/n/10.95 and the charge on the ca-pac-i-tor, $\OML/cmm/m/it/10.95 e\O
 T1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 t\OT1/cmr/m/n/10.95 ) =
  []
 
 
-Underfull \hbox (badness 1242) in paragraph at lines 102--109
-\OT1/cmr/m/n/10.95 ing func-tion of the mi-crowave cav-ity and
- []
-
-
-Underfull \hbox (badness 2884) in paragraph at lines 111--114
+Underfull \hbox (badness 2884) in paragraph at lines 128--131
 \OT1/cmr/m/n/10.95 We can now ex-press the time-dependent
  []
 
@@ -790,84 +811,141 @@ Package epstopdf Info: Source file: <figs/ThermalPhotons.eps>
 (epstopdf)                    size: 10462 bytes
 (epstopdf)             Command: <repstopdf --outfile=figs/ThermalPhotons-eps-co
 nverted-to.pdf figs/ThermalPhotons.eps>
-(epstopdf)             \includegraphics on input line 129.
+(epstopdf)             \includegraphics on input line 146.
 Package epstopdf Info: Output file is already uptodate.
-<figs/ThermalPhotons-eps-converted-to.pdf, id=24, 433.62pt x 321.2pt>
+<figs/ThermalPhotons-eps-converted-to.pdf, id=32, 433.62pt x 321.2pt>
 File: figs/ThermalPhotons-eps-converted-to.pdf Graphic file (type pdf)
 
 <use figs/ThermalPhotons-eps-converted-to.pdf>
 Package pdftex.def Info: figs/ThermalPhotons-eps-converted-to.pdf used on input
- line 129.
+ line 146.
 (pdftex.def)             Requested size: 226.0pt x 167.40724pt.
 
-Overfull \hbox (5.0pt too wide) in paragraph at lines 129--131
+Overfull \hbox (5.0pt too wide) in paragraph at lines 146--148
  [][] 
  []
 
-[3 <./figs/CrystalMixing.png>] [4 <./figs/ThermalPhotons-eps-converted-to.pdf>]
-<figs/QuantumRadar.png, id=51, 623.493pt x 407.34pt>
-File: figs/QuantumRadar.png Graphic file (type png)
+[4 <./figs/ThermalPhotons-eps-converted-to.pdf>]
+Package epstopdf Info: Source file: <figs/mr_entanglement.eps>
+(epstopdf)                    date: 2015-12-07 16:54:35
+(epstopdf)                    size: 304056 bytes
+(epstopdf)             Output file: <figs/mr_entanglement-eps-converted-to.pdf>
 
-<use figs/QuantumRadar.png>
-Package pdftex.def Info: figs/QuantumRadar.png used on input line 201.
-(pdftex.def)             Requested size: 226.0pt x 147.64919pt.
+(epstopdf)                    date: 2015-12-07 16:57:15
+(epstopdf)                    size: 147254 bytes
+(epstopdf)             Command: <repstopdf --outfile=figs/mr_entanglement-eps-c
+onverted-to.pdf figs/mr_entanglement.eps>
+(epstopdf)             \includegraphics on input line 212.
+Package epstopdf Info: Output file is already uptodate.
 
-Overfull \hbox (5.0pt too wide) in paragraph at lines 201--203
+<figs/mr_entanglement-eps-converted-to.pdf, id=55, 487.8225pt x 867.24pt>
+File: figs/mr_entanglement-eps-converted-to.pdf Graphic file (type pdf)
+
+<use figs/mr_entanglement-eps-converted-to.pdf>
+Package pdftex.def Info: figs/mr_entanglement-eps-converted-to.pdf used on inpu
+t line 212.
+(pdftex.def)             Requested size: 226.0pt x 401.78035pt.
+
+Overfull \hbox (5.0pt too wide) in paragraph at lines 212--214
  [][] 
  []
 
-<figs/PhasedArrays.png, id=52, 511.6716pt x 386.4036pt>
-File: figs/PhasedArrays.png Graphic file (type png)
 
-<use figs/PhasedArrays.png>
-Package pdftex.def Info: figs/PhasedArrays.png used on input line 225.
-(pdftex.def)             Requested size: 226.0pt x 170.67256pt.
-
-Overfull \hbox (5.0pt too wide) in paragraph at lines 225--227
- [][] 
- []
-
-
-Underfull \hbox (badness 2680) in paragraph at lines 189--232
+Underfull \hbox (badness 2680) in paragraph at lines 217--233
 \OT1/cmr/m/n/10.95 Quantum-enhanced sens-ing is a rel-a-tively
  []
 
-[5 <./figs/QuantumRadar.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 235--235
+[5]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [6 <./figs/mr_entanglement-eps-converted-to.pdf>]
+Package epstopdf Info: Source file: <figs/ErrorBoundsOptical.eps>
+(epstopdf)                    date: 2015-12-07 16:35:35
+(epstopdf)                    size: 143662 bytes
+(epstopdf)             Output file: <figs/ErrorBoundsOptical-eps-converted-to.p
+df>
+(epstopdf)                    date: 2015-12-07 17:07:26
+(epstopdf)                    size: 63330 bytes
+(epstopdf)             Command: <repstopdf --outfile=figs/ErrorBoundsOptical-ep
+s-converted-to.pdf figs/ErrorBoundsOptical.eps>
+(epstopdf)             \includegraphics on input line 265.
+Package epstopdf Info: Output file is already uptodate.
+
+<figs/ErrorBoundsOptical-eps-converted-to.pdf, id=66, 530.98375pt x 505.89pt>
+File: figs/ErrorBoundsOptical-eps-converted-to.pdf Graphic file (type pdf)
+
+<use figs/ErrorBoundsOptical-eps-converted-to.pdf>
+Package pdftex.def Info: figs/ErrorBoundsOptical-eps-converted-to.pdf used on i
+nput line 265.
+(pdftex.def)             Requested size: 226.0pt x 215.32074pt.
+
+Overfull \hbox (5.0pt too wide) in paragraph at lines 265--267
+ [][] 
+ []
+
+<figs/QuantumRadar.png, id=67, 623.493pt x 407.34pt>
+File: figs/QuantumRadar.png Graphic file (type png)
+
+<use figs/QuantumRadar.png>
+Package pdftex.def Info: figs/QuantumRadar.png used on input line 275.
+(pdftex.def)             Requested size: 226.0pt x 147.64919pt.
+
+Overfull \hbox (5.0pt too wide) in paragraph at lines 275--277
+ [][] 
+ []
+
+<figs/PhasedArrays.png, id=68, 511.6716pt x 386.4036pt>
+File: figs/PhasedArrays.png Graphic file (type png)
+
+<use figs/PhasedArrays.png>
+Package pdftex.def Info: figs/PhasedArrays.png used on input line 297.
+(pdftex.def)             Requested size: 226.0pt x 170.67256pt.
+
+Overfull \hbox (5.0pt too wide) in paragraph at lines 297--299
+ [][] 
+ []
+
+
+Underfull \vbox (badness 2538) has occurred while \output is active []
+
+ [7 <./figs/ErrorBoundsOptical-eps-converted-to.pdf>]
+Underfull \hbox (badness 10000) in paragraph at lines 306--306
 []\OT1/cmr/m/n/10.95 J. Bochmann A. Vainsencher
  []
 
 
-Underfull \hbox (badness 1708) in paragraph at lines 235--235
+Underfull \hbox (badness 1708) in paragraph at lines 306--306
 \OT1/cmr/m/n/10.95 Mil-burn. ``En-tan-gling op-ti-cal and mi-
  []
 
 
-Underfull \hbox (badness 1137) in paragraph at lines 235--235
+Underfull \hbox (badness 1137) in paragraph at lines 306--306
 \OT1/cmr/m/n/10.95 crowave cav-ity modes by means of a
  []
 
-
-Underfull \hbox (badness 1147) in paragraph at lines 235--235
+[8 <./figs/QuantumRadar.png> <./figs/PhasedArrays.png>]
+Underfull \hbox (badness 1147) in paragraph at lines 306--306
 \OT1/cmr/m/n/10.95 S. Lloyd L. Mac-cone S. Pi-ran-dola J.
  []
 
 
-Underfull \hbox (badness 3058) in paragraph at lines 235--235
+Underfull \hbox (badness 3058) in paragraph at lines 306--306
 \OT1/cmr/m/n/10.95 Shapiro. ``Quan-tum Il-lu-mi-na-tion with
  []
 
-[6 <./figs/PhasedArrays.png>] (./microwave_optical_coupling.aux)
+[9
+
+] (./microwave_optical_coupling.aux)
 Package logreq Info: Writing requests to 'microwave_optical_coupling.run.xml'.
 \openout1 = `microwave_optical_coupling.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 9003 strings out of 495028
- 145913 string characters out of 6181497
- 541033 words of memory out of 5000000
- 12075 multiletter control sequences out of 15000+600000
- 11860 words of font info for 45 fonts, out of 8000000 for 9000
+ 9031 strings out of 495028
+ 146714 string characters out of 6181497
+ 545057 words of memory out of 5000000
+ 12098 multiletter control sequences out of 15000+600000
+ 13559 words of font info for 53 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  44i,16n,48p,848b,998s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></us
@@ -875,20 +953,21 @@ r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/sha
 re/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/tex
 live/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/t
 exmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texlive/texmf-di
-st/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/font
-s/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1
-/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public
-/amsfonts/cm/cmr17.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfon
-ts/cm/cmr6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cm
-r8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb
-></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/
-share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/
-texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/share/texliv
-e/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on microwave_optical_coupling.pdf (6 pages, 1087504 bytes).
+st/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/font
+s/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1
+/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public
+/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfon
+ts/cm/cmr17.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/c
+mr6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb>
+</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/
+share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/t
+exlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive
+/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/share/texlive/texmf
+-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on microwave_optical_coupling.pdf (9 pages, 1441184 bytes).
 PDF statistics:
- 114 PDF objects out of 1000 (max. 8388607)
- 75 compressed objects within 1 object stream
+ 141 PDF objects out of 1000 (max. 8388607)
+ 92 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 31 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 46 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -1,0 +1,19 @@
+\boolfalse {citerequest}\boolfalse {citetracker}\boolfalse {pagetracker}\boolfalse {backtracker}\relax 
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {1}{\ignorespaces Optical and microwave cavities entangled through a mechanical resonator. A, Proposed experimental setup. B, Equivalent circuit diagram of microwave resonator.\relax }}{2}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {2}{\ignorespaces Optomechanical piezo crystal device from \cite {nanoCrystal}. a. SEM image showing the optical couplers and waveguide (red), piezoelectric photonic crystal (blue) and microwave contacts (yellow). b. Close-up of the optical coupling point and numerical simulation of the optical and mechanical resonant modes.\relax }}{2}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {3}{\ignorespaces Homodyne detection from \cite {nanoCrystal}.\relax }}{3}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {4}{\ignorespaces b. Optical sideband transmission across the resonance band for microwave detunings $2\pi \{-1,0,1\}$ Mhz. The blue and red traces are for microwave phase shifts $0,\pi $. c. Optical sideband transmission at optical detunings $\Delta =2\pi \{-1,0,1\}$ MHz as the microwave source is swept across the resonance.\cite {nanoCrystal}.\relax }}{3}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {5}{\ignorespaces Mean number of thermal photons in the microwave cavity (top) and the optical cavity (bottom)\relax }}{4}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {6}{\ignorespaces Log-negativity for the three bipartite systems (OC-MC black, OC-MR dashed red, MC-MR dashed blue) vs. normalized cavity detuning $\Delta _w/\omega _m$ at $T=100 mK$(a),$T=200 mK$(b) and $T=250 mK$(c)\cite {nanoMR}\relax }}{6}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {7}{\ignorespaces Upper bounds on detection error probabilities for classical (solid blue) and quantum (solid red), with lower bound (dashed blue) for coherent classical systems. \cite {qig}\relax }}{7}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {8}{\ignorespaces Proposed quantum radar system \cite {qi}\relax }}{8}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {9}{\ignorespaces Passive (top) and active (bottom) phase arrays. In the active array, each element has a microwave source.\relax }}{8}

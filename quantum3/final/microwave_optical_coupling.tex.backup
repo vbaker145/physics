@@ -39,7 +39,7 @@ The coherent transfer of quantum states may be exploited in applications includi
 Several similar mechanisms for optical/microwave coupling have been reported recently \cite{nanoCrystal, nanoMR}.\\
 We will start by reviewing some of the proposed methods for microwave/optical coupling.
 We then sketch the analytical exploration of the nanomechanical resonator from \cite{nanoMR} to demonstrate some important aspects of the approach. 
-A general discussion of applications is followed by a discussion of aspects of quantum illumination applied to radar systems.
+The application to quantum illumination, in particular quantum radar, is discussed in the final section.
 
 \section{Optical/Microwave Coupling Methods}
 Several methods for coupling optical and microwave systems have been investigated. 
@@ -48,32 +48,48 @@ The resonator itself is a drum-head capacitor that is coupled to the microwave c
 The equivalent electrical circuit is resonant at microwave frequencies.
 One surface of the mechanical resonator is coated with a mirrored finish and caps the end of an optical cavity.
 The optically-induced mechanical motion changes the capacitance of the microwave resonator circuit, providing the desired coupling.
-\begin{figure}[ht]
+\begin{figure}
  \caption{Optical and microwave cavities entangled through a mechanical resonator. A, Proposed experimental setup. B, Equivalent circuit diagram of microwave resonator.}
  \centering
    \includegraphics[width=0.5\textwidth]{figs/f1}
 \end{figure}
-\\In \cite{nanoCrystal} the authors have experimentally characterized a coupled microwave/optical system using a piezoelectric optical nanocrystal.
-In this case the nanomechanical coupling function is performed by a piezoelectric optomechanical crystal.
-The crystal is driven directly by a microwave signal. 
-The optical coupling is acheived by routing an optical waveguide to a separation of <1 optical wavelength from the crystal.
+\\In \cite{nanoCrystal} the authors have experimentally characterized a coupled microwave/optical system using a beam of piezoelectric material (AlN) patterned as a photonic crystal suspended over a cavity (figure \ref{fig:optoCrystal}).
+The crystal is driven directly by a microwave signal injected directly onto the beam. 
+The optical coupling is acheived by routing an optical waveguide to a separation of $<1$ optical wavelength from the crystal.
 The crystal has a transverse mechanical resonance at 4GHz which is electrically excited.
 The optical coupling point (see figure \ref{fig:optoCrystal}) is placed at the mechanical resonance point, so that the electrically excited mechanical motion interacts with the optical transmission.
-\begin{figure}[ht]
- \caption{Optomechanical piezo crystal device from \cite{nanoCrystal}.}
+\begin{figure}
+ \caption{Optomechanical piezo crystal device from \cite{nanoCrystal}. a. SEM image showing the optical couplers and waveguide (red), piezoelectric photonic crystal (blue) and microwave contacts (yellow). b. Close-up of the optical coupling point and numerical simulation of the optical and mechanical resonant modes.}
  \centering
    \includegraphics[width=0.5\textwidth]{figs/OptoMechCrystal}
  \label{fig:optoCrystal}
 \end{figure}
 \\
-The authors in \cite{nanoCrystal} focus on the ability to transfer phase and amplitude from the microwave signal to the optical signal.
+The authors in \cite{nanoCrystal} experimentally examine the nature of the coupling between the optical and mechanical modes.
+The authors demonstrate the detuning of the optomechanical crystal via a an applied DC voltage (figure ).
+It is clear that, for sufficient microwave excitation and piezoelectric actuation, the microwave signal will influence the transmitted optical signal.
+The most obvious effect will be an amplitude modulation of the optical signal at the microwave excitation frequency.
+To acheive the desired optical/microwave correlation the couling must also carry the microwave phase into the optical signal.
+\\
 Figure \ref{fig:homodyne} shows the experimental setup using homodyne mixing of an optical signal that has been downcoverted through photodetection and low-pass filtering to isolate the optical sideband related to the mechanical resonance.
 The Argand diagram of the received signal for different phases of the injected microwave signal show that the microwave phase is retained in the coupled optical signal.
-\begin{figure}[ht]
+\begin{figure}
  \caption{Homodyne detection from \cite{nanoCrystal}.}
  \centering
    \includegraphics[width=0.5\textwidth]{figs/CrystalMixing}
  \label{fig:homodyne}
+\end{figure}
+\\
+With both the amplitude and phase correlated the authors then demonstrate optical transparency controlled by the frequency and phase of the microwave signal. 
+The primary optical carrier is detuned from the optical cavity resonance by the microwave frequency ($\omega_{drive}=\omega_{o}-\omega_w$).
+Optical sidebands are added to the signal and swept across the cavity resonance frequency. 
+The sideband transmission can now be controlled entirely by the microwave signal (figure \ref{fig:transparency} ). 
+The absorbtion peak width (200 Hz) is much narrower than the microwave resonance (1.7 Mhz). 
+\begin{figure}
+ \caption{ b. Optical sideband transmission across the resonance band for microwave detunings $2\pi\{-1,0,1\}$ Mhz. The blue and red traces are for microwave phase shifts $0,\pi$. c. Optical sideband transmission at optical detunings $\Delta=2\pi\{-1,0,1\}$ MHz as the microwave source is swept across the resonance.\cite{nanoCrystal}.}
+ \centering
+   \includegraphics[width=0.5\textwidth]{figs/opticaltransparency}
+ \label{fig:transparency}
 \end{figure}
 \\
 The optomechanical piezoelectric crystal was fabricated as an integrated electronic/photonic device.
@@ -102,7 +118,8 @@ The Hamiltonian of the system shown in figure 1 is then:
 \end{align}
 Where $a^\dagger,a$ are the creation and annihilation operators of the optical cavity, $\Phi,Q$ are the flux through the inductor and the charge on the capacitor,
 $e(t)=-i\sqrt{2\hbar\omega_wL}E_w\left(e^{i\omega_{0w}t}-e^{-i\omega_{0w}t} \right)$ is the driving function of the microwave cavity
-and $G_{0c}\frac{\omega_c}{L}\sqrt{\hbar/m\omega_m} $ gives the optomechanical coupling rate with resonator mass m and optical cavity length L.
+and $G_{0c}=\frac{\omega_c}{L}\sqrt{\hbar/m\omega_m} $ gives the optomechanical coupling rate with resonator mass m and optical cavity length L,
+and $E_c=\sqrt{2P_c\kappa_c/\hbar\omega_{0c}}$ is the optical input.
 \\
 The quadratic form of the microwave resonator circuit is amenable to expression in terms of microwave creation and annihilation operators $b,b^\dagger$.
 We can then work in the interaction picture with respect to:
@@ -123,7 +140,7 @@ We also consider thermal effects for both systems. We plot the expected number o
 \begin{align}
  \braket{n}_e &= \frac{1}{z^{-1}e^{\beta \hbar \omega}-1}
 \end{align}
-\begin{figure}[ht]
+\begin{figure}
  \caption{Mean number of thermal photons in the microwave cavity (top) and the optical cavity (bottom)}
  \centering
    \includegraphics[width=0.5\textwidth]{figs/ThermalPhotons}
@@ -165,8 +182,9 @@ Expanding about the equilibrium point:
  \delta\dot{a} &= -(\kappa_c+i\Delta_c)\delta a + iG_{0c}a_s\delta q + \sqrt{2\kappa_c}a_{in}\\
  \delta\dot{b} &= -(\kappa_w+i\Delta_w)\delta b + iG_{0w}b_s\delta q
 \end{align}
-The authors now write 
+Having obtained the dynamics of the fluctuations of the system about the equilibirum point, the authors now analyze the correlations between the three component systems.
 
+\section{Correlation analysis}
 There are several measures of entanglement in quantum information theory. 
 A bipartite system is completely separable (unentangled) if it can be written as combinations of the tensor product of the component systems:
 \begin{align}
@@ -183,29 +201,80 @@ In \cite{qent} the authors introduce a computable entanglement metric for a bipa
  N(\rho) \equiv \frac{\|\rho^{T_a}\|_1}{2}
 \end{align}
 Where $\|\rho^{T_a}\|_1$ is the trace norm of the partial transpose of $\rho$ with respect to component system a.
-\section{Correlation analysis}
-
+The authors in \cite{nanoMR} use the logarithm of the negativity as their measure of entanglement. 
+After extracting the correlation matrix of the fluctuations (eq 3.1-3.18) they compute the log-negativity of the three bipartite systems (optical-resonator, microwave-resonator, optical-microwave) shown in figure \ref{fig:logneg}.
+The optical-microwave entanglement is the desired effect. 
+There is substantial optical-microwave entanglement at low temperatures.
+One critical system parameter is the resonator mass: lower resonator mass increases the optical/microwave entanglement and reduces the optical/resonator entanglement. 
+\begin{figure}
+ \caption{Log-negativity for the three bipartite systems (OC-MC black, OC-MR dashed red, MC-MR dashed blue) vs. normalized cavity detuning $\Delta_w/\omega_m$ at $T=100 mK$(a),$T=200 mK$(b) and $T=250 mK$(c)\cite{nanoMR}}
+ \centering
+   \includegraphics[width=0.5\textwidth]{figs/mr_entanglement}
+ \label{fig:logneg}
+\end{figure}
 
 \section{Discussion of quantum radar}
 Quantum-enhanced sensing is a relatively young field that seeks to enhance sensing by using quantum entanglement. 
 We discuss the particular application of quantum illumination in the microwave regime applied to radar systems.
 Radar systems determine the range, bearing and velocity of an object by emitting a microwave signal and measuring the signal reflections.
 Radar waveforms are designed to allow the receiver to correlate the return signal from an object of interest in the presence of thermal noise, interfering signals and signal reflections from other objects.
-Quantum illumination can improve this correlation and can theoretically provide better performance than any conventional microwave system \cite{qi}(other MIT citations).
+Quantum illumination can improve this correlation and can theoretically provide better performance than any conventional microwave system \cite{qi}\cite{qig}.
+\\
+One key performance metric in the current quantum illumination literature is the probability of detecting a target.
+In \cite{qig} the authors consider illuminating a strong thermal bath (average photon number $N_\beta \gg 1$) with a weak optical illumination.
+The illuminator source is the output of a spontaneous parametric downconversion process, so that an entangled pair of photons is generated with $N_S$ the average number of photons per mode.
+One of the photons is retained as the idler photon with annihilation operator $\hat{a}_I$, one photon is used as the source photon with annihilation operator $\hat{a}_S$.
+When there is no target present the annihilation operator for the return signal is simply $\hat{a}_R=\hat{a}_B$. 
+When there is a target present the return signal annihilation operator can be writting $\hat{a}_R = \sqrt{\kappa}\hat{a}_S+\sqrt{1-\kappa}\hat{a}_B $.
+With $\kappa \ll 1$ this represents a weak return signal.
+\\
+The authors show that the Wigner-distribution covariance matrix when there is no target present $\Lambda^0$ and when a target is present $\Lambda^1$ are:
+\begin{align}
+ \Lambda^{0} &= \frac{1}{4}\begin{bmatrix}
+                            B & 0 & 0 & 0\\
+                            0 & B & 0 & 0\\
+                            0 & 0 & S & 0\\
+                            0 & 0 & 0 & S
+                           \end{bmatrix}\\
+  \Lambda^{1} &= \frac{1}{4}\begin{bmatrix}
+                            A & 0 & \sqrt{\kappa}C_q & 0\\
+                            0 & A & 0 & -\sqrt{\kappa}C_q\\
+                            \sqrt{\kappa}C_q & 0 & S & 0\\
+                            0 & -\sqrt{\kappa}C_q & 0 & S
+                           \end{bmatrix}
+\end{align}
+With $B=2N_B+1$, $S=2N_S+1$, $A \equiv 2\kappa N_S+B$ and $C_q \equiv 2\sqrt{N_S(N_S+1)}$ is a correlation term for the entangled system.
+\\
+The authors then propose to measure the density matrix $\rho_{RI}$ of the idler and return signal.
+If both hypotheses are equally likely, the minimum error-probability decision rule is:
+\begin{align}
+ \rho_{RI}^1-\rho_{RI}^0 > 0 \rightarrow H^1
+\end{align}
+If $\{\gamma_n^+\}$ are the non-negative eigenvalues of $\rho_{RI}^1-\rho_{RI}^0$ then the error probability of the optimum quantum receiver is:
+\begin{align}
+ Pr(e) &= \left(1-\sum_n \gamma_n^+\right)
+\end{align}
+The authors are then able to develop Bhattacharrya bounds for the quantum illuminator and Chernoff bounds for a coherent-state classical illuminator, shown in \ref{figs:ErrorBoundsOptical}.
+For a reasonable number of transmissions $(<100)$ the theoretical upper bound on the detection error probability is substantially lower than the theorectical lower bound on a coherent classical system.
+This result provides motivation for investigating quantum illumination.
+\begin{figure}
+ \caption{Upper bounds on detection error probabilities for classical (solid blue) and quantum (solid red), with lower bound (dashed blue) for coherent classical systems. \cite{qig}}
+ \centering
+   \includegraphics[width=0.5\textwidth]{figs/ErrorBoundsOptical}
+ \label{fig:opticalerrorbounds}
+\end{figure}
 \\
 In microwave quantum illumination the microwave probe photon will travel from the transmitter to the object to be detected, scatter from the object, and return to the detector.
 An optical photon, termed the idler photon, is initially entangled with the microwave photon (figure \ref{fig:quantumradar}).
 The probe photons are not expected to remain in a coherent entangled state with the idler photons, yet there is a still an enhanced correlation between them even after decoherence \cite{qig}. 
-\begin{figure}[ht]
- \caption{Quantum radar conceptual design from \cite{qi}}
+\begin{figure}
+ \caption{Proposed quantum radar system \cite{qi}}
  \centering
    \includegraphics[width=0.5\textwidth]{figs/QuantumRadar}
  \label{fig:quantumradar}
 \end{figure}
 \\
-The key result \cite{qig} was to compare theorectical bounds on detection performance between a quantum illumination system and a coherent system.
-The authors analyzed an optical quantum illuminator detecting a weak scatterer in a strong thermal bath, so that there were many more thermal noise photons than scattered photons received at the detector. 
-As shown in figure 2 this is an artifical situation as thermal effects are generally negligble at optical energies.
+As we have shown in figure 2 the optical quantum illumination is somewhat artifical as thermal effects are generally negligble at optical energies.
 The authors in \cite{qi} present microwave quantum illumination as a more realistic application of the same principles.
 \\
 Even in the microwave regime the results in \cite{qig} and \cite{qi} are not necessarily relevant. 
@@ -220,7 +289,7 @@ An electronically steered antenna consists of many individual antenna elements, 
 Two types of ESA are shown in figure \ref{fig:phasedarrays}. The passive ESA in the top figure has a single high-power microwave source, which illuminates a planar array of antenna elements.
 Each element in the array includes an electronically controlled phase shifter that changes the phase of the signal as it passes through.
 The lower figure shows an active ESA in which every antenna element includes a separate microwave source.
-\begin{figure}[ht]
+\begin{figure}
  \caption{Passive (top) and active (bottom) phase arrays. In the active array, each element has a microwave source.}
  \centering
    \includegraphics[width=0.5\textwidth]{figs/PhasedArrays}
