@@ -66,6 +66,42 @@ We use the Born approximation with a spherically symmetric potential:
 Where we have done the integral through table lookup.
 
 \section{Problem 4}
+a. The scattered wavefunctions can be written as linear combinations of the spherical Bessel/Neumann functions. 
+For hard-sphere scattering we do not consider the origin so we cannot discard the Neumann part of the solution.
+For $\ell=1$:
+\begin{align}
+ u_{k,1} &= aj_1(kr)+bn_1(kr)\\
+ u_{k,1} &= a\left(\frac{\sin{kr}}{(kr)^2}-\frac{\cos{kr}}{kr} \right) + b\left(-\frac{\cos{kr}}{(kr)^2}-\frac{\sin{kr}}{kr} \right)
+\end{align}
+With the boundary condition that $u_{k1}$ vanishes at $r=r_0$ we can pull out a $\frac{1}{kr}$, incorporate a minus sign into a coefficient, 
+and express (2) as:
+\begin{align}
+ u_{k,1} &= a\left(\frac{\sin{kr}}{kr}-\cos{kr} \right) + b'\left(\frac{\cos{kr}}{kr}+\sin{kr} \right)\\
+ u_{k,1} &= a\left(\frac{\sin{kr}}{kr}-\cos{kr}+\frac{b'}{a}\left(\frac{\cos{kr}}{kr}+\sin{kr} \right)\right) \\
+ u_{k,1} &= C\left(\frac{\sin{kr}}{kr}-\cos{kr}+a\left(\frac{\cos{kr}}{kr}+\sin{kr} \right) \right)
+\end{align}
+Where we have defined our coefficients to match the form of the equation given.\\
+\\
+b. The boundary condition at $r=r_0$ can only be met if the expression in parentheses in (5) is 0 at $r_0$.
+\begin{gather}
+ \frac{\sin{kr}}{kr}-\cos{kr}+a\left(\frac{\cos{kr}}{kr}+\sin{kr} \right) = 0\\
+ a = \frac{\cos{kr_0}-\sin{kr_0}/kr_0}{\cos{kr_0}/kr_0+\sin{kr_0}}\\
+ a = \frac{kr_0\cos{kr_0}-\sin{kr_0}}{\cos{kr_0}+kr_0\sin{kr_0}}
+\end{gather}
+c. Using equation 6.4.62 from Sakurai for $\tan{\delta_\ell}$:
+\begin{align}
+ \tan{\delta_1}(kr_0) &= \frac{j_1(kr_0)}{n_1(kr_0)}\\
+ \tan{\delta_1}(kr_0) &= \frac{\sin{kr_0}-kr_0\cos{kr_0}}{\cos{kr_0}+kr_0\sin{kr_0}}
+\end{align}
+Comparing (10) and (8) we see that $a=-\tan{\delta_1}(kr_0)$.
+\\ \\
+d. We use the low-energy expansions of the spherical Bessel functions:
+\begin{align}
+ j_1(kr) &\simeq \frac{kr}{(3)!!} = \frac{kr}{3}\\
+ n_1(kr) &\simeq -\frac{(1)!!}{(kr)^2} = -\frac{1}{(kr^2)}
+\end{align}
+From (9) we see that $\tan{\delta_1} \propto -(kr_0)^3$. 
+Using the small-angle approximation we have proved $\delta_1 \propto (kr_0)^3$, which is much smaller than $\delta_0 \propto kr_0$.
 
 \section{Problem 5}
 To prove the optical theorem we will compare the form of the stationary wavefunction in both the plane wave and spherical wave bases,

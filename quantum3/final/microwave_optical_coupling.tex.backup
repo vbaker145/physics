@@ -1,4 +1,4 @@
-\documentclass[a4paper,10pt,twocolumn]{article}
+\documentclass[a4paper,11pt, twocolumn]{article}
 \usepackage[utf8]{inputenc}
 \usepackage{amsmath}
 \usepackage{amsfonts}
@@ -51,11 +51,37 @@ The optically-induced mechanical motion changes the capacitance of the microwave
 \begin{figure}[ht]
  \caption{Optical and microwave cavities entangled through a mechanical resonator. A, Proposed experimental setup. B, Equivalent circuit diagram of microwave resonator.}
  \centering
-   \includegraphics[width=0.5\textwidth]{f1}
+   \includegraphics[width=0.5\textwidth]{figs/f1}
 \end{figure}
-\\In \cite{nanoCrystal} the authors have characterized a coupled microwave/optical system using a piezoelectric optical nanocrystal.
+\\In \cite{nanoCrystal} the authors have experimentally characterized a coupled microwave/optical system using a piezoelectric optical nanocrystal.
+In this case the nanomechanical coupling function is performed by a piezoelectric optomechanical crystal.
+The crystal is driven directly by a microwave signal. 
+The optical coupling is acheived by routing an optical waveguide to a separation of <1 optical wavelength from the crystal.
+The crystal has a transverse mechanical resonance at 4GHz which is electrically excited.
+The optical coupling point (see figure \ref{fig:optoCrystal}) is placed at the mechanical resonance point, so that the electrically excited mechanical motion interacts with the optical transmission.
+\begin{figure}[ht]
+ \caption{Optomechanical piezo crystal device from \cite{nanoCrystal}.}
+ \centering
+   \includegraphics[width=0.5\textwidth]{figs/OptoMechCrystal}
+ \label{fig:optoCrystal}
+\end{figure}
 \\
-\section{Analysis of the Mechanical Resonator}
+The authors in \cite{nanoCrystal} focus on the ability to transfer phase and amplitude from the microwave signal to the optical signal.
+Figure \ref{fig:homodyne} shows the experimental setup using homodyne mixing of an optical signal that has been downcoverted through photodetection and low-pass filtering to isolate the optical sideband related to the mechanical resonance.
+The Argand diagram of the received signal for different phases of the injected microwave signal show that the microwave phase is retained in the coupled optical signal.
+\begin{figure}[ht]
+ \caption{Homodyne detection from \cite{nanoCrystal}.}
+ \centering
+   \includegraphics[width=0.5\textwidth]{figs/CrystalMixing}
+ \label{fig:homodyne}
+\end{figure}
+\\
+The optomechanical piezoelectric crystal was fabricated as an integrated electronic/photonic device.
+This is a strongly supported area of engineering research, as exemplified by the new Integrated Photonics Institute for Manufacturing Innovation, 
+an institute with almost 100 academic and industry members funded with \$110M federal funding and over \$500M cost share from the members \cite{ipimi}.
+As these engineering and manufacturing methods improve these types of nanomechanical systems will become readily available to physics researchers.
+
+\section{Analysis of the Mechanical Resonator Dynamics}
 We present the analysis of the nanomechanical resonator system in \cite{nanoMR} to illustrate some of the relevant analytical methods.
 The Hamiltonian of the combined system is expressed in terms of the creation and annihilation operators of the optical and microwave cavities.
 The effects of thermal noise are incorporated through a set of quantum Langevin equations, which are then linearized about a stationary point. 
@@ -93,14 +119,15 @@ The final Hamiltonian is:
 \end{split}
 \end{align}
 The fourth and fifth terms of the Hamiltonian are the coupling terms between the microwave and optical cavities and the mechanical resonator.\\ 
-We also consider thermal effects for both systems. We plot the expected number of thermal photons for both the optical system (500 THz) and the microwave system (4.5 GHz).
+We also consider thermal effects for both systems. We plot the expected number of thermal photons for both the optical system (500 THz) and the microwave system (4.5 GHz) in Figure \ref{fig:thermalnoise}.
 \begin{align}
  \braket{n}_e &= \frac{1}{z^{-1}e^{\beta \hbar \omega}-1}
 \end{align}
 \begin{figure}[ht]
  \caption{Mean number of thermal photons in the microwave cavity (top) and the optical cavity (bottom)}
  \centering
-   \includegraphics[width=0.5\textwidth]{ThermalPhotons}
+   \includegraphics[width=0.5\textwidth]{figs/ThermalPhotons}
+ \label{fig:thermalnoise}
 \end{figure}
 We can clearly neglect thermal noise in the optical part of the system, but we must include noise terms in the microwave system even at low temperatures.
 To incorporate the noise terms the authors introduce a set of quantum Langevin equations (QLEs), differential equations for the time evolution of the system.
@@ -127,11 +154,38 @@ The equilibrium values are found by setting the derivatives to 0:
  b_s &= \frac{E_w}{\kappa_w+i\Delta_w}
 \end{align}
 Where we have written $\Delta_c=\Delta_{0c}-G_{0c}q_s$ and $\Delta_w=\Delta_{0w}-G_{0w}q_s$. 
-These are the caivty detuning for the optical and microwave fields. 
+These are the caivty detunings for the optical and microwave fields. 
+Expanding about the equilibrium point:
+\begin{align}
+ \delta\dot{q} &= \omega_m\delta p\\
+ \begin{split}
+ \delta\dot{p} &= -\omega_m\delta q -\gamma_m\delta p +G_{0c}a_s(\delta a^\dagger+\delta a)\\
+               &\ +G_{0w}b_s(\delta b^\dagger+\delta b)+\xi
+ \end{split}\\
+ \delta\dot{a} &= -(\kappa_c+i\Delta_c)\delta a + iG_{0c}a_s\delta q + \sqrt{2\kappa_c}a_{in}\\
+ \delta\dot{b} &= -(\kappa_w+i\Delta_w)\delta b + iG_{0w}b_s\delta q
+\end{align}
+The authors now write 
 
-\section{Applications of coherent optical/microwave coupling}
-Quanum computing.\\
-Quantum illumination.
+There are several measures of entanglement in quantum information theory. 
+A bipartite system is completely separable (unentangled) if it can be written as combinations of the tensor product of the component systems:
+\begin{align}
+ \rho^{ab} &= \sum_i c_i \rho_i^a \otimes \rho_i^b
+\end{align}
+When $\rho^{ab}$ is a pure state the degree of entanglement can be determined from reduced density matrix with respect to one of the component systems:
+\begin{align}
+ \rho^a \equiv Tr_b(\rho^{ab} )\\
+ S = -Tr(\rho^a\ln{\rho^a} )
+\end{align}
+For mixed states the evaluation is more complicated. 
+In \cite{qent} the authors introduce a computable entanglement metric for a bipartite mixed state, the negativity:
+\begin{align}
+ N(\rho) \equiv \frac{\|\rho^{T_a}\|_1}{2}
+\end{align}
+Where $\|\rho^{T_a}\|_1$ is the trace norm of the partial transpose of $\rho$ with respect to component system a.
+\section{Correlation analysis}
+
+
 \section{Discussion of quantum radar}
 Quantum-enhanced sensing is a relatively young field that seeks to enhance sensing by using quantum entanglement. 
 We discuss the particular application of quantum illumination in the microwave regime applied to radar systems.
@@ -140,10 +194,43 @@ Radar waveforms are designed to allow the receiver to correlate the return signa
 Quantum illumination can improve this correlation and can theoretically provide better performance than any conventional microwave system \cite{qi}(other MIT citations).
 \\
 In microwave quantum illumination the microwave probe photon will travel from the transmitter to the object to be detected, scatter from the object, and return to the detector.
-An optical photon, termed the idler photon, is initially entangled with the microwave photon.
+An optical photon, termed the idler photon, is initially entangled with the microwave photon (figure \ref{fig:quantumradar}).
 The probe photons are not expected to remain in a coherent entangled state with the idler photons, yet there is a still an enhanced correlation between them even after decoherence \cite{qig}. 
+\begin{figure}[ht]
+ \caption{Quantum radar conceptual design from \cite{qi}}
+ \centering
+   \includegraphics[width=0.5\textwidth]{figs/QuantumRadar}
+ \label{fig:quantumradar}
+\end{figure}
 \\
-The key result \cite{} 
+The key result \cite{qig} was to compare theorectical bounds on detection performance between a quantum illumination system and a coherent system.
+The authors analyzed an optical quantum illuminator detecting a weak scatterer in a strong thermal bath, so that there were many more thermal noise photons than scattered photons received at the detector. 
+As shown in figure 2 this is an artifical situation as thermal effects are generally negligble at optical energies.
+The authors in \cite{qi} present microwave quantum illumination as a more realistic application of the same principles.
+\\
+Even in the microwave regime the results in \cite{qig} and \cite{qi} are not necessarily relevant. 
+Radar systems can employ very high-power microwave sources and highly directional antennas.
+Radar system performance is in general not limited by the thermal background noise but instead by ``clutter'': the scattered radar signals from objects not of interest.
+Typical clutter scatterers include ground, foliage, buildings, rain and other atmospheric particulate.
+Moder radar systems mitigate clutter effects through the use of short signal pulses, directional antennas, and sophisticated waveforms.
+Any radar system employing quantum illumination must be able to employ similar techniques, or else the gains from quantum coherence will be more than offset by other losses. 
+\\
+Modern radar designs are dominated by the electronically steered array (ESA) antenna. 
+An electronically steered antenna consists of many individual antenna elements, with each element able to individually control the phase shift of the transmitted and received signal.
+Two types of ESA are shown in figure \ref{fig:phasedarrays}. The passive ESA in the top figure has a single high-power microwave source, which illuminates a planar array of antenna elements.
+Each element in the array includes an electronically controlled phase shifter that changes the phase of the signal as it passes through.
+The lower figure shows an active ESA in which every antenna element includes a separate microwave source.
+\begin{figure}[ht]
+ \caption{Passive (top) and active (bottom) phase arrays. In the active array, each element has a microwave source.}
+ \centering
+   \includegraphics[width=0.5\textwidth]{figs/PhasedArrays}
+ \label{fig:phasedarrays}
+\end{figure}
+\\
+Applying quantum illumination to a phased array system will require the resolution of several questions.
+The schemes discussed so far may be compatible with a passive ESA. but it must be determined if passing the signal through many passive phase shifters will degrade the correlation with the idler signal.
+It is not alear how quantum illumination would be applied to an active ESA design. The active ESA signals are digitized at each individual element, and the antenna beamforming and signal correlation is done in the digital domain.
+
 
 \printbibliography
 \end{document}
