@@ -1,4 +1,4 @@
-\documentclass[a4paper,10pt,twocolumn]{article}
+\documentclass[a4paper,11pt, twocolumn]{article}
 \usepackage[utf8]{inputenc}
 \usepackage{amsmath}
 \usepackage{amsfonts}
@@ -81,7 +81,7 @@ This is a strongly supported area of engineering research, as exemplified by the
 an institute with almost 100 academic and industry members funded with \$110M federal funding and over \$500M cost share from the members \cite{ipimi}.
 As these engineering and manufacturing methods improve these types of nanomechanical systems will become readily available to physics researchers.
 
-\section{Analysis of the Mechanical Resonator}
+\section{Analysis of the Mechanical Resonator Dynamics}
 We present the analysis of the nanomechanical resonator system in \cite{nanoMR} to illustrate some of the relevant analytical methods.
 The Hamiltonian of the combined system is expressed in terms of the creation and annihilation operators of the optical and microwave cavities.
 The effects of thermal noise are incorporated through a set of quantum Langevin equations, which are then linearized about a stationary point. 
@@ -154,11 +154,38 @@ The equilibrium values are found by setting the derivatives to 0:
  b_s &= \frac{E_w}{\kappa_w+i\Delta_w}
 \end{align}
 Where we have written $\Delta_c=\Delta_{0c}-G_{0c}q_s$ and $\Delta_w=\Delta_{0w}-G_{0w}q_s$. 
-These are the caivty detuning for the optical and microwave fields. 
+These are the caivty detunings for the optical and microwave fields. 
+Expanding about the equilibrium point:
+\begin{align}
+ \delta\dot{q} &= \omega_m\delta p\\
+ \begin{split}
+ \delta\dot{p} &= -\omega_m\delta q -\gamma_m\delta p +G_{0c}a_s(\delta a^\dagger+\delta a)\\
+               &\ +G_{0w}b_s(\delta b^\dagger+\delta b)+\xi
+ \end{split}\\
+ \delta\dot{a} &= -(\kappa_c+i\Delta_c)\delta a + iG_{0c}a_s\delta q + \sqrt{2\kappa_c}a_{in}\\
+ \delta\dot{b} &= -(\kappa_w+i\Delta_w)\delta b + iG_{0w}b_s\delta q
+\end{align}
+The authors now write 
 
-\section{Applications of optical-microwave entanglement}
-Quanum computing.\\
-Quantum illumination.
+There are several measures of entanglement in quantum information theory. 
+A bipartite system is completely separable (unentangled) if it can be written as combinations of the tensor product of the component systems:
+\begin{align}
+ \rho^{ab} &= \sum_i c_i \rho_i^a \otimes \rho_i^b
+\end{align}
+When $\rho^{ab}$ is a pure state the degree of entanglement can be determined from reduced density matrix with respect to one of the component systems:
+\begin{align}
+ \rho^a \equiv Tr_b(\rho^{ab} )\\
+ S = -Tr(\rho^a\ln{\rho^a} )
+\end{align}
+For mixed states the evaluation is more complicated. 
+In \cite{qent} the authors introduce a computable entanglement metric for a bipartite mixed state, the negativity:
+\begin{align}
+ N(\rho) \equiv \frac{\|\rho^{T_a}\|_1}{2}
+\end{align}
+Where $\|\rho^{T_a}\|_1$ is the trace norm of the partial transpose of $\rho$ with respect to component system a.
+\section{Correlation analysis}
+
+
 \section{Discussion of quantum radar}
 Quantum-enhanced sensing is a relatively young field that seeks to enhance sensing by using quantum entanglement. 
 We discuss the particular application of quantum illumination in the microwave regime applied to radar systems.
@@ -194,11 +221,16 @@ Two types of ESA are shown in figure \ref{fig:phasedarrays}. The passive ESA in 
 Each element in the array includes an electronically controlled phase shifter that changes the phase of the signal as it passes through.
 The lower figure shows an active ESA in which every antenna element includes a separate microwave source.
 \begin{figure}[ht]
- \caption{Quantum radar conceptual design from \cite{qi}}
+ \caption{Passive (top) and active (bottom) phase arrays. In the active array, each element has a microwave source.}
  \centering
    \includegraphics[width=0.5\textwidth]{figs/PhasedArrays}
  \label{fig:phasedarrays}
 \end{figure}
+\\
+Applying quantum illumination to a phased array system will require the resolution of several questions.
+The schemes discussed so far may be compatible with a passive ESA. but it must be determined if passing the signal through many passive phase shifters will degrade the correlation with the idler signal.
+It is not alear how quantum illumination would be applied to an active ESA design. The active ESA signals are digitized at each individual element, and the antenna beamforming and signal correlation is done in the digital domain.
+
 
 \printbibliography
 \end{document}

@@ -110,6 +110,26 @@
       \verb http://dx.doi.org/10.1103/PhysRevLett.101.253601
       \endverb
     \endentry
+    \entry{qent}{article}{}
+      \name{labelname}{1}{}{%
+        {{hash=9444b19357f85bf4b74b8ab345cc9c8a}{Wener}{W\bibinitperiod}{G.\bibnamedelimi Vidal\bibnamedelima R.F.}{G\bibinitperiod\bibinitdelim V\bibinitperiod\bibinitdelim R\bibinitperiod}{}{}{}{}}%
+      }
+      \name{author}{1}{}{%
+        {{hash=9444b19357f85bf4b74b8ab345cc9c8a}{Wener}{W\bibinitperiod}{G.\bibnamedelimi Vidal\bibnamedelima R.F.}{G\bibinitperiod\bibinitdelim V\bibinitperiod\bibinitdelim R\bibinitperiod}{}{}{}{}}%
+      }
+      \strng{namehash}{9444b19357f85bf4b74b8ab345cc9c8a}
+      \strng{fullhash}{9444b19357f85bf4b74b8ab345cc9c8a}
+      \field{sortinit}{W}
+      \field{labeltitle}{Computable measure of entanglement}
+      \field{journaltitle}{Physical Review A}
+      \field{title}{Computable measure of entanglement}
+      \field{volume}{65}
+      \field{year}{2002}
+      \verb{doi}
+      \verb http://dx.doi.org/10.1103/PhysRevA.65.032314
+      \endverb
+      \keyw{physics}
+    \endentry
   \endsortlist
 \endrefsection
 \endinput
