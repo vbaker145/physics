@@ -19,6 +19,24 @@
 
 \refsection{0}
   \sortlist{entry}{nty}
+    \entry{ballentine}{book}{}
+      \name{labelname}{1}{}{%
+        {{hash=86cc3a7a7159e7a57305e6ac9f006d2e}{Ballantine}{B\bibinitperiod}{Leslie}{L\bibinitperiod}{}{}{}{}}%
+      }
+      \name{author}{1}{}{%
+        {{hash=86cc3a7a7159e7a57305e6ac9f006d2e}{Ballantine}{B\bibinitperiod}{Leslie}{L\bibinitperiod}{}{}{}{}}%
+      }
+      \list{publisher}{1}{%
+        {World Scientific}%
+      }
+      \strng{namehash}{86cc3a7a7159e7a57305e6ac9f006d2e}
+      \strng{fullhash}{86cc3a7a7159e7a57305e6ac9f006d2e}
+      \field{sortinit}{B}
+      \field{labeltitle}{Quantum Physics: A Modern Development}
+      \field{title}{Quantum Physics: A Modern Development}
+      \field{year}{2015}
+      \keyw{physics}
+    \endentry
     \entry{nanoCrystal}{article}{}
       \name{labelname}{1}{}{%
         {{hash=0afda2562ae8d2fc0889241ce3547b80}{Cleland}{C\bibinitperiod}{J.\bibnamedelimi Bochmann\bibnamedelimb A.\bibnamedelimi Vainsencher\bibnamedelimb D.\bibnamedelimi Awschalom\bibnamedelima A.}{J\bibinitperiod\bibinitdelim B\bibinitperiod\bibinitdelim A\bibinitperiod\bibinitdelim V\bibinitperiod\bibinitdelim D\bibinitperiod\bibinitdelim A\bibinitperiod\bibinitdelim A\bibinitperiod}{}{}{}{}}%
@@ -59,14 +77,12 @@
       \strng{fullhash}{c4b30b219cb4cf7772989d3934171084}
       \field{sortinit}{M}
       \field{labeltitle}{Entangling optical and microwave cavity modes by means of a nanomechanical resonator}
-      \field{journaltitle}{Annalen der Physik}
-      \field{number}{10}
+      \field{journaltitle}{Physical Review A}
       \field{title}{Entangling optical and microwave cavity modes by means of a nanomechanical resonator}
-      \field{volume}{322}
-      \field{year}{1905}
-      \field{pages}{891\bibrangedash 921}
+      \field{volume}{84}
+      \field{year}{2011}
       \verb{doi}
-      \verb http://dx.doi.org/10.1002/andp.19053221004
+      \verb http://dx.doi.org/10.1103/PhysRevA.84.042342
       \endverb
       \keyw{physics}
     \endentry
@@ -90,6 +106,26 @@
       \endverb
       \keyw{physics}
     \endentry
+    \entry{qcomm}{article}{}
+      \name{labelname}{1}{}{%
+        {{hash=741fa521d6abc1769caa7995f1ee647f}{Shapiro}{S\bibinitperiod}{J.}{J\bibinitperiod}{}{}{}{}}%
+      }
+      \name{author}{1}{}{%
+        {{hash=741fa521d6abc1769caa7995f1ee647f}{Shapiro}{S\bibinitperiod}{J.}{J\bibinitperiod}{}{}{}{}}%
+      }
+      \strng{namehash}{741fa521d6abc1769caa7995f1ee647f}
+      \strng{fullhash}{741fa521d6abc1769caa7995f1ee647f}
+      \field{sortinit}{S}
+      \field{labeltitle}{Defeating passive eavesdropping with quantum illumination}
+      \field{journaltitle}{Physical Review A}
+      \field{number}{022320}
+      \field{title}{Defeating passive eavesdropping with quantum illumination}
+      \field{volume}{80}
+      \field{year}{2009}
+      \verb{doi}
+      \verb http://dx.doi.org/10.1103/PhysRevLett.101.253601
+      \endverb
+    \endentry
     \entry{qig}{article}{}
       \name{labelname}{1}{}{%
         {{hash=2b83c9bcb1164dc6e8e5054d579fa907}{Shapiro}{S\bibinitperiod}{S.\bibnamedelimi Tan\bibnamedelimb B.\bibnamedelimi Erkmen\bibnamedelimb V.\bibnamedelimi Giovannetti\bibnamedelimb S.\bibnamedelimi Guha\bibnamedelimb S.\bibnamedelimi Lloyd\bibnamedelimb L.\bibnamedelimi Maccone\bibnamedelimb S.\bibnamedelimi Pirandola\bibnamedelima J.}{S\bibinitperiod\bibinitdelim T\bibinitperiod\bibinitdelim B\bibinitperiod\bibinitdelim E\bibinitperiod\bibinitdelim V\bibinitperiod\bibinitdelim G\bibinitperiod\bibinitdelim S\bibinitperiod\bibinitdelim G\bibinitperiod\bibinitdelim S\bibinitperiod\bibinitdelim L\bibinitperiod\bibinitdelim L\bibinitperiod\bibinitdelim M\bibinitperiod\bibinitdelim S\bibinitperiod\bibinitdelim P\bibinitperiod\bibinitdelim J\bibinitperiod}{}{}{}{}}%
@@ -107,7 +143,7 @@
       \field{volume}{101}
       \field{year}{2008}
       \verb{doi}
-      \verb http://dx.doi.org/10.1103/PhysRevLett.101.253601
+      \verb http://dx.doi.org/10.1103/PhysRevA.80.022320
       \endverb
     \endentry
     \entry{qent}{article}{}

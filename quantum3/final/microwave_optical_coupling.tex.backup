@@ -74,7 +74,7 @@ To acheive the desired optical/microwave correlation the couling must also carry
 Figure \ref{fig:homodyne} shows the experimental setup using homodyne mixing of an optical signal that has been downcoverted through photodetection and low-pass filtering to isolate the optical sideband related to the mechanical resonance.
 The Argand diagram of the received signal for different phases of the injected microwave signal show that the microwave phase is retained in the coupled optical signal.
 \begin{figure}
- \caption{Homodyne detection from \cite{nanoCrystal}.}
+ \caption{Top: Homodyne detection experiment from \cite{nanoCrystal}. Bottom: Argand diagram showing homodyne detection of signal injected at different phases (red) as well as the noise with no microwave input (gray) }
  \centering
    \includegraphics[width=0.5\textwidth]{figs/CrystalMixing}
  \label{fig:homodyne}
@@ -186,7 +186,7 @@ Having obtained the dynamics of the fluctuations of the system about the equilib
 
 \section{Correlation analysis}
 There are several measures of entanglement in quantum information theory. 
-A bipartite system is completely separable (unentangled) if it can be written as combinations of the tensor product of the component systems:
+A bipartite system is completely separable (unentangled) if it can be written as combinations of the tensor product of the component systems \cite{ballentine}:
 \begin{align}
  \rho^{ab} &= \sum_i c_i \rho_i^a \otimes \rho_i^b
 \end{align}
@@ -212,7 +212,25 @@ One critical system parameter is the resonator mass: lower resonator mass increa
    \includegraphics[width=0.5\textwidth]{figs/mr_entanglement}
  \label{fig:logneg}
 \end{figure}
-
+\section{Applications}
+Practical methods for entangling microwave and optical photons could be used in a variety of applications.
+The development of such systems also provides new oportunities to explore interesting fundamental physics.
+The analyses and experimental results mentioned here show the wide variety of fields involved in nanomechanically coupled optical and microwave systems , from quantum mechanics to statistical mechanics to quantum information theory
+\\ 
+Quantum computing schemes require ways to move quantum information between the physical qubits.
+Many differnt physical qubits have been proposed including optical photons, atoms, particles, Josephson junctions and quantum dots.
+Optical/microwave coupling could allow coherent transfer of quantum states between qubits, even if several types of physical qubits were used in the same system.
+\\
+In \cite{qcomm} Shapiro defines a protocol to defeat passive eavesdropping using quantum illumination.
+The proposed system uses an entangled pair of photons, with Alice sending one photon of each pairto Bob and retaining the second.
+Bob then modulates his received photons with bits of information and sends them back to Alice.
+By using her retained photon, Alice's optimum quantum receiver can correctly decode the information bit with an error probability orders of magnitude lower than a passive eavesdropper.
+This protocol could supprot high data rates ($>10$ Mbit/second) unlike conventional quantum key distribution schemes.
+\\
+An optical/microwave coupler might allow the Shapiro protocol to be applied to microwave communications links. 
+Microwave links provide ubiquitous wireless communications 
+\\
+Microwave photonics.
 \section{Discussion of quantum radar}
 Quantum-enhanced sensing is a relatively young field that seeks to enhance sensing by using quantum entanglement. 
 We discuss the particular application of quantum illumination in the microwave regime applied to radar systems.
@@ -222,6 +240,7 @@ Quantum illumination can improve this correlation and can theoretically provide 
 \\
 One key performance metric in the current quantum illumination literature is the probability of detecting a target.
 In \cite{qig} the authors consider illuminating a strong thermal bath (average photon number $N_\beta \gg 1$) with a weak optical illumination.
+They considered the thermal bath as a Gaussian state (previous work included only a microcanonical ensemble model of the thermal bath).
 The illuminator source is the output of a spontaneous parametric downconversion process, so that an entangled pair of photons is generated with $N_S$ the average number of photons per mode.
 One of the photons is retained as the idler photon with annihilation operator $\hat{a}_I$, one photon is used as the source photon with annihilation operator $\hat{a}_S$.
 When there is no target present the annihilation operator for the return signal is simply $\hat{a}_R=\hat{a}_B$. 
@@ -244,6 +263,7 @@ The authors show that the Wigner-distribution covariance matrix when there is no
                            \end{bmatrix}
 \end{align}
 With $B=2N_B+1$, $S=2N_S+1$, $A \equiv 2\kappa N_S+B$ and $C_q \equiv 2\sqrt{N_S(N_S+1)}$ is a correlation term for the entangled system.
+The off-diagonal terms are greater
 \\
 The authors then propose to measure the density matrix $\rho_{RI}$ of the idler and return signal.
 If both hypotheses are equally likely, the minimum error-probability decision rule is:
@@ -254,7 +274,7 @@ If $\{\gamma_n^+\}$ are the non-negative eigenvalues of $\rho_{RI}^1-\rho_{RI}^0
 \begin{align}
  Pr(e) &= \left(1-\sum_n \gamma_n^+\right)
 \end{align}
-The authors are then able to develop Bhattacharrya bounds for the quantum illuminator and Chernoff bounds for a coherent-state classical illuminator, shown in \ref{figs:ErrorBoundsOptical}.
+The authors are then able to develop Bhattacharrya bounds for the quantum illuminator and Chernoff bounds for a coherent-state classical illuminator, shown in \ref{fig:opticalerrorbounds}.
 For a reasonable number of transmissions $(<100)$ the theoretical upper bound on the detection error probability is substantially lower than the theorectical lower bound on a coherent classical system.
 This result provides motivation for investigating quantum illumination.
 \begin{figure}
@@ -300,6 +320,6 @@ Applying quantum illumination to a phased array system will require the resoluti
 The schemes discussed so far may be compatible with a passive ESA. but it must be determined if passing the signal through many passive phase shifters will degrade the correlation with the idler signal.
 It is not alear how quantum illumination would be applied to an active ESA design. The active ESA signals are digitized at each individual element, and the antenna beamforming and signal correlation is done in the digital domain.
 
-
 \printbibliography
+
 \end{document}

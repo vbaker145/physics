@@ -186,7 +186,7 @@ Having obtained the dynamics of the fluctuations of the system about the equilib
 
 \section{Correlation analysis}
 There are several measures of entanglement in quantum information theory. 
-A bipartite system is completely separable (unentangled) if it can be written as combinations of the tensor product of the component systems:
+A bipartite system is completely separable (unentangled) if it can be written as combinations of the tensor product of the component systems \cite{ballentine}:
 \begin{align}
  \rho^{ab} &= \sum_i c_i \rho_i^a \otimes \rho_i^b
 \end{align}
@@ -212,7 +212,28 @@ One critical system parameter is the resonator mass: lower resonator mass increa
    \includegraphics[width=0.5\textwidth]{figs/mr_entanglement}
  \label{fig:logneg}
 \end{figure}
-
+\section{Applications}
+Practical methods for entangling microwave and optical photons could be used in a variety of applications.
+The development of such systems also provides new oportunities to explore interesting fundamental physics.
+The analyses and experimental results mentioned here show the wide variety of fields involved in nanomechanically coupled optical and microwave systems , from quantum mechanics to statistical mechanics to quantum information theory
+\\ 
+Quantum computing schemes require ways to move quantum information between the physical qubits.
+Many differnt physical qubits have been proposed including optical photons, atoms, particles, Josephson junctions and quantum dots.
+Optical/microwave coupling could allow coherent transfer of quantum states between qubits, even if several types of physical qubits were used in the same system.
+\\
+In \cite{qcomm} Shapiro defines a protocol to defeat passive eavesdropping using quantum illumination.
+The proposed system uses an entangled pair of photons, with Alice sending one photon of each pairto Bob and retaining the second.
+Bob then modulates his received photons with bits of information and sends them back to Alice.
+By using her retained photon, Alice's optimum quantum receiver can correctly decode the information bit with an error probability orders of magnitude lower than a passive eavesdropper.
+This protocol could supprot high data rates ($>10$ Mbit/second) unlike conventional quantum key distribution schemes.
+An optical/microwave coupler might allow the Shapiro protocol to be applied to microwave communications links. 
+Microwave communications are a critical piece of communications infrastructure, providing wide area coverage without extensive cable infrastructure.
+Microwave links are also susceptible to passive eavesdropping since the signal is broadcast across an area. 
+Current wireless security protocols rely primarily on encryption to protect plaintext from passive collection, but the ciphertext can still be collected.
+Given enough time encryption keys may eventually be compromised, and then all previously transmitted messages are compromised.
+A secure protocol based on quantum illumination would prevent the ciphertext from being successfully copied in the first place.
+\\
+Microwave photonics.
 \section{Discussion of quantum radar}
 Quantum-enhanced sensing is a relatively young field that seeks to enhance sensing by using quantum entanglement. 
 We discuss the particular application of quantum illumination in the microwave regime applied to radar systems.
