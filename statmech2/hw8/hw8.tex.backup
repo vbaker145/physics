@@ -1,0 +1,72 @@
+\documentclass[a4paper,11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{braket}
+
+\numberwithin{equation}{section}
+\renewcommand\thesubsection{\alph{subsection}}
+\newcommand{\bvp}[1]{\mathbf{#1}'}
+\newcommand{\bv}[1]{\mathbf{#1}}
+
+
+%opening
+\title{Stat mech II HW8}
+\author{Vince Baker}
+
+\begin{document}
+
+\maketitle
+
+\section{Problem 7.21}
+we start with the equation:
+\begin{align}
+ C_P-C_V &= TV\kappa_T\left(\frac{\partial P}{\partial T} \right)^2\\
+ C_P-C_V &= T\left(\frac{\partial V}{\partial P}\right)_T\left(\frac{\partial P}{\partial T} \right)_V^2\\
+\end{align}
+To find an expression for V we calculate the form of the Helmholtz free energy H.
+Since the Debye specific heat $C_V \propto T^3$ at low temperature, U has the form:
+\begin{align}
+ U \simeq T^4+f(V)
+\end{align}
+Using the thermodynamic relations:
+\begin{align}
+ dS &= \frac{1}{T}dU + \frac{P}{T}dV\\
+ S &\simeq  VT^3+g(V)\text{ (constant volume)}\\
+ -\left(\frac{\partial A}{\partial T} \right)_V &= S\\
+ A &\simeq VT^4+g(V)\\
+ P &= -\left(\frac{\partial A}{\partial V} \right)_T \simeq T^4+g(V)
+\end{align}
+Where $f(V),g(V)$ are different arbitrary functions of V only. 
+We can now calculate the derivatives of the pressure:
+\begin{align}
+ \left(\frac{\partial P}{\partial T} \right)_V &\simeq  T^3\\
+ \left(\frac{\partial P}{\partial V} \right)_T &\simeq  g(V)
+\end{align}
+Putting these into equation (2) we find:
+\begin{align}
+ C_P-C_V &= Tg(V)(T^3)^2 \propto T^7
+\end{align}
+
+\section{Problem 7.34}
+We consider an n-dimensional Debye system and assume the propagation speed is the same in all directions.
+Taking the lattice vibrations as phonons with momentum $p=\hbar\bv{k}$ and $\omega=Ak$ we can find $g(\omega)\ d\omega$:
+\begin{align}
+ g(k)\ dk &= \frac{L^n}{(2\pi)^n} k^{n-1} dk\\
+ g(\omega) d\omega &= \frac{L^n}{(2\pi)^n} \frac{\omega^{n-1}}{A^n}  d\omega
+\end{align}
+The factor of $\omega^{n-1}$ will carry into the calculation of $\omega_{D}$:
+\begin{align}
+ \int_0^{\omega_D}g(\omega)d\omega = nN\\
+ g(\omega) \propto \frac{1}{\omega_D^n}
+\end{align}
+
+
+
+
+
+
+
+\end{document}

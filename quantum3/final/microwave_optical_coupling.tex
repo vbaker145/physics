@@ -309,6 +309,15 @@ Typical clutter scatterers include ground, foliage, buildings, rain and other at
 Moder radar systems mitigate clutter effects through the use of short signal pulses, directional antennas, and sophisticated waveforms.
 Any radar system employing quantum illumination must be able to employ similar techniques, or else the gains from quantum coherence will be more than offset by other losses. 
 \\
+One of the assumptions in the current quantum illumination literature is that the retained idler can be combined with the reflected signal.
+The optical idler would presumably be retained through a photonic delay line, easily implemented as a long section of optical fiber.
+Spatial delays of tens or even hundreds of kilometers are practical using this technique.
+However, it is assumed that the delay time through the fiber delay time is matched to the round-trip propagation time of the microwave signal.
+The current literature has not analyzed the effect of a timing mismatch between the idler and signal photons, but a timing mismatch could easily destroy the correlation.
+More fundamentally, radar systems commonly search for targets at different ranges in each transmission. 
+It is not clear if the quantum illumination scheme can be modified to perform a correlation at more than one hypothetical target distance at a time.
+The no-cloning rule eliminates the most obvious choice: clone multiple copies of the idler and ass each copy through a sseparate delay line.
+\\
 Modern radar designs are dominated by the electronically steered array (ESA) antenna. 
 An electronically steered antenna consists of many individual antenna elements, with each element able to individually control the phase shift of the transmitted and received signal.
 Two types of ESA are shown in figure \ref{fig:phasedarrays}. The passive ESA in the top figure has a single high-power microwave source, which illuminates a planar array of antenna elements.
