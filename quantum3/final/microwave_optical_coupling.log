@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.1.23)  7 DEC 2015 22:46
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.1.23)  7 DEC 2015 23:37
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -685,12 +685,12 @@ LaTeX Font Info:    Try loading font information for U+msb on input line 35.
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-Underfull \hbox (badness 4048) in paragraph at lines 37--43
+Underfull \hbox (badness 4048) in paragraph at lines 37--44
 \OT1/cmr/m/n/10.95 Coupling be-tween op-ti-cal and mi-crowave
  []
 
 
-Underfull \hbox (badness 1558) in paragraph at lines 37--43
+Underfull \hbox (badness 1558) in paragraph at lines 37--44
 \OT1/cmr/m/n/10.95 posed meth-ods for mi-crowave/optical cou-
  []
 
@@ -851,7 +851,7 @@ Overfull \hbox (5.0pt too wide) in paragraph at lines 212--214
  []
 
 [5] [6 <./figs/mr_entanglement-eps-converted-to.pdf>]
-Underfull \hbox (badness 2680) in paragraph at lines 238--254
+Underfull \hbox (badness 2680) in paragraph at lines 240--256
 \OT1/cmr/m/n/10.95 Quantum-enhanced sens-ing is a rel-a-tively
  []
 
@@ -864,17 +864,17 @@ df>
 (epstopdf)                    size: 63330 bytes
 (epstopdf)             Command: <repstopdf --outfile=figs/ErrorBoundsOptical-ep
 s-converted-to.pdf figs/ErrorBoundsOptical.eps>
-(epstopdf)             \includegraphics on input line 286.
+(epstopdf)             \includegraphics on input line 288.
 Package epstopdf Info: Output file is already uptodate.
 <figs/ErrorBoundsOptical-eps-converted-to.pdf, id=66, 530.98375pt x 505.89pt>
 File: figs/ErrorBoundsOptical-eps-converted-to.pdf Graphic file (type pdf)
 
 <use figs/ErrorBoundsOptical-eps-converted-to.pdf>
 Package pdftex.def Info: figs/ErrorBoundsOptical-eps-converted-to.pdf used on i
-nput line 286.
+nput line 288.
 (pdftex.def)             Requested size: 226.0pt x 215.32074pt.
 
-Overfull \hbox (5.0pt too wide) in paragraph at lines 286--288
+Overfull \hbox (5.0pt too wide) in paragraph at lines 288--290
  [][] 
  []
 
@@ -882,10 +882,10 @@ Overfull \hbox (5.0pt too wide) in paragraph at lines 286--288
 File: figs/QuantumRadar.png Graphic file (type png)
 
 <use figs/QuantumRadar.png>
-Package pdftex.def Info: figs/QuantumRadar.png used on input line 296.
+Package pdftex.def Info: figs/QuantumRadar.png used on input line 298.
 (pdftex.def)             Requested size: 226.0pt x 147.64919pt.
 
-Overfull \hbox (5.0pt too wide) in paragraph at lines 296--298
+Overfull \hbox (5.0pt too wide) in paragraph at lines 298--300
  [][] 
  []
 
@@ -893,10 +893,10 @@ Overfull \hbox (5.0pt too wide) in paragraph at lines 296--298
 File: figs/PhasedArrays.png Graphic file (type png)
 
 <use figs/PhasedArrays.png>
-Package pdftex.def Info: figs/PhasedArrays.png used on input line 318.
+Package pdftex.def Info: figs/PhasedArrays.png used on input line 320.
 (pdftex.def)             Requested size: 226.0pt x 170.67256pt.
 
-Overfull \hbox (5.0pt too wide) in paragraph at lines 318--320
+Overfull \hbox (5.0pt too wide) in paragraph at lines 320--322
  [][] 
  []
 
@@ -905,38 +905,32 @@ Underfull \vbox (badness 2538) has occurred while \output is active []
 
  [8 <./figs/ErrorBoundsOptical-eps-converted-to.pdf> <./figs/QuantumRadar.png>]
 
-Underfull \hbox (badness 1038) in paragraph at lines 327--327
-\OT1/cmr/m/it/10.95 Mod-ern De-vel-op-ment\OT1/cmr/m/n/10.95 . World Sci-en-tif
-ic,
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 327--327
+Underfull \hbox (badness 10000) in paragraph at lines 329--329
 []\OT1/cmr/m/n/10.95 J. Bochmann A. Vainsencher
  []
 
 
-Underfull \hbox (badness 1708) in paragraph at lines 327--327
+Underfull \hbox (badness 1708) in paragraph at lines 329--329
 \OT1/cmr/m/n/10.95 Mil-burn. ``En-tan-gling op-ti-cal and mi-
  []
 
 
-Underfull \hbox (badness 1137) in paragraph at lines 327--327
+Underfull \hbox (badness 1137) in paragraph at lines 329--329
 \OT1/cmr/m/n/10.95 crowave cav-ity modes by means of a
  []
 
 
-Underfull \hbox (badness 2027) in paragraph at lines 327--327
+Underfull \hbox (badness 2027) in paragraph at lines 329--329
 \OT1/cmr/m/n/10.95 ping with quan-tum il-lu-mi-na-tion''. In:
  []
 
 
-Underfull \hbox (badness 1147) in paragraph at lines 327--327
+Underfull \hbox (badness 1147) in paragraph at lines 329--329
 \OT1/cmr/m/n/10.95 S. Lloyd L. Mac-cone S. Pi-ran-dola J.
  []
 
 
-Underfull \hbox (badness 3058) in paragraph at lines 327--327
+Underfull \hbox (badness 3058) in paragraph at lines 329--329
 \OT1/cmr/m/n/10.95 Shapiro. ``Quan-tum Il-lu-mi-na-tion with
  []
 
@@ -948,7 +942,7 @@ Package logreq Info: Writing requests to 'microwave_optical_coupling.run.xml'.
 Here is how much of TeX's memory you used:
  9035 strings out of 495028
  146784 string characters out of 6181497
- 547074 words of memory out of 5000000
+ 548074 words of memory out of 5000000
  12102 multiletter control sequences out of 15000+600000
  13559 words of font info for 53 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
@@ -969,7 +963,7 @@ share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/t
 exlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive
 /texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/share/texlive/texmf
 -dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on microwave_optical_coupling.pdf (9 pages, 1444351 bytes).
+Output written on microwave_optical_coupling.pdf (9 pages, 1444703 bytes).
 PDF statistics:
  141 PDF objects out of 1000 (max. 8388607)
  92 compressed objects within 1 object stream
