@@ -1,0 +1,91 @@
+\documentclass[a4paper,11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{braket}
+
+\numberwithin{equation}{section}
+\renewcommand\thesubsection{\alph{subsection}}
+\newcommand{\bvp}[1]{\mathbf{#1}'}
+\newcommand{\bv}[1]{\mathbf{#1}}
+
+
+%opening
+\title{Statmech II HW6}
+\author{Vince Baker}
+
+\begin{document}
+
+\maketitle
+
+\section{Problem 8.9}
+We calculate the second-order approximation to the specific heat of a Fermi gas using Sommerfeld's expansion of the Fermi integrals in powers of $\ln{z}$.
+To carry the whole solution to second-order we first extend the approximation of $\ln{z}$ derived from $N/V$, substituting $\xi$ for $\ln{z}$:
+\begin{align}
+ \frac{N}{V} &= \frac{h}{\lambda^3}f_{3/2}(z)\\
+ \frac{N}{V} &\simeq \frac{4g}{3\sqrt{\pi}\lambda^3}(\xi)^{3/2}\left(1+\frac{\pi^2}{8}\xi^{-2}-\frac{7\pi^4}{640}\xi^{-4} \right)\\
+ e_f &= \left(\frac{3}{4\pi g} \right)^{2/3}\left(\frac{N}{V} \right)^{2/3}\frac{\hbar^2}{2m}\\
+ e_f &\simeq \frac{\lambda^2}{\pi}\frac{\hbar^2}{2m}\xi\left(1+\frac{\pi^2}{8}\xi^{-2}-\frac{7\pi^4}{640}\xi^{-4} \right)^{2/3}
+\end{align}
+Using a math package to help calculate the $2/3$ power of the series we find:
+\begin{align}
+ e_f &\simeq kT\ln{z}\left(1+\frac{\pi^2}{8}(\ln{z})^{-2}-\frac{\pi^4}{180}(\ln{z})^{-4} \right)
+\end{align}
+\\
+We now approximate $U/N$:
+\begin{align}
+ \frac{U}{N} &= \frac{3}{2}T\frac{f_{5/2}(z)}{f_{3/2}(z)}\\
+ f_{5/2}(z) &\simeq \frac{8}{15\sqrt{\pi}}(\ln{z})^{5/2}\left(1+\frac{5\pi^2}{8}(\ln{z})^{-2}-\frac{7\pi^4}{384}(\ln{z})^{-4} \right)\\
+ \frac{U}{N} &= \frac{3}{5}kT\ln{z}\left(1+\frac{\pi^2}{2}(\ln{z})^{-2}-\frac{11\pi^4}{120}(\ln{z})^{-4} \right)
+\end{align}
+Using the provided result for $\mu=kT\ln{z}$:
+\begin{align}
+\begin{split}
+ \frac{U}{N} = &\frac{3}{5}e_f\left(1+\frac{\pi^2}{2}(\frac{kT}{e_f})^2-\frac{11\pi^4}{120}(\frac{kT}{e_f})^4 \right)\\
+	       &\times\left(1-\frac{\pi^2}{12}(\frac{kT}{e_f})^2-\frac{\pi^4}{80}(\frac{kT}{e_f})^4 \right)
+\end{split}\\
+\frac{U}{N} = &\frac{3}{5}e_f\left(1+\frac{5\pi^2}{12}(\frac{kT}{e_f})^2-\frac{7\pi^4}{48}(\frac{kT}{e_f})^4 \right)
+\end{align}
+From the temperature-dependent part we find:
+\begin{align}
+ \frac{C_V}{Nk} = \frac{\pi^2}{2}\frac{kT}{e_f}-\frac{7\pi^4}{20}\left(\frac{kT}{e_f}\right)^3
+\end{align}
+
+\section{Problem 8.10}
+We first find the density of energy states for a system of dimension $n$ with $e=p^s$:
+\begin{align}
+ a(e) &= \frac{V}{h^n}\frac{2\pi^{n/2}}{\Gamma(n/2)}p^{n-1}dp\\
+ p &=e^{1/s}\\
+ p^{n-1} &= e^{(n-1)/s}\\
+ dp &= \frac{1}{s}e^{\frac{1}{s}-1}de\\
+ a(e) &= \frac{V}{h^n}\frac{2\pi^{n/2}}{\Gamma(n/2)}e^{(n-1)/s}\frac{1}{s}e^{\frac{1}{s}-1}de\\
+ a(e) &= \frac{V}{h^n}\frac{2\pi^{n/2}}{\Gamma(n/2)s}e^{(n/s)-1} de
+\end{align}
+We can now do the usual integrals for $P/kT$ and $U/N$.  
+\begin{align}
+ \frac{P}{kT} &= \frac{1}{h^n}\frac{2\pi^{n/2}}{\Gamma(n/2)s}\int_0^\infty \ln{(1+ze^{-\beta e)}}e^{(n/s)-1} de\\
+ \frac{P}{kT} &= \frac{1}{h^n}\frac{2\pi^{n/2}}{\Gamma(n/2)s}(kT)^{n/s}\int_0^\infty \ln{(1+ze^{-x)}}x^{(n/s)-1} dx\\
+ \frac{P}{kT} &= \frac{1}{h^n}\frac{2\pi^{n/2}}{\Gamma(n/2)s}(kT)^{n/s}\Gamma(n/s) f_{n/s+1}(z)\\
+ \frac{N}{V}  &= \frac{1}{h^n}\frac{2\pi^{n/2}}{\Gamma(n/2)s}\int_0^\infty \frac{e^{(n/s)-1}}{z^{-1}e^{\beta e}+1} de\\
+ \frac{N}{V}  &= \frac{1}{h^n}\frac{2\pi^{n/2}}{\Gamma(n/2)s}(kT)^{n/s}\int_0^\infty \frac{x^{(n/s)-1}}{z^{-1}e^{x}+1} de\\
+ \frac{N}{V}  &= \frac{1}{h^n}\frac{2\pi^{n/2}}{\Gamma(n/2)s}(kT)^{n/s}\Gamma(n/s) f_{n/s}(z)
+\end{align}
+Taking $U=kT^2\left\{\frac{\partial}{\partial T}(PV/kT) \right\}_{z,V}$ we have:
+\begin{align}
+ U &= \frac{n}{s}V\frac{1}{h^n}\frac{2\pi^{n/2}}{\Gamma(n/2)s}\Gamma(n/s)(kT)^{n/s} f_{(n/s)+1}(z)
+\end{align}
+Comparing (13) and (9) we have shown that $U=\frac{n}{s}PV$ as required.
+\\
+From (13) we have:
+\begin{align}
+ U=\frac{n}{s}NkT\frac{f_{(n/s)+1}(z)}{f_{n/s}(z)}
+\end{align}
+
+
+
+\section{Problem 8.13}
+
+
+\end{document}
