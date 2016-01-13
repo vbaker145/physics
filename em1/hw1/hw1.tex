@@ -1,0 +1,45 @@
+\documentclass[a4paper,11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{braket}
+
+\numberwithin{equation}{section}
+\renewcommand\thesubsection{\alph{subsection}}
+\newcommand{\bvp}[1]{\mathbf{#1}'}
+\newcommand{\bv}[1]{\mathbf{#1}}
+
+
+%opening
+\title{Electromagnetic Theory I HW1}
+\author{Vince Baker}
+
+\begin{document}
+
+\maketitle
+
+\section{Problem 1.1}
+a) Consider an element of excess charge inside the conductor.
+Enclose the excess charge in a Gaussian sphere of arbitrary radius such that the surface of the sphere remains inside the conductor. 
+By Gauss' Law there will be an electric field normal to the surface of the sphere, porportional to the encolsed excess charge.
+However, any electric field inside a conductor will cause the free charges to move. 
+Therefore, in equilibrium, any excess charge will be distributed on the surface of the conductor.
+\\ \\
+b)
+\\ \\
+c) On the surface of a conductor at equilibrium there must be no tangential component to the electric field, since nay tangential component would cause the free charge carriers to move.
+To calculate the normal electric field due to the surface charge distribution take a Gaussian pillbox around a differential area element $da$.
+Let the depth of the pillbox become arbitrarily small, so that the tangential components of the surface integral will be 0.
+The total charge enclosed in the pillbox is $\sigma \  da$.
+Gauss's law is then:
+\begin{align}
+ \int_{surface}\bv{E} \cdot d\bv{a} &= \sigma da
+\end{align}
+
+
+
+\section{Problem 1.4}
+
+\end{document}
