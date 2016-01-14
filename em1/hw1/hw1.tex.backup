@@ -71,27 +71,10 @@ For the exponential charge distribution, we first solve for the constant of porp
 \end{align}
 We can now calculate the field at a point at radius R inside the sphere from Gauss' law.
 \begin{align}
- \int_S\bv{E}\cdot d\bv{a} &= \int_V \frac{Q}{4\pi\epsilon_0}\frac{n+3}{a^{n+3}} r^n\ dV\\
- 4\pi R^2E &= \frac{Q}{\epsilon_0}\int_0^R\frac{n+3}{a^{n+3}}r^{n+2}\\
- \bv{E} &= \frac{Q}{4\pi\epsilon_0}\frac{R^{n+1}}{a^{n+3}}
+ \int_S\bv{E}\cdot d\bv{a} &= \int_V \frac{Q}{4\pi}\frac{n+3}{a^{n+3}} r^nr^2\ dV
 \end{align}
-\\
-The fields for all three distributions are plotted below in units such that $\frac{Q}{4\pi\epsilon_0}=1$.
-\begin{figure}[h]
- \caption{Conducting sphere}
- \centering
-   \includegraphics[width=0.5\textwidth]{conducting}
-\end{figure}
-\begin{figure}[h]
- \caption{Sphere of uniform charge distribution}
- \centering
-   \includegraphics[width=0.5\textwidth]{uniform}
-\end{figure}
-\begin{figure}[h]
- \caption{Sphere with exponential radial charge distribution}
- \centering
-   \includegraphics[width=0.5\textwidth]{exponentials}
-\end{figure}
+
+
 
 
 \end{document}

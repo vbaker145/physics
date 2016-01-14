@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.1.23)  7 JAN 2016 20:49
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.1.23)  13 JAN 2016 21:43
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -340,8 +340,7 @@ Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
 \Gin@req@height=\dimen112
 \Gin@req@width=\dimen113
 )
-(/usr/share/texlive/texmf-dist/tex/latex/braket/braket.sty)
-No file hw1.aux.
+(/usr/share/texlive/texmf-dist/tex/latex/braket/braket.sty) (./hw1.aux)
 \openout1 = `hw1.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 19.
@@ -356,6 +355,7 @@ LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 19.
 LaTeX Font Info:    ... okay on input line 19.
 LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 19.
 LaTeX Font Info:    ... okay on input line 19.
+
 (/usr/share/texlive/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count100
@@ -426,26 +426,110 @@ LaTeX Font Info:    Try loading font information for U+msb on input line 21.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-) [1
+)
+Underfull \hbox (badness 10000) in paragraph at lines 24--44
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] (./hw1.aux) ) 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 24--44
+
+ []
+
+[1
+
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
+Underfull \hbox (badness 10000) in paragraph at lines 63--67
+
+ []
+
+[2]
+Package epstopdf Info: Source file: <conducting.eps>
+(epstopdf)                    date: 2016-01-13 21:33:28
+(epstopdf)                    size: 50725 bytes
+(epstopdf)             Output file: <conducting-eps-converted-to.pdf>
+(epstopdf)                    date: 2016-01-13 21:36:35
+(epstopdf)                    size: 15482 bytes
+(epstopdf)             Command: <repstopdf --outfile=conducting-eps-converted-t
+o.pdf conducting.eps>
+(epstopdf)             \includegraphics on input line 83.
+Package epstopdf Info: Output file is already uptodate.
+ <conducting-eps-converted-to.pdf, id=20, 425.59pt x 319.1925pt>
+File: conducting-eps-converted-to.pdf Graphic file (type pdf)
+
+<use conducting-eps-converted-to.pdf>
+Package pdftex.def Info: conducting-eps-converted-to.pdf used on input line 83.
+
+(pdftex.def)             Requested size: 180.0pt x 134.99992pt.
+Package epstopdf Info: Source file: <uniform.eps>
+(epstopdf)                    date: 2016-01-13 21:33:14
+(epstopdf)                    size: 54478 bytes
+(epstopdf)             Output file: <uniform-eps-converted-to.pdf>
+(epstopdf)                    date: 2016-01-13 21:36:35
+(epstopdf)                    size: 22376 bytes
+(epstopdf)             Command: <repstopdf --outfile=uniform-eps-converted-to.p
+df uniform.eps>
+(epstopdf)             \includegraphics on input line 88.
+Package epstopdf Info: Output file is already uptodate.
+
+<uniform-eps-converted-to.pdf, id=21, 425.59pt x 319.1925pt>
+File: uniform-eps-converted-to.pdf Graphic file (type pdf)
+
+<use uniform-eps-converted-to.pdf>
+Package pdftex.def Info: uniform-eps-converted-to.pdf used on input line 88.
+(pdftex.def)             Requested size: 180.0pt x 134.99992pt.
+Package epstopdf Info: Source file: <exponentials.eps>
+(epstopdf)                    date: 2016-01-13 21:43:13
+(epstopdf)                    size: 85987 bytes
+(epstopdf)             Output file: <exponentials-eps-converted-to.pdf>
+(epstopdf)                    date: 2016-01-13 21:36:36
+(epstopdf)                    size: 37094 bytes
+(epstopdf)             Command: <repstopdf --outfile=exponentials-eps-converted
+-to.pdf exponentials.eps>
+(epstopdf)             \includegraphics on input line 93.
+runsystem(repstopdf --outfile=exponentials-eps-converted-to.pdf exponentials.ep
+s)...executed safely (allowed).
+
+Package epstopdf Info: Result file: <exponentials-eps-converted-to.pdf>
+(epstopdf)                    date: 2016-01-13 21:43:16
+(epstopdf)                    size: 32270 bytes.
+
+<exponentials-eps-converted-to.pdf, id=22, 433.62pt x 321.2pt>
+File: exponentials-eps-converted-to.pdf Graphic file (type pdf)
+
+<use exponentials-eps-converted-to.pdf>
+Package pdftex.def Info: exponentials-eps-converted-to.pdf used on input line 9
+3.
+(pdftex.def)             Requested size: 180.0pt x 133.33472pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[3 <./conducting-eps-converted-to.pdf> <./uniform-eps-converted-to.pdf>]
+[4 <./exponentials-eps-converted-to.pdf>] (./hw1.aux) ) 
 Here is how much of TeX's memory you used:
- 2598 strings out of 495028
- 33187 string characters out of 6181497
- 85891 words of memory out of 5000000
- 5768 multiletter control sequences out of 15000+600000
- 9489 words of font info for 36 fonts, out of 8000000 for 9000
+ 2640 strings out of 495028
+ 33879 string characters out of 6181497
+ 93911 words of memory out of 5000000
+ 5789 multiletter control sequences out of 15000+600000
+ 11666 words of font info for 44 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 37i,6n,24p,234b,199s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/share/t
-exlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive
-/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-
-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fo
-nts/type1/public/amsfonts/cm/cmr17.pfb>
-Output written on hw1.pdf (1 page, 35602 bytes).
+ 37i,10n,24p,234b,236s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/share/texlive/texm
+f-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texmf-dist
+/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts
+/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1
+/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/publi
+c/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfo
+nts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/
+cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.p
+fb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr
+/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/t
+exlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
+Output written on hw1.pdf (4 pages, 177691 bytes).
 PDF statistics:
- 24 PDF objects out of 1000 (max. 8388607)
- 16 compressed objects within 1 object stream
+ 85 PDF objects out of 1000 (max. 8388607)
+ 59 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 1 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 16 words of extra memory for PDF output out of 10000 (max. 10000000)
 
