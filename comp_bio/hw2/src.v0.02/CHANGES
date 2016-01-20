@@ -1,0 +1,26 @@
+
+version:
+
+0.02:
+	1/17/10:
+		- Added a function for random numbers drawn from
+		  a Gaussian distribution in base/ran01.cc
+	1/18/10:
+		- Added output_velocities to ensemble.cc
+		- Added instantaneous pressure calculation via
+		  calculation of the virial in forces.cc
+	1/20/10:
+		- Addition of a steepest descent function
+		  with arbitrary size step
+		- Split the sys.init() function into two separate
+		  to allow for positions and velocities to
+		  happen at different times
+	1/22/10:
+		- Inclusion of velocity verlet integration 
+		- Most outputs are redirectied to files.
+
+0.01:
+	1/14/10: 
+		- First version of the program.
+
+

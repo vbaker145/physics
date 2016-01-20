@@ -1,0 +1,8 @@
+
+To compile this program, type 
+
+	% make
+
+You will need to have compiled the code in the 'src.v0.xx' directory 
+first since otherwise it will complain of a missing "ran01.o" file.
+

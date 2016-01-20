@@ -1,0 +1,45 @@
+
+Version 0.02
+
+Code to accompany the PHYS 462/562 Computational Biophysics course.
+
+The code is written in C++ and uses the object oriented programming
+model.
+
+-------------------------------------------------------------------
+To RUN:
+	% make
+	% ./run_me input_v0.02.txt
+
+
+-------------------------------------------------------------------
+In this directory there should be:
+
+ main.cc					- Main part of the program. It sets up the
+ 			simulation, reads input file, initializes, and runs the
+			simulation.
+
+ input_v0.xx.txt			- text file containing the input parameters
+ 			to run the simulation. This one gets read by ensemble.cc
+
+ ensemble.cc, ensemble.h	- 'ensemble' object. This contains an array 
+ 			of 'atom's, physical properties of the system, and other
+			variables
+
+ atom.cc, atom.h 			- 'atom' object 
+
+ forces.cc, forces.h		- 'force' object. This contains functions to
+ 			implement LJ forces, and others
+
+ integrator.cc, integrator.h	- 'integrator' object. This object knows
+ 			how to implement different algorithms for the Finite Difference
+			Methods presented in class.
+ minima.cc, minima.h		- contains subroutines to minimize the
+ 			energy before the simulation starts.
+
+ defs.h						- contains various definitions
+ base						- directory that contains some base objects
+ makefile					- makefile to automatize compilation commands
+ objects					- directory to hold the compiled files
+ tests						- directory to hold results from tests
+-------------------------------------------------------------------

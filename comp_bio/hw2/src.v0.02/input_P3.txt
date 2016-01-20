@@ -1,0 +1,7 @@
+0.8    requested_particle_density
+0.005   delta_t
+30.0    Lx
+30.0    Ly
+30.0     Lz
+2.      total_time
+0.500   temperature
