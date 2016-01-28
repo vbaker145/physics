@@ -1,0 +1,50 @@
+\documentclass[a4paper,11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{braket}
+\usepackage{listings}
+
+\numberwithin{equation}{section}
+\renewcommand\thesubsection{\alph{subsection}}
+\newcommand{\bvp}[1]{\mathbf{#1}'}
+\newcommand{\bv}[1]{\mathbf{#1}}
+
+\lstset{breaklines=true}
+
+%opening
+\title{Computational Biophysics HW3}
+\author{Vince Baker}
+
+\begin{document}
+
+\maketitle
+
+\section{Q1}
+For algorithms that attempt to minimize the starting potential energy through a method such as steepest descent, the temperature does not have an effect.
+The gradient of the potential energy is a function of position only.\\
+One could also search for an energy minimum by running the simulation with some initial temperature and letting the temperature approach zero during the simulation (annealing).
+The system temperature sets the intensity of the thermal fluctuations that allow the system to cross local minima.
+As the temperature approaches zero the system should settle towards the ground state, or at least a local minimum energy state.\\
+
+\section{Q2}
+i) The first and second peaks in the pair correlation function of a liquid are the nearest-neighbor and second-neighbor shells. \\
+ii) The pair correlation function is normalized by the expected pair correlation function for an unordered system (ideal gas) of the same density.
+The actual pair correlation function should approach 1 as $r \rightarrow \infty$ since we don't expect to see order at extremely long scales.
+In molecular dynamics simulations using periodic boundary conditions the pair correlation function should not be calculated on length scales longer than the cell size, as PBCs impose nonphysical periodicity at those length scales.
+
+\section{Q3}
+
+\section{P1}
+The coordination function is close to 6 at the highest density, showing a hexagonal-type structure. 
+At the lower densities the material is less ordered, so the nearest-neighbor cage does not have the same regualr packing.
+This is reflected in the lower coordinatio numbers.
+\begin{figure}[h]
+ \caption{Effect of density upon coordination number}
+ \centering
+   \includegraphics[width=\textwidth]{p1}
+\end{figure}
+
+\end{document}
