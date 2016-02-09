@@ -1,0 +1,53 @@
+\documentclass[a4paper,11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{braket}
+
+\numberwithin{equation}{section}
+\renewcommand\thesubsection{\alph{subsection}}
+\newcommand{\bvp}[1]{\mathbf{#1}'}
+\newcommand{\bv}[1]{\mathbf{#1}}
+\newcommand{\ez}{\epsilon_0}
+\newcommand{\lrp}[1]{\left({#1}\right)}
+\newcommand{\lrb}[1]{\left\{{#1}\right\}}
+
+
+%opening
+\title{Electromagnetic Theory HW4}
+\author{Vince Baker}
+
+\begin{document}
+
+\maketitle
+
+\section{Problem 2.13}
+a) For a long cylinder with surface potentials independent of z the solution should have no z-dependence.
+The standard separation of Laplace's equation in polar coordinates produces the general series solution:
+\begin{align}
+ \begin{split}
+  \Phi(\rho, \phi) = &A_0 + B\ln{\rho}+\sum_{n=1}^\infty \rho^n\lrp{A_n\cos{n\phi}+B_n\sin{n\phi}}\\
+		    &+ \sum_{n=-1}^{-\infty} \rho^n\lrp{C_n\cos{n\phi}+D_n\sin{n\phi}}
+ \end{split}
+\end{align}
+We need a solution that is regular at the origin and single-valued, so the negative series and the logarithmic term coefficients must be 0.
+\begin{align}
+  \Phi(\rho, \phi) = &A_0 +\sum_{n=1}^\infty \rho^n\lrp{A_n\cos{n\phi}+B_n\sin{n\phi}}
+\end{align}
+We first solve for the $A_0$ coefficient using the provided boundary conditions on the cylinder inner surface.
+\begin{align}
+ \Phi(b,\phi) &= \begin{cases}
+                 V_1,& 0\le\phi\le\pi \\
+                 V_2,& -\pi\le\phi\le 0 \\
+                \end{cases}\\
+ \int_{-\pi}^\pi \Phi(b,\phi) d\phi &= \int_{-\pi}^\pi A_0 d\phi + \int_{-\pi}^{\pi}\sum_{n=1}^\infty \rho^n\lrp{A_n\cos{n\phi}+B_n\sin{n\phi}}\\
+ \pi (V_2+V_1) &= 2\pi A_0 + 0\\
+ A_0 &= \frac{V_2+V_1}{2}
+\end{align}
+
+
+\section{Problem 2.15}
+
+\end{document}
