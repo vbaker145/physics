@@ -1,0 +1,80 @@
+
+version:
+
+0.09:
+		- added polymer option. Polymers are strings of LJ particles
+		  joined by "bonds" enforced in the verlet_polymers integrator
+		  function.
+		- added calculation of end-to-end distance and radius of gyration
+		  for the polymers.
+		- added quasi 3D representation graphics, with filled atoms. Available
+		  through defs.h
+		- added compile option in gl_obj.cc to color verlet lists around
+		  one particle
+		- added option to read/write particle positions. Now, can save a collapsed
+		  coil polymer and read into another simulation with smaller energy.
+		- the input parameters will be written right after hitting the "apply" button
+		  from the parameters window. This input is compatible with the readable
+		  input.txt file.
+		- made confined simulations work with a define statement #if CONFINED == 0
+		- fixed update of verlet lists to be 1/2 of the rc-rl distance.
+		- verlet list cutoff is not available from the params window.
+		- FIXED MAJOR BUG IN VERLET LISTS CODE. NOW IT CONSERVES ENERGY.
+		- added measuring real time per simu seconds for benchmarking.
+0.08:
+		- added option for putting only two particles. Used
+		  to illustrate concepts of integrating algorithms
+0.07:
+		- Fixed some bugs in the graphical frontend
+		- Corrected current terminology from Ising to XY model.
+		- Added Legendre 2nd order poly to energy possibilities.
+		  Call it the 'LL' model.
+		- Added NPT for regular MC
+0.06:
+		- Added Metropolis Monte Carlo method. It can
+		  adjust the MC step dynamically.
+0.05:
+		- Graphics take modifications on read parameters
+		- Added algorithm for doing hard spheres on event drivent
+		  dynamics.
+		- Added Gaussian with input mu and sigma
+		- Added Langevin dynamics object
+		- Fixed velocity verlet to be more efficient by calculating
+		  forces only once
+		- Graphical program can tag a particle and write tagged
+		  trajectory to file
+		- Added rudimentary temperature re-scale button. Only
+		  works with velocity verlet.
+0.04:
+		- Added force calculation with distance cutoff rc.
+		- Added verlet lists
+		- Added graphics with fltk
+0.03:
+	1/24/10:
+		- Added a diffusion function where the mean square
+		  displacement and vacf are calculated
+		- All results are now dumped into the 'results'
+		  directory
+		- Added g(r) calculation
+0.02:
+	1/17/10:
+		- Added a function for random numbers drawn from
+		  a Gaussian distribution in base/ran01.cc
+	1/18/10:
+		- Added output_velocities to ensemble.cc
+		- Added instantaneous pressure calculation via
+		  calculation of the virial in forces.cc
+	1/20/10:
+		- Addition of a steepest descent function
+		  with arbitrary size step
+		- Split the sys.init() function into two separate
+		  to allow for positions and velocities to
+		  happen at different times
+	1/22/10:
+		- Inclusion of velocity verlet integration 
+		- Most outputs are redirectied to files.
+0.01:
+	1/14/10: 
+		- First version of the program.
+
+

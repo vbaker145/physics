@@ -1,0 +1,1337 @@
+# data file for the Fltk User Interface Designer (fluid)
+version 1.0300 
+header_name {.h} 
+code_name {.cxx}
+decl {\#include "FL/fl_ask.H"} {private local
+} 
+
+decl {\#include "FL/fl_file_chooser.H"} {private local
+} 
+
+decl {\#include "atom.h"} {private local
+} 
+
+decl {\#include "ensemble.h"} {private local
+} 
+
+decl {\#include "integrator.h"} {private local
+} 
+
+decl {\#include "minima.h"} {private local
+} 
+
+decl {\#include "forces.h"} {private local
+} 
+
+decl {\#include "diffusion.h"} {private local
+} 
+
+decl {\#include "paircorrfunc.h"} {private local
+} 
+
+decl {\#include "R.h"} {private local
+} 
+
+decl {\#include "verletlist.h"} {private local
+} 
+
+decl {\#include "defs.h"} {private local
+} 
+
+decl {\#include <stdlib.h>} {private local
+} 
+
+decl {\#include <iostream>} {public local
+} 
+
+decl {\#include "gl_obj.h"} {private local
+} 
+
+decl {int flag = 0;} {private local
+} 
+
+decl {float freq = 0.001;} {private local
+} 
+
+decl {long bench_t = time(NULL);} {private local
+} 
+
+decl {int bench_h = 100;} {selected private local
+} 
+
+decl {using namespace std;} {private local
+} 
+
+Function {} {open
+} {
+  code CLEAN_OUTPUT_FILES {}
+  code SET_SEED {}
+  Fl_Window setupWin {
+    label {Setup Params} open
+    xywh {35 401 425 395} type Double visible
+  } {
+    Fl_Tabs tabSetup {open
+      xywh {4 4 416 346}
+    } {
+      Fl_Group tabParams {
+        label Params open
+        xywh {4 24 325 325}
+      } {
+        Fl_Value_Input valueLx {
+          label {Lx:}
+          xywh {46 54 65 25}
+        }
+        Fl_Value_Input valueLy {
+          label {Ly:}
+          xywh {46 94 65 25}
+        }
+        Fl_Value_Input valueLz {
+          label {Lz:}
+          xywh {47 132 65 25}
+        }
+        Fl_Value_Input valueDeltaT {
+          label {Delta t:}
+          xywh {134 179 75 25}
+        }
+        Fl_Value_Input valueDensity {
+          label {Density:}
+          xywh {219 89 100 25}
+        }
+        Fl_Value_Input valueTotalTime {
+          label {Total Time:}
+          xywh {134 214 75 25}
+        }
+        Fl_Value_Input valueTemperature {
+          label {Temperature:}
+          xywh {219 54 100 25}
+        }
+      }
+      Fl_Group tabDynamics {
+        label Dynamics open
+        xywh {4 24 326 325} hide
+      } {
+        Fl_Choice choiceDynamics {
+          label {Force and Integration Dynamics:}
+          callback {choiceDynamicsHideButtons();} open
+          xywh {14 74 305 25} down_box BORDER_BOX align 5
+        } {
+          MenuItem choiceDynLJN2 {
+            label {0) MD LJ N*(N-1)/2 Calculation}
+            xywh {0 0 36 21}
+          }
+          MenuItem choiceDynLJRc {
+            label {1) MD LJ with Rc Potential cutoff}
+            xywh {10 10 36 21}
+          }
+          MenuItem choiceDynLJRcVerletLists {
+            label {2) MD LJ Rc + Verlet Lists}
+            xywh {20 20 36 21}
+          }
+          MenuItem choiceDynHardSpheres {
+            label {3) DMD Hard Spheres}
+            xywh {30 30 36 21}
+          }
+          MenuItem choiceDynLangevin {
+            label {4) MD Langevin}
+            xywh {40 40 36 21}
+          }
+          MenuItem choiceDynLangevin2 {
+            label {5) MD Langevin - Method 2}
+            xywh {50 50 36 21}
+          }
+          MenuItem choiceDynMCLJ {
+            label {6) MC LJ}
+            xywh {60 60 36 21}
+          }
+          MenuItem choiceDynMCLJXY {
+            label {7) MC LJ+XY Model}
+            xywh {70 70 36 21}
+          }
+          MenuItem choiceDynMCLJLL {
+            label {8) MC LJ+LL Model}
+            xywh {80 80 36 21}
+          }
+          MenuItem choiceDynMCLJNPT {
+            label {9) MC LJ in NPT}
+            xywh {90 90 36 21}
+          }
+          MenuItem choiceDynLJN2Polymers {
+            label {10) MD LJ N(N-1)/2 POLYMERS}
+            xywh {100 100 36 21}
+          }
+          MenuItem choiceDynLJRcVerletListsPolymers {
+            label {11) MD LJ Rc + Verlet Lists Polymers}
+            xywh {30 30 36 21}
+          }
+        }
+        Fl_Value_Input valueRcCutoff {
+          label {Rc Cutoff:}
+          xywh {40 125 115 25} align 5
+        }
+        Fl_Value_Input valueRlCutoff {
+          label {Rl Cutoff:}
+          xywh {165 125 115 25} align 5
+        }
+        Fl_Value_Input valueDampingConstant {
+          label {Damping Constant:}
+          callback {valueVelRelaxationTime->value(1./valueDampingConstant->value());}
+          xywh {19 184 135 25} align 5
+        }
+        Fl_Value_Input valueVelRelaxationTime {
+          label {Vel. Relaxation Time:}
+          xywh {164 185 135 25} align 5 deactivate
+        }
+        Fl_Value_Input valueMCStepSize {
+          label {MC Step Size:}
+          xywh {20 241 135 25} align 5
+        }
+        Fl_Value_Input valueMCStepSizeTheta {
+          label {MC Theta Size:}
+          xywh {167 242 135 25} align 5
+        }
+        Fl_Check_Button checkDoMCStepRescale {
+          label {Adjust MC Step}
+          xywh {163 269 70 15} down_box DOWN_BOX
+        }
+        Fl_Value_Input valueXYJ {
+          label {XY Model J:}
+          xywh {44 314 135 25} align 5
+        }
+      }
+      Fl_Group tabInitPos {
+        label Inits open
+        xywh {4 24 325 325} hide
+      } {
+        Fl_Choice initPosChoice {
+          label {Positions:} open
+          xywh {119 69 155 25} down_box BORDER_BOX
+        } {
+          MenuItem {} {
+            label {Lattice Positions}
+            xywh {10 10 36 21}
+          }
+          MenuItem {} {
+            label {Random Positions}
+            xywh {0 0 36 21}
+          }
+          MenuItem {} {
+            label {Two Particles Random}
+            xywh {10 10 36 21}
+          }
+          MenuItem {} {
+            label {Two Particles x-axis}
+            xywh {20 20 36 21}
+          }
+          MenuItem {} {
+            label Polymers
+            xywh {30 30 36 21}
+          }
+          MenuItem {} {
+            label {Read From File}
+            xywh {40 40 36 21}
+          }
+        }
+        Fl_Choice initVelChoice {
+          label {Velocities:} open
+          xywh {125 205 152 24} down_box BORDER_BOX
+        } {
+          MenuItem {} {
+            label {Zero Velocities}
+            xywh {0 0 36 21}
+          }
+          MenuItem {} {
+            label {Uniform Random Velocities}
+            xywh {10 10 36 21}
+          }
+          MenuItem {} {
+            label {Two Particle}
+            xywh {20 20 36 21}
+          }
+          MenuItem {} {
+            label Polymer
+            xywh {30 30 36 21}
+          }
+        }
+        Fl_Value_Input valueThresholdInitRandPos {
+          label {Threshold Energy for Rnd Pos.}
+          xywh {60 130 215 30} align 5
+        }
+        Fl_Value_Input valueTwoPartVel {
+          label {Two particle up/down speed}
+          xywh {61 264 215 30} align 5
+        }
+      }
+      Fl_Group tabProteins {
+        label Polymers open
+        xywh {4 24 326 325} hide
+      } {
+        Fl_Check_Button checkPutPolymers {
+          label {Put Proteins}
+          xywh {75 50 185 15} down_box DOWN_BOX
+        }
+        Fl_Value_Input valueNumChains {
+          label {Number of Chains:}
+          xywh {77 110 135 25} align 5
+        }
+        Fl_Value_Input valueNumAtomsPerChain {
+          label {No. Atoms per Chain:}
+          xywh {77 175 135 25} align 5
+        }
+        Fl_Value_Input valueBondLength {
+          label {Length of Bonds:}
+          xywh {77 239 135 25} align 5
+        }
+      }
+      Fl_Group tabMinimize {
+        label Minimize open
+        xywh {4 24 325 325} hide
+      } {
+        Fl_Check_Button checkSteepDescMinim {
+          label {Steepest Descent Minimize}
+          xywh {60 80 165 15} down_box DOWN_BOX
+        }
+      }
+      Fl_Group tabMeasures {
+        label Measures open
+        xywh {4 24 325 325} hide
+      } {
+        Fl_Check_Button checkDoVacf {
+          label {Do vacf and <r2>}
+          xywh {42 49 70 15} down_box DOWN_BOX
+        }
+        Fl_Check_Button checkDoPcf {
+          label {Do pair correlation function}
+          xywh {42 79 70 15} down_box DOWN_BOX
+        }
+        Fl_Check_Button checkDoR {
+          label {Do end-to-end and Rg}
+          xywh {42 109 70 15} down_box DOWN_BOX
+        }
+        Fl_Value_Input valueTimeMeasure {
+          label {Time interval to measure vacf and pcf:}
+          xywh {14 173 65 25} align 5
+        }
+        Fl_Value_Input valueNHisPcf {
+          label {Num. bins in pcf histogram:}
+          xywh {14 247 65 25} align 5
+        }
+      }
+    }
+    Fl_Return_Button applyParamBut {
+      label Apply
+      callback {applyParamsButton();}
+      xywh {176 355 72 30}
+    }
+  }
+  Fl_Window toolsWin {
+    xywh {522 78 335 355} type Double hide
+  } {
+    Fl_Tabs tabTools {open
+      xywh {4 4 326 346}
+    } {
+      Fl_Group tabRunParams {
+        label {Live Params} open
+        xywh {4 24 325 325}
+      } {
+        Fl_Value_Output valueOutputReqTemp {
+          label {Requested Temperature:}
+          xywh {20 69 90 25} align 5
+        }
+        Fl_Value_Output valueOutputTemp {
+          label {Current Temperature:}
+          xywh {20 123 90 25} align 5
+        }
+        Fl_Repeat_Button butScaleTemp {
+          label {Scale Velocities}
+          callback {applyRescaleVels();}
+          xywh {85 175 125 31}
+        }
+      }
+      Fl_Group tabParticles {
+        label Tag open
+        xywh {4 24 325 325} hide
+      } {
+        Fl_Value_Input valueTagParticle {
+          label {Tag Particle \#:}
+          xywh {130 100 55 25}
+        }
+        Fl_Value_Output valueTotNumParticles {
+          label {Num. Particles:}
+          xywh {130 55 55 25}
+        }
+        Fl_Check_Button checkTagPart {
+          label Tag
+          callback {applyCheckTagParticle();}
+          xywh {215 100 70 25} down_box DOWN_BOX
+        }
+        Fl_Button butTagPart {
+          label {Write Tag Trajectory}
+          callback {writeTagTrajectory();}
+          xywh {75 145 165 30}
+        }
+      }
+    }
+  }
+  Fl_Window mainWin {
+    label Liquids open
+    xywh {137 120 440 490} type Double
+    code0 {\#include "gl_obj.h"} visible
+  } {
+    Fl_Box {} {
+      label label
+      xywh {21 34 402 402} box DOWN_BOX
+    }
+    Fl_Box mainBox {
+      label label
+      xywh {22 35 400 400} box DOWN_BOX
+      class gl_obj
+    }
+    Fl_Menu_Bar {} {open
+      xywh {0 0 440 20}
+    } {
+      Submenu {} {
+        label File open
+        xywh {0 0 70 21}
+      } {
+        MenuItem {} {
+          label {Read Positions}
+          callback {ReadPositions();}
+          xywh {0 0 36 21}
+        }
+        MenuItem {} {
+          label {Write Positions}
+          callback {WritePositions(0);}
+          xywh {10 10 36 21} divider
+        }
+        MenuItem {} {
+          label Quit
+          callback {ExitFunc();}
+          xywh {10 10 36 21}
+        }
+      }
+      Submenu {} {
+        label Params open
+        xywh {0 0 70 21}
+      } {
+        MenuItem setupParamsMenu {
+          label {Setup Params}
+          callback {showParamsWindow();}
+          xywh {0 0 36 21}
+        }
+        MenuItem writeVelsMenu {
+          label {Write Velocities}
+          callback {saveAllVels();}
+          xywh {0 0 36 21} deactivate
+        }
+      }
+      Submenu {} {
+        label Run open
+        xywh {0 0 70 21}
+      } {
+        MenuItem {} {
+          label Pause
+          callback {Pause();}
+          xywh {0 0 36 21} deactivate
+        }
+        MenuItem {} {
+          label Step
+          callback {Step();}
+          xywh {0 0 36 21} deactivate
+        }
+        MenuItem {} {
+          label Run
+          callback {Run();}
+          xywh {0 0 36 21} deactivate
+        }
+      }
+      Submenu {} {
+        label Tools open
+        xywh {0 0 70 21}
+      } {
+        MenuItem toolsDialog {
+          label {Tools Window}
+          callback {showToolsWindow();}
+          xywh {0 0 36 21}
+        }
+      }
+    }
+    Fl_Return_Button stepButton {
+      label Step
+      callback {Step();
+runButton->activate();}
+      xywh {174 448 120 25} deactivate
+    }
+    Fl_Return_Button runButton {
+      label Run
+      callback {runButton->deactivate();
+Run();}
+      xywh {301 448 120 25} deactivate
+    }
+    Fl_Value_Output simuTime {
+      label Time
+      xywh {46 449 53 22}
+    }
+    Fl_Spinner freq_anim {
+      callback {freq = freq_anim->value();}
+      xywh {111 450 50 20} type Float labelsize 7 align 0 minimum 0.001 maximum 0.01 step 0.001 value 0.001 textsize 10
+    }
+  }
+  code {mainWin->show(argc,argv);} {}
+  code {mainBox->show();} {}
+  code {mainBox->redraw();} {}
+} 
+
+Function {calc(void)} {open
+} {
+  code {// **************************
+    // CHOOSE STEPS ACCORDING TO DYNAMICS
+    switch(mainBox->sys.dynamics)
+    {
+    
+          case 0:
+        {
+          // \#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#
+          // REGULAR LJ MD, N*(N-1)/2 CALCULATION
+          // \#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#
+
+          // **************************
+          // CALCULATE FORCES
+          double virSum;
+          mainBox->physics.calc_LJ_forces(virSum, mainBox->sys);
+
+          // **************************
+          // INTEGRATE EQ. OF MOTION
+          //    - VERLET ALGORITHM
+          mainBox->integrate.verlet(mainBox->sys);
+          //    - VELOCITY VERLET ALGORITHM
+          //integrate.velocity_verlet(physics, sys);
+
+          break;
+        }
+        case 1:
+        {
+          // \#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#
+          // LJ POTENTIAL CUTOFF AT Rc
+          // \#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#
+
+          // **************************
+          // CALCULATE FORCES
+          //mainBox->physics.calc_LJ_forces_pot_cutoff(mainBox->sys);
+          // **************************
+          // CALCULATE FORCES HERE ONLY THE FIRST TIME
+          if (mainBox->n==0)
+          {
+            mainBox->physics.calc_LJ_forces_pot_cutoff(mainBox->sys);
+          }
+
+          // **************************
+          // INTEGRATE EQ. OF MOTION PT 1
+          //    - VERLET ALGORITHM
+          //integrate.verlet(sys);
+          //    - VELOCITY VERLET ALGORITHM
+          mainBox->integrate.velocity_verlet_pt1(mainBox->physics, mainBox->sys);
+
+          // **************************
+          //  CALCULATE FORCES IN BETWEEN
+          mainBox->physics.calc_LJ_forces_pot_cutoff(mainBox->sys);
+
+          // **************************
+          // INTEGRATE EQ. OF MOTION PT 2
+          //    - VELOCITY VERLET ALGORITHM
+          mainBox->integrate.velocity_verlet_pt2(mainBox->physics, mainBox->sys);
+
+          break;
+        }
+        case 2:
+        {
+          // \#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#
+          // LJ POTENTIAL CUTOFF AT Rc
+          // WITH VERLET LISTS
+          // \#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#
+
+          // **************************
+          // CALCULATE FORCES
+          mainBox->physics.calc_LJ_forces_verletlists(*mainBox->neighborsverlet, mainBox->sys);
+
+          // **************************
+          // INTEGRATE EQ. OF MOTION
+          //    - VERLET ALGORITHM
+          mainBox->integrate.verlet(mainBox->sys);
+          //    - VELOCITY VERLET ALGORITHM
+          //integrate.velocity_verlet(physics, sys);
+
+          // **************************
+          // CHECK IF NEED TO UPDATE VERLET LISTS
+          if (mainBox->neighborsverlet->check_verletlist(mainBox->sys))
+          //if (mainBox->neighborsverlet->check_verletlist(mainBox->sys) || (mainBox->n%3==0))
+          {
+            //PRINT2("in update",n);
+            mainBox->neighborsverlet->update_verletlist(mainBox->sys);
+          }
+          /*
+           */
+
+          break;
+        }
+        case 3:
+        {
+          // \#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#
+          // HARD SPHERES DMD
+          // \#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#
+
+          // **************************
+          // USE HARD SPHERE STEPWISE ALGORITHM
+          mainBox->hardsphere.calc_hardsphere_stepwise(mainBox->sys);
+
+          break;
+        }
+        case 4:
+        {
+          // \#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#
+          // LANGEVIN DYNAMICS
+          // \#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#
+
+          // **************************
+          // CALCULATE FORCES
+	  mainBox->physics.calc_LJ_forces_pot_cutoff(mainBox->sys);
+          //mainBox->physics.calc_LJ_forces_verletlists(*mainBox->neighborsverlet, mainBox->sys);
+
+          // **************************
+          // INTEGRATE EQ. OF MOTION
+          //  - LANGEVIN DYNAMICS
+          mainBox->brownian.integrate_ermak(mainBox->sys);
+
+          // **************************
+          // CHECK IF NEED TO UPDATE VERLET LISTS
+          /*
+          if (mainBox->neighborsverlet->check_verletlist(mainBox->sys))
+          {
+            //PRINT2("in update",n);
+            mainBox->neighborsverlet->update_verletlist(mainBox->sys);
+          }
+          
+           */
+
+          break;
+        }
+        case 5:
+        {
+          // \#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#
+          // LANGEVIN DYNAMICS, INTEGRATION METHOD
+          // WITH FORCE NOT CONSTANT
+          // \#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#
+
+          // **************************
+          // CALCULATE FORCES HERE ONLY THE FIRST TIME
+          if (mainBox->n==0)
+          {
+            mainBox->physics.calc_LJ_forces_pot_cutoff(mainBox->sys);
+            //physics.calc_LJ_forces_verletlists(neighborsverlet, sys);
+          }
+
+          // **************************
+          // INTEGRATE EQ. OF MOTION
+          //  - LANGEVIN DYNAMICS STEP 1
+          //    UPDATE POSITIONS
+          mainBox->brownian.integrate_other_pt1(mainBox->sys);
+
+          // **************************
+          //  CALCULATE FORCES IN BETWEEN
+          mainBox->physics.calc_LJ_forces_pot_cutoff(mainBox->sys);
+          
+          // **************************
+          // INTEGRATE EQ. OF MOTION
+          //  - LANGEVIN DYNAMICS STEP 2
+          //    UPDATE VELOCITIES
+          mainBox->brownian.integrate_other_pt2(mainBox->sys);
+
+          // **************************
+          // CHECK IF NEED TO UPDATE VERLET LISTS
+          /*
+          if (neighborsverlet.check_verletlist(sys))
+          {
+            //PRINT2("in update",n);
+            neighborsverlet.update_verletlist(sys);
+          }
+           */
+
+          break;
+        }
+        case 6:
+        {
+          // \#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#
+          // MC OF LJ PARTICLES, NO ROTATION
+          // \#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#
+
+          // **************************
+          // INITIALIZE THE POTENTIAL ENERGY BY
+          // CALCULATING FORCES BUT ONLY ON THE FIRST STEP
+          if (mainBox->n==0)
+          {
+            double virSum;
+            mainBox->physics.calc_LJ_forces(virSum, mainBox->sys);
+            // USING SHIFTED POTENTIAL INTRODUCES ALREADY
+            // THE SHIFT AS AN ADDITIONAL TERM IN THE INITIAL
+            // ENERGY
+            //physics.calc_LJ_forces_pot_cutoff(2.5, sys);
+          }
+
+          // **************************
+          // DO MC STEP
+          double acc;
+          acc = mainBox->mc.mc_step(mainBox->physics, mainBox->sys);
+          cout <<  "accepted = " << acc 
+          	<< " mc_step = " << mainBox->sys.mc_dr
+          	<< "\\n";
+
+          // **************************
+          // ADJUST MC STEP IF REQUESTED
+          if (mainBox->sys.do_mc_adjust)
+            mainBox->sys.mc_dr = mainBox->mc.adjust_mc_step_size(acc, mainBox->sys.mc_dr);
+
+          break;
+        }
+        case 7:
+        {
+          // \#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#
+          // MC OF LJ + XY PARTICLES
+          // \#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#
+
+          // **************************
+          // INITIALIZE THE POTENTIAL ENERGY BY
+          // CALCULATING FORCES BUT ONLY ON THE FIRST STEP
+          if (mainBox->n==0)
+          {
+            // INITIALIZE ANGLES
+            mainBox->sys.init_random_angles();
+
+            // THIS IS IGNORING THE ISING TERM!
+            double virSum;
+            mainBox->physics.calc_LJ_forces(virSum, mainBox->sys);
+            // USING SHIFTED POTENTIAL INTRODUCES ALREADY
+            // THE SHIFT AS AN ADDITIONAL TERM IN THE INITIAL
+            // ENERGY
+            //physics.calc_LJ_forces_pot_cutoff(2.5, sys);
+          }
+
+          // **************************
+          // DO MC STEP
+          double acc;
+          acc = mainBox->mc.mc_step_2D_angle(0, mainBox->physics, mainBox->sys);
+          cout <<  "accepted = " << acc
+               <<  " mc_step = " << mainBox->sys.mc_dr
+               <<  " mc_theta = " << DEGREE(mainBox->sys.theta_o)
+            << "\\n";
+
+          // **************************
+          // ADJUST MC STEP IF REQUESTED
+          if (mainBox->sys.do_mc_adjust)
+             mainBox->sys.mc_dr = mainBox->mc.adjust_mc_step_size_theta(acc, mainBox->sys.mc_dr, mainBox->sys.theta_o);
+
+          break;
+        }
+        case 8:
+        {
+          // \#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#
+          // MC OF LJ + LL PARTICLES
+          // \#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#
+
+          // **************************
+          // INITIALIZE THE POTENTIAL ENERGY BY
+          // CALCULATING FORCES BUT ONLY ON THE FIRST STEP
+          if (mainBox->n==0)
+          {
+            // INITIALIZE ANGLES
+            mainBox->sys.init_random_angles();
+
+            // THIS IS IGNORING THE ISING TERM!
+            double virSum;
+            mainBox->physics.calc_LJ_forces(virSum, mainBox->sys);
+            // USING SHIFTED POTENTIAL INTRODUCES ALREADY
+            // THE SHIFT AS AN ADDITIONAL TERM IN THE INITIAL
+            // ENERGY
+            //physics.calc_LJ_forces_pot_cutoff(2.5, sys);
+          }
+
+          // **************************
+          // DO MC STEP
+          double acc;
+          acc = mainBox->mc.mc_step_2D_angle(1, mainBox->physics, mainBox->sys);
+          cout <<  "accepted = " << acc
+               <<  " mc_step = " << mainBox->sys.mc_dr
+               <<  " mc_theta = " << DEGREE(mainBox->sys.theta_o)
+            << "\\n";
+
+          // **************************
+          // ADJUST MC STEP IF REQUESTED
+          if (mainBox->sys.do_mc_adjust)
+             mainBox->sys.mc_dr = mainBox->mc.adjust_mc_step_size_theta(acc, mainBox->sys.mc_dr, mainBox->sys.theta_o);
+
+          break;
+        }
+        case 9:
+        {
+          // \#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#
+          // MC OF LJ PARTICLES, NO ROTATION
+          // NPT ENSEMBLE
+          // \#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#
+
+          // **************************
+          // INITIALIZE THE POTENTIAL ENERGY BY
+          // CALCULATING FORCES BUT ONLY ON THE FIRST STEP
+          if (mainBox->n==0)
+          {
+            double virSum;
+            mainBox->physics.calc_LJ_forces(virSum, mainBox->sys);
+            // USING SHIFTED POTENTIAL INTRODUCES ALREADY
+            // THE SHIFT AS AN ADDITIONAL TERM IN THE INITIAL
+            // ENERGY
+            //physics.calc_LJ_forces_pot_cutoff(2.5, sys);
+          }
+
+          // **************************
+          // DO MC STEP
+          double acc;
+          acc = mainBox->mc.mc_step_NPT(mainBox->physics, mainBox->sys);
+          cout <<  "accepted = " << acc
+               <<  " mc_step = " << mainBox->sys.mc_dr
+            << "\\n";
+
+          // **************************
+          // ADJUST MC STEP IF REQUESTED
+          if (mainBox->sys.do_mc_adjust)
+             mainBox->sys.mc_dr = mainBox->mc.adjust_mc_step_size(acc, mainBox->sys.mc_dr);
+
+          break;
+         }
+         case 10:
+         {
+          // \#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#
+          // POLYMER DYNAMICS WITH
+          // REGULAR LJ MD, N*(N-1)/2 CALCULATION
+          // \#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#
+
+          // **************************
+          // CALCULATE FORCES
+          double virSum;
+          mainBox->physics.calc_LJ_forces(virSum, mainBox->sys);
+
+          // **************************
+          // INTEGRATE EQ. OF MOTION
+          //    - VERLET ALGORITHM
+          //integrate.verlet(sys);
+          //    - VELOCITY VERLET ALGORITHM
+          //integrate.velocity_verlet(physics, sys);
+          //    - VERLET ALGORITHM USING SHAKE CONSTRAINTS
+          mainBox->integrate.verlet_polymers(virSum, mainBox->sys);
+
+          break;
+        }
+        case 11:
+        { 
+          // \#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#
+          // POLYMER DYNAMICS WITH
+          // LJ POTENTIAL CUTOFF AT Rc
+          // WITH VERLET LISTS
+          // \#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#
+
+          // **************************
+          // CALCULATE FORCES
+          mainBox->physics.calc_LJ_forces_verletlists(*mainBox->neighborsverlet, mainBox->sys);
+
+          // **************************
+          // INTEGRATE EQ. OF MOTION
+          //    - VERLET ALGORITHM
+          //integrate.verlet(sys);
+          //    - VELOCITY VERLET ALGORITHM
+          //integrate.velocity_verlet(physics, sys);
+          //    - VERLET ALGORITHM USING SHAKE CONSTRAINTS
+          double virSum;
+          mainBox->integrate.verlet_polymers(virSum, mainBox->sys);
+
+          // **************************
+          // CHECK IF NEED TO UPDATE VERLET LISTS
+          if (mainBox->neighborsverlet->check_verletlist(mainBox->sys))
+          //if (mainBox->neighborsverlet->check_verletlist(mainBox->sys) || (mainBox->n%3==0))
+          {
+            //PRINT2("in update",n);
+            mainBox->neighborsverlet->update_verletlist(mainBox->sys);
+          }
+          /*
+           */
+
+          break;
+        }
+
+        default:
+          PRINT2("ERROR: NO CHOSEN DYNAMICS",mainBox->sys.dynamics);
+          exit(0);
+    }
+
+
+    // **************************
+    // UPDATE PRESSURE
+    mainBox->sys.calc_pressure();
+
+    // **************************
+    // PERIODIC OUTPUT OF THERMODYNAMIC PROPERTIES
+    ofstream out_f("results/thermo.dat",ios_base::app);
+    mainBox->sys.output_properties(mainBox->n, mainBox->n*mainBox->sys.delta_t, out_f);
+    out_f.close();
+    //sys.output_position(5);
+    ofstream out_p("results/totlinmom.dat",ios_base::app);
+    mainBox->sys.output_total_linear_momentum(out_p);
+    out_p.close();
+    // ***************************
+    // WRITE TO BUTTON WINDOW TOO
+    valueOutputTemp->value( mainBox->sys.temperature );
+
+    // **************************
+    // CALCULATE MEAN SQUARE DISP. AND VACF
+    if (mainBox->sys.do_vacf)
+      mainBox->diff->accum(mainBox->n,mainBox->sys);
+    // **************************
+    // CALCULATE PAIR CORRELATION FUNCTION
+    if (mainBox->sys.do_pcf)
+      mainBox->pcf->accum(mainBox->n,mainBox->sys);
+    // **************************
+    // CALCULATE END-TO-END AND RG FUNCTION
+    if (mainBox->sys.do_R)
+    {
+    	ofstream out_rg("results/rg.dat",ios_base::app);
+    	ofstream out_rg2("results/rg2.dat",ios_base::app);
+    	ofstream out_eoe("results/eoe.dat",ios_base::app);
+    	ofstream out_eoe_vec("results/eoe_vec.dat",ios_base::app);
+    	ofstream out_eoe2("results/eoe2.dat",ios_base::app);
+        mainBox->R->calc(mainBox->sys, out_rg, out_rg2, out_eoe, out_eoe_vec, out_eoe2);
+        out_rg.close();
+        out_rg2.close();
+        out_eoe.close();
+        out_eoe_vec.close();
+        out_eoe2.close();
+    }
+
+    // **************************
+    // RECORD TAG PARTICLE'S LOCATION
+    if (mainBox->sys.do_tag)
+      mainBox->sys.record_tag_particles_position();
+
+    // **************************
+    // PRINT TIME
+    //if (n % 10 ==0) PRINT5("time = ",n*sys.delta_t,": (",n*sys.delta_t/sys.total_time*100.,"%)");
+
+    // **************************
+    // INCREMENT LOOP COUNTER
+    mainBox->n++;
+    // INCREMENT SIMULATION TIME
+    // - EXCLUDE FOR DMD THAT CALCULATES ITS OWN
+    // - SIMULATION TIME
+    if(mainBox->sys.dynamics!=3)
+    {
+        mainBox->sys.simulation_time = mainBox->n*mainBox->sys.delta_t;
+    }} {}
+} 
+
+Function {anim(void*)} {open
+} {
+  code {// TIME LOOP
+if (mainBox->sys.simulation_time <= mainBox->sys.total_time)
+{
+
+  calc();
+
+  // UPDATE WINDOW OBJECTS
+  mainBox->redraw();
+
+    // **************************
+    // PUT TIME IN WINDOW BUTTON
+    //simuTime->value(mainBox->n*mainBox->sys.delta_t);
+    simuTime->value(mainBox->sys.simulation_time);
+
+
+\#if BENCH_IT == 1
+    // **************************
+    //  OUTPUT EXECUTION TIME 
+    if (mainBox->n % bench_h == 0)
+    {
+      cout << "  RUNNING AT "
+        << float(time(NULL) - bench_t) / float(bench_h*mainBox->sys.delta_t)
+        << " seconds per unit time\\n";
+      bench_t = time(NULL);
+    }
+\#endif
+
+
+  // TIMEOUT FUNCTION
+  if (flag)
+    Fl::add_timeout(freq,anim);
+  
+}} {}
+} 
+
+Function {showParamsWindow(void)} {open
+} {
+  code {// READ FILE AND INIT PARAM WINDOW
+
+mainBox->DoDisplayLists();
+
+// =============================================
+// READ DEFAULT PARAMS FROM FILE
+char input_file[30] = "input_v09.txt";
+mainBox->sys.readFile(input_file);
+
+
+
+// ***********************************
+// PUT VALUES IN PARAM WINDOW
+valueLx->value(mainBox->sys.Lx);
+valueLy->value(mainBox->sys.Ly);
+valueLz->value(mainBox->sys.Lz);
+\#if NDIM == 2
+valueLz->deactivate();
+\#endif
+
+valueDeltaT->value(mainBox->sys.delta_t);
+valueDensity->value(mainBox->sys.density);
+valueTotalTime->value(mainBox->sys.total_time);
+valueTemperature->value(mainBox->sys.temperature);
+
+choiceDynamics->value(mainBox->sys.dynamics);
+valueRcCutoff->value(mainBox->sys.rc);
+valueRlCutoff->value(mainBox->sys.rl);
+
+initPosChoice->value(mainBox->sys.init_pos);
+valueThresholdInitRandPos->value(mainBox->sys.threshold_energy);
+initVelChoice->value(mainBox->sys.init_vel);
+valueTwoPartVel->value(mainBox->sys.two_part_vel);
+
+valueDampingConstant->value(mainBox->sys.damping_constant);
+valueVelRelaxationTime->value(1./mainBox->sys.damping_constant);
+
+valueTimeMeasure->value(mainBox->sys.time_meas);
+valueNHisPcf->value(mainBox->sys.nhis_pcf);
+
+checkDoVacf->value(mainBox->sys.do_vacf);
+checkDoPcf->value(mainBox->sys.do_pcf);
+checkDoR->value(mainBox->sys.do_R);
+
+valueMCStepSize->value(mainBox->sys.mc_dr);
+valueMCStepSizeTheta->value(mainBox->sys.theta_o);
+checkDoMCStepRescale->value(mainBox->sys.do_mc_adjust);
+valueXYJ->value(mainBox->sys.XY_J);
+
+checkSteepDescMinim->value( mainBox->sys.do_minimize );
+
+// DAMPING CONST STATUS
+if (choiceDynamics->value() != 4 && choiceDynamics->value() != 5)
+	valueDampingConstant->deactivate();
+// MC STEP SIZE STATUS
+if (choiceDynamics->value() != 6 && choiceDynamics->value() != 7 && choiceDynamics->value() != 8 && choiceDynamics->value() != 9)
+	valueMCStepSize->deactivate();
+	
+// POLYMER DATA
+checkPutPolymers->value( mainBox->sys.do_polymers );
+valueNumChains->value( mainBox->sys.num_chains );
+valueNumAtomsPerChain->value( mainBox->sys.atoms_per_chain );
+valueBondLength->value( mainBox->sys.length_bonds );
+
+setupWin->show();} {}
+} 
+
+Function {applyParamsButton(void)} {open
+} {
+  code {applyParams();
+
+Inits();} {}
+} 
+
+Function {applyParams(void)} {open
+} {
+  code {// APPLY PARAMETERS TO SYSTEM
+mainBox->sys.Lx = valueLx->value();
+mainBox->sys.Ly = valueLy->value();
+mainBox->sys.Lz = valueLz->value();
+
+mainBox->sys.delta_t = valueDeltaT->value();
+
+// IF THIS IS A TWO-PARTICLE SYSTEM, THE DENSITY
+// WILL BE FIXED BELOW, IN apply_inits()
+mainBox->sys.density = valueDensity->value();
+
+mainBox->sys.total_time = valueTotalTime->value();
+mainBox->sys.temperature = valueTemperature->value();
+mainBox->sys.requested_temperature = mainBox->sys.temperature;
+
+mainBox->sys.dynamics = choiceDynamics->value();
+mainBox->sys.rc = valueRcCutoff->value();
+mainBox->sys.rl = valueRlCutoff->value();
+
+mainBox->sys.init_pos = initPosChoice->value();
+mainBox->sys.threshold_energy = valueThresholdInitRandPos->value();
+
+mainBox->sys.damping_constant = valueDampingConstant->value();
+
+mainBox->sys.time_meas = valueTimeMeasure->value();
+mainBox->sys.nhis_pcf = valueNHisPcf->value();
+
+mainBox->sys.do_vacf = checkDoVacf->value();
+mainBox->sys.do_pcf = checkDoPcf->value();
+mainBox->sys.do_R = checkDoR->value();
+
+mainBox->sys.init_vel = initVelChoice->value();
+mainBox->sys.two_part_vel = valueTwoPartVel->value();
+
+mainBox->sys.mc_dr = valueMCStepSize->value();
+mainBox->sys.theta_o = valueMCStepSizeTheta->value();
+mainBox->sys.do_mc_adjust = checkDoMCStepRescale->value();
+mainBox->sys.XY_J = valueXYJ->value();
+
+mainBox->sys.do_minimize = checkSteepDescMinim->value();
+
+//POLYMERS
+mainBox->sys.do_polymers = checkPutPolymers->value(  );
+mainBox->sys.num_chains = valueNumChains->value(  );
+mainBox->sys.atoms_per_chain = valueNumAtomsPerChain->value(  );
+mainBox->sys.length_bonds = valueBondLength->value(  );
+
+// WRITE TO FILES AND CLOSE
+ofstream warn("results/warnings.txt");
+ofstream params("results/params.txt");
+
+// =============================================
+//  WRITE INITIAL PARAMETERS
+char dummy8[40] = "results/input.txt";
+mainBox->sys.writeFile(dummy8);
+// =============================================
+
+mainBox->sys.apply_inits(warn);
+valueDensity->value(mainBox->sys.density);
+
+params << mainBox->sys;
+
+params.close();
+warn.close();
+
+// ACTIVATE AND DEACTIVATE BUTTON
+stepButton->activate();
+runButton->activate();
+applyParamBut->deactivate();
+setupWin->hide();
+setupParamsMenu->deactivate();
+writeVelsMenu->activate();
+
+// OTHER BUTTONS
+valueTotNumParticles->value(mainBox->sys.N);
+valueOutputReqTemp->value( mainBox->sys.requested_temperature );} {}
+} 
+
+Function {Inits(void)} {open
+} {
+  code {// =============================================
+  // INITIALIZE POSITIONS : 1 - LATTICE, 2 - RANDOM WITH ENERGY CHECK
+  mainBox->sys.init_positions(mainBox->sys.init_pos);
+
+  // =============================================
+  // VERLET NEIGHBOR LIST
+  mainBox->neighborsverlet = new verletlist(mainBox->sys.N, mainBox->sys.rc, mainBox->sys.rl);
+
+  // =============================================
+  // OPTIONAL OUTPUTS TO VERIFY INITIAL SETUP 
+  //
+  //char dummy[40] = "results/out_init_r.xyz";
+  //sys.output_positions(1,dummy);
+  //sys.output_position(5);
+  //
+  //char dummy2[40] = "results/out_init_v.dat";
+  //sys.output_velocities(dummy2);
+  //
+  //sys.output_total_linear_momentum();
+  //
+  //char dummy7[40] = "results/enrg_lndscp.dat";
+  //mainBox->physics.energy_landscape(mainBox->sys,dummy7);
+
+  // =============================================
+  // DEFINE CONFINED SYSTEM
+\#if CONFINED == 1
+  double min_L = MIN(mainBox->sys.Lx,mainBox->sys.Ly);
+  min_L = MIN(min_L,mainBox->sys.Lz);
+  double rad;
+  //rad = min_L+5.;
+  //rad = min_L / 2.;
+  //rad = min_L / 3.;
+  //rad = min_L / 4.;
+  //rad = min_L / 6.;
+  //rad = min_L / 8.;
+  rad = 3.75;
+  mainBox->sys.fix_atoms_beyond_radius(rad);
+  PRINT2("Confined to radius = ",rad);
+\#endif
+
+  // =============================================
+  // OPTIONAL MINIMIZATION STEP
+  //int    particle  = 5;
+  double step_size = 0.1;
+  double criterium = 1.0e-4;
+  // - MOVE ONE PARTICLE
+  //minimize.steepest_descents_arbitrary_step_one_particle(particle, step_size, criterium, physics, sys);
+  // - MOVE ALL PARTICLES
+  int steps_min = 1; 
+  if (mainBox->sys.do_minimize)
+  {
+    for (int i=0; i<steps_min; i++)
+    {
+      mainBox->minimize.steepest_descents_arbitrary_step(step_size, criterium, mainBox->physics, mainBox->sys);
+    }
+  }    
+  // - PRINT POSITIONS AFTER MINIMIZING
+  //char dummy3[40] = "out_minim_r.xyz";
+  //sys.output_positions(1,dummy3);
+
+  // =============================================
+  // INITIALIZE RANDOM VELOCITIES
+  mainBox->sys.init_velocities(mainBox->sys.init_vel);
+  //char dummy6[40] = "results/out_init_v.dat";
+  //sys.output_velocities(dummy6);
+
+  // =============================================
+  // CREATE DIFFUSION OBJECT
+  mainBox->diff = new diffusion(mainBox->sys);
+  // CREATE PAIR CORRELATION FUNCTION OBJECT
+  mainBox->pcf = new paircorrfunc(mainBox->sys);
+  // CREATE END-TO-END AND RG FUNCTION OBJECT
+  mainBox->R = new R_meas(mainBox->sys);
+
+  // =============================================
+  // UPDATE VERLET LISTS FOR THE FIRST STEP
+  mainBox->neighborsverlet->update_verletlist(mainBox->sys);
+
+  // =============================================
+  // INITIALIZE TAG PARTICLE ARRAY
+  mainBox->sys.reset_tag_pos();
+
+  // =============================================
+  // MAIN TIME LOOP
+  mainBox->n       = 0;
+  mainBox->sys.simulation_time = 0.;
+  
+  
+  // ADVANCE BY ONE TIMESTEP TO SHOW PARTICLES
+  Step();} {}
+} 
+
+Function {showToolsWindow(void)} {open
+} {
+  code {// INITIALIZE BUTTONS AND BOXES
+valueTagParticle->value( mainBox->sys.tag_particle );
+checkTagPart->value( mainBox->sys.do_tag );
+
+toolsWin->show();} {}
+} 
+
+Function {applyCheckTagParticle(void)} {open
+} {
+  code {// CHECK THAT PARTICLE ID IS WITHIN BOUNDS
+int cp = valueTagParticle->value();
+if (cp >=0 && cp < mainBox->sys.N)
+{
+
+// RESET ARRAY WHENEVER HIT THE CHECK BUTTON
+mainBox->sys.reset_tag_pos();
+
+// GET VALUES
+mainBox->sys.tag_particle = valueTagParticle->value();
+mainBox->sys.do_tag = checkTagPart->value();
+
+}
+else
+{
+
+checkTagPart->value(0);
+cout << "Tag Particle out of range " << cp << "\\n";
+
+}} {}
+} 
+
+Function {applyRescaleVels(void)} {open
+} {
+  code {// RESCALE VELOCITIES TO APPROXIMATE REQUESTED TEMPERATURE
+mainBox->sys.scale_vel();} {}
+} 
+
+Function {choiceDynamicsHideButtons(void)} {open
+} {
+  code {// LANGEVIN DAMPING CONST
+if (choiceDynamics->value()!=4 && choiceDynamics->value()!=5)
+  valueDampingConstant->deactivate();
+else
+  valueDampingConstant->activate();
+  
+// MC STEP SIZE
+if (choiceDynamics->value()!=6 && choiceDynamics->value()!=7 && choiceDynamics->value()!=8)
+  valueMCStepSize->deactivate();
+else
+  valueMCStepSize->activate();} {}
+} 
+
+Function {WritePositions(int)} {open
+} {
+  code {char *a = fl_file_chooser("Write Positions","*.xyz",NULL);
+
+if (a!=NULL)
+{
+	// WRITE REAL (NOT IMAGE) POISITIONS
+	// TO FILE
+	mainBox->sys.output_positions(0,a);
+}} {}
+} 
+
+Function {ReadPositions(void)} {open
+} {
+  code {char *a = fl_file_chooser("Read Positions","*.xyz",NULL);
+
+if (a!=NULL)
+{
+	// READ REAL POSITIONS FROM FILE
+	mainBox->sys.input_positions(a);
+}} {}
+} 
+
+Function {saveAllVels(void)} {} {
+  code {char *a = fl_file_chooser("Save Velocities",NULL,NULL);
+
+if (a!=NULL)
+{
+	mainBox->sys.output_velocities(a);
+}} {}
+} 
+
+Function {writeTagTrajectory(void)} {} {
+  code {// WRITE TRAJECTORY TO FILE
+mainBox->sys.write_tag_pos();} {}
+} 
+
+Function {Pause(void)} {} {
+  code {flag = 0;} {}
+} 
+
+Function {Step(void)} {} {
+  code {flag = 1;
+
+
+Fl::add_timeout(freq,anim);
+
+flag = 0;} {}
+} 
+
+Function {Run(void)} {} {
+  code {flag = 1;
+
+
+// RUN
+Fl::add_timeout(freq,anim);} {}
+} 
+
+Function {ExitFunc(void)} {} {
+  code {//if (!fl_ask("Quit?")) return;
+exit(0);} {}
+} 
