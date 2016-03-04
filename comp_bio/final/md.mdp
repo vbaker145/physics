@@ -1,0 +1,51 @@
+title                    = Protein example
+cpp                      = /usr/bin/cpp
+include                  = 
+define                   = 
+
+integrator               = md
+dt                       = 0.0001
+nsteps                   = 500
+
+comm-mode                = Linear
+nstcomm                  = 1
+
+nstxout                  = 0
+nstvout                  = 0
+nstfout                  = 0
+nstcheckpoint            = 10000
+nstlog                   = 500
+nstenergy                = 100
+nstxtcout                = 10
+xtc-precision            = 1000
+
+nstlist                  = 5
+ns_type                  = grid
+pbc                      = xyz
+rlist                    = 0.9
+domain-decomposition     = no
+
+coulombtype              = Cut-off
+rcoulomb-switch          = 0
+rcoulomb                 = 0.9
+
+vdw-type                 = Cut-off
+rvdw-switch              = 0
+rvdw                     = 0.9
+
+DispCorr                 = EnerPres
+
+Tcoupl                   = berendsen
+tc-grps                  = System
+tau_t                    = 0.1
+ref_t                    = 300
+
+Pcoupl                   = No ;berendsen
+Pcoupltype               = isotropic
+tau_p                    = 0.5
+compressibility          = 4.5e-5
+ref_p                    = 1.0
+
+gen_vel                  = yes
+gen_temp                 = 300
+gen_seed                 = 1993

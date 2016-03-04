@@ -35,7 +35,7 @@
 
 using namespace std;
 
-int mainFunc(int argc, char* argv[], double gamma)
+int mainFunc(int argc, char* argv[], double temp)
 {
   // =============================================
   // CHECK FOR CORRECT NUMBER OF INPUT PARAMETERS,
@@ -75,11 +75,12 @@ int mainFunc(int argc, char* argv[], double gamma)
   sys.readFile(argv[1]);
 
   //VJB: modify gamma for multi-parameter runs
-  sys.damping_constant = gamma;
+  //sys.damping_constant = gamma;
+  sys.temperature = temp;
   out_f.close();
 
   char therm_fname[80];
-  sprintf(therm_fname, "results/thermo_%d.dat", (int) sys.damping_constant);
+  sprintf(therm_fname, "results/thermo_%d.dat", (int) sys.temperature);
   out_f.open((const char *) therm_fname);
 
   // =============================================
@@ -632,6 +633,7 @@ int mainFunc(int argc, char* argv[], double gamma)
 	// **************************
 	//	OUTPUT EXECUTION TIME 
 	if (n % bench_h == 0)
+
 	{
 	  cout << "  RUNNING AT " 
 		<< float(time(NULL) - bench_t) / float(bench_h*sys.delta_t) 
@@ -668,10 +670,9 @@ int mainFunc(int argc, char* argv[], double gamma)
 
 //Refactored code to automate multi-parameter runs
 int main(int argc, char* argv[] ) {
-	double gammas[9] = {5,6,7,8,9,10,12,15,20};
 
-	for( int i=0; i<9; i++ ) {
-		mainFunc(argc, argv, gammas[i]);
+	for( int i=1; i<=10; i++ ) {
+		mainFunc(argc, argv, (double) i);
 	}
 
 }

@@ -46,9 +46,146 @@ We first solve for the $A_0$ coefficient using the provided boundary conditions 
  \pi (V_2+V_1) &= 2\pi A_0 + 0\\
  A_0 &= \frac{V_2+V_1}{2}
 \end{align}
-
-
+To solve for the $A_n$ and $B_n$ we note the following delta function relations::
+\begin{align}
+ \int_0^{2\pi}\sin{(n\phi)}\sin{(m\phi)}\ d\phi = \pi\delta_{n,m}\\
+ \int_0^{2\pi}\cos{(n\phi)}\cos{(m\phi)}\ d\phi = \pi\delta_{n,m}
+\end{align}
+Multiplying through by $\cos{(m\phi)}$ and integrating we get the following relations for $A_n$:
+\begin{align}
+ \int \Phi(b,\phi)\cos{(n\phi)} &= \pi b^n A_n\\
+ \int_{-\pi/2}^{\pi/2}V_1\cos{(n\phi)} +&\int_{\pi/2}^{3\pi/2}V_2\cos{(n\phi)}= \pi b^n A_n\\
+ A_n &= \frac{1}{\pi b^n n}\lrb{V_1\lrp{\sin{(n\phi)}}_{-\pi/2}^{\pi/2}+V_2\lrp{\sin{(n\phi)}}_{\pi/2}^{3\pi/2}}\\
+ A_n &= \frac{2}{\pi b^n n}(-1)^{(n+1)/2}\lrb{V_2-V_1}\text{ (n odd)}
+\end{align}
+For $B_n$:
+\begin{align}
+ \int \Phi(b,\phi)\sin{(n\phi)} &= \pi b^n B_n\\
+ \int_{-\pi/2}^{\pi/2}V_1\sin{(n\phi)}+&\int_{\pi/2}^{3\pi/2}V_2\sin{(n\phi)} = \pi b^n B_n\\
+ B_n &= \frac{-1}{\pi b^n n}\lrb{V_1\lrp{\cos{(n\phi)}}_{-\pi/2}^{\pi/2}+V_2\lrp{\cos{(n\phi)}}_{\pi/2}^{3\pi/2}}\\
+ B_n &= 0
+\end{align}
+\\
+We now have a complete expression for the potential:
+\begin{align}
+ \begin{split}
+  \Phi(\rho,\phi) = &\frac{V_1+V_2}{2}+\frac{2(V_2-V_1)}{\pi}\\
+                    &\times\sum_{n=1,3,5...}^\infty\frac{\rho^n}{nb^n}\lrb{(-1)^{(n+1)/2}\cos{(n\phi)}}
+ \end{split}
+\end{align}
+We make use the following series expansion of the arctan function:
+\begin{align}
+ \tan^{-1}(x) &= \sum_{n=0}^\infty \frac{(-1)^2}{2n+1}x^{2n+1}
+\end{align}
+We recognize that the sum over odd terms can be converted to a regular series by making the substitution $n\rightarrow 2n+1$.
+We put the cosine term into an exponential form by writing $\cos{((2n+1)\phi)}= \Re\lrb{e^{i(2n+1)\phi}}$.
+We can then write the series as:
+\begin{align}
+ \begin{split}
+  \Phi(\rho,\phi) = &\frac{V_1+V_2}{2}+\frac{(V_1-V_2)}{\pi}\\
+                    &\times\sum_{n=0}^\infty\frac{2\rho^{2n+1}}{(2n+1)b^{2n+1}}\lrb{(-1)^n\Re\lrb{e^{i(2n+1)\phi}}}
+ \end{split}\\
+ \Phi(\rho,\phi) = &\frac{V_1+V_2}{2}+\frac{2(V_2-V_1)}{\pi}\Re\lrb{\tan^{-1}\lrp{\frac{\rho}{b}e^{i\phi}}}
+\end{align}
+We now use the identity:
+\begin{align}
+ \Re\lrb{\tan^{-1}(z)} &= \frac{1}{2}\tan^{-1}\lrp{\frac{2\Re(z)}{1-|z|^2}}
+\end{align}
+We can now simplify the series:
+\begin{align}
+ \Phi(\rho,\phi) = &\frac{V_1+V_2}{2}+\frac{(V_2-V_1)}{\pi}\tan^{-1}\lrp{\frac{2(\rho/b)\cos{\phi}}{1-\rho^2/b^2}}\\
+ \Phi(\rho,\phi) = &\frac{V_1+V_2}{2}+\frac{(V_2-V_1)}{\pi}\tan^{-1}\lrp{\frac{2\rho b \cos{\phi}}{b^2-\rho^2}}
+\end{align}
+\\
+b) To find the surface charge density we take the normal derivative of the potential.
+\begin{align}
+ \sigma &= \ez\frac{\partial \Phi}{\partial \rho}\\
+ \sigma &= \ez\lrp{\frac{V_1-V_2}{\pi}}\frac{1}{1+\lrp{\frac{2b\rho\cos{\phi}}{b^2-\rho^2}}^2}\lrp{2b\cos{\phi}\frac{b^2+\rho^2}{(b^2-\rho^2)^2}}\\
+ \sigma &= \ez\lrp{\frac{V_1-V_2}{\pi}}\frac{2b\cos{\phi}(b^2+\rho^2)}{(b^2-\rho^2)^2+(2b\rho\cos{\phi})^2}
+\end{align}
+Where we have used an expression for the derivative of the arctangent that is valid between $-\pi/2<\phi<\pi/2$.
+However, since the second half of the sphere is between $\pi/2<\phi<3\pi/2$ the derivative expression applies to both halves, since the arctan function is identical on both intervals.
+Evaluating the expression at $\rho=b$:
+\begin{align}
+ \sigma &= \ez\lrp{\frac{V_1-V_2}{\pi}}\frac{4b^3\cos{\phi}}{(2b^2\cos{\phi})^2}\\
+ \sigma &= \ez\lrp{\frac{V_1-V_2}{\pi}}\frac{1}{b\cos{\phi}}
+\end{align}
 
 \section{Problem 2.15}
+a) To show that the Green function has an expansion of the form specified, we use the relation:
+\begin{align}
+ \nabla'^2(G_D(\bv{x},\bvp{x}) &= -4\pi\delta(\bv{x}-\bvp{x})
+\end{align}
+Taking the second derivative of the suggested expansion:
+\begin{align}
+ \begin{split}
+  \nabla'^2(G_D) = 2\sum_{n=0}^\infty &g_n(y,y')\nabla^2(\sin{(n\pi x)}\sin{(n\pi x')}\\
+			    &+\sin{(n\pi x)}\sin{(n\pi x')}\nabla^2(g_n(y,y')
+ \end{split}\\
+ \begin{split}
+ \nabla'^2(G_D) = 2\sum_{n=0}^\infty &\lrp{\sin{(n\pi x)}\sin{(n\pi x')}}\\
+				     &\times\lrp{\nabla^2(g_n(y,y')-n^2\pi^2g_n(y,y')}
+ \end{split}
+\end{align}
+Inserting the provided condition on $g_n(y,y')$ and using the same delta-function sine series as the previous problem we see  that the provided expansion satisfies the required relation.
+In addition, for Dirichlet boundary conditions, the Green function must vanish on the boundary. The $\sin{n\pi x}$ expressions naturally vanish at $\lrb{0,1}$.
+The additional constraints that $g_n(y,y')=0$ at $y'=0,y'=1$ then guarantee the remainder of the boundary condition.
+\\ \\
+b) We see that combinations of $\cosh{n\pi y}$ and $\sinh{n\pi y}$ meet the requirements of $g_n(y,y')$.
+We break the solution into the two regions $y<y'$ and $y>y'$. 
+We must then solve for the coefficients using the boundary conditions, the requirement that $G(\bv{x},\bvp{x})$ is symmetric, and the requirement that $g(y=y')=-4\pi\delta(y-y')$.\\
+We first write out the linear combinations split into the two regions:
+\begin{align}
+ g_n(y,y') = \begin{cases}
+              A_n\sinh{(n\pi y')}+B_n\cosh{(n\pi y')},&y'<y\\
+              C_n\sinh{(n\pi y')}+D_n\cosh{(n\pi y')},&y'>y\\
+             \end{cases}
+\end{align}
+The boundary condition at $y'=0$ applies to the first case. 
+It can be satisifed by taking all $B_n=0$.
+The boundary condition at $y'=1$ applies to the second case, and results in the condition:
+\begin{align}
+ C_n\sinh{(n\pi (1))}+D_n\cosh{(n\pi (1))} &= 0\\
+ \frac{-D_n}{C_n} &= \tanh{(n\pi)}\\
+ D_n &= -\sinh{(n\pi)}\\
+ C_n &= \cosh{(n\pi)}
+\end{align}
+Using the trig identity $\sinh{(a-b)}=\sinh{a}\cosh{b}-\cosh{a}\sinh{b}$ we can now write the full linear combination as:
+\begin{align}
+ g_n(y,y') = \begin{cases}
+              A_n\sinh{(n\pi y')},&y'<y\\
+              A'_n\sinh{(n\pi y' - n\pi)},&y'>y
+             \end{cases}
+\end{align}
+We have inserted the coefficient $A'_n$ to recognize that our solution in the second region came from a ratio of coefficients, so it is undetermined up to some multiplier.\\
+We now choose $A_n,A'_n$ to satisfy the requirement that $g_n(y,y')$ be symmetric. 
+we note that the coefficients $A_n$ will have a functional form that satifies the symmetry, but also a common arbitrary constant which we call $F_n$.
+\begin{align}
+ g_n(y,y') = \begin{cases}
+              F_n\lrb{\sinh{(n\pi y')}\times\sinh{(n\pi y - n\pi)}},&y'<y\\
+              F_n\lrb{\sinh{(n\pi y' - n\pi)}\times\sinh{(n\pi y)}},&y'>y
+             \end{cases}
+\end{align}
+To determine the $F_n$ normalization constants we examine the function at $y=y'$.
+The second derivative must be a delta function at $y=y'$, so the first derivative must equal 1.
+We therefore have the following equation for the $F_n$:
+\begin{align}
+ \Delta \frac{\partial g_n(y,y')}{\partial y}|_{y=y'} &= 1\\
+ \frac{\partial g_n(y,y')}{\partial y}|_{y=y'} &= \begin{cases}
+						  F_nn\pi\lrb{\sinh{(n\pi y-n\pi)}\times\cosh{(n\pi y)}},&y'<y\\
+						  F_nn\pi\lrb{\sinh{(n\pi y)}\times\cosh{(n\pi y-n\pi)}},&y'>y\\
+						\end{cases}\\
+ F_nn\pi\{\sinh{(n\pi y-n\pi)}\cosh{(n\pi y)}-&\sinh{(n\pi y)}\cosh{(n\pi y-n\pi)}\} = 1\\
+ F_nn\pi(\sinh{\lrp{n\pi y-n\pi y +n\pi}} ) &= 1\\
+ F_n &= \frac{1}{n\pi\sinh{(n\pi)}}
+\end{align}
+We have now determined all coefficients, and the complete expansion is:
+\begin{align}
+\begin{split}
+ G(x,x',y,y') = \int_{n=1}^\infty &\frac{1}{n\pi\sinh{(n\pi)}}\sin{(n\pi x)}\sin{(n\pi x')}\\
+				  &\times\sinh{(n\pi y_<)}\sinh{\lrp{n\pi (1-y_>)}}
+ \end{split}
+\end{align}
+Where we have adopted the usual convention of $y_<,Y_>$ as the lesser of (greater than) of $y$ and $y'$.
 
 \end{document}

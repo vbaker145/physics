@@ -1,0 +1,172 @@
+\documentclass[a4paper,11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{braket}
+
+\numberwithin{equation}{section}
+\renewcommand\thesubsection{\alph{subsection}}
+\newcommand{\bvp}[1]{\mathbf{#1}'}
+\newcommand{\bv}[1]{\mathbf{#1}}
+\newcommand{\ez}{\epsilon_0}
+\newcommand{\lrp}[1]{\left({#1}\right)}
+\newcommand{\lrb}[1]{\left\{{#1}\right\}}
+
+
+%opening
+\title{Electromagnetic Theory HW4}
+\author{Vince Baker}
+
+\begin{document}
+
+\maketitle
+
+\section{Problem 3.1}
+The spherical geometry with azimuthal symmetry will have a solution of the form:
+\begin{align}
+ \Phi(r,\theta) &= \sum_{\ell=0}^\infty (A_\ell r^\ell+B_\ell r^{-(\ell+1)})P_\ell \cos{\theta}
+\end{align}
+Since we are working the region between two concentric spheres we keep both radial terms.
+We'll apply the boundary conditions on the inner and outer sphers and use both equations to determine $A_\ell$ and $B_\ell$.
+Starting with the inner sphere boundary, we have:
+\begin{align}
+ A_\ell a^\ell + B_\ell a^{-(\ell+1)} &= V\frac{2\ell+1}{2} \lrb{\int_0^{\pi/2} P_\ell(\cos{\theta})\sin\theta\ d\theta}
+\end{align}
+For the outer sphere boundary we find:
+\begin{align}
+ A_\ell b^\ell + B_\ell b^{-(\ell+1)} &= V\frac{2\ell+1}{2} \lrb{\int_{\pi/2}^{\pi} P_\ell(\cos{\theta})\sin\theta\ d\theta}
+\end{align}
+Since $\sin\theta$ is an odd function the non-zero even terms in the series vanish, since the non-zero even Legendre polynomials are even functions.
+To calculate the integrals we use the result:
+\begin{align}
+ P'_{n+1}(x)-P'_{n-1}(x) &= (2n+1)P_n(x)\\
+ \frac{1}{2n+1}\frac{d}{dx}(P'_{n+1}(x)-P'_{n-1}(x)) &= P_n(x)
+\end{align}
+Substituing $x\rightarrow\cos\theta$ we can now integrate by parts:
+\begin{align}
+ \int_0^{\pi/2} P_\ell(\cos{\theta})\sin\theta\ d\theta &= -\int_1^0 P_\ell(x) dx\\
+ \int_0^{\pi/2} P_\ell(\cos{\theta})\sin\theta\ d\theta &= \int_0^1 \frac{1}{2\ell+1}\frac{d}{dx}(P'_{\ell+1}(x)-P'_{\ell-1}(x)) dx\\
+ \int_0^{\pi/2} P_\ell(\cos{\theta})\sin\theta\ d\theta &= \frac{1}{2\ell+1}\lrb{P_{\ell+1}(x)-P_{\ell-1}(x)}_0^1\\
+ \int_0^{\pi/2} P_\ell(\cos{\theta})\sin\theta\ d\theta &= \frac{1}{2\ell+1}(P_{\ell-1}(0)-P_{\ell+1}(0))
+\end{align}
+We note that the integral in (3) will have the same result but with opposite sign. 
+We can now write our equations for the coefficients:
+\begin{align}
+ A_\ell a^\ell + B_\ell a^{-(\ell+1)} &= \frac{V}{2} (P_{\ell-1}(0)-P_{\ell+1}(0))\\
+ A_\ell b^\ell + B_\ell b^{-(\ell+1)} &= -\frac{V}{2} (P_{\ell-1}(0)-P_{\ell+1}(0))
+\end{align}
+After a lot of algebra, we find the coefficients:
+\begin{align}
+ A_\ell &= \lrb{\frac{1}{a^\ell}+\frac{1}{a^{2\ell+1}} \frac{a^\ell+b^\ell}{a^\ell b^{-(\ell+1)}-1/a}}
+	    \frac{V}{2} (P_{\ell-1}(0)-P_{\ell+1}(0))\\
+ B_\ell &= -\lrb{ \frac{a^\ell+b^\ell}{a^\ell b^{-(\ell+1)}-1/a} } \frac{V}{2} (P_{\ell-1}(0)-P_{\ell+1}(0))
+\end{align}
+
+
+
+
+
+
+
+\section{Problem 3.6}
+This problem specifies two point charges rather than a boundary. 
+Instead of the usual series solution to a boundary value problem, we expand the potentials of the two point charges in terms of spherical harmonics (Jackson 3.70).
+Recognizing the azimuthal symmetry we keep only the $m=0$ terms, with the normalization of the spherical harmonics cancelling the $\frac{1}{2\ell+1}$ term:
+\begin{align}
+ \frac{1}{|\bv{x}-\bvp{x}|} &= 4\pi \sum_\ell \frac{r_<^\ell}{r_>^{\ell+1}}P_\ell(\cos\theta')P_\ell(\cos\theta)
+\end{align}
+With the charges at $\theta'=0,\pi$, we can then write the complete potential:
+\begin{align}
+ \Phi(r,\theta) &= \frac{q}{4\pi\ez}\sum_\ell \frac{r_<^\ell}{r_>^{\ell+1}} P_\ell(\cos\theta)\lrb{P_\ell(1)-P_\ell(-1)}
+\end{align}
+$P_\ell(x)$ is an odd function for $\ell$ odd and an even function for $\ell$ even. 
+We then write the potential:
+\begin{align}
+ \Phi(r,\theta) &= \frac{q}{2\pi\ez}\sum_{\ell=1,3...} \frac{r_<^\ell}{r_>^{\ell+1}} P_\ell(\cos\theta)
+\end{align}
+\\
+b) As $a\rightarrow 0$, $r_<=a=0$ and $r_>=r$. Therefore only the $\ell=0$ term would normally survive.
+Keeping the ratio $qa=p/2$ constant so that the potential doesn't vanish, we can pull out an a:
+\begin{align}
+ \Phi(r,\theta) &= \frac{p}{4\pi\ez} \sum_{\ell=1,3...} \frac{a^{\ell-1}}{r^{\ell+1}} P_\ell(\cos\theta)\\
+ \Phi(r,\theta) &= \frac{p}{4\pi\ez} \frac{\cos\theta}{r^2}
+\end{align}
+c) Since the total potential on the ground sphere is 0, the charge distribution on the sphere must cancel the dipole potential.
+Solving the dipole potential at the sphere surface:
+\begin{align}
+ \Phi(b,\theta) &= \frac{p}{4\pi\ez} \frac{\cos\theta}{b^2} + \Phi_{sphere} = 0\\
+ \Phi_{sphere} &= -\frac{p}{4\pi\ez} \frac{\cos\theta}{b^2} 
+\end{align}
+We examine the potential due to the charge distribution on the sphere.
+Clearly only the $\ell=1$ term survives, and the coefficient $A_1=-\frac{p}{4\pi\ez} \frac{\cos\theta}{b^3}$ to match the expression at $r=b$. 
+We then combine the two potentials:
+\begin{align}
+ \Phi(r,\theta) &= \frac{p}{4\pi\ez}\cos\theta\lrb{\frac{1}{r^2}-\frac{r}{b^3}} 
+\end{align}
+We note that hhis potential vanishes at the sphere surface as required.
+\\
+
+\section{Problem 3.14}
+We first solve for the line charge density:
+\begin{align}
+ C \int_{-d}^d(d^2-z^2)dz &= Q\\
+ C &= Q\lrp{2d^3-\frac{2}{3}d^3}^{-1}\\
+ C &= \frac{3Q}{4d^3}\\
+ \lambda(z) &= \frac{3Q}{4d^3}(d^2-z^2),\ |z|<d
+\end{align}
+This problem includes charge in a region with a spherical boundary, so we use the spherical Green's function.
+The charge distribution has azimuthal symmetry so we only keep terms with $m=0$, and can write the Green's function in terms of Legendre polynomials:
+\begin{align}
+ G(\bv{x},\bvp{x}) &= \sum_{\ell=0}^\infty P_\ell(\cos\theta')P_\ell(\cos\theta)r_<^\ell\lrp{\frac{1}{r_>^{\ell+1}}-\frac{r_>^\ell}{b^{2\ell+1}}}
+\end{align}
+Since the potential is 0 on the surface of the sphere we only need the volume integral term in the solution:
+\begin{align}
+ \Phi(\bv{x}) &= \frac{1}{4\pi\ez}\int_V dV\ \rho(\bvp{x})G(\bv{x},\bvp{x})
+\end{align}
+The volume is 0 everywhere except along the z axis from $-d$ to $d$. 
+To use the Green's function in spherical coordinates we break the integral into two pieces along $\theta'=0$ and $\theta'=\pi$.
+We then have:
+\begin{align}
+ \begin{split}
+ \Phi(\bv{x}) = &\frac{3Q}{16\pi\ez d^3}\times\\
+		&\int_0^d dr'\ (d^2-r'^2) \sum_{\ell=0}^\infty P_\ell(\cos\theta)r_<^\ell\lrp{\frac{1}{r_>^{\ell+1}}-\frac{r_>^\ell}{b^{2\ell+1}}}+\\
+                &\int_{-d}^0 dr'\ (d^2-r'^2) \sum_{\ell=0}^\infty (-1)^\ell P_\ell(\cos\theta)r_<^\ell\lrp{\frac{1}{r_>^{\ell+1}}-\frac{r_>^\ell}{b^{2\ell+1}}}\\
+ \end{split}
+\end{align}
+The two integrals are essentially identical except for the order of integration and the factor of $(-1)^\ell)$ in the second integral.
+It is clear that if we exchance the sum and integration that all odd terms in the sum will be 0. 
+The expression then simplifies to:
+\begin{align}
+ \begin{split}
+ \Phi(\bv{x}) = &\frac{3Q}{8\pi\ez d^3}\times\\
+		&\sum_{\ell=0,2...}^\infty \int_0^d dr'\ (d^2-r'^2) P_\ell(\cos\theta)r_<^\ell\lrp{\frac{1}{r_>^{\ell+1}}-\frac{r_>^\ell}{b^{2\ell+1}}}\\
+ \end{split}
+\end{align}
+b) To find the charge density on the sphere we use $\sigma = -\ez\left[\frac{\partial \Phi(n,\theta)}{\partial r}\right]_{r=b}$.
+We first evaluate the potential at $r>r'$ since we are looking at the surface of the sphere:
+\begin{align}
+  \Phi(r,\theta) &= \frac{3Q}{8\pi\ez d^3}\sum_{\ell=0,2...}^\infty \int_0^d dr'\ (d^2-r'^2) P_\ell(\cos\theta)r'^\ell\lrp{\frac{1}{r^{\ell+1}}-\frac{r^\ell}{b^{2\ell+1}}}\\
+  \Phi(r,\theta) &= \frac{3Q}{8\pi\ez d^3}\sum_{\ell=0,2...}^\infty P_\ell(\cos\theta)\lrp{\frac{1}{r^{\ell+1}}-\frac{r^\ell}{b^{2\ell+1}}} \int_0^d dr'\ (d^2-r'^2) r'^\ell\\
+  \Phi(r,\theta) &= \frac{3Q}{4\pi\ez}\sum_{\ell=0,2...}^\infty P_\ell(\cos\theta)\lrp{\frac{1}{r^{\ell+1}}-\frac{r^\ell}{b^{2\ell+1}}} \frac{d^\ell}{(\ell+1)(\ell+3)}
+\end{align}
+We now take the derivative with respect to r, evaluated at $r=b$:
+\begin{align}
+ \frac{\partial \Phi(r,\theta)}{\partial r} &= \frac{3Q}{4\pi\ez}\sum_{\ell=0,2...}^\infty P_\ell(\cos\theta) \frac{d^\ell}{(\ell+1)(\ell+3)}\lrp{-\frac{\ell+1}{r^{\ell+2}}-\frac{\ell r^{\ell-1}}{b^{2\ell+1}}}\\
+ \frac{\partial \Phi(b,\theta)}{\partial r} &= -\frac{3Q}{4\pi\ez}\sum_{\ell=0,2...}^\infty P_\ell(\cos\theta) \frac{(2\ell+1)d^\ell}{(\ell+1)(\ell+3)b^{\ell+2}}
+\end{align}
+With the normal pointing in from the surface we pick up a negative sign, so the final expression for the charge density is:
+\begin{align}
+ \sigma &= -\frac{3Q}{4\pi}\sum_{\ell=0,2...}^\infty P_\ell(\cos\theta) \frac{(2\ell+1)d^\ell}{(\ell+1)(\ell+3)b^{\ell+2}}
+\end{align}
+c) With $d \ll b$ the ratio $d^\ell/b^{\ell+2}$ approaches 0 for all terms other than $\ell=0$. 
+Therefore, we can approximate the surface charge density by:
+\begin{align}
+ \sigma &= -\frac{Q}{4\pi b^2}
+\end{align}
+This is just the total charge on the line distribution spread evenly over the surface of the sphere, so in this limit the problem resembles a point charge at the center of a conducting sphere.
+
+
+
+\end{document}

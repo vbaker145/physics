@@ -1,0 +1,91 @@
+\documentclass[a4paper,11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{braket}
+
+\numberwithin{equation}{section}
+\renewcommand\thesubsection{\alph{subsection}}
+\newcommand{\bvp}[1]{\mathbf{#1}'}
+\newcommand{\bv}[1]{\mathbf{#1}}
+\newcommand{\ez}{\epsilon_0}
+\newcommand{\eo}{\epsilon_1}
+\newcommand{\lrp}[1]{\left({#1}\right)}
+\newcommand{\lrb}[1]{\left\{{#1}\right\}}
+
+
+%opening
+\title{Computational Biophysics HW7}
+\author{Vince Baker}
+
+\begin{document}
+
+\maketitle
+
+\section{3.9}
+The conventional solution in cylindrical coordinates takes the seperation constant $k^2$, resulting in $\sinh, \cosh$ solutions for the z equation.
+In this problem we have boundary conditions $\Phi(\rho,\phi,0)=0$ and $\Phi(\rho,\phi,L)=0$.
+These cannot be satisfied by the hyperbolic functions.
+Instead, we take the separation constant to be $-k^2$ so that we get the $\sin$ solution for z which will satisfy the boundary conditions.
+We are then working with the modified Bessel functions.\\
+We are looking for an interior solution, so we discard the Neumann terms. 
+The $\phi$ solutions are the typical exponential combinations, with the usual integer restriction on $m$ so they are single-valued.
+We can then write the general solution in cylindrical coordinates:
+\begin{align}
+ \Phi(\rho,\phi,z) &= \sum_{m=0}^\infty \sum_{n=1}^\infty I_m(\frac{n\pi}{L}\rho)\sin{\lrp{\frac{n\pi}{L}z}}\lrp{A_{mn}e^{im\phi}+B_{mn}e^{-im\phi}}
+\end{align}
+Where we have removed the $n=0$ term, since it will be zero due to the sine function.\\
+We now solve for the coefficients using the other provided boundary condition:
+\begin{align}
+ \Phi(b,\phi,z) &= V(\phi,z)\\
+ V(\phi,z) &= \sum_{m=0}^\infty \sum_{n=1}^\infty I_m(\frac{n\pi}{L}b)\sin{\lrp{\frac{n\pi}{L}z}}\lrp{A_{mn}e^{im\phi}+B_{mn}e^{-im\phi}}
+\end{align}
+We multiply both sides by a $e^{-im'\phi}\sin{\frac{n\pi}{L}z'}$ and integrate, using the delta function relations:
+\begin{align}
+ \int_0^{2\pi} e^{i(m-m')\phi}\ d\phi &= 2\pi\delta(m-m')\\
+ \int_0^L \sin(n\pi z/L)\sin(n'\pi z/L)\ dz &= \frac{L}{2}\delta(n-n')
+\end{align}
+We then have:
+\begin{gather}
+ \int_0^{2\pi} \int_0^L V(\phi,z)e^{-im\phi}\sin{\lrp{\frac{n\pi}{L}z}}\ d\phi\ dz =  I_m(\frac{n\pi}{L}b) \pi L A_{mn}\\
+ A_{mn} = \lrp{I_m(\frac{n\pi}{L}b) \pi L}^{-1} \int_0^{2\pi} \int_0^L V(\phi,z)e^{-im\phi}\sin{\lrp{\frac{n\pi}{L}z}}\ d\phi\ dz
+\end{gather}
+Following the same process, but multiplying by $e^{im'\phi}\sin{\lrp{\frac{n\pi}{L}z'}}$, we find the $B_{mn}$:
+\begin{gather}
+ B_{mn} = \lrp{I_m(\frac{n\pi}{L}b) \pi L}^{-1} \int_0^{2\pi} \int_0^L V(\phi,z)e^{im\phi}\sin{\lrp{\frac{n\pi}{L}z}}\ d\phi\ dz
+\end{gather}
+Inserting the coefficients into (1) we now have a complete expression for the potential inside the cylinder.
+
+
+\section{4.1}
+a) The charge distribution consists of 4 point charges, all at $r=a$ and $\theta = \pi/2$.
+The four $\phi$ angles are $0, \pm\pi/2, \pi$. 
+We can write the charge distribution in terms of delta functions:
+\begin{align}
+ \rho &= q\delta(r-a)\delta(\theta-\pi/2)\lrb{\delta(\phi)+\delta(\phi-\pi/2)-\delta(\phi-\pi/2)-\delta(\phi-\pi)}
+\end{align}
+The coefficients are then:
+\begin{align}
+ q_{\ell m} &= \int Y_{\ell m}^*(\theta,\phi)r^\ell \rho(\bv{x}) d^3x\\
+ q_{\ell m} &= qa^\ell \lrp{Y_{\ell m}^*(0,0)+Y_{\ell m}^*(0,\pi/2)-Y_{\ell m}^*(0,-\pi/2)-Y_{\ell m}^*(0,\pi)}
+\end{align}
+We pull out the common $\theta$ part of the spherical harmonics:
+\begin{align}
+ q_{\ell m} &= qa^\ell P_\ell(0)\sqrt{ \frac{(2\ell+1)(\ell-m)!}{4\pi(\ell+m)!} } \lrp{e^{im0}+e^{im\pi/2}-e^{-im\pi/2}-e^{im\pi}}
+\end{align}
+When m is even the first and last $\phi$ terms will cancel, as will the second and third. Therefore $q_{\ell m}=0$ for m even.
+When m is odd the $\phi$ terms reduce to $2\mp2i$ with the sign alternating.
+We can then write the coefficients as:
+\begin{align}
+ q_{\ell m} &= 2qa^\ell P_\ell(0)\sqrt{ \frac{(2\ell+1)(\ell-m)!}{4\pi(\ell+m)!} } \lrp{1-i^m}\ (\text{m odd})
+\end{align}
+
+
+
+
+\section{4.9ab}
+
+
+\end{document}
