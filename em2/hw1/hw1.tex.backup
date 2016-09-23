@@ -1,0 +1,106 @@
+\documentclass[a4paper,11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{braket}
+
+\numberwithin{equation}{section}
+\renewcommand\thesubsection{\alph{subsection}}
+\newcommand{\bvp}[1]{\mathbf{#1}'}
+\newcommand{\bv}[1]{\mathbf{#1}}
+\newcommand{\ez}{\epsilon_0}
+\newcommand{\eo}{\epsilon_1}
+\newcommand{\lrp}[1]{\left({#1}\right)}
+\newcommand{\lrb}[1]{\left\{{#1}\right\}}
+
+
+%opening
+\title{Electromagnetic Theory II HW1}
+\author{Vince Baker}
+
+\begin{document}
+
+\maketitle
+
+\section{6.1}
+a) We start with the general solution for the wave equation and the provided source function:
+\begin{align}
+ \Psi(\bv{x},t) &= \int d^3x'\ \frac{\lrb{f(x',t')}_{ret}}{|x-x'|}\\
+ f(x',t') &= \delta(x')\delta(y')\delta(t')
+\end{align}
+We can write this out in components, defining $\rho^2=x^2+y^2$:
+\begin{align}
+ \Psi(\bv{x},t) &= \int d^3x'\ \frac{\delta(x')\delta(y')\delta(t-\sqrt{(x-x')^2+(y-y')^2+(z-z')^2}/c)}{\sqrt{(x-x')^2+(y-y')^2+(z-z')^2}}\\
+ \Psi(\bv{x},t) &= \int dz'\ \frac{\delta(t-\sqrt{\rho^2+(z-z')^2}/c)}{\sqrt{\rho^2+(z-z')^2}}
+\end{align}
+To evaluate the delta function of a function, we use:
+\begin{align}
+ \delta(g(x)) &= \sum_i \frac{\delta(x-x_i)}{|g'(x_i)|}
+\end{align}
+Where the $x_i$ are the roots of $g(x)$. In this case $g(z')=t-\sqrt{\rho^2+(z-z')^2}/c$.
+\begin{align}
+ g'(z') &= -\frac{1}{2c}\frac{2(z-z')(-1)}{\sqrt{\rho^2+(z-z')^2}} = \frac{z-z'}{c\sqrt{\rho^2+(z-z')^2}}
+\end{align}
+We find the roots of $g(z')$:
+\begin{align}
+ t-\sqrt{\rho^2+(z-z')^2}/c &= 0\\
+ (z-z')^2 &= c^2t^2-\rho^2\\
+ z' &= z \pm \sqrt{c^2t^2-\rho^2}
+\end{align}
+Plugging in the two roots the delta function is written as:
+\begin{align}
+\begin{split}
+\delta(t-\sqrt{\rho^2+(z-z')^2}/c) = &\frac{c^2t}{\sqrt{c^2t^2-\rho^2}}\{\delta(z'-z+\sqrt{c^2t^2-\rho^2})\\
+		  &+\delta(z'-z-\sqrt{c^2t^2-\rho^2})\}
+\end{split}
+\end{align}
+We can now evaluate (4):
+\begin{align}
+ \Psi(\bv{x},t) &= \frac{c^2t}{\sqrt{c^2t^2-\rho^2}}\lrb{ \frac{1}{\sqrt{\rho^2+(z-z')^2}}}_{z'=z\pm\sqrt{c^2t^2-\rho^2}}\\ 
+ \Psi(\bv{x},t) &= \frac{c^2t}{\sqrt{c^2t^2-\rho^2}}\lrb{\frac{1}{ct}+\frac{1}{ct}}\\
+ \Psi(\bv{x},t) &= \frac{2c}{\sqrt{c^2t^2-\rho^2}}
+\end{align}
+The suggest answer is this function multipled by the unit step function of $(ct-\rho)$. 
+Inspecting (9), we see that the delta function will only have real roots when $ct>\rho$.
+Therefore we can write the wave equation in the suggested form:
+\begin{align}
+ \Psi(\bv{x},t) &= \frac{2c}{\sqrt{c^2t^2-\rho^2}}\Theta(ct-\rho)
+\end{align}
+\\
+b) We now extend our line charge to a sheet charge in the y-z plane, which will produce an effective one-dimensional source in the x direction.
+The formulation is similar to part A, we just remove the $\delta(y')$ from the source term.
+\begin{align}
+ \Psi(\bv{x},t) &= \int d^3x'\ \frac{\delta(x')\delta(t-\sqrt{(x-x')^2+(y-y')^2+(z-z')^2}/c)}{\sqrt{(x-x')^2+(y-y')^2+(z-z')^2}}\\
+ \Psi(\bv{x},t) &= \int dy'\ dz'\ \frac{\delta(t-\sqrt{x^2+(y-y')^2+(z-z')^2}/c)}{\sqrt{x^2+(y-y')^2+(z-z')^2}}
+\end{align}
+We do the two-dimensional integral in polar coordinates, setting the observation point at $z=0,y=0$. We define $\rho'^2 = z'^2+y'^2$. 
+The $\phi$ integral is easy due to our choice of origin and is just $2\pi$.
+We now have:
+\begin{align}
+ \Psi(\bv{x},t) &= 2\pi \int_0^\infty d\rho'\ \rho'\frac{\delta(t-\sqrt{x^2+\rho'^2}/c)}{\sqrt{x^2+\rho'^2}}
+\end{align}
+We again find the derivative of the argument of the delta function:
+\begin{align}
+ \frac{d}{d\rho'}(t-\sqrt{x^2+\rho'^2}/c) &= -\frac{\rho'}{c\sqrt{x^2+\rho'^2}}
+\end{align}
+The roots of the argument are at $\rho' = \pm \sqrt{c^2t^2-x^2}$.
+They roots will only be real when $ct>x$. 
+We also note that the negative root will not be used since the integral starts at 0.
+We can then write the delta function:
+\begin{align}
+ \delta(t-\sqrt{x^2+\rho'^2}/c) &= c^2t\frac{\delta(\rho'-\sqrt{c^2t^2-x^2})}{\sqrt{c^2t^2-x^2}}
+\end{align}
+With the correct delta function expression our wave function is now:
+\begin{align}
+ \Psi(\bv{x},t) &= 2\pi \frac{c^2t}{\sqrt{c^2t^2-x^2}} \frac{1}{\sqrt{x^2+c^2t^2-x^2}}\sqrt{c^2t^2-x^2}\\
+ \Psi(\bv{x},t) &= 2\pi c
+\end{align}
+
+
+
+
+
+
+\end{document}

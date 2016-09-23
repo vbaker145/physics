@@ -1,0 +1,161 @@
+\documentclass[a4paper,11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{braket}
+
+\numberwithin{equation}{section}
+\renewcommand\thesubsection{\alph{subsection}}
+\newcommand{\bvp}[1]{\mathbf{#1}'}
+\newcommand{\bv}[1]{\mathbf{#1}}
+\newcommand{\ez}{\epsilon_0}
+\newcommand{\eo}{\epsilon_1}
+\newcommand{\lrp}[1]{\left({#1}\right)}
+\newcommand{\lrb}[1]{\left\{{#1}\right\}}
+
+
+%opening
+\title{Electromagnetic Theory II HW2}
+\author{Vince Baker}
+
+\begin{document}
+
+\maketitle
+
+\section{6.4}
+a) The relevant form of Ohm's law is:
+\begin{align}
+ \bv{J} = \sigma \bv{E}
+\end{align}
+We start in the frame that is rotating with the sphere.
+In this frame $\bv{J}=0$ and therefore $\bv{E}=0$ since there is no excess charge. 
+We can then transform to the lab frame using the relation:
+\begin{align}
+ \bv{E}_{lab} = \bv{E}_{rot}+\bv{v}\times \bv{B}\\
+ \bv{E}_{lab} = \bv{v}\times \bv{B}
+\end{align}
+We find $\bv{B}$ from the given magnetic moment. 
+Since the sphere is uniformly magnetized the magnetization has the same direction and magnitude at each point in the sphere.
+The magnetic moment is the volume integral of the magnetization, so it is clear that $M$ is the magnitude of the magnetization.
+We choose our coordinates so that the magnetic moment and magnetization are along the z axis.\\
+The magnetic field of a uniformly magnetized body can be determined using the magnetic potential formalism.
+The result for a sphere is:
+\begin{align}
+ \bv{B} &= \frac{2}{3}\mu_0 \bv{M} = \frac{2}{3}\mu_0M\hat{z}\ \text{(inside sphere)}
+\end{align}
+The problem expresses the E field in terms of the magnetic moment $m=\frac{4}{3}\pi R^3M$, so we rewrite the B field:
+\begin{align}
+ \bv{B} &= \frac{1}{2\pi R^3}\mu_0 m\hat{z}
+\end{align}
+We now need an expression for $\bv{v} \times \bv{B}$. 
+The axis of rotation is aligned with the axis of magnetization, so $\bv{v} = \bv{\omega} \times \bv{r}$ will always be perpendicular to the z axis.
+The E field in the lab frame is:
+\begin{align}
+ \bv{E}_{lab} &= \frac{1}{2\pi R^3}\mu_0 m \omega (\hat{z} \times \bv{r} \times \hat{z})\\
+ \bv{E}_{lab} &= \frac{1}{2\pi R^3}\mu_0 m \omega (x\hat{x}+y\hat{y})\\
+ \bv{E}_{lab} &= \frac{1}{2\pi R^3}\mu_0 m \omega \rho \hat{\rho}\\
+\end{align}
+We can find the charge density from $\nabla \cdot \bv{E} = \frac{\rho}{\ez}$.
+\begin{align}
+ \rho &= \frac{\ez \mu_0 m \omega}{2\pi R^3}\\
+ \rho &= \frac{m \omega}{2\pi R^3 c^2}
+\end{align}
+\\
+b) To find the multipole expansion we want the field in spherical coordinates. 
+\begin{align}
+ \bv{E}_{lab} &= \frac{1}{2\pi R^3}\mu_0 m \omega (x\hat{x}+y\hat{y})\\
+ \bv{E}_{lab} &= \frac{1}{2\pi R^3}\mu_0 m \omega (r\sin{\theta}(\sin{\theta}\hat{r}+\cos{\theta}\hat{\theta}))\\
+ \bv{E}_{lab} &= \frac{1}{2\pi R^3}\mu_0 m \omega (r\sin^2{\theta}\hat{r}+r\sin{\theta}\cos{\theta}\hat{\theta})
+\end{align}
+The general solution for the potential outside the sphere, given the axial symmetry, is:
+\begin{align}
+ \Phi &= \sum_{\ell=0}^\infty A_\ell r^{-(\ell+1)}P_\ell(\cos{\theta})\\
+ \bv{E} &= -\nabla \Phi\\
+ \bv{E} &= \sum_{\ell=0}^\infty\lrb{ \lrp{A_\ell(\ell+1)r^{-(\ell+2)}P_\ell(\cos{\theta})}\hat{r}+\lrp{-A_\ell r^{-(\ell+2)}\frac{\partial}{\partial \theta}P_\ell(\cos{\theta})}\hat{\theta} }
+\end{align}
+The tangential electric field at the boundary must be continuous, and the $\theta$ term in the electric field includes $\sin{\theta}\cos{\theta}$.
+Taking the derivative of $P_2(\cos{\theta})=\frac{1}{4}(1+3\cos{2\theta})$ we recover the correct form using the double angle formula. 
+Solving for the coefficient using the boundary condition:
+\begin{align}
+ \frac{\mu_0 m \omega R}{2\pi R^3}\sin{\theta}\cos{\theta} &= -A_2 R^{-4}(-3\sin{\theta}\cos{\theta})\\
+ A_2 = \frac{\mu_0 m \omega R^2}{6\pi}
+\end{align}
+Therefore the electric field outside the sphere is:
+\begin{align}
+ \bv{E} &= \frac{\mu_0 m \omega R^2}{2\pi}\lrp{\frac{1}{r^4}P_2(\cos{\theta})\hat{r}+\frac{1}{r^4}\cos{\theta}\sin{\theta}\hat{\theta}}
+\end{align}
+We look to express this in a multipole expansion by finding the multipole moments. 
+Through orthogonality only the $q_{20}$ moment will survive.
+Using equation 4.11 in Jackson:
+\begin{align}
+ E_r &= \frac{3}{5\ez}q_{20}\sqrt{\frac{5}{4\pi}}\frac{P_2(\cos{\theta})}{r^4}
+\end{align}
+Therefore,
+\begin{align}
+ q_{20} &= \frac{\ez\mu_0 m \omega R^2}{2\pi}\frac{5}{3}\sqrt{\frac{4\pi}{5}}\\
+ q_{20} &= \frac{m \omega R^2}{c^2}\sqrt{\frac{5}{4\pi}}\frac{2}{3}
+\end{align}
+The $Q_{33}$ term of the quadropole moment tensor is:
+\begin{align}
+ Q_{33} &= 2\sqrt{\frac{4\pi}{5}}q_{20} = \frac{m \omega R^2}{c^2}\frac{4}{3}
+\end{align}
+Since the quadropole tensor is traceless, $Q_{11}=Q_{22}=-\frac{1}{2}Q_{33}$.
+
+c) We have already found the radial electric fields outside and inside the sphere:
+\begin{align}
+ \bv{E}^{rad}_{in} &= \frac{\mu_0 m \omega}{2\pi R^3}r\sin^2{\theta}\hat{r}\\
+ \bv{E}^{rad}_{out} &= \frac{\mu_0 m \omega R^2}{2\pi} \frac{1}{r^4}P_2(\cos{\theta})\hat{r}
+\end{align}
+Since a dielectric medium is not specified we assume all media have permittivity $\ez$, and the radial continuity equation reduces to:
+\begin{align}
+ (E^{rad}_{in}-E^{rad}_{out}) &= \frac{\rho}{\ez}\\
+ \rho &= \frac{m\omega}{2\pi c^2R^2}\lrp{\sin^2{\theta}-P_2(\cos{\theta})}
+\end{align}
+Writing $P_2(\cos{\theta})$ as $-\frac{1}{2}+\frac{3}{2}\cos^2{\theta}$ using the double-angle formula we recover the desired charge density:
+\begin{align}
+ \rho &= \frac{m\omega}{3\pi c^2R^2}\lrp{1-\frac{5}{2}P_2(\cos{\theta})}
+\end{align}
+\\
+d) We integrate along the surface of the sphere from $\theta=0$ to $\theta=\frac{\pi}{2}$.
+The tangential electric field at the surface $r=R$ is:
+\begin{align}
+ \bv{E}^{\theta} &= \frac{\mu_0 m \omega}{2\pi R^2}\cos{\theta}\sin{\theta}\hat{\theta}
+\end{align}
+The line element is $Rd\theta$, leading to the integral:
+\begin{align}
+ \int \bv{E} \cdot d\ell &= \int_0^{\pi/2}\frac{\mu_0 m \omega}{2\pi R^2}\cos{\theta}\sin{\theta} R\ d\theta\\
+ \int \bv{E} \cdot d\ell &= \frac{\mu_0 m \omega}{2\pi R}\int_0^{\pi/2}\cos{\theta}\sin{\theta} d\theta\\
+ \int \bv{E} \cdot d\ell &= \frac{\mu_0 m \omega}{4\pi R}
+\end{align}
+
+\section{6.6}
+a) The field momentum is:
+\begin{align}
+ \bv{P_{field}} &= \mu_0\ez\int_V \bv{E} \times \bv{H}\ d^3x
+\end{align}
+The electric field from the point charge Q can be found from Coulomb's law.
+The B field of an N-turn toroid using Amperian loops is $\frac{\mu_0NI}{2\pi a}$ inside, 0 outside, and is directed tangential to the radius from the center of the toroid.
+The H field is therefore $\frac{NI}{2\pi a}$.
+We can then find the field momentum:
+\begin{align}
+ \bv{P_{field}} &= \mu_0\ez  \frac{NI}{2\pi a} \frac{1}{4\pi\ez a^2} \int_V  \hat{r} \times \hat{\phi} \ d^3x\\
+ \bv{P_{field}} &= \frac{INQA\mu_0}{4\pi a^2}\hat{z}
+\end{align}
+We check the approximation:
+\begin{align}
+ \bv{P}_{field} &= \frac{1}{c^2}\bv{E}(0) \times \bv{m}
+\end{align}
+Where $\bv{E}(0)$ is the first term in a Taylor series expansion of the electric field and the approximation is valid when the change in E field intensity is small over the region containing the current.
+Each turn in the toroid has a magnetic moment $IA$, and the E field strength at the center of each turn is $\frac{Q}{4\pi\ez}$, so the momentum in each turn is:
+\begin{align}
+ \bv{P}_{field} &= \frac{1}{c^2} \frac{Q}{4\pi\ez} IA (\hat{r} \times \hat{\phi})\\
+ \bv{P_{field}} &= \frac{IQA\mu_0}{4\pi a^2}\hat{z}
+\end{align}
+Adding the contribution from N turns the approximation provides the exact result.
+b) Plugging in the provided values we find a field momentum of $2.00e^{-12}\ Ns$, an electric field strength of $9.00e^5\ V/m$, and a magnetic induction of $4.00e^{-3}$ Tesla.
+For comparison, the momentum of the insect is $1e^{-9}\ Ns$.
+
+
+\end{document}

@@ -1,0 +1,110 @@
+\documentclass[a4paper,11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{braket}
+
+\numberwithin{equation}{section}
+\renewcommand\thesubsection{\alph{subsection}}
+\newcommand{\bvp}[1]{\mathbf{#1}'}
+\newcommand{\bv}[1]{\mathbf{#1}}
+\newcommand{\ez}{\epsilon_0}
+\newcommand{\eo}{\epsilon_1}
+\newcommand{\lrp}[1]{\left({#1}\right)}
+\newcommand{\lrb}[1]{\left\{{#1}\right\}}
+
+
+%opening
+\title{Electromagnetic Theory II HW4}
+\author{Vince Baker}
+
+\begin{document}
+
+\maketitle
+
+\section*{7.8}
+a) Inside each slab of linear, lossless, nondispersive media both the forward and backward waves will propagate without interaction or attenuation.
+They will only undergo a phase shift of $kt_j$ ($-kt_j$ for the backward wave) where $t_j$ is the thickness of slab j and $k=\frac{n_j\omega}{c}$.
+The transfer matrix is then:
+\begin{align}
+ T_j(n_j,t_j) &= \begin{bmatrix}
+                  e^{ik_jt_j} & 0 \\
+                  0           & e^{-ik_jt_j}
+                 \end{bmatrix}
+\end{align}
+Since $\sigma_3 = \begin{bmatrix}1 & 0\\ 0 & -1 \end{bmatrix}$ we can use Euler's formula to write this transfer matrix as:
+\begin{align}
+ T_j(n_j,t_j) &= \begin{bmatrix}
+                  \cos{(k_jt_j)}+i\sin{(k_jt_j)} & 0 \\
+                  0           & \cos{(k_jt_j)}-i\sin{(k_jt_j)}
+                 \end{bmatrix}\\
+ T_j(n_j,t_j) &= I\cos{(k_jt_j)}+i\sigma_3\sin{(k_jt_j)}
+\end{align}
+b) Across a zero-width boundary between layers the phases of the forward and backward waves must be identical on both sides of the boundary.
+For normal incidence, with $\mu' = \mu$, the transmitted and reflected components of an incident wave (Jackson 7.39) can be wrtten:
+\begin{align}
+ E_{trans} &= 2\lrp{1+n'/n}^{-1}E_{incident}\\
+ E_{reflect} &= \frac{n'/n-1}{n'/n+1}E_{incident}
+\end{align}
+We consider the backward-propagating wave in region 1 as the combination of the reflected part of the forward-propagating wave in region 1 and the transmitted part of the backward-propagating wave in region 2.
+Defining $\beta^+ \equiv \frac{1}{2}(n_1/n_2+1), \beta^- \equiv \frac{1}{2}(n_1/n_2-1)$:
+\begin{align}
+ E_- &= E_-'\frac{1}{\beta^+}+E_+\frac{\beta^-}{\beta^+}\\
+ E_-' &= \beta^+E_- - \beta^-E_+
+\end{align}
+Defining $n \equiv n_1/n_2$ we have recovered the $t_{21}$ and $t_{22}$ transfer matrix elements.
+Across the two layers we must have $E_++E_- = E_+'+E_-'$. 
+Therefore must have $t_{11} = t_{22}$ and $t_{12}=t_{21}$. 
+Using the Pauli matrix $\sigma_1 = \begin{bmatrix}0 & 1\\ 1 & 0 \end{bmatrix}$ we can now write the transfer matrix as:
+\begin{align}
+ T_{i\rightarrow j} &= I\frac{n+1}{2}-\sigma_1 \frac{n-1}{2}
+\end{align}
+c) There will be no backward-propagating wave in the final semi-infinite region. 
+Therefore the expression for total transmission and reflection by the stack is:
+\begin{align}
+ \begin{bmatrix}E_+' \\ 0 \end{bmatrix} &= \begin{bmatrix}t_{11}&t_{12}\\t_{21}&t_{22} \end{bmatrix} \begin{bmatrix}E_+ \\ E_- \end{bmatrix}
+\end{align}
+From the second row in this matrix equation it is clear that $E_- = -\frac{t_{21}}{t_{22}}E_+$.
+Plugging that result into the first row gives:
+\begin{align}
+ E_+' &= \lrp{t_{11}-\frac{t_{12}t_{21}}{t_{22}}}E_+\\
+ E_+' &= \lrp{\frac{t_{11}t_{22}-t_{12}t_{21}}{t_{22}}}E_+\\
+ E_+' &= \lrp{\frac{det(T)}{t_{22}}}E_+\\
+\end{align}
+
+\section*{7.12}
+a) Starting in the time domain with the charge/current equation, and using Ohm's law ($J=\sigma E$):
+\begin{align}
+ \nabla \cdot \bv{J}(\bv{x},t) + \frac{\partial \rho(\bv{x},t)}{\partial t} = 0\\
+ \sigma\nabla \cdot \bv{E}(\bv{x},t) + \frac{\partial \rho(\bv{x},t)}{\partial t} = 0
+\end{align}
+Tranforming to the Fourier domain, using the identity $F(dG/dx) = -i\omega F(G(x))$:
+\begin{align}
+ \sigma(\omega) \nabla \cdot \bv{E}(\bv{x},\omega) - i\omega \rho(\bv{x},\omega) = 0
+\end{align}
+Since $\nabla \cdot \bv{E} = \frac{\rho}{\ez}$ we have:
+\begin{align}
+ \lrp{\sigma(\omega)-i\omega \ez}\rho(\bv{x},\omega) &= 0
+\end{align}
+b) Plugging in the given representation for $\sigma(\omega)$:
+\begin{align}
+ \lrp{\frac{\ez\omega_p^2\tau}{1-i\omega\tau}-i\omega \ez}\rho(\bv{x},\omega) &= 0\\
+ \lrp{\frac{\ez\omega_p^2\tau}{1-i\omega\tau}-i\omega \ez} &= 0\\
+ \omega_p^2\tau &= i\omega+\omega^2\tau\\
+ \omega = \frac{-i \pm \sqrt{4\tau^2\omega_p^2-1}}{2\tau}
+\end{align}
+In the approximation $\omega_p\tau \gg 1$ the roots are $-\frac{i}{2\tau} \pm \omega_p$.
+All other frequencies would require that $\rho=0$ from eq. 5.
+Since $\rho$ is only non-zero at two frequencies, it is straightforward to evaluate the inverse Fourier transform:
+\begin{align}
+ \rho(\bv{x},t) &= \frac{1}{2\pi} \int_{-\infty}^\infty \rho(\omega) e^{-i\omega t}\ d\omega\\
+ \rho(\bv{x},t) &= \frac{1}{2\pi} \lrp{e^{-i(-\frac{i}{2\tau} + \omega_p)t}+e^{-i(-\frac{i}{2\tau} - \omega_p)t} }\\
+ \rho(\bv{x},t) &= \frac{1}{2\pi} e^{-t/2\tau}\lrp{e^{-i\omega_p t}+e^{i\omega_p t} }\\
+ \rho(\bv{x},t) &= \frac{1}{\pi} e^{-t/2\tau} \cos{(\omega_p t)}
+\end{align}
+This function form shows that the initial charge distribution at $t=0$ will cause a damped oscillation at $\omega_p$ that will decay with time constant $1/2\tau$.
+
+
+\end{document}

@@ -1,0 +1,111 @@
+\documentclass[a4paper,11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{braket}
+
+\numberwithin{equation}{section}
+\renewcommand\thesubsection{\alph{subsection}}
+\newcommand{\bvp}[1]{\mathbf{#1}'}
+\newcommand{\bv}[1]{\mathbf{#1}}
+\newcommand{\ez}{\epsilon_0}
+\newcommand{\eo}{\epsilon_1}
+\newcommand{\lrp}[1]{\left({#1}\right)}
+\newcommand{\lrb}[1]{\left\{{#1}\right\}}
+
+
+%opening
+\title{Electromagnetic Theory II HW6}
+\author{Vince Baker}
+
+\begin{document}
+
+\maketitle
+
+\section*{8.4}
+The general wave equation for a cylindrical waveguide is:
+\begin{align}
+ \lrp{\nabla_t^2+\gamma^2}\psi &= 0\\
+ \psi &= E_z\textbf{ (TM) ,}B_z\textbf{ (TE)}
+\end{align}
+The solutions that are regular at $\rho=0$ are:
+\begin{align}
+ \psi &= A_m J_m(\gamma\rho)e^{\pm im\phi}
+\end{align}
+The boundary conditions on the conductor surface $\rho=R$ will be different for TE and TM modes.
+For TM modes the E field vanishes at the surface, so the eigenvalues are the zeros of $J_m(\gamma R)$.
+For TE modes the normal derivative of the magnetic field vanishes at the surface, so the eigenvalues are the zeros of $J'_m(\gamma R)$.
+Therefore the mode frequencies are:
+\begin{align}
+ \omega_{m,n} &= \frac{Z_m(n)}{\sqrt{\mu\epsilon}R}\textbf{ (TM)}\\
+ \omega_{m,n} &= \frac{Z'_m(n)}{\sqrt{\mu\epsilon}R}\textbf{ (TE)}
+\end{align}
+Where we have defined $Z_m(n)$ as the Nth zero of $J_m$ and $Z'_m(n)$ as the Nth zero of $J'_m$. 
+The first few roots are:
+\begin{align}
+ Z_0 &= 2.41, 5.52, 8.65\\
+ Z_1 &= 3.83, 7.02, 10.17\\
+ Z_2 &= 5.14, 8.41, 11.62\\
+ Z'_0 &= 3.83, 7.02, 10.17\\
+ Z'_1 &= 1.84, 5.33, 8.54\\
+ Z'_2 &= 3.05, 6.71, 9.97
+\end{align}
+The lowest root is $Z'_1(1)$, so the the dominant mode is $TE_{11}$. 
+Listing the dominant mode and the next four higher modes:
+\begin{tabular}{l | c | r}
+ Mode & Frequency & Ratio\\
+ \hline
+ $TE_{11}$ & 1.84  & 1\\
+ $TM_{01}$ & 2.41  & 1.31 \\
+ $TE_{21}$ & 3.05 & 1.66\\
+ $TE_{01},TM_{11}$ & 3.83 & 2.08\\
+ $TM_{21}$ & 5.14 & 2.79
+\end{tabular}
+\\ \\
+b) The attenuation coefficients are found from (Jackson 8.57):
+\begin{align}
+ \beta_\lambda &= -\frac{1}{2P}\frac{dP}{dz}
+\end{align}
+The power and power loss for TE and TM modes are:
+\begin{align}
+ P_{TM} &= \frac{1}{2\sqrt{\mu\epsilon}}\lrp{\frac{\omega}{\omega_\lambda}}^2 \lrp{1-\frac{\omega_\lambda^2}{\omega^2}}^{1/2}\epsilon \int_A \psi^* \psi\ da\\
+ \frac{dP}{dz}_{TM} &= \frac{1}{2\sigma\delta}\lrp{\frac{\omega}{\omega_\lambda}}^2\oint_C \frac{1}{\mu^2\omega_\lambda^2}|\frac{\partial \psi}{\partial n}|^2\ d\ell\\
+ P_{TE} &= \frac{1}{2\sqrt{\mu\epsilon}}\lrp{\frac{\omega}{\omega_\lambda}}^2 \lrp{1-\frac{\omega_\lambda^2}{\omega^2}}^{1/2}\mu \int_A \psi^* \psi\ da\\
+ \frac{dP}{dz}_{TM} &= \frac{1}{2\sigma\delta}\lrp{\frac{\omega}{\omega_\lambda}}^2
+	      \oint_C \frac{1}{\mu\epsilon\omega_\lambda^2}\lrp{1-\frac{\omega_\lambda^2}{\omega^2}}|\bv{n}\times\nabla_t\psi|^2 
+	      +|\frac{\partial \psi}{\partial n}|^2\ d\ell
+\end{align}
+We can evaluate the power expressions using the orthogonality of the Bessel functions:
+\begin{align}
+ \int_0^1 xJ_m(xu)J_m(xu)\ dx &= \frac{1}{2}\lrp{J_{m+1}(u)}^2
+\end{align}
+For the TM modes, integrating from $\rho=0$ to $R$ with $u \equiv Z_m(n)/R$ making the substitution $\rho' = \rho/R$ we find:
+\begin{align}
+ P_{TM} &= \frac{1}{2}\sqrt{\frac{\epsilon}{\mu}}\lrp{\frac{\omega}{\omega_\lambda}}^2\lrp{1-\frac{\omega_\lambda^2}{\omega^2}}^{1/2} 2\pi\int_0^1R^2\rho' \left[ J_m(\rho' Z_m(n))\right]^2\ d\rho'\\
+ P_{TM} &= \frac{1}{2}\sqrt{\frac{\epsilon}{\mu}}\lrp{\frac{\omega}{\omega_\lambda}}^2\lrp{1-\frac{\omega_\lambda^2}{\omega^2}}^{1/2}\pi R^2\left[J_{m+1}(Z_m(n))\right]^2
+\end{align}
+For the TE modes we are working with the zeros of the derivatives of the Bessel functions. 
+
+
+
+
+\section*{8.6}
+We have solved the cylindrical waveguide in the previous problem, the cylindrical cavity frequencies come from the modified expression for $\gamma$ in a cavity:
+\begin{align}
+ \gamma^2 &= \mu\epsilon\omega^2 - \lrp{\frac{p\pi}{d}}^2\\
+ \omega^2_{\lambda p} &= \frac{1}{\mu\epsilon}\lrb{\gamma_\lambda^2+\lrp{\frac{p\pi}{d}}^2}
+\end{align}
+Where $p=0,1,2..$ for TM modes (cosine solutions in z) and $p=1,2,3...$ for TE modes (sine solutions in z).
+Writing the modes in terms of the zeros of the Bessel functions and their derivatives, and pulling out a factor of $1/R^2$:
+\begin{align}
+ \omega_{m,n,p} &= \frac{1}{\sqrt{\mu\epsilon}R}\sqrt{\lrp{Z_m(n)^2+\lrp{\frac{p\pi R}{d}}^2}}\textbf{ (TM)}\\
+ \omega_{m,n,p} &= \frac{1}{\sqrt{\mu\epsilon}R}\sqrt{\lrp{Z'_m(n)^2+\lrp{\frac{p\pi R}{d}}^2}}\textbf{ (TE)}\\
+\end{align}
+
+
+
+\section*{9.3}
+
+\end{document}
