@@ -1,0 +1,34 @@
+\documentclass[a4paper,11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{braket}
+
+\numberwithin{equation}{section}
+\renewcommand\thesubsection{\alph{subsection}}
+\newcommand{\bvp}[1]{\mathbf{#1}'}
+\newcommand{\bv}[1]{\mathbf{#1}}
+\newcommand{\ez}{\epsilon_0}
+\newcommand{\eo}{\epsilon_1}
+\newcommand{\lrp}[1]{\left({#1}\right)}
+\newcommand{\lrb}[1]{\left\{{#1}\right\}}
+
+
+%opening
+\title{Solid State 1 HW2}
+\author{Vince Baker, Tony Wang}
+
+\begin{document}
+\maketitle
+
+\section*{1}
+For the first structure, the lattice vector is $\bv{a}_1=a\bv{\hat{x}}$ and the basis is a single molecule.\\
+\\
+For the second structure, the lattice vector is $\bv{a}_1=2a\bv{\hat{x}}$ and the basis are the two different molecules separated by a.\\
+\\
+For the third structure, the lattice vector is $\bv{a}_1=b\bv{\hat{x}}$ and the basis is two of the same molecule separated by a.\\
+\\
+For the fourth structure, the lattice vectors are $\bv{a}_1=b\bv{\hat{x}}, \bv{a}_2=\frac{b}{2}\bv{\hat{x}}+c\bv{\hat{y}} $ and the basis is a square of four molecules of side a.\\
+\end{document}

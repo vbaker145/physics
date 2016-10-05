@@ -1,0 +1,95 @@
+\documentclass[a4paper,11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{braket}
+
+\numberwithin{equation}{section}
+\renewcommand\thesubsection{\alph{subsection}}
+\newcommand{\bvp}[1]{\mathbf{#1}'}
+\newcommand{\bv}[1]{\mathbf{#1}}
+\newcommand{\ez}{\epsilon_0}
+\newcommand{\eo}{\epsilon_1}
+\newcommand{\lrp}[1]{\left({#1}\right)}
+\newcommand{\lrb}[1]{\left\{{#1}\right\}}
+
+
+%opening
+\title{Solid State 1 HW1}
+\author{Vince Baker, Jesse Unger}
+
+\begin{document}
+\maketitle
+
+\section*{1}
+We use the distance convention relative to the distance between the centers of adjacent cubes. 
+The first four terms of the Madleung constant are then:
+\begin{align}
+ T1: \frac{8}{\sqrt{3/4}} &= 9.24\\
+ T2: -6\\
+ T3: \frac{-12}{\sqrt{2}} &= -8.48\\
+ T4: \frac{24}{\sqrt{11/4}} &= 14.47
+\end{align}
+
+Alternatively, using the nearest-neighbor distance as 1:
+\begin{align}
+ T1: 8\\
+ T2: -\frac{6}{\sqrt{2}} &= -4.24\\
+ T3: -\frac{12}{2} &= -6\\
+ T4: \frac{24}{\sqrt{11/2}} &= 10.23
+\end{align}
+The series is converging.
+
+\section*{2}
+We use the Lennard-Jones potential with parameters $\epsilon=50, \sigma=2.74$.
+The total potential energy is given by Kittel 3.11:
+\begin{align}
+ U_{tot} &= 2N\epsilon\lrb{\sum_j\lrp{\frac{\sigma}{p_{ij}R}}^{12}-\sum_j\lrp{\frac{\sigma}{p_{ij}R}}^6 }
+\end{align}
+For the fcc and bcc crystals the constants are the same, and only the structure-dependent sums are different. 
+For the fcc crystal:
+\begin{align}
+ \sum_j p_{ij}^{-12} &\equiv p_{ij}^{-12} = 12.13\\
+ \sum_j p_{ij}^{-6} &\equiv p_{ij}^{-6} = 14.45
+\end{align}
+For the bcc crystal:
+\begin{align}
+ \sum_j p_{ij}^{-12} &\equiv p_{ij}^{-12} = 9.11\\
+ \sum_j p_{ij}^{-6} &\equiv p_{ij}^{-6} = 12.25
+\end{align}
+The cohesive energy depends on the lattice distance R. 
+The equilibrium value of R can be evaluated from the derivative of the potential energy:
+\begin{align}
+ \frac{dU}{dR} &= 2N\epsilon\lrb{-\sigma^{12}\lrp{p_{ij}}^{-12}12R^{-12}+\sigma^{6}\lrp{p_{ij}}^{-6}6R^{-7}} = 0\\
+ R_0 &= \sigma\lrb{\frac{2p_{ij}^{-12}}{p_{ij}^{-6}}}^{1/6}
+\end{align}
+The equilibrium value $R0$ is 1.0902 for the fcc structure and 1.0684 for the bcc structure. 
+We can now calculate the cohesive energies of the Ne structures:
+\begin{align}
+ U_{fcc} &= -4.30341(2N\epsilon)\\
+ U_{bcc} &= -4.1181(2N\epsilon)\\
+ \frac{U_{bcc}}{U_{fcc}} &= 0.9569
+\end{align}
+
+\section*{3}  
+
+\section*{4}
+The cohesive energy per molecule of an ionic crystal (ignoring the repulsive term) is:
+\begin{align}
+ U_{tot} &= -\frac{aq^2}{R}
+\end{align}
+For both Ba+O- and Ba++O-- the internuclear distance is 2.76\AA{} and the Madelung constant is 1.75.
+For Ba+O- $q=e$, while for Ba++O-- $q=2e$. 
+Calculating the energies in SI and then converting to eV:
+\begin{align}
+ U_{Ba+O-} &= -\frac{1}{4\pi\ez}\frac{ae^2}{R_0} = 1.46e^{-18} J = -9.12 eV\\
+ U_{Ba++O--} &= -\frac{1}{4\pi\ez}\frac{a(2e)^2}{R_0} = 5.84e^{-18} J = -36.48 eV
+\end{align}
+A configuration will be stable if the cohesive energy plus the electron affinity of the negative ion are greater than the ionization potential of the positive ion.
+For Ba+O-, the configuration energy is ($-9.12-1.5+5.19=-5.43 eV$) so the configuration is stable.
+For Ba++O-- the configuration energy is ($-36.48+9+9.96=-17.52 eV$) so it is stable as well.
+Since the lowest energy configuration is Ba++O-- we expect that to be the valence configuration found in the BaO crystal.
+
+\end{document}
