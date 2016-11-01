@@ -1,0 +1,36 @@
+* **********************************
+* NETWORK   (KNETWK): BK
+* STATION    (KSTNM): CMB
+* LOCATION   (KHOLE): 00
+* CHANNEL   (KCMPNM): BHN
+* CREATED           : 2016-10-24T00:11:36
+* START             : 2010-12-17T00:00:00
+* END               : 2599-12-31T23:59:59
+* DESCRIPTION       : Columbia College, Columbia, CA, USA
+* LATITUDE          : 38.034550
+* LONGITUDE         : -120.386510
+* ELEVATION         : 697.0
+* DEPTH             : 2.0
+* DIP               : 90.0
+* AZIMUTH           : 0.0
+* SAMPLE RATE       : 40.0
+* INPUT UNIT        : M
+* OUTPUT UNIT       : COUNTS
+* INSTTYPE          : Streckeisen STS-1/E300 VBB Feedback Seismometer
+* INSTGAIN          : 1.974000e+03 (M/S)
+* COMMENT           : 
+* SENSITIVITY       : 3.311820e+09 (M/S)
+* A0                : 1.153220e+04
+* **********************************
+ZEROS	3
+	+0.000000e+00	+0.000000e+00	
+	+0.000000e+00	+0.000000e+00	
+	+0.000000e+00	+0.000000e+00	
+POLES	4
+	-1.227750e-02	+1.203930e-02	
+	-1.227750e-02	-1.203930e-02	
+	-3.602270e+01	+1.013170e+02	
+	-3.602270e+01	-1.013170e+02	
+CONSTANT	3.819257e+13
+
+
