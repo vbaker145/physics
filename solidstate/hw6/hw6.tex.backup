@@ -1,0 +1,77 @@
+\documentclass[a4paper,11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{braket}
+
+\numberwithin{equation}{section}
+\renewcommand\thesubsection{\alph{subsection}}
+\newcommand{\bvp}[1]{\mathbf{#1}'}
+\newcommand{\bv}[1]{\mathbf{#1}}
+\newcommand{\ez}{\epsilon_0}
+\newcommand{\eo}{\epsilon_1}
+\newcommand{\lrp}[1]{\left({#1}\right)}
+\newcommand{\lrb}[1]{\left\{{#1}\right\}}
+
+
+%opening
+\title{Solid State 1 HW6}
+\author{Vincent Baker}
+
+\begin{document}
+\maketitle
+
+\section*{Q1}
+Starting with the general expression for U, and using $f(e)=1 (e<e_f), =0(e>e_F)$ at $T=0$:
+\begin{align}
+ U &= \int_0^\infty eD(e)f(e)de \\
+ U &= \int_0^{e_F} \frac{V}{2\pi^2}\lrp{\frac{2m}{\hbar}}^{3/2}e^{3/2}de\\
+ U &= \frac{V}{2\pi^2}\lrp{\frac{2m}{\hbar}}^{3/2}\int_0^{e_F}e^{3/2}de 
+\end{align}
+
+
+\section*{Q2}
+For a two-dimensional electron gas the number of allowed states in a square of length L is:
+\begin{align}
+  \frac{2\pi k^2}{\lrp{2\pi/L}^2} &= \frac{A}{2}k^2 = N
+\end{align}
+ We then compute the density of states from N:
+\begin{align}
+ k^2 &= \frac{2m}{\hbar^2}\epsilon\\
+ N &= \frac{mA}{\hbar^2}\epsilon\\
+ D(\epsilon) &= \frac{dN}{d\epsilon} = \frac{mA}{\hbar^2}
+\end{align}
+We see that the density of states is constant.
+
+\section*{Q3}
+
+
+\section*{Q4}
+a) The nanometric wire is similar to a waveguide, supporting standing wave modes across the wire and propagating modes along it.
+Since the standing wave modes have no physical momentum the total energy minus the standing wave energy must be the kinetic energy:
+\begin{align}
+ E(n,N) - \epsilon(n) &= \frac{1}{2} mv^2
+\end{align}
+Solving $\frac{\hbar^2}{2m}\Delta^2 \Psi = E\Psi$ with the given wavefunction we find that:
+\begin{align}
+ E(N,n) &= \frac{\hbar^2}{2m}\lrb{\lrp{\frac{n\pi}{L_{xy}}}^2+(2\pi N)^2}
+\end{align}
+Where v is the average electron velocity along the wire, N is the quantum number of the propagating mode, and n is the quantum number ($n_x+n_y$) of the standing wave modes.
+Using the expression for kinetic energy
+\begin{align}
+ E(N,n) - e(n) &= \frac{\hbar^2}{2m}\lrp{2\pi N}^2 = \frac{1}{2}mv^2\\
+ N &= \frac{mv}{2\pi\hbar}
+\end{align}
+Finally, substituting into the expression for $D_N(E)$:
+\begin{align}
+ D_N(E) &= 2/AN\\
+ \frac{\lrp{2\pi\hbar}^2}{2m} &\equiv A\\
+ D_N(E) &= \frac{1}{\pi \hbar v}
+\end{align}
+b) The problem directs us to sum over all n of which $E\ge e_n$. 
+The given expression using a step function so that any term with $E-e_n < 0$ is equal to zero.
+This is exactly the summation requested.
+
+\end{document}

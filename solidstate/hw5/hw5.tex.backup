@@ -1,0 +1,59 @@
+\documentclass[a4paper,11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{braket}
+
+\numberwithin{equation}{section}
+\renewcommand\thesubsection{\alph{subsection}}
+\newcommand{\bvp}[1]{\mathbf{#1}'}
+\newcommand{\bv}[1]{\mathbf{#1}}
+\newcommand{\ez}{\epsilon_0}
+\newcommand{\eo}{\epsilon_1}
+\newcommand{\lrp}[1]{\left({#1}\right)}
+\newcommand{\lrb}[1]{\left\{{#1}\right\}}
+
+
+%opening
+\title{Solid State 1 HW5}
+\author{Tony Wang, Vincent Baker}
+
+\begin{document}
+\maketitle
+
+\section*{Q1}
+The atomic motion is restricted to two dimensions. 
+With one phonon mode per $(\pi/L)^2$ in K space:
+\begin{align}
+ N &= (\pi K^2)/(2\pi/L)^2\\
+ N &= AK^2/4\pi\\
+ \frac{dN}{dK} &= AK/2\pi\\ 
+ D(\omega) &=  \frac{dN}{dK}\frac{dK}{d\omega} = A\omega/2\pi v^2
+\end{align}
+Where in the last step we used the relation $\omega=vK$.\\
+We now have an expression for the internal energy under the Debye assumptions:
+\begin{align}
+ U &= 3\int_0^{\omega_D} d\omega \frac{A\omega}{2\pi v^2}\frac{\hbar \omega}{e^{\beta \hbar \omega}-1}\\
+ \omega_D &= \lrp{\frac{4\pi Nv^2}{A}}^{1/2}\\
+ \frac{\partial U}{\partial T}_v &= \frac{3A\hbar^2}{2\pi v^2kT^2} \int_0^{\omega_D} d\omega \frac{\omega^3e^{\beta\hbar\omega}}{\lrp{e^{\beta \hbar \omega}-1}^2}
+\end{align}
+Introducing the Debye temperature $\theta = \frac{\hbar v}{k}\lrp{4\pi N/A}^{1/2}$ and the variable $x=\hbar \omega /kT$ we can write the heat capacity as:
+\begin{align}
+ C_v &=  \frac{3Ak^3T^2}{2\pi v^2\hbar^2}\int_0^{x_D} dx \frac{x^3e^x}{\lrp{e^x-1}^2}\\
+ C_v &=  6kA\lrp{\frac{T}{\theta}}^2\int_0^{x_D} dx \frac{x^3e^x}{\lrp{e^x-1}^2}
+\end{align}
+For low temperatures $x_d \rightarrow \infty$ and the integral is a constant (7.21 per Wolfram Alpha). 
+The heat capacity therefore has a $T^2$ dependence for low temperatures.\\ \\
+If adjacent layers are weakly bound compared to the intra-layer interactions then at extremely low temperatures only the low-energy inter-layer phonon modes will be excited.
+This essentially becomes a one-dimensional problem, and therefore $C_v \propto T$ since the number of excited phonon modes is proportional to T in one dimension.
+\\ 
+\section*{Q2}
+
+\section*{Q3}
+Graphite is made of layers of covalently-bonded graphene, with weak van der Waals forces holding the layers together. 
+The thermal conductivity is proportional to the square of the speed of sound in the material, which is just the slope of the linear part of the dispersion relation.
+Per our previous investigation the slope is proportional to the square root of the bond energy.
+Therefore we expect much higher thermal conductivity along the graphene layers than across the layers.
+\end{document}
