@@ -1,0 +1,67 @@
+\documentclass[a4paper,11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{braket}
+
+\numberwithin{equation}{section}
+\renewcommand\thesubsection{\alph{subsection}}
+\newcommand{\bvp}[1]{\mathbf{#1}'}
+\newcommand{\bv}[1]{\mathbf{#1}}
+\newcommand{\ez}{\epsilon_0}
+\newcommand{\eo}{\epsilon_1}
+\newcommand{\lrp}[1]{\left({#1}\right)}
+\newcommand{\lrb}[1]{\left\{{#1}\right\}}
+
+
+%opening
+\title{Solid State 1 HW7}
+\author{Jesse Unger, Paul Xhori, Vincent Baker}
+
+\begin{document}
+\maketitle
+
+\section*{7.1}
+a) The energy of a free electron gas in two and three dimensions is:
+\begin{align}
+ E_{2D} &= \frac{\hbar^2}{2m}\lrp{k_x^2+k_y^2}\\
+ E_{3D} &= \frac{\hbar^2}{2m}\lrp{k_x^2+k_y^2+k_z^2}
+\end{align}
+The corner point at $k_y=k_x=\pi/a$ then has twice the energy of the k vector halfway along the side at $k_x=\pi/a, k_y=0$.\\
+b) The corner point at $k_z=k_y=k_x=\pi/a$ has three times the energy of the k vector halfway along the side at $k_x=\pi/a, k_z=k_y=0$.\\
+c)
+\section*{7.3}
+a) The Kronig-Penney model is:
+\begin{align}
+ (P/Ka)\sin{Ka} + \cos{Ka} &= \cos{ka}
+\end{align}
+We are looking for the lowest energy band when $k=0$ with $P \ll 1$.
+Assuming the first term is small due to the condition on P, and noting that $\varliminf_{x\rightarrow 0}\sin{x}/x = 1$, we have:
+\begin{align}
+ K &\simeq 0,k=0\\
+ \cos{Ka} &\simeq 1-P\\
+ K &\simeq \frac{1}{a} \cos^{-1}{(1-P)}
+\end{align}
+The energy of the lowest band at $k=0$ is $\frac{\hbar^2}{2ma^2}\lrp{\cos^{-1}{(1-P)}}^2$.\\
+b) At $k=\pi/a$ we have:
+\begin{align}
+ \frac{P}{Ka}\sin{Ka}+\cos{Ka} &= -1
+\end{align}
+To find the band gap we need to find the points at which the function is equal to -1.
+We note that the sinc function $\sin{x}/x$ has zeros at $x=\pm n\pi$ with n an integer, so one of the points is at $Ka=\pi$.
+Expaning both the sinc function and $\cos{x}$ about $x=\pi$ we have:
+\begin{align}
+ P(1-x/\pi)-1+\frac{1}{2}\lrp{x-\pi}^2 &= -1\\
+ P(1-x/\pi)+\frac{1}{2}\lrp{x-\pi}^2 &= 0
+\end{align}
+We don't find a closed-form expression from this, but plugging in $P=0.1$ we find the second solution at $x=3.205, K=3.205/a$.
+This gives a band gap of $\frac{\hbar^2}{2ma^2}(3.205^2-\pi^2)$.
+
+ 
+\section*{Q3}
+
+
+
+\end{document}
